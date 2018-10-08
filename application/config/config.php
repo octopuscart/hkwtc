@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$baselink = 'http://'.$_SERVER['SERVER_NAME'];
+$baselink = '//'.$_SERVER['SERVER_NAME'];
 
 $baselinkmain = strpos($baselink, '192.168') ? $baselink.'/royaltailors' : $baselink.'/';
 //$baselinkmain = $baselink."/demoshirt";

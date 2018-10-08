@@ -96,8 +96,8 @@ background: -o-linear-gradient(transparent, transparent);
 }
 
 .goldline{
-    background: url("../images/gold_line.png");
-        background: url(../images/gold_line.png);
+    background: url("../images/gold_line1.png");
+        background: url(../images/gold_line1.png);
     height: 28px;
     width: 100%;
     float: left;
