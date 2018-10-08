@@ -16,8 +16,16 @@ class Shop extends CI_Controller {
         $categories = $this->Product_model->productListCategories(0);
         $data["categories"] = $categories;
         $data["product_home_slider_bottom"] = $product_home_slider_bottom;
-        
+
         $this->load->view('home', $data);
+    }
+
+    public function contactus() {
+        $this->load->view('pages/contactus');
+    }
+
+    public function aboutus() {
+        $this->load->view('pages/aboutus');
     }
 
 }

@@ -199,7 +199,7 @@ $this->load->view('layout/header');
                     <!-- Layer -->
                     <div class="tp-caption customin font-playfair tp-resizeme rs-parallaxlevel-7" 
                          data-x="center" data-hoffset="0" 
-                         data-y="center" data-voffset="10" 
+                         data-y="center" data-voffset="100" 
                          data-speed="720" 
                          data-start="1200" 
                          data-easing="easeOutBack"

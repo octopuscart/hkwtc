@@ -96,8 +96,8 @@ background: -o-linear-gradient(transparent, transparent);
 }
 
 .goldline{
-    background: url("../images/gold_line1.png");
-        background: url(../images/gold_line1.png);
+    background: url("../images/gold_line.png");
+        /*background: url(../images/goldline.jpg);*/
     height: 28px;
     width: 100%;
     float: left;
@@ -187,4 +187,104 @@ heading-block hr {
     margin-bottom: 0px;
     position: relative;
     margin-top: 8px;
+}
+
+
+.footer-shop h4:before {
+    position: absolute;
+    bottom: -18px;
+    height: 14px;
+    left: 0px;
+    width: 30px;
+    margin: 0 auto;
+    background: none;
+    content: "";
+    background-size: cover;
+}
+.footer-shop h4:after {
+    position: absolute;
+    bottom: -20px;
+    height: 24px;
+    left: 0px;
+    width: 100%;
+    margin: 0 auto;
+    background: url(../images/gold_line11.png);
+    /* content: ""; */
+    background-size: contain;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: center
+}
+
+.footer-shop h4 {
+    font-size: 20px;
+    color: #fff;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    font-weight: 500;
+    position: relative;
+    text-align: center;
+    color: #926400;
+}
+
+footer p {
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+}
+
+footer .links-footer li a {
+    color: rgba(255,255,255,0.8);
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: 500;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+footer .social-links{
+    float:right;
+}
+
+footer .social-links a {
+    margin-left: 6px;
+    padding-top: 5px;
+    float: left;
+    padding: 10px;
+    border: 1px solid #f5bc71;
+}
+
+footer {
+    background: #161409;
+    padding: 50px 0;
+}
+
+.heading-block h3:after {
+    bottom: -15px;
+    height: 25px;
+    left: 0px;
+    width: 50px;
+    background: #000000;
+    content: "";
+    right: 0px;
+    margin: 0 auto;
+    position: absolute;
+        width: 100%;
+    margin: 0 auto;
+    background: url(../images/gold_line11.png);
+    /* content: ""; */
+    background-size: contain;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: center
+}
+.heading-block h3:before {
+    bottom: -15px;
+    height: 25px;
+    left: 0px;
+    width: 50px;
+    background: none;
+ 
 }

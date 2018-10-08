@@ -113,7 +113,7 @@
                                 <ul class="nav">
                                     <li class="dropdown"> <a  href="contact_us_1.html" class="dropdown-toggle " data-toggle="dropdown">Home</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="">About Us</a></li>
+                                            <li><a href="<?php echo site_url("Shop/aboutus"); ?>">About Us</a></li>
                                             <li><a href="">FAQ'S</a></li>
 
                                         </ul>
@@ -131,7 +131,7 @@
                                         <a href="<?php echo site_url("/"); ?>">Our Blog</a>
                                     </li>
                                     <li > 
-                                        <a href="<?php echo site_url("/"); ?>">Contact Us</a>
+                                        <a href="<?php echo site_url("Shop/contactus"); ?>">Contact Us</a>
                                     </li>
 
 
