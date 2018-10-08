@@ -717,8 +717,8 @@ $this->load->view('layout/header');
             <!-- Heading -->
             <div class="heading-block white margin-bottom-20">
                 <h4>- We are Professionals - </h4>
-                <h3>We are tailoring artists</h3>
-                <hr>
+                <h5 style="font-size: 35px;color:white;">We are tailoring artists</h5>
+               
             </div>
             <div class="intro-small col-md-11 center-auto margin-bottom-0">
                 <p>
