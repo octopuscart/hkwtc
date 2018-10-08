@@ -25,8 +25,8 @@ $this->load->view('layout/header');
                     <ul class="studio-loc padding-right-100">
                         <li><i class="flaticon-route"></i> Shop A, 2/F Entertainment Building,<br/>
                             30 Queen’s Road, Central, Hong Kong</li>
-                        <li><i class="flaticon-smartphone"></i> <a href="#"><b><span class="fa fa-phone"></span></b> +(852) 26559778</a> <br>
-                            <a href="#"><span class="fa fa-fax"></span></b> +(852) 26559768</a></li>
+                        <li><i class="flaticon-smartphone"></i> <a href="#"><b><span class="fa fa-phone"></span></b> +(852) 2655 9778</a> <br>
+                            <a href="#"><span class="fa fa-fax"></span></b> +(852) 2655 9768</a></li>
                         <li><i class="flaticon-mail"></i> <a href="#">lyra@royaltailor.hk</a> <br>
                             <a href="#">sales@royaltailor.hk</a></li>
                     </ul>
