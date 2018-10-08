@@ -1,0 +1,152 @@
+
+
+.btn{
+    background: #D1913C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFD194, #D1913C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFD194, #D1913C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.ownmenu .nav .dropdown-menu li:hover > a {
+    background: #8e9eab;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: #fff !important;
+}
+
+
+.goldergradiant{
+
+    background: #D1913C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fcfcfc, #f08a03);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fcfcfc, #f08a03); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+.silvergraditant{
+     background: #8e9eab;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.sticky-wrapper .logomain{
+    height: 92px;
+    margin-top: -25px;
+    position: absolute;
+}
+
+.is-sticky .logomain{
+ height: 59px;
+ margin-top: -7px;
+}
+
+
+
+.header .navbar li a:before {
+    position: absolute;
+    left: 0px;
+    bottom: 19px;
+    height: 2px;
+    width: 0px;
+    background:none;
+}
+
+.goldtextcss a{
+color:	#D5AD6D; /*if no support for background-clip*/
+
+}
+
+.goldtextcsst{
+color:	#D5AD6D; /*if no support for background-clip*/
+background: -webkit-linear-gradient(transparent, transparent),
+-webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgba(163,126,67,1) 45%, rgba(145,112,59,1) 61%, rgba(213,173,109,1) 100%);
+background: -o-linear-gradient(transparent, transparent);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+    /* background: linear-gradient(to right, #eef2f3, #8e9eab); */
+    background: url(https://img00.deviantart.net/9087/i/2012/169/7/8/golden_swirls_border_png_by_melissa_tm-d540ffo.png);
+    background-size: 193px;
+    background-position: -5px 55px;
+    background-repeat: no-repeat;
+
+}
+
+.ownmenu .dropdown-menu li a:hover:before {
+    width: 100%;
+    background: #d6a600;
+}
+
+.ownmenu .nav .dropdown-menu {
+    border: none;
+    min-width: auto;
+    margin-top: 0px;
+    border-radius: 0px;
+    padding: 10px 0px;
+}
+
+.oleofont{
+    font-family: 'Oleo Script', cursive;
+
+}
+
+.goldline{
+    background: url("../images/gold_line.png");
+        background: url(../images/gold_line.png);
+    height: 28px;
+    width: 100%;
+    float: left;
+    background-size: contain;
+    background-repeat-x: repeat;
+    background-repeat-y: no-repeat;
+}
+
+.goldline2{
+    background: url("../images/gold_line2.png");
+        background: url(../images/gold_line2.png);
+    height: 28px;
+    width: 100%;
+    float: left;
+    background-size: contain;
+    background-repeat-x: repeat;
+    background-repeat-y: no-repeat;
+}
+
+.goldline3{
+    background: url("../images/gold_line3.png");
+        background: url(../images/gold_line3.png);
+    height: 128px;
+    width: 100%;
+    float: left;
+    background-size: contain;
+    background-position: center;
+    background-repeat:no-repeat;
+}
+
+.acces-ser article:before {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background: rgba(248, 171, 0, 0.41);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    color: #b28c06;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+}
