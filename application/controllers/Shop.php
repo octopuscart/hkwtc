@@ -37,5 +37,9 @@ class Shop extends CI_Controller {
     public function aboutus() {
         $this->load->view('pages/aboutus');
     }
+    
+     public function blog() {
+        $this->load->view('pages/blog');
+    }
 
 }

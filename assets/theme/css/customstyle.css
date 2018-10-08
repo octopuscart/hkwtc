@@ -319,3 +319,32 @@ hr {
     border: 0;
     border-top: 5px solid #b28c06;
 }
+
+.side-bar .heading h6:before  {
+    position: absolute;
+    bottom: -20px;
+    height: 24px;
+    left: 0px;
+    width: 100%;
+    margin: 0 auto;
+    background: url(../images/gold_line11.png);
+    /* content: ""; */
+    background-size: contain;
+    float: left;
+    background-repeat: no-repeat;
+    
+}
+.side-bar .heading h6:after  {
+    position: absolute;
+    bottom: -20px;
+    height: 24px;
+    left: 0px;
+    width: 100%;
+    margin: 0 auto;
+    background:none;
+}
+
+
+.side-bar .heading h6{
+    color: #b28c06;
+}

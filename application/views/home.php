@@ -794,7 +794,7 @@ $this->load->view('layout/header');
             <!-- Heading -->
             <div class="heading-block">
                 <h3>Our Latest News</h3>
-                <hr>
+               
             </div>
 
             <!-- News Post -->

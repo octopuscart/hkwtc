@@ -128,7 +128,7 @@
                                         <a href="<?php echo site_url("/"); ?>">Offers</a>
                                     </li>
                                     <li > 
-                                        <a href="<?php echo site_url("/"); ?>">Our Blog</a>
+                                        <a href="<?php echo site_url("Shop/blog"); ?>">Our Blog</a>
                                     </li>
                                     <li > 
                                         <a href="<?php echo site_url("Shop/contactus"); ?>">Contact Us</a>
