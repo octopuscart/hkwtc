@@ -8,8 +8,8 @@
                 <h4 >Contact Information!</h4>
                 <p><b><i class="fa fa-location-arrow"></i></b> Shop A, 2/F Entertainment Building,<br/>
                     30 Queen’s Road, Central, Hong Kong</p>
-                <p><b><i class="fa fa-phone"></i></b> +(852) 26559778</p>
-                <p><b><i class="fa fa-fax"></i></b> +(852) 26559768</p>
+                <p><b><i class="fa fa-phone"></i></b> +(852) 2655 9778</p>
+                <p><b><i class="fa fa-fax"></i></b> +(852) 2655 9768</p>
                 <p><b><i class="fa fa-envelope"></i></b> lyra@royaltailor.hk</p>
             </div>
 
