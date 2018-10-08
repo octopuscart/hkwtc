@@ -627,13 +627,65 @@ $this->load->view('layout/header');
     </div>
 </section>
 
+<div style="clear: both"></div>
+
+
+
+<!-- About US -->
+
+<section class="light-gray-bg pad-t-b-30">
+
+    <div class="goldline2 " style="margin-bottom: 30px;"></div>
+    <div class="container"> 
+
+        <!-- Heading -->
+        <div class="heading-block margin-bottom-10">
+            <h3>Best Sellers</h3>
+            <hr>
+        </div>
+        <div class="intro-small col-md-8 center-auto margin-bottom-10">
+            <p>
+
+                Different suits and shirts style and cutting. 
+            </p>
+        </div>
+
+        <!-- Images Sec -->
+        <div class="img-sec margin-bottom-30">
+            <div class="shop-content">
+                <div id="new-arrival-slide"> 
+                    <?php
+                    foreach ($product_home_slider_bottom['home_bottom'] as $key => $value) {
+                        ?>
+                        <!-- Item -->
+                        <div class="item">
+                            <article class="shop-artical"> 
+                                <div class="imagblock">
+                                    <img class="img-responsive" src="http://bespoketailorsadmin.costcointernational.com/assets_main/productimages/<?php echo $value['file_name']; ?>" alt="" >
+                                </div>
+                                <div class="item-hover"> <a href="#." class="btn">add to cart</a>  </div>
+                            </article>
+                            <div class="info"> <a href="#.">Winkle Free Cotton </a> <span class="price">US$ 1010.00</span> </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <div class="goldline2 " style="margin-bottom: 30px;"></div>
+  <div style="clear: both"></div>
 <!-- Content -->
 <div id="content" class="home-shop"> 
 
     <!-- About Sec -->
-    <section class="acces-ser pad-t-b-0 ">
+    <section class="acces-ser margin-top-30 " >
         <div class="container"> 
-            <div class="goldline2 " style="margin-bottom: 30px;"></div>
+
             <!-- Heading -->
             <div class="heading-block margin-bottom-30">
                 <h3>We Are Tailoring Artist</h3>
@@ -718,7 +770,7 @@ $this->load->view('layout/header');
             <div class="heading-block white margin-bottom-20">
                 <h4>- We are Professionals - </h4>
                 <h5 style="font-size: 35px;color:white;">We are tailoring artists</h5>
-               
+
             </div>
             <div class="intro-small col-md-11 center-auto margin-bottom-0">
                 <p>
@@ -732,20 +784,57 @@ $this->load->view('layout/header');
     <div style="clear: both"></div>
 
 
+
+
+
+
+    <section class="new-main padding-top-30">
+        <div class="container"> 
+
+            <!-- Heading -->
+            <div class="heading-block">
+                <h3>Our Latest News</h3>
+                <hr>
+            </div>
+
+            <!-- News Post -->
+            <div class="news-post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <article> <img class="img-responsive" src="<?php echo base_url(); ?>assets/theme/images/blogimage1.jpg" alt=""> <span>By Admin</span> <span><?php echo date("d M, Y"); ?></span> <a href="#." class="news-tittle">J Winter Fashion Show 6th Feb 2018 atop Costa neoRomantica cruise</a>
+                            <p>Royal Tailor was invited to collaborate with the iconic J Winter Fashion Show atop Costa neoRomantica cruise ship produced by supermodel Jessica Minh Anh</p>
+                            <a href="#." class="red-more">Read More</a> </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article> <img class="img-responsive" src="<?php echo base_url(); ?>assets/theme/images/blogimage1.jpg" alt=""> <span>By Admin</span> <span><?php echo date("d M, Y"); ?></span> <a href="#." class="news-tittle">J Winter Fashion Show 6th Feb 2018 atop Costa neoRomantica cruise</a>
+                            <p>Royal Tailor was invited to collaborate with the iconic J Winter Fashion Show atop Costa neoRomantica cruise ship produced by supermodel Jessica Minh Anh</p>
+                            <a href="#." class="red-more">Read More</a> </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article> <img class="img-responsive" src="<?php echo base_url(); ?>assets/theme/images/blogimage1.jpg" alt=""> <span>By Admin</span> <span><?php echo date("d M, Y"); ?></span> <a href="#." class="news-tittle">J Winter Fashion Show 6th Feb 2018 atop Costa neoRomantica cruise</a>
+                            <p>Royal Tailor was invited to collaborate with the iconic J Winter Fashion Show atop Costa neoRomantica cruise ship produced by supermodel Jessica Minh Anh</p>
+                            <a href="#." class="red-more">Read More</a> </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <div class="goldline3 " ></div>
     <div style="clear: both"></div>
-
     <!-- OUR SERVICES -->
-    <section class="client-sec" style="    padding: 0;
+    <section class="client-sec" style="    padding: 0;margin-top: 30px;
              background: none;">
-        <div class="container margin-bottom-30"> 
+        <div class="container margin-bottom-00"> 
 
             <!-- Heading -->
             <div class="heading-block " style="    margin-bottom: 10px;">
                 <h3>our Best Brands</h3>
                 <hr>
             </div>
-            <div class="intro-small col-md-9 center-auto">
+            <div class="intro-small col-md-9 center-auto margin-bottom-0">
                 <p>
                     We will offer you with world-famous brands and 6000 kinds of different fabrics.                </p>
             </div>
@@ -756,13 +845,56 @@ $this->load->view('layout/header');
                 <li style="padding: 25px;"><img src="<?php echo base_url(); ?>assets/brand/4.jpg"  alt="" ><div class="goldline " style="margin-bottom: 30px;"></div></li>
                 <li style="padding: 25px;"><img src="<?php echo base_url(); ?>assets/brand/5.jpg"  alt="" ><div class="goldline " style="margin-bottom: 30px;"></div></li>
             </ul>
-            
-             <div class="goldline2 " style="margin-bottom: 30px;"></div>
+
+            <div class="goldline2 " style="margin-bottom: 30px;"></div>
+            <div style="clear: both"></div>
         </div>
-        
-        
+
+
     </section>
-   
+
+
+    <!-- Testimonial -->
+    <section class="testimonial white-bg light-gry" data-stellar-background-ratio="0.5" style="padding: 30px 0px">
+        <div class="container"> 
+
+            <!-- Heading -->
+            <div class="heading-block">
+                <h3>What Our Customers Say</h3>
+                <hr>
+            </div>
+
+            <!-- Slider -->
+            <div class="slider-sec">
+                <div id="testi-slide"> 
+
+                    <!-- Slide -->
+                    <div class="item">
+                        <div class="tesi-text">
+                            <div class="avatar"> <img src="<?php echo base_url(); ?>assets/theme/images/comments-avatar-2.jpg" alt="" > </div>
+                            <p>Make it impossible in my life.
+                                Just one day to ready the nice suit to my father. 
+                                Complete the perfect black suit party.
+                                Many Thanks.</p>
+                            <h6>-  Catherine To -</h6>
+                            <span>Google Review</span> </div>
+                    </div>
+                    <div class="item">
+                        <div class="tesi-text">
+                            <div class="avatar"> <img src="<?php echo base_url(); ?>assets/theme/images/comments-avatar-2.jpg" alt="" > </div>
+                            <p>專業意見及優質的服務,令我選擇到心儀顏色的西裝
+
+
+                                Highly recommend! </p>
+                            <h6>- EDDY LAU -</h6>
+                            <span>Google Review</span> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 </div>
 <!-- End Content --> 
 

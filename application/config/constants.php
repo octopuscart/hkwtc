@@ -32,7 +32,9 @@ define('custome_image_server_suit', $baselink . '/suitapi');
 // define('custome_image_server', 'http://w2p.nitafashions.com');
 
 define("globle_currency_type", '$HK ');
+define("globle_currency", "HK$ ");
 /*
+ * 
   |--------------------------------------------------------------------------
   | Display Debug backtrace
   |--------------------------------------------------------------------------

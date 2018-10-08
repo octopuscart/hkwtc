@@ -288,3 +288,34 @@ footer {
     background: none;
  
 }
+
+
+.shop-artical .btn {
+    position: absolute;
+    bottom: 0%;
+    left: 62px;
+}
+
+.light-gray-bg article .imagblock {
+   background: url(../images/productfram2.png);
+    background-size: 101% 100%;
+    padding: 10px;
+    margin: 3px;
+}
+
+.shop-artical .item-hover {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: rgba(240, 171, 20, 0.29);
+    opacity: 0;
+}
+
+hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 0;
+    border-top: 5px solid #b28c06;
+}

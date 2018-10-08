@@ -58,7 +58,7 @@
         <!--LOADER--> 
                 <div id="loader">
                     <div class="position-center-center">
-                        <img src="<?php echo base_url(); ?>assets/theme/images/crown.gif">
+                        <img src="<?php echo base_url(); ?>assets/theme/images/crown.gif"  style="    height: 50px;">
                         <!--<div class="loader"></div>-->
                     </div>
                 </div>

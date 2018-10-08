@@ -255,7 +255,7 @@ $(".slide-5").owlCarousel({
 /* 	PORTFOLIO SLIDER
 /*-----------------------------------------------------------------------------------*/
 $("#new-arrival-slide").owlCarousel({ 
-    items : 3,
+    items : 4,
 	autoplay:true,
 	loop:true,
 	margin: 30,
@@ -273,7 +273,7 @@ $("#new-arrival-slide").owlCarousel({
             items:2,
         },
         1000:{
-            items:3,
+            items:4,
         },
     },
 	animateOut: 'fadeOut'	
