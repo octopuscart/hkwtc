@@ -668,7 +668,7 @@ $this->load->view('layout/header');
                         <h3> IMPECCABLE FIT </h3>
                         Find the perfect fit off-the-rack
                         </p>
-                         <div class="goldline "></div>
+                        <div class="goldline "></div>
                         <img class="img-responsive" src="<?php echo base_url(); ?>assets/theme/images/shirts.jpg" alt="" >
                         <div class="position-center-center">
                             <h6></h6>
@@ -676,15 +676,15 @@ $this->load->view('layout/header');
                         <a href="#" class="btn by">Shop NOW</a> 
                     </article>
                 </div>
-                
-                
+
+
                 <div class="col-sm-4">
                     <article> 
                         <p>
                         <h3>PERFECT STYLE </h3>
                         Find the perfect fit off-the-rack
                         </p>
-                         <div class="goldline "></div>
+                        <div class="goldline "></div>
                         <img class="img-responsive" src="<?php echo base_url(); ?>assets/theme/images/perfectsuit.jpg" alt="" >
                         <div class="position-center-center">
                             <h6></h6>
@@ -702,120 +702,67 @@ $this->load->view('layout/header');
         </div>
     </section>
 
-    
+
     <div class="intro-small1 col-md-8 center-auto">
-                <div class="goldline3 " ></div>
-            </div>
-  
-                <div style="clear: both"></div>
+        <div class="goldline3 " ></div>
+    </div>
+
+    <div style="clear: both"></div>
     <!-- About US -->
-    <section class="light-gray-bg pad-t-b-130">
+
+
+    <section class="lookin-pro">
         <div class="container"> 
 
             <!-- Heading -->
-            <div class="heading-block margin-bottom-30">
-                <h3>Best Sellers</h3>
+            <div class="heading-block white margin-bottom-20">
+                <h4>- We are Professionals - </h4>
+                <h3>We are tailoring artists</h3>
                 <hr>
             </div>
-            <div class="intro-small col-md-8 center-auto">
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout..</p>
+            <div class="intro-small col-md-11 center-auto margin-bottom-0">
+                <p>
+                    We always listen to the expressed and unexpressed wish of our guests. We have over 6000 fabric choices to attire different style and need. We tailor-made every lining color and detail for each unique and personalized character.
+                </p>
             </div>
-
-            <!-- Images Sec -->
-            <div class="img-sec">
-                <div class="shop-content">
-                    <div id="new-arrival-slide"> 
-
-                        <?php
-                        foreach ($product_home_slider_bottom['home_slider'] as $key => $value) {
-                            ?>
-
-                            <!-- Item -->
-                            <div class="item">
-                                <article class="shop-artical"> 
-                                    <div class="product_image_back" style="background: url(<?php echo imageserver . $value['file_name']; ?>)"></div>
-
-
-                                    <div class="item-hover">
-                                        <a href="#." class="btn" ng-click="addToCart(<?php echo $value['id']; ?>, 1)">add to cart</a> 
-                                        <a href="#." class="btn by">BUY NOW</a> 
-                                    </div>
-                                </article>
-                                <div class="info"> <a href="#."><?php echo $value['title']; ?> </a> <span class="price">{{<?php echo $value['price']; ?>|currency:" Rs. "}}</span> </div>
-                            </div>
-                            <?php
-                        }
-                        ?>
-
-                    </div>
-                </div>
-            </div>
+            <div class="text-center"> <a href="#." class="btn">TRY US</a> </div>
         </div>
     </section>
 
-    <!-- Shop Content -->
-    <div class="shop-content pad-t-b-130">
-        <div class="container"> 
-
-            <!-- Heading -->
-            <div class="heading-block">
-                <h3>Latest products</h3>
-                <hr>
-            </div>
-            <div class="row"> 
-
-                <?php
-                foreach ($product_home_slider_bottom['home_bottom'] as $key => $value) {
-                    ?>
-                    <!-- Item -->
-                    <div class="col-sm-4">
-                        <article class="shop-artical"> 
-                            <div class="product_image_back" style="background: url(<?php echo imageserver . $value['file_name']; ?>)"></div>
-                            <div class="item-hover">
-                                <div class="up-side">
-                                    <hr class="dotted white">
-                                    <a href="#."><?php echo $value['title']; ?> </a> 
-                                    <span class="price">{{<?php echo $value['price']; ?>|currency:" Rs. "}}</span> 
-                                </div>
-                                <a href="#." class="btn" ng-click="addToCart(<?php echo $value['id']; ?>, 1)">add to cart</a> 
-                                <a href="#." class="btn by">BUY NOW</a> 
-                            </div>
-                        </article>
-                    </div>
-
-                    <?php
-                }
-                ?>
+    <div style="clear: both"></div>
 
 
-            </div>
-        </div>
-
-        <!-- Load More -->
-        <div class="text-center margin-top-50"> <a href="#." class="btn">Check out more shop</a> </div>
-    </div>
+    <div class="goldline3 " ></div>
+    <div style="clear: both"></div>
 
     <!-- OUR SERVICES -->
-    <section class="client-sec">
-        <div class="container"> 
+    <section class="client-sec" style="    padding: 0;
+             background: none;">
+        <div class="container margin-bottom-30"> 
 
             <!-- Heading -->
-            <div class="heading-block margin-bottom-30">
+            <div class="heading-block " style="    margin-bottom: 10px;">
                 <h3>our Best Brands</h3>
                 <hr>
             </div>
-            <div class="intro-small col-md-8 center-auto">
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout..</p>
+            <div class="intro-small col-md-9 center-auto">
+                <p>
+                    We will offer you with world-famous brands and 6000 kinds of different fabrics.                </p>
             </div>
             <ul class="nolist-style">
-                <li><img src="images/client-img-1.png" alt="" ></li>
-                <li><img src="images/client-img-2.png" alt="" ></li>
-                <li><img src="images/client-img-3.png" alt="" ></li>
-                <li><img src="images/client-img-4.png" alt="" ></li>
-                <li><img src="images/client-img-5.png" alt="" ></li>
+                <li style="padding: 25px;"><img src="<?php echo base_url(); ?>assets/brand/1.jpg"  alt="" ><div class="goldline " style="margin-bottom: 30px;"></div></li>
+                <li style="padding: 25px;"><img src="<?php echo base_url(); ?>assets/brand/2.jpg"  alt="" ><div class="goldline " style="margin-bottom: 30px;"></div></li>
+                <li style="padding: 25px;"><img src="<?php echo base_url(); ?>assets/brand/3.jpg"  alt="" ><div class="goldline " style="margin-bottom: 30px;"></div></li>
+                <li style="padding: 25px;"><img src="<?php echo base_url(); ?>assets/brand/4.jpg"  alt="" ><div class="goldline " style="margin-bottom: 30px;"></div></li>
+                <li style="padding: 25px;"><img src="<?php echo base_url(); ?>assets/brand/5.jpg"  alt="" ><div class="goldline " style="margin-bottom: 30px;"></div></li>
             </ul>
+            
+             <div class="goldline2 " style="margin-bottom: 30px;"></div>
         </div>
+        
+        
     </section>
+   
 </div>
 <!-- End Content --> 
 

@@ -6,9 +6,11 @@
             <!-- Contact -->
             <div class="col-md-4">
                 <h4>Contact Information!</h4>
-                <p><b>Address:</b> PO Box 16122 Collins Street West Victoria 8007 Australia</p>
-                <p><b>Phone:</b> (+100) 123 456 7890</p>
-                <p><b>Email:</b> demos@domain.com</p>
+                <p><b>Address:</b> Shop A, 2/F Entertainment Building,
+30 Queen’s Road, Central, Hong Kong</p>
+                <p><b>Phone:</b> +(852) 26559778</p>
+                <p><b>Phone:</b> +(852) 26559768</p>
+                <p><b>Email:</b> lyra@royaltailor.hk</p>
                 <div class="social-links"> <a href="#."><i class="fa fa-facebook"></i></a> <a href="#."><i class="fa fa-twitter"></i></a> <a href="#."><i class="fa fa-linkedin"></i></a> <a href="#."><i class="fa fa-pinterest"></i></a> <a href="#."><i class="fa fa-instagram"></i></a> <a href="#."><i class="fa fa-google"></i></a> </div>
             </div>
 
@@ -49,11 +51,11 @@
 </footer>
 
 <!-- Rights -->
-<div class="rights">
-    <div class="container">
+<div class="rights goldergradiant">
+    <div class="container ">
         <div class="row">
-            <div class="col-sm-6">
-                <p>Copyright © <?php echo date('Y')?> <a href="#." class="ri-li"> ClassApartStore.com </a>  All rights reserved</p>
+            <div class="col-sm-6 " >
+                <p style="color:black">Copyright © <?php echo date('Y')?> <a href="#." class="ri-li" style="color:black"> www.royaltailor.hk </a>  All rights reserved</p>
             </div>
             <div class="col-sm-6 text-right"> </div>
         </div>
