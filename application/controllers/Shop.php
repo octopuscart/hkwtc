@@ -16,14 +16,14 @@ class Shop extends CI_Controller {
         $categories = $this->Product_model->productListCategories(0);
         $data["categories"] = $categories;
         $data["product_home_slider_bottom"] = $product_home_slider_bottom;
-        $customarray = [1,2];
+        $customarray = [1, 2];
         $this->db->where_in('id', $customarray);
         $query = $this->db->get('custome_items');
         $customeitem = $query->result();
-        
+
         $data['shirtcustome'] = $customeitem[0];
         $data['suitcustome'] = $customeitem[1];
-        
+
         $query = $this->db->get('sliders');
         $data['sliders'] = $query->result();
 
@@ -37,25 +37,26 @@ class Shop extends CI_Controller {
     public function aboutus() {
         $this->load->view('pages/aboutus');
     }
-    
-     public function blog() {
+
+    public function blog() {
         $this->load->view('pages/blog');
     }
-    
+
     public function sendmailtest() {
-        $this->load->library('email');
-        $config['protocol'] = 'smtp';
-        $config['smtp_host'] = 'ssl://smtp.googlemail.com';
-        $config['smtp_port'] = '465';
-        $config['smtp_timeout'] = '7';
-        $config['smtp_user'] = 'noreply.octopuscart@gmail.com';
-        $config['smtp_pass'] = 'ilvznbnpokkfobbg';
-        $config['charset'] = 'utf-8';
-        $config['newline'] = "\r\n";
-        $config['mailtype'] = 'text'; // or html
-        $config['validation'] = FALSE;
+      
+        $config = Array(
+            'protocol' => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_port' => 465,
+            'smtp_user' => 'noreplay2classapartstore@gmail.com',
+            'smtp_pass' => 'padhaivadhai',
+            'mailtype' => 'html',
+            'charset' => 'iso-8859-1'
+        );
+        $this->load->library('email', $config);
 
         $this->email->initialize($config);
+         $this->email->set_newline("\r\n");
         $this->email->from('sales@bespoketailorshk.com', 'Test Sender');
         $this->email->to("sales@bespoketailorshk.com");
         $this->email->subject('Test Mail');
