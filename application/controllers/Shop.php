@@ -41,5 +41,33 @@ class Shop extends CI_Controller {
      public function blog() {
         $this->load->view('pages/blog');
     }
+    
+    public function sendmailtest() {
+        $this->load->library('email');
+        $config['protocol'] = 'smtp';
+        $config['smtp_host'] = 'ssl://smtp.googlemail.com';
+        $config['smtp_port'] = '465';
+        $config['smtp_timeout'] = '7';
+        $config['smtp_user'] = 'noreply.octopuscart@gmail.com';
+        $config['smtp_pass'] = 'ilvznbnpokkfobbg';
+        $config['charset'] = 'utf-8';
+        $config['newline'] = "\r\n";
+        $config['mailtype'] = 'text'; // or html
+        $config['validation'] = FALSE;
+
+        $this->email->initialize($config);
+        $this->email->from('sales@bespoketailorshk.com', 'Test Sender');
+        $this->email->to("sales@bespoketailorshk.com");
+        $this->email->subject('Test Mail');
+
+        $this->email->message("Test Mail");
+        $send = $this->email->send();
+        if ($send) {
+            echo json_encode("send");
+        } else {
+            $error = $this->email->print_debugger(array('headers'));
+            echo json_encode($error);
+        }
+    }
 
 }
