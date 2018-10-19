@@ -2,6 +2,14 @@
 <footer class="footer-shop">
     <div class="container"> 
         <div class="row"> 
+            <div class="col-md-2">
+                        <center>
+
+            <img src="<?php echo base_url(); ?>assets/images/spacial/turismlogo.png" class="spacial_text" style="height: 198px;
+    margin-top: 10px;
+">      
+            </center>
+            </div>
 
             <!-- Contact -->
             <div class="col-md-4">
@@ -14,7 +22,7 @@
             </div>
 
             <!-- Categories -->
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <h4>Categories</h4>
                 <ul class="links-footer">
                     <li ><a href="#">Shirts</a></li>
@@ -25,7 +33,7 @@
             </div>
 
             <!-- Categories -->
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <h4>Customer Services</h4>
                 <ul class="links-footer">
                     <li><a href="#.">Shipping & Returns</a></li>
