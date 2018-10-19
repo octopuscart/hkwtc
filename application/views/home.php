@@ -631,11 +631,26 @@ $this->load->view('layout/header');
 
 
 
-<!-- About US -->
 
-<section class="light-gray-bg pad-t-b-30">
+<!-- About US -->
+<section class="light-gray-bg pad-t-b-30" style="background: url(<?php echo base_url(); ?>assets/images/spacial/middle3.jpg)">
+
+    
+  
+        <div class="container">
+            <center>
+
+            <img src="<?php echo base_url(); ?>assets/images/spacial/middle.png" class="spacial_text">      
+            </center>
+
+            
+        </div> 
 
     <div class="goldline2 " style="margin-bottom: 30px;"></div>
+    
+    
+   
+    
     <div class="container"> 
 
         <!-- Heading -->
@@ -655,7 +670,9 @@ $this->load->view('layout/header');
             <div class="shop-content">
                 <div id="new-arrival-slide"> 
                     <?php
+                    $testdev = 0;
                     foreach ($product_home_slider_bottom['home_bottom'] as $key => $value) {
+                        if($testdev==1){
                         ?>
                         <!-- Item -->
                         <div class="item">
@@ -669,6 +686,7 @@ $this->load->view('layout/header');
                         </div>
                         <?php
                     }
+                    }
                     ?>
 
                 </div>
@@ -677,8 +695,8 @@ $this->load->view('layout/header');
     </div>
 </section>
 
-  <div class="goldline2 " style="margin-bottom: 30px;"></div>
-  <div style="clear: both"></div>
+<div class="goldline2 " style="margin-bottom: 30px;"></div>
+<div style="clear: both"></div>
 <!-- Content -->
 <div id="content" class="home-shop"> 
 
@@ -794,7 +812,7 @@ $this->load->view('layout/header');
             <!-- Heading -->
             <div class="heading-block">
                 <h3>Our Latest News</h3>
-               
+
             </div>
 
             <!-- News Post -->

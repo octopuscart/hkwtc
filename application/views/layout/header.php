@@ -119,7 +119,7 @@
                                         </ul>
                                     </li>
                                     <li > 
-                                        <a href="<?php echo site_url("/"); ?>">Customize Now </a>
+                                        <a href="<?php echo site_url("/"); ?>">Shop Now </a>
                                     </li>
                                     <li > 
                                         <a href="<?php echo site_url("/"); ?>">Look Book</a>
