@@ -670,7 +670,7 @@ $this->load->view('layout/header');
             <div class="shop-content">
                 <div id="new-arrival-slide"> 
                     <?php
-                    $testdev = 0;
+                    $testdev = 1;
                     foreach ($product_home_slider_bottom['home_bottom'] as $key => $value) {
                         if($testdev==1){
                         ?>
