@@ -42,12 +42,12 @@ class ApiMulti extends REST_Controller {
 
         $this->response($session_cart);
     }
-	
-	function cartOperationShirt_get() {
+
+    function cartOperationShirt_get() {
         if ($this->checklogin) {
-            $session_cart = $this->Product_model->cartData($this->user_id);
+            $session_cart = $this->Product_model->cartDataNoCustome($this->user_id);
         } else {
-            $session_cart = $this->Product_model->cartData();
+            $session_cart = $this->Product_model->cartDataNoCustome();
         }
 
         $tempss = array();
@@ -494,14 +494,14 @@ class ApiMulti extends REST_Controller {
                         "customization_category_id" => "7",
                         "elements" => ["pocket_leftv10001.png",],
                         "image" => "pocket_one.jpeg",
-                        "overlay"=>["leftpocket.png"],
+                        "overlay" => ["leftpocket.png"],
                     ), array(
                         "status" => "0",
                         "title" => "2 Pocket",
                         "customization_category_id" => "7",
                         "elements" => ["pocket_leftv10001.png", "pocket_rightv10001.png"],
                         "image" => "pocket_two.jpeg",
-                        "overlay"=>["rightpocket.png", "leftpocket.png"],
+                        "overlay" => ["rightpocket.png", "leftpocket.png"],
                     )],
                 "Front" => [
                     array(
@@ -605,7 +605,7 @@ class ApiMulti extends REST_Controller {
                         "elements" => ["collar_full_cutaway0001.png"],
                         "image" => "collar_full_cutaway.jpeg",
                         "buttons" => "buttonsh12.png",
-                    ), 
+                    ),
                     array(
                         "status" => "0",
                         "title" => "Wing Tip",
@@ -1059,7 +1059,7 @@ class ApiMulti extends REST_Controller {
                         "button_hole" => ["button_41_hole0001.png"],
                         "buttons" => ["button_410001",],
                         "show_buttons" => "true",
-                         "overlay" => ["body_double_right_42_overlay.png"],
+                        "overlay" => ["body_double_right_42_overlay.png"],
                     )
                     , array(
                         "status" => "0",
@@ -1070,7 +1070,7 @@ class ApiMulti extends REST_Controller {
                         "button_hole" => ["button_41_hole0001.png"],
                         "image" => "42_button.jpg",
                         "show_buttons" => "true",
-                         "overlay" => ["body_double_right_42_overlay.png"],
+                        "overlay" => ["body_double_right_42_overlay.png"],
                     )
                     , array(
                         "status" => "0",
@@ -1082,7 +1082,7 @@ class ApiMulti extends REST_Controller {
                         "button_hole" => ["button_61_hole0001.png"],
                         "extra_button" => ["button_61_last0001"],
                         "show_buttons" => "true",
-                         "overlay" => ["body_double_right_62_overlay.png"],
+                        "overlay" => ["body_double_right_62_overlay.png"],
                     )
                     , array(
                         "status" => "0",
@@ -1094,7 +1094,7 @@ class ApiMulti extends REST_Controller {
                         "button_hole" => ["button_61_hole0001.png"],
                         "extra_button" => ["button_61_last0001"],
                         "show_buttons" => "true",
-                         "overlay" => ["body_double_right_62_overlay.png"],
+                        "overlay" => ["body_double_right_62_overlay.png"],
                     )
                 ],
                 "Lapel Style & Width" => [
@@ -1229,11 +1229,11 @@ class ApiMulti extends REST_Controller {
                             "1 Button" => array("elements" => [
                                     "laple_single_3_notch_peak_upper0001.png",
                                     "laple_single_peak_classic0001.png"
-                                ], "overelay" => ["13notchpeaklapleoverlay.png",  "laple_single_peak_overlay_classic.png"]),
+                                ], "overelay" => ["13notchpeaklapleoverlay.png", "laple_single_peak_overlay_classic.png"]),
                             "2 Buttons" => array("elements" => [
                                     "laple_single_3_notch_peak_upper0001.png",
                                     "laple_single_peak_classic0001.png"
-                                ], "overelay" => ["13notchpeaklapleoverlay.png",  "laple_single_peak_overlay_classic.png"]),
+                                ], "overelay" => ["13notchpeaklapleoverlay.png", "laple_single_peak_overlay_classic.png"]),
                             "3 Buttons" => array("elements" => [
                                     "laple_single_3_notch_peak_upper0001.png",
                                     "laple_single_3_peak_classic0001.png"
@@ -1241,7 +1241,7 @@ class ApiMulti extends REST_Controller {
                             "4 Buttons" => array("elements" => [
                                     "laple_single_3_notch_peak_upper0001.png",
                                     "laple_single_3_peak_classic0001.png"
-                                ], "overelay" => ["13notchpeaklapleoverlay.png", ]),
+                                ], "overelay" => ["13notchpeaklapleoverlay.png",]),
                             "4 Buttons 1 Button Fasten" => array("elements" => [
                                     "laple_peak_upper0001.png",
                                     "laple_4_peack_classic0001.png"
@@ -1292,7 +1292,6 @@ class ApiMulti extends REST_Controller {
                                     "laple_6_shwal_modern0001.png",
                                 ], "overelay" => []),
                         ),
-                       
                         "customization_category_id" => "6",
                         "image" => "shawl_modern.jpeg"
                     ),
@@ -1300,7 +1299,6 @@ class ApiMulti extends REST_Controller {
                         "status" => "0",
                         "title" => "Shawal Laple Classic",
                         "elements" => ["body_round0001.png"],
-                        
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
                                     "laple_single_shwal_classic0001.png",
@@ -1327,7 +1325,6 @@ class ApiMulti extends REST_Controller {
                                     "laple_6_shwal_classic0001.png",
                                 ], "overelay" => []),
                         ),
-                      
                         "customization_category_id" => "6",
                         "image" => "shawl_classic.jpeg"
                     ),

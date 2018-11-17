@@ -153,7 +153,7 @@ $this->load->view('layout/header');
 
                         </div>
                         <div class="col-md-4">
-                            <a href="<?php echo site_url("Cart/checkoutInit"); ?>" class="btn btn-primary pull-right" >Proceed To Checkout <i class=" fa fa-arrow-right"></i></a>
+                            <a href="#" class="btn btn-primary pull-right" >Proceed To Checkout <i class=" fa fa-arrow-right"></i></a>
 
                         </div>
 
