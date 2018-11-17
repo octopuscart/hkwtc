@@ -92,8 +92,8 @@ $this->load->view('layout/header');
 
                 createItemBlock(1);
                 createItemBlock(2);
-                createItemBlock(3);
                 createItemBlock(4);
+                createItemBlock(3);
                 ?>
 
 
