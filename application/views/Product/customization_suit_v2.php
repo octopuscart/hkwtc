@@ -293,7 +293,7 @@ $this->load->view('layout/header');
                         <!--shirt customization-->
                         <div class="row" style="margin-top: 10px;">
                             <?php
-                            $this->load->view('Product/custome_support_suit2');
+                            $this->load->view('customization/custome_support_suit2');
                             ?> 
                         </div>
                     </div>
@@ -323,7 +323,7 @@ $this->load->view('layout/header');
 </script>
 
 <!--angular controllers-->
-<script src="<?php echo base_url(); ?>assets/theme2/angular/ng-suitcustomization2.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme/angular/ng-suitcustomization2.js"></script>
 
 
 <?php
