@@ -40,7 +40,7 @@ code {
 .fixpos{
     position: absolute;
     left: 0;
-    height: 440px;
+    height: 530px;
 }
 
 
@@ -247,23 +247,46 @@ code {
 }
 
 .monogramtext_posistion_collar {
-    left: 208px;
+    left: 248px;
     display: block;
-    top: 8px;
+    top: 26px;
 }
 
-.monogramtext_posistion_cuff_left{
-  left: 355px;
+.multicustom .monogramtext_posistion_collar {
+    left: 223px;
     display: block;
-    top: 320px;
-    transform: rotate(6deg);
+    top: 24px;
+
 }
 
-.monogramtext_posistion_left_pocket{
-    left: 262px;
+
+.monogramtext_posistion_cuff_left {
+    left: 362px;
     display: block;
-    top: 111px;
+    top: 325px;
+    transform: rotate(29deg);
 }
+
+.multicustom .monogramtext_posistion_cuff_left {
+    left: 332px;
+    display: block;
+    top: 306px;
+    transform: rotate(43deg);
+}
+
+
+.monogramtext_posistion_left_pocket {
+    left: 310px;
+    display: block;
+    top: 152px;
+}
+.multicustom .monogramtext_posistion_left_pocket {
+    left: 277px;
+    display: block;
+    top: 136px;
+}
+
+
 
 
 .customization_items  .nav>li>a {
@@ -367,14 +390,14 @@ p.selected-element-title_text_price{
 
 
 .customization_order_block{
-   height: 60px;
-        background: #000;
-       
-  
-        width: 100%;
-        /* padding: 37px; */
-        margin: 0px;
-        left: 0;
+    height: 60px;
+    background: #000;
+
+
+    width: 100%;
+    /* padding: 37px; */
+    margin: 0px;
+    left: 0;
 }
 
 
@@ -385,7 +408,7 @@ p.selected-element-title_text_price{
 
 
 .insert_button {
-       padding: 3px 5px;
+    padding: 3px 5px;
     margin-top: 2px;
     margin-top: 2px;
 }
@@ -397,11 +420,11 @@ p.selected-element-title_text_price{
 @media only screen and (max-width: 768px) {
 
     .insert_button {
-    padding: 3px 3px;
-    margin-top: 2px;
-    margin-top: 2px;
-}
-    
+        padding: 3px 3px;
+        margin-top: 2px;
+        margin-top: 2px;
+    }
+
     .customization_order_block {
         height: 54px;
         background: #000;
@@ -411,7 +434,7 @@ p.selected-element-title_text_price{
         /* padding: 37px; */
         margin: 0px;
         left: 0;
-            z-index: 100;
+        z-index: 100;
     }
 
     .cuff_collar_area_elements{
@@ -444,11 +467,12 @@ p.selected-element-title_text_price{
         top: 4px;
     }
 
+
     .monogramtext_posistion_cuff_left {
         left: 80%;
-    display: block;
-    top: 239px;
-    transform: rotate(8deg);
+        display: block;
+        top: 239px;
+        transform: rotate(8deg);
     }
 
     .monogramtext_posistion_left_pocket {
@@ -634,5 +658,27 @@ p.selected-element-title_text_price{
     box-shadow: 0px 5px 13px -5px #000;
     padding-bottom: 5px;
     padding-left: 5px;
+}
+
+.customization_title {
+    height: 45px;
+    background: #d89a48;
+    color: #000;
+    text-align: center;
+    font-size: 12px;
+    padding: 0px 5px;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.fabricblock {
+    background-size: 237px !important;
+    background-position: -33px -118px!important;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.multicustom .fixpos{
+    height: 480px;
 }
 

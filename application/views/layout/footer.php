@@ -102,6 +102,12 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/theme/rs-plugin/js/jquery.tp.min.js"></script> 
 <script src="<?php echo base_url(); ?>assets/theme/js/main.js"></script> 
 
+<!-- type ahead-->
+<script src="<?php echo base_url(); ?>assets/handlebars.js" type="text/javascript"></script>
+
+<!-- type ahead-->
+<script src="<?php echo base_url(); ?>assets/typeahead.bundle.js" type="text/javascript"></script>
+
 </body>
 
 <!-- Mirrored from demos.webicode.com/html/BizTo/html/shop-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Feb 2018 16:18:20 GMT -->

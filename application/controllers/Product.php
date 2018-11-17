@@ -16,106 +16,41 @@ class Product extends CI_Controller {
     }
 
     //function for product list
-    function ProductList($cat_id) {
-        $categories = $this->Product_model->productListCategories($cat_id);
+    function ProductList($custom_id, $cat_id) {
+
+
+        $this->db->where('id', $custom_id);
+        $query = $this->db->get('custome_items');
+        $customeitem = $query->row();
+
+        if ($cat_id == 0) {
+            $cat_id = $customeitem->category_id;
+        }
+
+        $categories = $this->Product_model->productListCategories($cat_id, $custom_id);
         $data["categorie_parent"] = $this->Product_model->getparent($cat_id);
         $data["categories"] = $categories;
         $data["category"] = $cat_id;
+        $data["custom_item"] = $customeitem->item_name;
+        $data["custom_id"] = $custom_id;
+        $data["item_price"] = $customeitem->price;
+
         $this->load->view('Product/productList', $data);
     }
 
-    //list of product api
-    //ProductList APi
-    public function productListApi($category_id) {
-//        $attrdatak = $this->get();
-        $attrdatak = $_GET;
-        $products = [];
-        $countpr = 0;
-
-
-        if (isset($attrdatak["minprice"])) {
-            $mnpricr = $attrdatak["minprice"] - 1;
-            $mxpricr = $attrdatak["maxprice"] + 1;
-            unset($attrdatak["minprice"]);
-            unset($attrdatak["maxprice"]);
-            $pricequery = " and (price between '$mnpricr' and '$mxpricr') ";
-        }
-
-        foreach ($attrdatak as $key => $atv) {
-            if ($atv) {
-                $countpr += 1;
-                $key = str_replace("a", "", $key);
-                $val = str_replace("-", ", ", $atv);
-                $query_attr = "SELECT product_id FROM product_attribute
-                           where attribute_id in ($key) and attribute_value_id in ($val)
-                           group by product_id ";
-                $queryat = $this->db->query($query_attr);
-                $productslist = $queryat->result();
-                foreach ($productslist as $key => $value) {
-                    array_push($products, $value->product_id);
-                }
-            }
-        }
-//print_r($products);
-
-        $productdict = [];
-
-        $productcheck = array_count_values($products);
-
-
-//print_r($productcheck);
-
-        foreach ($productcheck as $key => $value) {
-            if ($value == $countpr) {
-                array_push($productdict, $key);
-            }
-        }
-
-        $proquery = "";
-        $pricequery = "";
-        if (count($productdict)) {
-            $proquerylist = implode(",", $productdict);
-            $proquery = " and pt.id in ($proquerylist) ";
-        }
-
-        $categoriesString = $this->Product_model->stringCategories($category_id) . ", " . $category_id;
-        $categoriesString = ltrim($categoriesString, ", ");
-
-        $product_query = "select pt.id as product_id, pt.folder, pt.title, pt.sale_price, pt.regular_price, pt.price, pt.file_name, pt.file_name1 
-            from products as pt where pt.category_id in ($categoriesString) $pricequery $proquery 
-                order by pt.id desc";
-        try {
-            $product_result = $this->Product_model->query_exe($product_query);
-        } catch (Exception $e) {
-            $product_result = [];
-        }
-        $product_list_st = [];
-
-        $pricecount = [];
-
-        foreach ($product_result as $key => $value) {
-            array_push($product_list_st, $value['product_id']);
-            array_push($pricecount, $value['price']);
-        }
-
-        $attr_filter = array();
-        $pricelist = array();
-     
-
-        $productArray = array('attributes' => $attr_filter,
-            'products' => $product_result,
-            'product_count' => count($product_result),
-            'price' => $pricelist);
-        print_r($productArray);
-        
-       // $this->response($productArray);
+    function ProductSearch() {
+        $data['keyword'] = $_GET['keyword'];
+        $this->load->view('Product/productSearch', $data);
     }
 
-    //api
     //function for details
     function ProductDetails($product_id) {
         $prodct_details = $this->Product_model->productDetails($product_id);
         if ($prodct_details) {
+            $prodct_details_attrs = $this->Product_model->productDetailsVariants($product_id);
+
+            $data['product_attr_variant'] = $prodct_details_attrs;
+
             $pquery = "SELECT pa.attribute, cav.attribute_value FROM product_attribute as pa
       join category_attribute_value as cav on cav.id = pa.attribute_value_id
       where pa.product_id = $product_id";
@@ -126,6 +61,12 @@ class Product extends CI_Controller {
             $data["product_details"] = $prodct_details;
 
 
+            $pquery = "SELECT pa.* FROM product_related as pr 
+      join products as pa on pa.id = pr.related_product_id
+      where pr.product_id = $product_id";
+            $product_related = $this->Product_model->query_exe($pquery);
+
+            $data["product_related"] = $product_related;
 
             $this->config->load('seo_config');
             $this->config->set_item('seo_title', $prodct_details['title']);
@@ -133,47 +74,11 @@ class Product extends CI_Controller {
             $this->config->set_item('seo_keywords', $prodct_details['keywords']);
             $this->config->set_item('seo_imgurl', imageserver . $prodct_details['file_name']);
 
-
-
-
             $this->load->view('Product/productDetails', $data);
         } else {
             $this->load->view('errors/html/error_404');
         }
     }
-
-    //customization shirt
-
-
-    function customizationShirt($product_id=0) {
-        
-        
-        
-        $product = $this->Product_model->productDetails($product_id);
-        $data['product'] = $product;
-        $this->load->view('Product/customization_shirt', $data);
-    }
-    
-    
-    function customizationSuit() {
-        $session_cart = $this->Product_model->cartData();
-        $data = [];
-        $this->load->view('Product/customization_suit', $data);
-    }
-    
-    
-    function customizationSuitV2() {
-        $session_cart = $this->Product_model->cartData();
-        $data = [];
-        $this->load->view('Product/customization_suit_v2', $data);
-    }
-    
-
-    //end of customization shrit
-
-
-
-
 
     function test() {
 //        $this->session->unset_userdata('session_cart');
@@ -187,99 +92,75 @@ class Product extends CI_Controller {
         $this->session->unset_userdata('session_cart');
     }
 
-    function testlist() {
-        $listproduct = [
-            'AM138',
-            'AM122',
-            'AM159',
-            'AM247',
-            'AM861',
-            'AM864',
-            'AM865',
-            'AM868',
-            'AM867',
-            'AM866',
-            'AM393',
-            'AM397',
-            'AM588',
-            'AM590',
-            'AM697',
-            'AM613',
-            'AM796',
-            'AM409',
-            'AM660',
-            'AM661',
-            'AM938',
-            'AM143',
-            'AM164',
-            'AM162',
-            'AM354',
-            'AM902',
-            'AM263',
-            'AM262',
-            'AM405',
-            'AM403',
-            'AM616',
-            'AM661',
-            'AM699',
-            'AM664',
-            'AM843',
-            'AM906',
-            'AM905',
-            'AM912',
-            'AM911',
-            'AM910',
-            'AM908',
-            'AM845',
-            'D2342',
-            'D2351',
-            'D1689',
-            'D3107',
-            'D3108',
-            'D1137',
-            'D2386',
-            'D2390',
-            'D1576',
-            'D1549',
-            'D3347',
-            'D1371',
-            'D2572',
-            'D163',
-            'D3364',
-            'D148',
-            'D889',
-            'D123',
-            'D2572',
-            'D3341',
-            'D3358',
-            'D1224',
-            'D3363',
-            'D2278',
-            'WF111',
-            'WF105',
-            'WF87',
-            'WF89',
-            'WF51',
-            'WF149',
-            'WF45',
-            'WF103',
-            'WF179',
-            'WF174',
-            'WF180',
-            'L841',
-            'L884',
-            'L878',
-            'L874',
-            'L884',
-            'L892',
-        ];
+    function customizationShirt1($productid) {
+        $productdetails = $this->Product_model->productDetails($productid);
 
-        foreach ($listproduct as $key => $value) {
-            $vl = $value;
-            echo "<a style='width:100px;width:110px;float:left;border:1px solid red;padding:5px;margin:5px;' href='https://nitafashions.com/nfw/large/$vl.jpg' >"
-            . "<img src='https://nitafashions.com/nfw/small/$vl.jpg' style='height:100px;'><br/><b>$vl<b>"
-            . "</a>";
+        $data['productdetails'] = $productdetails;
+        $this->load->view('Product/customization_shirt', $data);
+    }
+
+    function customizationRedirect($custom_id, $product_id) {
+        if ($custom_id == 1) {
+            redirect('Product/customizationShirt/' . $product_id . "/" . $custom_id);
         }
+        if ($custom_id == 2) {
+            redirect('Product/customizationSuit/' . $product_id . "/" . $custom_id);
+        }
+        if ($custom_id == 4) {
+            redirect('Product/customizationJacket/' . $product_id . "/" . $custom_id);
+        }
+        if ($custom_id == 3) {
+            redirect('Product/customizationPant/' . $product_id . "/" . $custom_id);
+        }
+    }
+
+    function customizationShirt($productid, $custom_id) {
+        $productdetails = $this->Product_model->productDetails($productid , $custom_id);
+        $data['productdetails'] = $productdetails;
+        $data["custom_item"] = "Pant";
+        $data['custom_id'] = $custom_id;
+        $this->load->view('Product/customization_shirt', $data);
+    }
+
+    function customizationSuit($productid, $custom_id) {
+        $productdetails = $this->Product_model->productDetails($productid, $custom_id);
+        $data['productdetails'] = $productdetails;
+        $data["custom_item"] = "Suit";
+        $data['custom_id'] = $custom_id;
+        $this->load->view('Product/customization_suit_v2', $data);
+    }
+    
+    function customizationSuitV2($productid, $custom_id) {
+        $productdetails = $this->Product_model->productDetails($productid, $custom_id);
+        $data['productdetails'] = $productdetails;
+        $data["custom_item"] = "Suit";
+        $data['custom_id'] = $custom_id;
+        $this->load->view('Product/customization_suit_v3', $data);
+    }
+
+    function customizationPant($productid, $custom_id) {
+        $productdetails = $this->Product_model->productDetails($productid, $custom_id);
+        $data['productdetails'] = $productdetails;
+        $data["custom_item"] = "Pant";
+        $data['custom_id'] = $custom_id;
+        $this->load->view('Product/customization_suit_v2', $data);
+    }
+    
+    
+    function customizationPantV2($productid, $custom_id) {
+        $productdetails = $this->Product_model->productDetails($productid, $custom_id);
+        $data['productdetails'] = $productdetails;
+        $data["custom_item"] = "Pant";
+        $data['custom_id'] = $custom_id;
+        $this->load->view('Product/customization_suit_v3', $data);
+    }
+
+    function customizationJacket($productid, $custom_id) {
+        $productdetails = $this->Product_model->productDetails($productid, $custom_id);
+        $data['productdetails'] = $productdetails;
+        $data["custom_item"] = "Jacket";
+        $data['custom_id'] = $custom_id;
+        $this->load->view('Product/customization_suit_v2', $data);
     }
 
 }

@@ -1,40 +1,63 @@
 <?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
+require("configdbconnect.php");
+$configuration = $globleConnectDB;
 
 $baselink = 'http://' . $_SERVER['SERVER_NAME'];
 
-$baselinkmain = strpos($baselink, '192.168') ? $baselink . '/customshirtadmin/' : 'http://nitafashions.com/customshirtadmin/';
-define('imageserver', $baselinkmain . "assets_main/productimages/");
-
-
-
-
-//define('custome_image_server', 'http://api.octopuscart.com');
-//
-//if (strpos($baselink, '192.168')) {
-//    define('custome_image_server', 'http://127.0.0.1/fabrics');
-//} else {
-//    define('custome_image_server', 'http://w2p.nitafashions.com');
-//} 
-
-if (strpos($baselink, "192.168.1.2")) {
-    $baselinkmain = "http://test.costcointernational.com/";
-    define('custome_image_server', $baselinkmain . '/');
-} else {
-    define('custome_image_server', $baselink . '/fabrics');
+$baselink = 'http://' . $_SERVER['SERVER_NAME'];
+switch ($baselink) {
+    case "http://localhost":
+        $baselinkmain = $baselink . $configuration['localpath'];
+        break;
+    case "http://192.168.1.2":
+        $baselinkmain = $baselink . $configuration['localpath'];
+        break;
+    default:
+        $baselinkmain = $configuration['site_url'];
 }
 
-define('custome_image_server_suit', $baselink . '/suitapi');
+define('imageserver', $baselinkmain . "assets_main/productimages/");
+define('imageserverslider', $baselinkmain . "assets_main/sliderimages/");
+define('imageservermain', $baselinkmain . "assets_main/");
+define('globle_currency_type',  $configuration['currency']);
+define('globle_currency',  $configuration['currency']);
+define('site_mail_logo', $configuration['site_logo']);
+define('custome_image_server', $configuration['product_images_url']);
+
+
+//Email Settings//
+define('email_sender', $configuration['email_sender']);
+define('email_sender_name', $configuration['email_sender_name']);
+define('email_bcc', $configuration['email_bcc']);
+
+//paypal settings
+define('paypal_api_username', $configuration['paypal_api_username']);
+define('paypal_api_password', $configuration['paypal_api_password']);
+define('paypal_api_signature', $configuration['paypal_api_signature']);
+define('paypal_api_currency_code', $configuration['paypal_api_currency_code']);
+
+
+//reporting configuration
+define('EMAIL_HEADER', $globleConnectReport['email_header']);
+define('EMAIL_FOOTER', $globleConnectReport['email_footer']);
+define('REPORT_MODE', $globleConnectReport['report_mode']);
+
+//payment mode
+define('PAYMENT_MODE_PAYPAL', $globleConnectCartCheckout['payment_paypal']);
+define('PAYMENT_MODE_BANK', $globleConnectCartCheckout['payment_bank']);
+define('PAYMENT_MODE_CHEQUE', $globleConnectCartCheckout['payment_cheque']);
+define('PAYMENT_MODE_COD', $globleConnectCartCheckout['payment_cod']);
+define('DEFAULT_PAYMENT_MODE', $globleConnectCartCheckout['default_payment_mode']);
+define('ORDER_PREFIX', $globleConnectCartCheckout['order_prefix']);
+define('PRODUCT_PATH_PRE', $globleConnectCartCheckout['product_path_pre']);
+define('PRODUCT_PATH_POST', $globleConnectCartCheckout['product_path_post']);
 
 
 
-// define('custome_image_server', 'http://w2p.nitafashions.com');
 
-define("globle_currency_type", '$HK ');
-define("globle_currency", "HK$ ");
 /*
- * 
   |--------------------------------------------------------------------------
   | Display Debug backtrace
   |--------------------------------------------------------------------------
