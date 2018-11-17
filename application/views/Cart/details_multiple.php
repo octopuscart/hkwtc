@@ -47,19 +47,19 @@ $this->load->view('layout/header');
 
                     switch ($citem_id) {
                         case 1:
-                            $item_array = array("title" => "Shirt(s)");
+                            $item_array = array("title" => "Shirt(s)", "link"=>site_url("Customization/customizationShirt"));
                             break;
                         case 2:
-                            $item_array = array("title" => "Suit(s)");
+                            $item_array = array("title" => "Suit(s)", "link"=>site_url("Customization/customizationSuitV2"));
                             break;
                         case 3:
-                            $item_array = array("title" => "Pant(s)");
+                            $item_array = array("title" => "Pant(s)", "link"=>site_url("Customization/customizationSuitV2"));
                             break;
                         case 4:
-                            $item_array = array("title" => "Jacket(s)");
+                            $item_array = array("title" => "Jacket(s)", "link"=>site_url("Customization/customizationSuitV2"));
                             break;
                         default:
-                            $item_array = array("title" => "Shirt(s)");
+                            $item_array = array("title" => "Shirt(s)", "link"=>site_url("Customization/customizationSuitV2"));
                     }
                     ?>
 
@@ -68,7 +68,7 @@ $this->load->view('layout/header');
                     <div class="custom_block_item">
                         <h3 class="text-left " style="font-weight:500;    margin-top: 0px;" >
                             <?php echo $item_array['title']; ?>
-                            <a href="<?php echo site_url("Customization/customizationShirt"); ?>" class="btn btn-default pull-right">Customize Now <i class="fa fa-arrow-right"></i></a> 
+                            <a href="<?php echo $item_array['link']; ?>" class="btn btn-default pull-right">Customize Now <i class="fa fa-arrow-right"></i></a> 
                         </h3>
                       
                         <div class="row cart-details" >

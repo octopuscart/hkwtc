@@ -163,9 +163,9 @@ class Customization extends CI_Controller {
     
     
     function customizationSuitV2() {
-        $session_cart = $this->Product_model->cartData();
+     
         $data = [];
-        $this->load->view('Product/customization_suit_v2', $data);
+        $this->load->view('customization/customization_suit_v2', $data);
     }
     
 
