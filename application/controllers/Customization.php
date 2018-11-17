@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Product extends CI_Controller {
+class Customization extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -145,10 +145,13 @@ class Product extends CI_Controller {
     //customization shirt
 
 
-    function customizationShirt() {
-        $session_cart = $this->Product_model->cartData();
-        $data = [];
-        $this->load->view('Product/customization_shirt', $data);
+    function customizationShirt($product_id=0) {
+        
+        
+        
+        $product = $this->Product_model->productDetails($product_id);
+        $data['product'] = $product;
+        $this->load->view('customization/customization_shirt', $data);
     }
     
     

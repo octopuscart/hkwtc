@@ -43,7 +43,7 @@
         <script src="<?php echo base_url(); ?>assets/theme/angular/angular.min.js"></script>
         <script src='<?php echo base_url(); ?>assets/theme/angular/angular-route.js'></script>
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/css/customstyle.css">
-<link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
 
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -53,29 +53,31 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
             <![endif]-->
     </head>
-    <body ng-app="ClassApartStore">
+    <body ng-app="App">
 
         <!--LOADER--> 
-                <div id="loader">
-                    <div class="position-center-center">
-                        <img src="<?php echo base_url(); ?>assets/theme/images/crown.gif"  style="    height: 50px;">
-                        <!--<div class="loader"></div>-->
-                    </div>
-                </div>
+        <div id="loader">
+            <div class="position-center-center">
+                <img src="<?php echo base_url(); ?>assets/theme/images/crown.gif"  style="    height: 50px;">
+                <!--<div class="loader"></div>-->
+            </div>
+        </div>
 
 
 
         <script>
-            var ClassApartStore = angular.module('ClassApartStore', []).config(function ($interpolateProvider, $httpProvider) {
+
+
+                var App = angular.module('App', []).config(function ($interpolateProvider, $httpProvider) {
                 //$interpolateProvider.startSymbol('{$');
                 //$interpolateProvider.endSymbol('$}');
                 $httpProvider.defaults.headers.common = {};
-                $httpProvider.defaults.headers.post = {};
-
-            });
-            var baseurl = "<?php echo base_url(); ?>index.php/";
-            var avaiblecredits = 0;
-        </script>
+                        $httpProvider.defaults.headers.post = {};
+                });
+                        var baseurl = "<?php echo site_url(); ?>";
+                        var imageurlg = "<?php echo imageserver; ?>";
+                        var globlecurrency = "<?php echo globle_currency; ?>";
+                        var avaiblecredits = 0;</script>
 
         <style>
             .ownmenu .dropdown.megamenu .dropdown-menu li:last-child{
@@ -111,16 +113,21 @@
                             <!-- NAV -->
                             <div class="collapse navbar-collapse goldtextcss" id="nav-open-btn">
                                 <ul class="nav">
-                                    <li class="dropdown"> <a  href="contact_us_1.html" class="dropdown-toggle " data-toggle="dropdown">Home</a>
+                                    <li class="dropdown"> <a  href="#" class="dropdown-toggle " data-toggle="dropdown">Home</a>
                                         <ul class="dropdown-menu">
                                             <li><a href="<?php echo site_url("Shop/aboutus"); ?>">About Us</a></li>
                                             <li><a href="">FAQ'S</a></li>
-
                                         </ul>
                                     </li>
-                                    <li > 
-                                        <a href="<?php echo site_url("/"); ?>">Shop Now </a>
+                                    <li class="dropdown"> <a  href="<?php echo site_url('Product/ProductList/1/0') ?>" class="dropdown-toggle " data-toggle="dropdown">Shop Now</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirts</a></li>
+                                            <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suits</a></li>
+                                            <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jackets</a></li>
+                                            <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pants</a></li>
+                                        </ul>
                                     </li>
+                        
                                     <li > 
                                         <a href="<?php echo site_url("/"); ?>">Look Book</a>
                                     </li>
@@ -187,11 +194,12 @@
                             <!-- NAV RIGHT -->
                             <div class="nav-right">
                                 <ul >
-                                    <li class="dropdown user-basket"> <span class="cart-num">{{globleCartData.total_quantity}}</span> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="fa fa-shopping-cart"></i> </a>
-                                        <ul class="dropdown-menu" ng-if="globleCartData.total_quantity">
+                                    <li class="dropdown user-basket"> <span class="cart-num">{{globleCartDatac.total_quantity}}</span> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="fa fa-shopping-cart"></i> </a>
+                                        <ul class="dropdown-menu" ng-if="globleCartDatac.total_quantity">
 
                                             <!--prodcut cart list-->
-                                            <li ng-repeat="product in globleCartData.products" class="animated flipInX">
+                                            <div class="scroll_items">
+                                            <li ng-repeat="product in globleCartDatac.products" class="animated flipInX">
                                                 <div class="media-left">
                                                     <div class="cart-img"> 
                                                         <a href="#"> 
@@ -200,24 +208,25 @@
                                                     </div>
                                                 </div>
                                                 <div class="media-body">
-                                                    <h6 class="media-heading" style="font-size: 12px;">{{product.title}}</h6>
+                                                    <h6 class="media-heading" style="font-size: 12px;">{{product.title}} - {{product.item_name}}</h6>
                                                     <span class="price">{{product.quantity}}    X    {{product.price|currency:" "}}</span> 
                                                 </div>
                                                 <a href="#." class="remov" ng-click="removeCart(product.product_id)">
                                                     <i class="fa fa-times"></i>
                                                 </a> 
                                             </li>
+                                            </div>
                                             <!--end of product cart list-->
-                                            <li class="margin-0 padding-0 price-cart-drop">
-                                                <h5>Subtotal: <span>{{globleCartData.total_price|currency:" "}}</span></h5>
+                                            <li class="margin-0 padding-0 price-cart-drop" style="background: #fff!important;">
+                                                <h5>Subtotal: <span>{{globleCartDatac.total_price|currency:" "}}</span></h5>
                                             </li>
                                             <li class="margin-0 padding-0"> 
-                                                <a href="<?php echo site_url("Cart/details"); ?>" class="btn margin-bottom-20">VIEW CART</a> 
-                                                <a href="<?php echo site_url("Product/customizationShirt"); ?>" class="btn">CUSTOMIZE</a>
+                                                <a href="<?php echo site_url("Cart/detailsc"); ?>" class="btn margin-bottom-20">VIEW CART</a> 
+                                                <a href="<?php echo site_url("Cart/details"); ?>" class="btn">CUSTOMIZE</a>
                                             </li>
                                         </ul>
 
-                                        <ul class="dropdown-menu" ng-if="globleCartData.products.length == 0">
+                                        <ul class="dropdown-menu" ng-if="globleCartDatac.products.length == 0">
                                             <li class="margin-0 padding-0 price-cart-drop">
                                                 <h5>No Item Found</h5>
                                             </li>

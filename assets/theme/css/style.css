@@ -7306,7 +7306,7 @@ header.white-header #cd-menu-trigger.is-clicked .cd-menu-icon {
 	overflow-y: scroll;
 }
 .fly-nav ::-webkit-scrollbar {
- width: 5px;
+ width: 3px;
 }
 .fly-nav ::-webkit-scrollbar-track {
  background: #000000;

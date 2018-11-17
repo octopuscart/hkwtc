@@ -1,10 +1,10 @@
 
 
 
-ClassApartStore.controller('customizationShirt', function ($scope, $http, $location) {
+App.controller('customizationShirt', function ($scope, $http, $location) {
     $scope.fabricurl = "http://api.octopuscart.com/output/";
 
-    var globlecart = baseurl + "Api/cartOperationSuit";
+    var globlecart = baseurl + "ApiMulti/cartOperationShirt";
     $scope.product_quantity = 1;
 
     $scope.cartFabrics1 = [
@@ -27,7 +27,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
         for (i in $scope.cartFabrics) {
             var fb = $scope.cartFabrics[i];
             $scope.selecteElements[fb.folder] = {'sleeve':["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",], 
-                'collar_buttons': 'buttonsh1.png',
+                'collar_buttons': 'buttonsh12.png',
                 'show_buttons': 'true',
                 "Monogram Initial": "ABC",
                 "Collar Insert": "No",
@@ -37,18 +37,17 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
                 "Monogram ColorBack": "White-Black",
                 "Monogram Color": "white",
                 "Monogram Background": "black",
-                "Monogram Style": "Style 1",
+                "Monogram Style": "10",
                 "summary": {},
             };
         }
         $scope.screencustom = {
             'view_type': 'front',
             "fabric": $scope.cartFabrics[0].folder,
-            "sku": $scope.cartFabrics[0].sku,
             "productobj": $scope.cartFabrics[0],
-            "style_select":"with_shirt",
+            "sku":$scope.cartFabrics[0].sku,
         };
-        var url = baseurl + "Api/customeElementsSuit";
+        var url = baseurl + "Api/customeElements";
         $http.get(url).then(function (rdata) {
             $scope.data_list = rdata.data.data;
             $scope.cuff_collar_insert = rdata.data.cuff_collar_insert;
@@ -63,7 +62,6 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
                     if (temp[j]['status'] == 1) {
                         for (f in $scope.cartFabrics) {
                             var fb = $scope.cartFabrics[f];
-                            console.log(fb);
                             $scope.selecteElements[fb.folder][$scope.keys[i].title] = temp[j];
                             $scope.selecteElements[fb.folder]['summary'][$scope.keys[i].title] = temp[j].title;
                         }
@@ -75,9 +73,6 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
     }
 
 
-     $scope.show_shirt = function(shirtstyle){
-         $scope.screencustom.style_select = shirtstyle;
-     }
 
 
     $scope.fabricCartData = {};//cart data
@@ -132,6 +127,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
     //select fabric
     $scope.selectFabric = function (fabric) {
         $scope.screencustom.fabric = fabric.folder;
+         $scope.screencustom.sku = fabric.sku;
         $scope.screencustom.productobj = fabric;
     }
     //

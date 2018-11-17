@@ -17,7 +17,6 @@ class Product_model extends CI_Model {
 
     public function query_exe($query) {
         $query = $this->db->query($query);
-        $data = [];
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
                 $data[] = $row;
@@ -40,6 +39,9 @@ class Product_model extends CI_Model {
         $digits_1 = strlen($no);
         $i = 0;
         $str = array();
+        $wordsz = array('0' => 'zero', '1' => 'one', '2' => 'two',
+            '3' => 'three', '4' => 'four', '5' => 'five', '6' => 'six',
+            '7' => 'seven', '8' => 'eight', '9' => 'nine',);
         $words = array('0' => '', '1' => 'one', '2' => 'two',
             '3' => 'three', '4' => 'four', '5' => 'five', '6' => 'six',
             '7' => 'seven', '8' => 'eight', '9' => 'nine',
@@ -69,10 +71,11 @@ class Product_model extends CI_Model {
         }
         $str = array_reverse($str);
         $result = implode('', $str);
+        $result = $result ? $result : $wordsz[$result / 10];
         $points = ($point) ?
-                "." . $words[$point / 10] . " " .
-                $words[$point = $point % 10] : '';
-        return $result . "Rupees  " . $points . " Paise";
+                " and " . $wordsz[$point / 10] . " " .
+                $wordsz[$point = $point % 10] : '';
+        return "Only " . globle_currency . $result . " " . ($points ? "" . $points . " Cents" : "") . "";
     }
 
     ///*******  Get data for deepth of the array  ********///
@@ -89,13 +92,117 @@ class Product_model extends CI_Model {
         return $container;
     }
 
+    function singleProductAttrs($product_id) {
+        $query = "SELECT pa.attribute, pa.product_id, cav.additional_value, pa.attribute_value_id, cav.attribute_value FROM product_attribute as pa 
+join category_attribute_value as cav on cav.id = pa.attribute_value_id
+where pa.product_id = $product_id group by attribute_value_id";
+        $product_attr_value = $this->query_exe($query);
+        $arrayattr = [];
+        if (count($product_attr_value))
+            foreach ($product_attr_value as $key => $value) {
+                $attrk = $value['attribute'];
+                $attrv = $value['additional_value'];
+                if ($attrk == 'Colors') {
+                    array_push($arrayattr, array($attrk => $attrv));
+                }
+            }
+        return $arrayattr;
+    }
+
+    //product prices
+    function category_items_prices_id($category_items_id) {
+
+        $queryr = "SELECT cip.price, ci.item_name, cip.item_id, cip.id FROM custome_items_price as cip
+                       join custome_items as ci on ci.id = cip.item_id
+                       where cip.category_items_id = $category_items_id";
+        $query = $this->db->query($queryr);
+        $category_items_price_array = $query->row();
+        return $category_items_price_array;
+    }
+
     //product Details
-    function productDetails($product_id) {
+    function productDetails($product_id, $custom_id = 0) {
         $this->db->where('id', $product_id);
         $query = $this->db->get('products');
         $product = $query->result_array();
+
         if (count($product)) {
-            return $product[0];
+            $productobj = $product[0];
+
+            $item_price = $this->category_items_prices_id($productobj['category_items_id']);
+            $productobj['price'] = $item_price->price;
+            $productobj['regular_price'] = $item_price->price;
+            $productobj['item_name'] = $item_price->item_name;
+            $productobj['item_id'] = $item_price->item_id;
+
+            if ($custom_id != 0) {
+                $this->db->where('id', $custom_id);
+                $query = $this->db->get('custome_items');
+                $customeitem = $query->row();
+            }
+            $productattr = $this->singleProductAttrs($productobj['id']);
+            $productobj['attrs'] = $productattr;
+
+
+            $productobj['vendor'] = '';
+            return $productobj;
+        } else {
+            return FALSE;
+        }
+    }
+
+    function getProductVeriants($product_id) {
+        $this->db->select("id as product_id");
+        $this->db->where('variant_product_of', $product_id);
+        $query = $this->db->get('products');
+        $product_veriant = $query->result_array();
+        return $product_veriant;
+    }
+
+    //product veriants
+    function productDetailsVariants($product_id) {
+        $product_veriant = $this->getProductVeriants($product_id);
+        $mproduct_id = $product_id;
+        if (count($product_veriant)) {
+            
+        } else {
+            $this->db->select("variant_product_of as product_id");
+            $this->db->where('id', $product_id);
+            $query = $this->db->get('products');
+            $productvcs = $query->row();
+            $mproduct_id = $productvcs->product_id;
+            if ($mproduct_id) {
+                $product_veriant = $this->getProductVeriants($mproduct_id);
+            } else {
+                $mproduct_id = $product_id;
+                $product_veriant = [];
+            }
+        }
+
+        $mproduct_id;
+        $productvstr = [$mproduct_id];
+        foreach ($product_veriant as $key => $value) {
+            array_push($productvstr, $value['product_id']);
+        }
+
+        $productatrvalue = implode(", ", $productvstr);
+        $query = "SELECT pa.attribute, pa.product_id, pa.attribute_value_id, cav.attribute_value FROM product_attribute as pa 
+join category_attribute_value as cav on cav.id = pa.attribute_value_id
+where pa.product_id in ($productatrvalue) group by attribute_value_id";
+        $product_attr_value = $this->query_exe($query);
+
+
+        $product_attrs = array();
+        foreach ($product_attr_value as $key => $value) {
+            $attrv = $value['attribute'];
+            if (isset($product_attrs[$attrv])) {
+                array_push($product_attrs[$attrv], $value);
+            } else {
+                $product_attrs[$attrv] = [$value];
+            }
+        }
+        if (count($product_attrs)) {
+            return $product_attrs;
         } else {
             return FALSE;
         }
@@ -103,7 +210,7 @@ class Product_model extends CI_Model {
 
     /////Cart management 
     //get cart data
-    function cartData($user_id = 0, $item_type=0) {
+    function cartDataCustome($user_id = 0) {
         if ($user_id != 0) {
             $this->db->where('user_id', $user_id);
             $this->db->where('order_id', '0');
@@ -113,18 +220,37 @@ class Product_model extends CI_Model {
             $total_price = 0;
             $total_quantity = 0;
             $total_credit_limit = 0;
+            $custome_items = [];
+            $custome_items_name = [];
             foreach ($product as $key => $value) {
                 $productlist[$value['product_id']] = $value;
+                if (isset($value['item_id'])) {
+                    array_push($custome_items, $value['item_id']);
+                    array_push($custome_items_name, $value['item_name']);
+                }
                 $total_price += $value['total_price'];
                 $total_quantity += $value['quantity'];
                 $total_credit_limit += ($value['credit_limit'] * $value['quantity']);
+                $cart_id = $value['id'];
+                $this->db->where('cart_id', $cart_id);
+                $query = $this->db->get('cart_customization');
+                $cartcustom = $query->result_array();
+                $customdata = array();
+                foreach ($cartcustom as $key1 => $value1) {
+                    $customdata[$value1['style_key']] = $value1['style_value'];
+                }
+                $productlist[$value['product_id']]['custom_dict'] = $customdata;
             }
 
-            $cartdata = array('products' => $productlist,
+            $cartdata = array(
+                'products' => $productlist,
+                'custome_items_name' => $custome_items_name,
+                'custome_items' => $custome_items,
                 'total_quantity' => $total_quantity,
                 'total_price' => $total_price,
                 'total_credit_limit' => $total_credit_limit,
-                'used_credit' => 0);
+                'used_credit' => 0
+            );
             return $cartdata;
         } else {
             $session_cart = $this->session->userdata('session_cart');
@@ -133,6 +259,8 @@ class Product_model extends CI_Model {
             } else {
                 $cartdata = array('products' => array(),
                     'total_quantity' => 0,
+                    'custome_items' => [],
+                    'custome_items_name' => [],
                     'total_credit_limit' => $total_credit_limit,
                     'total_price' => 0, 'used_credit' => 0);
                 $this->session->set_userdata('session_cart', $cartdata);
@@ -140,7 +268,12 @@ class Product_model extends CI_Model {
             }
             $session_cart['total_quantity'] = 0;
             $session_cart['total_price'] = 0;
+            $custome_items = [];
             foreach ($session_cart['products'] as $key => $value) {
+                if (isset($value['item_id'])) {
+                    array_push($session_cart['custome_items'], $value['item_id']);
+                    array_push($session_cart['custome_items_name'], $value['item_name']);
+                }
                 $session_cart['total_quantity'] += $value['quantity'];
                 $session_cart['total_price'] += $value['total_price'];
             }
@@ -148,28 +281,228 @@ class Product_model extends CI_Model {
         }
     }
 
+    function cartData($user_id = 0) {
+        if ($user_id != 0) {
+            $this->db->where('user_id', $user_id);
+            $this->db->where('order_id', '0');
+            $query = $this->db->get('cart');
+            $product = $query->result_array();
+            $productlist = array();
+            $total_price = 0;
+            $total_quantity = 0;
+            $total_credit_limit = 0;
+            $custome_items = [];
+            $custome_items_name = [];
+            foreach ($product as $key => $value) {
+                $productlist[$value['product_id']] = $value;
+                if (isset($value['item_id'])) {
+                    array_push($custome_items, $value['item_id']);
+                    array_push($custome_items_name, $value['item_name']);
+                }
+                $total_price += $value['total_price'];
+                $total_quantity += $value['quantity'];
+                $total_credit_limit += ($value['credit_limit'] * $value['quantity']);
+                $cart_id = $value['id'];
+                $this->db->where('cart_id', $cart_id);
+                $query = $this->db->get('cart_customization');
+                $cartcustom = $query->result_array();
+                $customdata = array();
+                foreach ($cartcustom as $key1 => $value1) {
+                    $customdata[$value1['style_key']] = $value1['style_value'];
+                }
+                $productlist[$value['product_id']]['custom_dict'] = $customdata;
+            }
+
+            $cartdata = array(
+                'products' => $productlist,
+                'custome_items_name' => $custome_items_name,
+                'custome_items' => $custome_items,
+                'total_quantity' => $total_quantity,
+                'total_price' => $total_price,
+                'total_credit_limit' => $total_credit_limit,
+                'used_credit' => 0
+            );
+            return $cartdata;
+        } else {
+            $session_cart = $this->session->userdata('session_cart');
+            if ($session_cart) {
+                
+            } else {
+                $cartdata = array('products' => array(),
+                    'total_quantity' => 0,
+                    'custome_items' => [],
+                    'custome_items_name' => [],
+                    'total_credit_limit' => $total_credit_limit,
+                    'total_price' => 0, 'used_credit' => 0);
+                $this->session->set_userdata('session_cart', $cartdata);
+                $session_cart = $this->session->userdata('session_cart');
+            }
+            $session_cart['total_quantity'] = 0;
+            $session_cart['total_price'] = 0;
+            $custome_items = [];
+            $returndata = $session_cart;
+            $returndata['products'] = array();
+            foreach ($session_cart['products'] as $key => $value) {
+                if (isset($value['item_id'])) {
+                    array_push($session_cart['custome_items'], $value['item_id']);
+                    array_push($session_cart['custome_items_name'], $value['item_name']);
+                }
+                if (isset($value['custom_dict'])) {
+                    $returndata['products'][$key] = $value;
+                    $returndata['total_quantity'] += $value['quantity'];
+                    $returndata['total_price'] += $value['total_price'];
+                }
+            }
+            return $returndata;
+        }
+    }
+
+    function cartDataNoCustome($user_id = 0) {
+        if ($user_id != 0) {
+            $this->db->where('user_id', $user_id);
+            $this->db->where('order_id', '0');
+            $query = $this->db->get('cart');
+            $product = $query->result_array();
+            $productlist = array();
+            $total_price = 0;
+            $total_quantity = 0;
+            $total_credit_limit = 0;
+            $custome_items = [];
+            $custome_items_name = [];
+            foreach ($product as $key => $value) {
+                $productlist[$value['product_id']] = $value;
+                if (isset($value['item_id'])) {
+                    array_push($custome_items, $value['item_id']);
+                    array_push($custome_items_name, $value['item_name']);
+                }
+                $total_price += $value['total_price'];
+                $total_quantity += $value['quantity'];
+                $total_credit_limit += ($value['credit_limit'] * $value['quantity']);
+                $cart_id = $value['id'];
+                $this->db->where('cart_id', $cart_id);
+                $query = $this->db->get('cart_customization');
+                $cartcustom = $query->result_array();
+                $customdata = array();
+                foreach ($cartcustom as $key1 => $value1) {
+                    $customdata[$value1['style_key']] = $value1['style_value'];
+                }
+                $productlist[$value['product_id']]['custom_dict'] = $customdata;
+            }
+
+            $cartdata = array(
+                'products' => $productlist,
+                'custome_items_name' => $custome_items_name,
+                'custome_items' => $custome_items,
+                'total_quantity' => $total_quantity,
+                'total_price' => $total_price,
+                'total_credit_limit' => $total_credit_limit,
+                'used_credit' => 0
+            );
+            return $cartdata;
+        } else {
+            $session_cart = $this->session->userdata('session_cart');
+            if ($session_cart) {
+                
+            } else {
+                $cartdata = array('products' => array(),
+                    'total_quantity' => 0,
+                    'custome_items' => [],
+                    'custome_items_name' => [],
+                    'total_credit_limit' => $total_credit_limit,
+                    'total_price' => 0, 'used_credit' => 0);
+                $this->session->set_userdata('session_cart', $cartdata);
+                $session_cart = $this->session->userdata('session_cart');
+            }
+            $session_cart['total_quantity'] = 0;
+            $session_cart['total_price'] = 0;
+            $custome_items = [];
+            $returndata = $session_cart;
+            $returndata['products'] = array();
+            foreach ($session_cart['products'] as $key => $value) {
+                if (isset($value['item_id'])) {
+                    array_push($session_cart['custome_items'], $value['item_id']);
+                    array_push($session_cart['custome_items_name'], $value['item_name']);
+                }
+                if (!isset($value['custom_dict'])) {
+                    $returndata['products'][$key] = $value;
+                    $returndata['total_quantity'] += $value['quantity'];
+                    $returndata['total_price'] += $value['total_price'];
+                    
+                }
+            }
+            return $returndata;
+        }
+    }
+
+    //get order details  
     public function getOrderDetails($key_id, $is_key = 0) {
         $order_data = array();
-
         if ($is_key === 'key') {
             $this->db->where('order_key', $key_id);
         } else {
-
             $this->db->where('id', $key_id);
         }
         $query = $this->db->get('user_order');
         $order_details = $query->row();
-
+        $payment_details = array("payment_mode" => "", "txn_id" => "", "payment_date" => "");
 
         if ($order_details) {
+
+            $this->db->order_by('id', 'desc');
+            $this->db->where('order_id', $order_details->id);
+            $query = $this->db->get('user_order_status');
+            $userorderstatus = $query->result();
+            $order_data['order_status'] = $userorderstatus;
+
+            if ($order_details->payment_mode == 'PayPal') {
+                $this->db->where('order_id', $order_details->id);
+                $query = $this->db->get('paypal_status');
+                $paypal_details = $query->result();
+
+                if ($paypal_details) {
+                    $paypal_details = end($paypal_details);
+                    $payment_details['payment_mode'] = "PayPal";
+                    $payment_details['txn_id'] = $paypal_details->txn_no;
+                    $payment_details['payment_date'] = $paypal_details->timestemp;
+                }
+            }
+
+            $order_id = $order_details->id;
             $order_data['order_data'] = $order_details;
             $this->db->where('order_id', $order_details->id);
             $query = $this->db->get('cart');
             $cart_items = $query->result();
+
+            $this->db->order_by('display_index', 'asc');
+            $this->db->where('order_id', $order_details->id);
+            $query = $this->db->get('custom_measurement');
+            $custom_measurement = $query->result_array();
+
+            $order_data['measurements_items'] = $custom_measurement;
+
+            foreach ($cart_items as $key => $value) {
+                $cart_id = $value->id;
+
+                $this->db->where('cart_id', $cart_id);
+                $query = $this->db->get('cart_customization');
+                $cartcustom = $query->result_array();
+
+                $customdata = array();
+                foreach ($cartcustom as $key1 => $value1) {
+                    $customdata[$value1['style_key']] = $value1['style_value'];
+                }
+                $value->custom_dict = $customdata;
+
+//                $this->db->where('order_id', $order_id);
+//                $this->db->where('vendor_id', $vendor_id);
+//                $query = $this->db->get('vendor_order_status');
+//                $orderstatus = $query->result();
+                $value->product_status = array();
+            }
+            $order_data['payment_details'] = $payment_details;
             $order_data['cart_data'] = $cart_items;
             $order_data['amount_in_word'] = $this->convert_num_word($order_data['order_data']->total_price);
         }
-
         return $order_data;
     }
 
@@ -179,29 +512,27 @@ class Product_model extends CI_Model {
     }
 
     //cart operation session 
-    public function cartOperation($product_id, $quantity, $user_id = 0, $setSession = 0) {
-
+    public function cartOperation($product_id, $quantity, $item_id, $user_id = 0, $setSession = 0) {
 
         if ($user_id != 0) {
             $cartdata = $this->cartData($user_id);
-            $product_details = $this->productDetails($product_id);
+            $product_details = $this->productDetails($product_id, $item_id);
             $product_dict = array(
-                'sku' => $product_details['sku'],
                 'title' => $product_details['title'],
                 'price' => $product_details['price'],
-                'item_type' => $product_details['item_type'],
+                'sku' => $product_details['sku'], 'folder' => $product_details['folder'],
+                'attrs' => "",
+                'vendor_id' => $product_details['user_id'],
                 'total_price' => $product_details['price'],
-                'file_name' => custome_image_server . '/output/' . $product_details['folder'] . "/shirt0001.png",
+                'item_id' => $product_details['item_id'],
+                'item_name' => $product_details['item_name'],
+                'file_name' => custome_image_server . PRODUCT_PATH_PRE . $product_details['folder'] . PRODUCT_PATH_POST,
                 'quantity' => $quantity,
                 'user_id' => $user_id,
                 'credit_limit' => $product_details['credit_limit'] ? $product_details['credit_limit'] : 0,
                 'product_id' => $product_id,
-                'folder'=>$product_details['folder'],
                 'op_date_time' => date('Y-m-d H:i:s'),
             );
-            if ($product_details['item_type'] == 'Jacket') {
-                $product_dict['file_name'] = custome_image_server_suit . '/' . $product_details['folder'] . "/fabric0001.png";
-            }
             if (isset($cartdata['products'][$product_id])) {
                 if ($setSession) {
                     $total_price = $product_details['price'] * $quantity;
@@ -223,7 +554,8 @@ class Product_model extends CI_Model {
             if ($session_cart) {
                 
             } else {
-                $cartdata = array('products' => array(), 'total_quantity' => 0, 'total_price' => 0);
+                $cartdata = array('products' => array(), 'total_quantity' => 0, 'custome_items' => [],
+                    'custome_items_name' => [], 'total_price' => 0);
                 $this->session->set_userdata('session_cart', $cartdata);
                 $session_cart = $this->session->userdata('session_cart');
             }
@@ -236,23 +568,22 @@ class Product_model extends CI_Model {
                 $session_cart['products'][$product_id]['total_price'] = $price;
                 $this->session->set_userdata('session_cart', $session_cart);
             } else {
-                $product_details = $this->productDetails($product_id);
+                $product_details = $this->productDetails($product_id, $item_id);
                 $product_dict = array(
-                    'sku' => $product_details['sku'],
                     'title' => $product_details['title'],
-                    'item_type' => $product_details['item_type'],
                     'price' => $product_details['price'],
+                    'sku' => $product_details['sku'], 'folder' => $product_details['folder'],
+                    'attrs' => "",
+                    'item_id' => $product_details['item_id'],
+                    'item_name' => $product_details['item_name'],
+                    'vendor_id' => $product_details['user_id'],
                     'total_price' => $product_details['price'],
-                    'file_name' => custome_image_server . '/output/' . $product_details['folder'] . "/shirt0001.png",
+                    'file_name' => custome_image_server . PRODUCT_PATH_PRE . $product_details['folder'] . PRODUCT_PATH_POST,
                     'quantity' => 1,
-                    'folder'=>$product_details['folder'],
                     'product_id' => $product_id,
                     'date' => date('Y-m-d'),
                     'time' => date('H:i:s'),
                 );
-                if ($product_details['item_type'] == 'Jacket') {
-                    $product_dict['file_name'] = custome_image_server_suit . '/' . $product_details['folder'] .  "/fabric0001.png";
-                }
                 $session_cart['products'][$product_id] = $product_dict;
                 $this->session->set_userdata('session_cart', $session_cart);
             }
@@ -335,11 +666,11 @@ class Product_model extends CI_Model {
     }
 
     function product_home_slider_bottom() {
-        $pquery = "SELECT pa.* FROM products as pa where home_slider = 'on'";
+        $pquery = "SELECT pa.* FROM products as pa where home_slider = 'on' and variant_product_of<1";
         $product_home_slider = $this->query_exe($pquery);
 
 
-        $pquery = "SELECT pa.* FROM products as pa where home_bottom = 'on'";
+        $pquery = "SELECT pa.* FROM products as pa where home_bottom = 'on'  and variant_product_of<1";
         $product_home_bottom = $this->query_exe($pquery);
 
         return array('home_bottom' => $product_home_bottom, 'home_slider' => $product_home_slider);
@@ -375,36 +706,48 @@ class Product_model extends CI_Model {
 
     //menu controller
     function menuController() {
-        return "hello";
+        return "";
     }
 
     function order_mail($order_id, $subject = "") {
+        setlocale(LC_MONETARY, 'en_US');
+        $checkcode = REPORT_MODE;
         $order_details = $this->getOrderDetails($order_id, 0);
 
-        if ($order_details) {
-            $config = Array(
-                'protocol' => 'smtp',
-                'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_port' => 465,
-                'smtp_user' => 'noreplay2classapartstore@gmail.com',
-                'smtp_pass' => 'vjdsxubpqhrhahrj',
-                'mailtype' => 'html',
-                'charset' => 'iso-8859-1'
-            );
-            $this->load->library('email', $config);
-            $this->email->set_newline("\r\n");
-            $this->email->from('no_replay_classapartstore@gmail.com', 'Class Apart Store');
-            $this->email->to($order_details['order_data']->email);
-            $this->email->bcc('noreplay2classapartstore@gmail.com');
+        $emailsender = email_sender;
+        $sendername = email_sender_name;
+        $email_bcc = email_bcc;
 
-            if ($subject) {
-                $this->email->subject($subject);
+        if ($order_details) {
+            $order_no = $order_details['order_data']->order_no;
+            $this->email->set_newline("\r\n");
+            $this->email->from(email_bcc, $sendername);
+            $this->email->to($order_details['order_data']->email);
+            $this->email->bcc(email_bcc);
+
+            $orderlog = array(
+                'log_type' => 'Email',
+                'log_datetime' => date('Y-m-d H:i:s'),
+                'order_id' => $order_id,
+            );
+            $this->db->insert('user_order_log', $orderlog);
+
+            $subject = "Order Confirmation - Your Order with www.bespoketailorshk.com [" . $order_no . "] has been successfully placed!";
+            $this->email->subject($subject);
+
+            if ($checkcode) {
+                $this->email->message($this->load->view('Email/order_mail', $order_details, true));
+                $this->email->print_debugger();
+                $send = $this->email->send();
+                if ($send) {
+                    echo json_encode("send");
+                } else {
+                    $error = $this->email->print_debugger(array('headers'));
+                    echo json_encode($error);
+                }
             } else {
-                $this->email->subject('Class Apart Sore Order No:' . $order_details['order_data']->order_no . " has been confirmed.");
+                echo $this->load->view('Email/order_mail', $order_details, true);
             }
-            $this->email->message($this->load->view('Email/order_mail', $order_details, true));
-            $this->email->print_debugger();
-            echo $result = $this->email->send();
         }
     }
 
@@ -421,12 +764,16 @@ class Product_model extends CI_Model {
 
             $vender_id = $vendor_details->id;
             if (isset($venderarray[$vender_id])) {
+                $venderarray[$vender_id]['quantity'] += $value->quantity;
+                $venderarray[$vender_id]['total_price'] += $value->total_price;
                 array_push($venderarray[$vender_id]['cart_data'], $value);
             } else {
                 $venderarray[$vender_id] = array(
                     'vendor' => $vendor_details,
                     'order_data' => $order_details['order_data'],
-                    'cart_data' => array($value)
+                    'cart_data' => array($value),
+                    'total_price' => $value->total_price,
+                    'quantity' => $value->quantity,
                 );
             }
         }
@@ -440,6 +787,8 @@ class Product_model extends CI_Model {
                     'c_date' => date('Y-m-d'),
                     'c_time' => date('H:i:s'),
                     'order_id' => $value['order_data']->id,
+                    'total_price' => $value['total_price'],
+                    'total_quantity' => $value['quantity'],
                     'vendor_order_no' => $vendor_order,
                     'vendor_id' => $value['vendor']->id,
                     'vendor_email' => $value['vendor']->email,
@@ -449,34 +798,301 @@ class Product_model extends CI_Model {
                 );
                 $value['vorder_no'] = $vendor_order;
                 $this->db->insert('vendor_order', $vendor_order_dict);
+                $last_id = $this->db->insert_id();
 
-//                $config = Array(
-//                    'protocol' => 'smtp',
-//                    'smtp_host' => 'ssl://smtp.googlemail.com',
-//                    'smtp_port' => 465,
-//                    'smtp_user' => 'noreplay2classapartstore@gmail.com',
-//                    'smtp_pass' => 'vjdsxubpqhrhahrj',
-//                    'mailtype' => 'html',
-//                    'charset' => 'iso-8859-1'
-//                );
-//                $this->load->library('email', $config);
-//                $this->email->set_newline("\r\n");
-//                $this->email->from('no_replay_classapartstore@gmail.com', 'Class Apart Store');
-//                $this->email->to($value['vendor']->email);
-//                $this->email->bcc('noreplay2classapartstore@gmail.com');
-//
-//
-//                $this->email->subject('Class Apart Sore Vendor Order No:' . $vendor_order . " Generated.");
-//
-//
-//                echo $this->load->view('Email/vender_order_mail', $value, true);
-//                $this->email->message($this->load->view('Email/vender_order_mail', $order_details, true));
-//                $this->email->print_debugger();
-//                try {
-//                  //  echo $result = $this->email->send();
-//                } catch (customException $e) {
-//                    
-//                }
+                //add vendor status
+                $vendor_order_status_data = array(
+                    'c_date' => date('Y-m-d'),
+                    'c_time' => date('H:i:s'),
+                    'vendor_order_id' => $last_id,
+                    'order_id' => $value['order_data']->id,
+                    'status' => "Payment Pending",
+                    'vendor_id' => $value['vendor']->id,
+                    'remark' => "Order Confirmed, Now Payment Pending From Client Side.",
+                );
+                $this->db->insert('vendor_order_status', $vendor_order_status_data);
+            }
+        }
+    }
+
+    //custom product model
+    //cart operation session 
+    public function cartOperationCustom($product_id, $quantity, $custom_id, $customekey, $customevalue, $user_id = 0, $setSession = 0) {
+
+        $this->db->where('id', $custom_id);
+        $query = $this->db->get('custome_items');
+        $customeitem = $query->row();
+
+        $custom_dict = array();
+        foreach ($customekey as $key => $value) {
+            $kkey = $customekey[$key];
+            $vvalue = $customevalue[$key];
+            $custom_dict[$kkey] = $vvalue;
+        }
+
+        $item_name = $customeitem->item_name;
+        $item_id = $customeitem->id;
+
+        if ($user_id != 0) {
+            $cartdata = $this->cartData($user_id);
+            $product_details = $this->productDetails($product_id, $item_id);
+            $product_dict = array(
+                'title' => $product_details['title'],
+                'price' => $product_details['price'],
+                'sku' => $product_details['sku'], 'folder' => $product_details['folder'],
+                'attrs' => "",
+                'vendor_id' => $product_details['user_id'],
+                'total_price' => $product_details['price'],
+                'file_name' => custome_image_server . PRODUCT_PATH_PRE . $product_details['folder'] . PRODUCT_PATH_POST,
+                'quantity' => $quantity,
+                'user_id' => $user_id,
+                'item_id' => $item_id,
+                'item_name' => $item_name,
+                'credit_limit' => $product_details['credit_limit'] ? $product_details['credit_limit'] : 0,
+                'product_id' => $product_id,
+                'op_date_time' => date('Y-m-d H:i:s'),
+            );
+            if (isset($cartdata['products'][$product_id])) {
+
+                if ($setSession) {
+                    $total_price = $product_details['price'] * $quantity;
+                    $total_quantity = $quantity;
+                } else {
+                    $total_price = $cartdata['products'][$product_id]['total_price'] + $product_details['price'];
+                    $total_quantity = $cartdata['products'][$product_id]['quantity'] + $quantity;
+                }
+                $cid = $cartdata['products'][$product_id]['id'];
+                $this->db->set('quantity', $total_quantity);
+                $this->db->set('total_price', $total_price);
+                $this->db->where('id', $cid); //set column_name and value in which row need to update
+                $this->db->update('cart'); //
+            } else {
+
+//                $custom_dict
+
+                $this->db->insert('cart', $product_dict);
+                $last_id = $this->db->insert_id();
+                $display_index = 1;
+                foreach ($custom_dict as $key => $value) {
+                    $custom_array = array(
+                        'style_key' => $key,
+                        'style_value' => $value,
+                        'display_index' => $display_index,
+                        'cart_id' => $last_id,
+                    );
+                    $this->db->insert('cart_customization', $custom_array);
+                    $display_index++;
+                }
+            }
+        } else {
+            $session_cart = $this->session->userdata('session_cart');
+            if ($session_cart) {
+                
+            } else {
+                $cartdata = array('products' => array(), 'total_quantity' => 0, 'custome_items' => [],
+                    'custome_items_name' => [], 'total_price' => 0);
+                $this->session->set_userdata('session_cart', $cartdata);
+                $session_cart = $this->session->userdata('session_cart');
+            }
+
+            if (isset($session_cart['products'][$product_id])) {
+                $product_dict = $session_cart['products'][$product_id];
+                $qauntity = $product_dict['quantity'] + $quantity;
+                $price = $product_dict['price'] * $qauntity;
+                $session_cart['products'][$product_id]['quantity'] = $qauntity;
+                $session_cart['products'][$product_id]['total_price'] = $price;
+                $this->session->set_userdata('session_cart', $session_cart);
+            } else {
+                $product_details = $this->productDetails($product_id, $item_id);
+                $product_dict = array(
+                    'title' => $product_details['title'],
+                    'price' => $product_details['price'],
+                    'sku' => $product_details['sku'], 'folder' => $product_details['folder'],
+                    'attrs' => "",
+                    'vendor_id' => $product_details['user_id'],
+                    'total_price' => $product_details['price'],
+                    'file_name' => custome_image_server . PRODUCT_PATH_PRE . $product_details['folder'] . PRODUCT_PATH_POST,
+                    'quantity' => 1,
+                    'item_id' => $item_id,
+                    'item_name' => $item_name,
+                    'product_id' => $product_id,
+                    'date' => date('Y-m-d'),
+                    'time' => date('H:i:s'),
+                    'custom_dict' => $custom_dict
+                );
+                $session_cart['products'][$product_id] = $product_dict;
+                $this->session->set_userdata('session_cart', $session_cart);
+            }
+            $session_cart = $this->session->userdata('session_cart');
+        }
+    }
+
+    public function cartOperationCustomMulti($product_id, $quantity, $custom_id, $customekey, $customevalue, $user_id = 0, $setSession = 0) {
+
+        $this->db->where('id', $custom_id);
+        $query = $this->db->get('custome_items');
+        $customeitem = $query->row();
+
+        $custom_dict = array();
+        foreach ($customekey as $key => $value) {
+            $kkey = $customekey[$key];
+            $vvalue = $customevalue[$key];
+            $custom_dict[$kkey] = $vvalue;
+        }
+
+        $item_name = $customeitem->item_name;
+        $item_id = $customeitem->id;
+
+        if ($user_id != 0) {
+            $cartdata = $this->cartData($user_id);
+            $product_details = $this->productDetails($product_id, $item_id);
+            $product_dict = array(
+                'title' => $product_details['title'],
+                'price' => $product_details['price'],
+                'sku' => $product_details['sku'], 'folder' => $product_details['folder'],
+                'attrs' => "",
+                'vendor_id' => $product_details['user_id'],
+                'total_price' => $product_details['price'],
+                'file_name' => custome_image_server . PRODUCT_PATH_PRE . $product_details['folder'] . PRODUCT_PATH_POST,
+                'quantity' => $quantity,
+                'user_id' => $user_id,
+                'item_id' => $item_id,
+                'item_name' => $item_name,
+                'credit_limit' => $product_details['credit_limit'] ? $product_details['credit_limit'] : 0,
+                'product_id' => $product_id,
+                'op_date_time' => date('Y-m-d H:i:s'),
+            );
+            if (isset($cartdata['products'][$product_id])) {
+
+                if ($setSession) {
+                    $total_price = $product_details['price'] * $quantity;
+                    $total_quantity = $quantity;
+                } else {
+                    $total_price = $cartdata['products'][$product_id]['total_price'] + $product_details['price'];
+                    $total_quantity = $cartdata['products'][$product_id]['quantity'] + $quantity;
+                }
+                $cid = $cartdata['products'][$product_id]['id'];
+                $this->db->set('quantity', $total_quantity);
+                $this->db->set('total_price', $total_price);
+                $this->db->where('id', $cid); //set column_name and value in which row need to update
+                $this->db->update('cart'); //
+            } else {
+
+//                $custom_dict
+
+                $this->db->insert('cart', $product_dict);
+                $last_id = $this->db->insert_id();
+                $display_index = 1;
+                foreach ($custom_dict as $key => $value) {
+                    $custom_array = array(
+                        'style_key' => $key,
+                        'style_value' => $value,
+                        'display_index' => $display_index,
+                        'cart_id' => $last_id,
+                    );
+                    $this->db->insert('cart_customization', $custom_array);
+                    $display_index++;
+                }
+            }
+        } else {
+            $session_cart = $this->session->userdata('session_cart');
+            if ($session_cart) {
+                $session_cart['products'][$product_id]['custom_dict'] = $custom_dict;
+                $this->session->set_userdata('session_cart', $session_cart);
+            } else {
+                $cartdata = array('products' => array(), 'total_quantity' => 0, 'custome_items' => [],
+                    'custome_items_name' => [], 'total_price' => 0);
+                $this->session->set_userdata('session_cart', $cartdata);
+                $session_cart = $this->session->userdata('session_cart');
+            }
+        }
+    }
+
+    public function cartOperationCustomCopy($user_id = "guest") {
+
+        $session_cart = $this->session->userdata('session_cart');
+        $productlist = $session_cart['products'];
+
+        foreach ($productlist as $key => $value) {
+            $quantity = $value['quantity'];
+            $product_id = $value['product_id'];
+            $item_id = $value['item_id'];
+            $item_name = $value['item_name'];
+            $product_details = $this->productDetails($product_id, $item_id);
+            $product_dict = array(
+                'title' => $product_details['title'],
+                'price' => $product_details['price'],
+                'sku' => $product_details['sku'], 'folder' => $product_details['folder'],
+                'attrs' => "",
+                'vendor_id' => $product_details['user_id'],
+                'total_price' => $value['total_price'],
+                'file_name' => custome_image_server . PRODUCT_PATH_PRE . $product_details['folder'] . PRODUCT_PATH_POST,
+                'quantity' => $quantity,
+                'user_id' => $user_id,
+                'item_id' => $item_id,
+                'item_name' => $item_name,
+                'credit_limit' => $product_details['credit_limit'] ? $product_details['credit_limit'] : 0,
+                'product_id' => $product_id,
+                'op_date_time' => date('Y-m-d H:i:s'),
+            );
+            $custom_dict = $value['custom_dict'];
+            $this->db->insert('cart', $product_dict);
+            $last_id = $this->db->insert_id();
+            $display_index = 1;
+            foreach ($custom_dict as $key => $value) {
+                $custom_array = array(
+                    'style_key' => $key,
+                    'style_value' => $value,
+                    'display_index' => $display_index,
+                    'cart_id' => $last_id,
+                );
+                $this->db->insert('cart_customization', $custom_array);
+                $display_index++;
+            }
+        }
+    }
+
+    public function cartOperationCustomCopyOrder($order_id) {
+
+        $session_cart = $this->session->userdata('session_cart');
+        $productlist = $session_cart['products'];
+
+        foreach ($productlist as $key => $value) {
+            $quantity = $value['quantity'];
+            $product_id = $value['product_id'];
+            $item_id = $value['item_id'];
+            $item_name = $value['item_name'];
+            $product_details = $this->productDetails($product_id, $item_id);
+            $product_dict = array(
+                'title' => $product_details['title'],
+                'price' => $product_details['price'],
+                'sku' => $product_details['sku'], 'folder' => $product_details['folder'],
+                'attrs' => "",
+                'vendor_id' => $product_details['user_id'],
+                'total_price' => $value['total_price'],
+                'file_name' => custome_image_server . PRODUCT_PATH_PRE . $product_details['folder'] . PRODUCT_PATH_POST,
+                'quantity' => $quantity,
+                'user_id' => 'guest',
+                'item_id' => $item_id,
+                'item_name' => $item_name,
+                'credit_limit' => $product_details['credit_limit'] ? $product_details['credit_limit'] : 0,
+                'product_id' => $product_id,
+                'order_id' => $order_id,
+                'op_date_time' => date('Y-m-d H:i:s'),
+            );
+            $custom_dict = $value['custom_dict'];
+            $this->db->insert('cart', $product_dict);
+            $last_id = $this->db->insert_id();
+            $display_index = 1;
+            foreach ($custom_dict as $key => $value) {
+                $custom_array = array(
+                    'style_key' => $key,
+                    'style_value' => $value,
+                    'display_index' => $display_index,
+                    'cart_id' => $last_id,
+                );
+                $this->db->insert('cart_customization', $custom_array);
+                $display_index++;
             }
         }
     }

@@ -1,11 +1,13 @@
 
 
 
-ClassApartStore.controller('customizationShirt', function ($scope, $http, $location) {
+App.controller('customizationShirt', function ($scope, $http, $location, $filter) {
     $scope.fabricurl = "http://api.octopuscart.com/output/";
+    var currencyfilter = $filter('currency');
 
-    var globlecart = baseurl + "Api2/cartOperationSuit";
+    var globlecart = baseurl + "customApi/cartOperationSingle/" + product_id+"/"+gcustome_id;
     $scope.product_quantity = 1;
+
 
     $scope.cartFabrics1 = [
         {"sku": "AM697"},
@@ -26,7 +28,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
     $scope.shirtimplement = function () {
         for (i in $scope.cartFabrics) {
             var fb = $scope.cartFabrics[i];
-            $scope.selecteElements[fb.folder] = {'sleeve': ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png", ],
+            $scope.selecteElements[fb.product_id] = {'sleeve': ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png", ],
                 'collar_buttons': 'buttonsh1.png',
                 'show_buttons': 'true',
                 "Monogram Initial": "ABC",
@@ -41,14 +43,26 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
                 "summary": {},
             };
         }
+        var viewtype = "front";
+        switch (defaut_view) {
+            case "Jacket":
+                viewtype = "front";
+                break;
+            case "Pant":
+                viewtype = "pant";
+                break;
+            default:
+                viewtype = "front";
+        }
+
+
         $scope.screencustom = {
-            'view_type': 'front',
-            "fabric": $scope.cartFabrics[0].folder,
-            "sku": $scope.cartFabrics[0].sku,
+            'view_type': viewtype,
+            "fabric": $scope.cartFabrics[0].product_id,
             "productobj": $scope.cartFabrics[0],
-            "style_select": "with_shirt",
+            "sku": $scope.cartFabrics[0].sku,
         };
-        var url = baseurl + "Api2/customeElementsSuit";
+        var url = baseurl + "customApi/customeElements" + defaut_view;
         $http.get(url).then(function (rdata) {
             $scope.data_list = rdata.data.data;
             $scope.cuff_collar_insert = rdata.data.cuff_collar_insert;
@@ -59,17 +73,63 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
             $scope.parents = 'Body Fit';
             for (i in $scope.keys) {
                 var temp = $scope.data_list[$scope.keys[i].title];
+                console.log(temp);
                 for (j in temp) {
                     if (temp[j]['status'] == 1) {
                         for (f in $scope.cartFabrics) {
                             var fb = $scope.cartFabrics[f];
-                            console.log(fb);
-                            $scope.selecteElements[fb.folder][$scope.keys[i].title] = temp[j];
-                            $scope.selecteElements[fb.folder]['summary'][$scope.keys[i].title] = temp[j].title;
+                            console.log(fb.product_id, temp[j], $scope.keys[i].title);
+                            $scope.selecteElements[fb.product_id][$scope.keys[i].title] = temp[j];
+                            $scope.selecteElements[fb.product_id]['summary'][$scope.keys[i].title] = temp[j].title;
                         }
                     }
                 }
             }
+
+
+            setTimeout(function () {
+
+
+                //zoom plugin
+
+                $(document).on('mousemove', '.frame', function () {
+
+                    var element = {
+                        width: $(this).width(),
+                        height: $(this).height()
+                    };
+
+                    var mouse = {
+                        x: event.pageX,
+                        y: event.pageY
+                    };
+
+                    var offset = $(this).offset();
+
+                    var origin = {
+                        x: (offset.left + (element.width / 2)),
+                        y: (offset.top + (element.height / 2))
+                    };
+
+                    var trans = {
+                        left: (origin.x - mouse.x) / 2,
+                        down: (origin.y - mouse.y) / 2
+                    };
+
+                    var transform = ("scale(2,2) translateX(" + trans.left + "px) translateY(" + trans.down + "px)");
+
+                    $(this).children(".zoom").css("transform", transform);
+
+                });
+
+                $(document).on('mouseleave', '.frame', function () {
+                    $(this).children(".zoom").css("transform", "none");
+                });
+
+                //end of zoom
+
+            }, 1500)
+
 
         });
     }
@@ -84,14 +144,12 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
 
     $scope.getCartDataFabric = function () {
         $http.get(globlecart).then(function (rdata) {
-            $scope.fabricCartData = rdata.data;
+            console.log(rdata.data)
+            $scope.fabricCartData = [rdata.data];
+            $scope.cartFabrics = [rdata.data];
             console.log($scope.fabricCartData)
             $scope.fabricCartData['grand_total'] = $scope.fabricCartData['total_price'];
-            for (pd in $scope.fabricCartData.products) {
-                var pds = $scope.fabricCartData.products[pd];
-                $scope.cartFabrics.push(pds);
 
-            }
             $scope.shirtimplement()
         }, function (r) {
         })
@@ -267,13 +325,13 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
         $scope.selecteElements[$scope.screencustom.fabric]['Contrast Lapel Button Hole'] = insfab;
 
     }
-    
+
     $scope.sleeve_button_hole_contrast = function (insfab) {
 
         $scope.selecteElements[$scope.screencustom.fabric]['Button Thread'] = insfab;
 
     }
-    
+
 
     $scope.selectCollarCuffInsertType = function (cctype, insfab) {
         $scope.selecteElements[$scope.screencustom.fabric][cctype] = insfab;
@@ -289,6 +347,88 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
             $scope.screencustom.view_type = "front";
         }
     }
+
+$scope.changeViews = function (viewtype) {
+       
+            $scope.screencustom.view_type = viewtype;
+        
+    }
+
+    //add to cart
+    $scope.addToCartCustome = function () {
+        var summerydata = $scope.selecteElements[product_id].summary;
+        var customhtmlarray = [];
+        var form = new FormData()
+        for (i in summerydata) {
+            var ks = i;
+            var kv = summerydata[i];
+            form.append("customekey[]", ks);
+            form.append("customevalue[]", kv);
+            console.log(ks, kv);
+            var summaryhtml = "<tr><th>" + ks + "</th><td>" + kv + "</td></tr>";
+            customhtmlarray.push(summaryhtml);
+        }
+        ;
+        customhtmlarray = customhtmlarray.join("");
+        var customdiv = "<div class='custome_summary_popup'><table>" + customhtmlarray + "</table></div>"
+
+        swal({
+            title: 'Confirm Design',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#000',
+            cancelButtonColor: 'red',
+            confirmButtonText: 'Yes, Add To Cart',
+            cancelButtonText: 'Cancel',
+            confirmButtonClass: 'btn btn-success',
+            cancelButtonClass: 'btn btn-danger',
+//            title: 'Adding to Cart',
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+            html: customdiv,
+            preConfirm: function () {
+
+                swal({
+                    title: 'Adding to Cart',
+                    onOpen: function () {
+                        swal.showLoading()
+                    }
+                });
+                var globlecart = baseurl + "Api/cartOperationCustom";
+
+//                var form = new FormData()
+                form.append('product_id', product_id);
+                form.append('quantity', 1);
+                form.append('custome_id', gcustome_id);
+                $http.post(globlecart, form).then(function (rdata) {
+                    swal.close();
+                    $scope.getCartData();
+                    swal({
+                        title: 'Added To Cart',
+                        type: 'success',
+                        html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, globlecurrency) + ", Quantity: " + rdata.data.quantity + "</p>",
+                        imageUrl: rdata.data.file_name,
+                        imageWidth: 100,
+                        timer: 1500,
+
+                        imageAlt: 'Custom image',
+                        showConfirmButton: false,
+                        animation: true,
+                        onClose: function () {
+                            window.location = baseurl + "Cart/details";
+                        }
+                    })
+                }, function () {
+                    swal.close();
+                    swal({
+                        title: 'Something Wrong..',
+                    })
+                });
+            },
+        })
+    }
+
+
 
 
 
