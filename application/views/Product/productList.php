@@ -228,16 +228,16 @@ $image2 = "";
 
                         <!-- HEADING -->
                         <div  ng-if='atv.product_count'>
-                        <div class="heading">
-                            <h6>Filter by price</h6>
-                            <hr class="dotted">
+                            <div class="heading">
+                                <h6>Filter by price</h6>
+                                <hr class="dotted">
+                            </div>
+                            <!-- PRICE -->
+                            <div class="cost-price-content">
+                                <div id="price-range" class="price-range"></div>
+                                <span id="price-min" class="price-min">20</span> <span id="price-max" class="price-max">80</span> <a href="#." class="btn btn-small btn-inverse pull-right" >FILTER</a> </div>
                         </div>
-                        <!-- PRICE -->
-                        <div class="cost-price-content">
-                            <div id="price-range" class="price-range"></div>
-                            <span id="price-min" class="price-min">20</span> <span id="price-max" class="price-max">80</span> <a href="#." class="btn btn-small btn-inverse pull-right" >FILTER</a> </div>
-                        </div>
-                            
+
                         <!-- HEADING -->
 
                         <div class="product_attr" ng-repeat="(attrk, attrv) in productResults.attributes" >
@@ -249,18 +249,18 @@ $image2 = "";
                             <!-- COLORE -->
                             <ul class="cate" ng-if='attrv.widget == "color"'>
                                 <li ng-repeat="atv in attrv" ng-if='atv.product_count'>
-                                   
-                                        <label style="font-weight: 500;background: {{atv.additional_value}};padding: 0px 5px;float: left;
-                                               margin-right: 5px;border: 1px solid #0000005e;border: 1px solid #0000005e;
-                                               text-shadow: 0px 1px 4px #000;">
-                                            <input type="checkbox"  ng-model="atv.checked" ng-click="attributeProductGet(atv)" style="opacity: 0;"> 
 
-                                            <i class="fa fa-check" ng-if="atv.checked" style="    position: absolute;
-                                               margin-top: -22px;
-                                               color: #fff;"></i>
-                                            <!--{{atv.attribute_value}} ({{atv.product_count}})-->
-                                        </label>
-                                
+                                    <label style="font-weight: 500;background: {{atv.additional_value}};padding: 0px 5px;float: left;
+                                           margin-right: 5px;border: 1px solid #0000005e;border: 1px solid #0000005e;
+                                           text-shadow: 0px 1px 4px #000;">
+                                        <input type="checkbox"  ng-model="atv.checked" ng-click="attributeProductGet(atv)" style="opacity: 0;"> 
+
+                                        <i class="fa fa-check" ng-if="atv.checked" style="    position: absolute;
+                                           margin-top: -22px;
+                                           color: #fff;"></i>
+                                        <!--{{atv.attribute_value}} ({{atv.product_count}})-->
+                                    </label>
+
 
                                     <!--<a href="#."><input type="checkbox">{{atv.attribute_value}} <span>(32) </span></a>-->
                                 </li>
@@ -303,6 +303,15 @@ $image2 = "";
                                         case "1":
                                             ?>
                                             <img class="img-responsive" src="<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/shirtFoldm0001.png" alt="product">
+
+                                            <div class="item-hover" style="background: url(<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/shirt_model10001.png);    background-size: 96%;
+                                                 background-color: white;
+                                                 background-repeat: no-repeat;"> 
+                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 9px;">Customize Now
+                                                </a> 
+                                                <a href="#." class="btn" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)">add to cart</a> 
+                                            </div>
+
                                             <?php
                                             break;
                                         case "2":
@@ -323,13 +332,16 @@ $image2 = "";
                                             break;
                                         default:
                                             echo $custom_item;
+                                            ?>
+                                            <div class="item-hover" style=""> 
+                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 9px;">Customize Now
+                                                </a> 
+                                                <a href="#." class="btn" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)">add to cart</a> 
+                                            </div>
+                                        <?php
                                     }
                                     ?>
-                                    <div class="item-hover"> 
-                                        <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 9px;">Customize Now
-                                        </a> 
-                                        <a href="#." class="btn" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id;?>)">add to cart</a> 
-                                    </div>
+
                                     <div class="info"> 
                                         <a href="#.">
                                             {{product.title}}
@@ -387,7 +399,7 @@ $image2 = "";
 
 
 <script>
-            var category_id = <?php echo $category; ?>;</script>
+    var category_id = <?php echo $category; ?>;</script>
 <!--angular controllers-->
 
 <script src="<?php echo base_url(); ?>assets/theme/js/jquery.pajinate.min.js"></script>
@@ -402,7 +414,7 @@ $this->load->view('layout/footer');
 <script src="<?php echo base_url(); ?>assets/theme/js/jquery.pajinate.min.js"></script>
 
 <script type="text/javascript">
-            $(document).ready(function () {
+    $(document).ready(function () {
 
     });
 </script>

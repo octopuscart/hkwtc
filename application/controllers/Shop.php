@@ -215,9 +215,9 @@ class Shop extends CI_Controller {
 
             if (strpos($folder, '_')) {
                 $titles = explode("_", $foldermain);
-                $title = "BT" . $titles[1];
+                $title = "RT" . $titles[1];
             } else {
-                $title = "BT" . $foldermain;
+                $title = "RT" . $foldermain;
             }
 
 
