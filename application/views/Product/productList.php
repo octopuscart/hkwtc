@@ -39,20 +39,21 @@ $image2 = "";
     }
 
     .colorblock{
-        font-weight: 500;
-
-        padding: 0px 10px;
-        height: 13px;
-        width: 100x;
-        /* float: left; */
-        margin-top: -71px;
-        position: absolute;
-        margin: auto;
-        border: 1px solid #0000005e;
-        border: 1px solid #0000005e;
-        text-shadow: 0px 1px 4px #000;
-        margin-top: -71px;
-        margin-left: -7px;
+            font-weight: 500;
+    padding: 0px 10px;
+    height: 8px;
+    /* float: left; */
+    width: 15px;
+    position: absolute;
+    /* float: left; */
+    /* margin-top: -71px; */
+    /* position: absolute; */
+    margin: auto;
+    /* border: 1px solid #0000005e; */
+    /* border: 1px solid #0000005e; */
+    text-shadow: 0px 1px 4px #000;
+    /* margin-top: -71px; */
+    margin-left: -7px;
     }
 
 
@@ -369,7 +370,7 @@ $image2 = "";
                                             <br>
                                             <span style="font-size: 12px">{{product.short_description}} </span>
                                         </a> 
-                                        <p style="    margin-bottom: -7px;" ng-if="product.attr.length">
+                                        <p style="    margin-bottom: -7px;    height: 12px;" ng-if="product.attr.length">
 
                                             <span class="colorblock" style="background: {{product.attr[0]['Colors']}};"></span>
                                         </p>

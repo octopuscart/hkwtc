@@ -31,38 +31,41 @@ $paymentstatus = "";
         background: #ddd;
         border: 6px solid #ff3b3b;
     }
-    .icon-circle{
-        font-size: 19px; height: 31px;width: 31px;
-        background-color: #000;
-        float: left; border-radius: 50%; color: #fff;line-height: 28px;text-align: center;
-    }
-
+    .icon-circle {
+    font-size: 19px;
+    height: 31px;
+    width: 31px;
+    background-color: #b28c06;
+    float: left;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 28px;
+    text-align: center;
+}
     .headerorder{
         padding: 2px 10px;
         /*text-align: center;*/
-        background-color: #000000;
+      
         margin-bottom: 10px;
-        color: #fff;
-        font-weight: 300;
+        font-weight: 600;
         font-size: 18px;
     }
 </style>
 
-<div class="inner-page-banner-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="breadcrumb-area">
-                    <h1>Order Details</h1>
-                    <ul>
 
-                        <li>Order No. #<?php echo $order_data->order_no; ?></li>
-                    </ul>
-                </div>
-            </div>
+<!-- Inner Page Banner Area Start Here -->
+<section class="sub-bnr" data-stellar-background-ratio="0.5" style="margin-bottom: 10px;">
+    <div class="position-center-center">
+        <div class="container">
+            <h4>Order Details</h4>
+
+            <!-- Breadcrumb -->
+            <ol class="breadcrumb">
+               <li>Order No. #<?php echo $order_data->order_no; ?></li>
+            </ol>
         </div>
     </div>
-</div>
+</section>
 
 
 
@@ -245,7 +248,7 @@ $paymentstatus = "";
                                         <td colspan="2"  style="text-align: center">Product</td>
 
                                         <td style="text-align: right;width: 100px"">Price</td>
-                                        <td style="text-align: right;width: 20px"">Qantity</td>
+                                        <td style="text-align: right;width: 10px">Qantity</td>
                                         <td style="text-align: right;width: 100px">Total</td>
                                     </tr>
                                     <!--cart details-->
@@ -263,14 +266,15 @@ $paymentstatus = "";
                                         </center>
                                         </td>
 
-                                        <td style="width: 200px;">
+                                        <td style="width: 300px;">
 
                                             <?php echo $product->title; ?> - <?php echo $product->item_name; ?>
                                             <br/>
                                             <small style="font-size: 12px;">(<?php echo $product->sku; ?>)</small>
 
                                             <h4 class="panel-title">
-                                                <a role="button" class="btn btn-xs btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $product->id; ?>" aria-expanded="true" aria-controls="collapseOne">
+                                                <a role="button" class="btn  btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $product->id; ?>" aria-expanded="true" aria-controls="collapseOne" style="    margin: 5px 0px;
+    padding: 4px;">
                                                     View Summary
                                                 </a>
                                             </h4>

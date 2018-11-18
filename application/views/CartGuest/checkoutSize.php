@@ -155,10 +155,10 @@ $this->load->view('layout/header');
                                     <tr>
                                         <td colspan="5" class="text_right">
                                             <div class="proceed-button pull-left " >
-                                                <a href=" <?php echo site_url("Cart/details"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> Back To Cart</a>
+                                                <a href=" <?php echo site_url("Cart/details"); ?>" class="btn btn-default checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> Back To Cart</a>
                                             </div>
                                             <div class="proceed-button pull-right ">
-                                                <a href=" <?php echo site_url("CartGuest/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Shipping Address <i class="fa fa-arrow-right"></i></a>
+                                                <a href=" <?php echo site_url("CartGuest/checkoutShipping"); ?>" class="btn btn-default checkout_button_next disabled" >Choose Shipping Address <i class="fa fa-arrow-right"></i></a>
                                             </div>
                                         </td>
 

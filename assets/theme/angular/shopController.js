@@ -201,6 +201,8 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
         $http.post(globlecart, form).then(function (rdata) {
             swal.close();
             $scope.getCartData();
+            $scope.getCartDatac();
+            $scope.getCartDatanc();
             swal({
                 title: 'Added To Cart',
                 type: 'success',

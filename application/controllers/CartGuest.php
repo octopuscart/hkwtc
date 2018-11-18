@@ -22,9 +22,9 @@ class CartGuest extends CI_Controller {
 
     function redirectCart() {
         if ($this->checklogin) {
-            $session_cart = $this->Product_model->cartData($this->user_id);
+            $session_cart = $this->Product_model->cartDataCustome($this->user_id);
         } else {
-            $session_cart = $this->Product_model->cartData();
+            $session_cart = $this->Product_model->cartDataCustome();
         }
         if (count($session_cart['custome_items'])) {
             
@@ -66,9 +66,9 @@ class CartGuest extends CI_Controller {
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
         if ($this->checklogin) {
-            $session_cart = $this->Product_model->cartData($this->user_id);
+            $session_cart = $this->Product_model->cartDataCustome($this->user_id);
         } else {
-            $session_cart = $this->Product_model->cartData();
+            $session_cart = $this->Product_model->cartDataCustome();
         }
 
         $custome_items = $session_cart['custome_items'];
@@ -172,21 +172,23 @@ class CartGuest extends CI_Controller {
         $data['checkoutmode'] = 'Guest'; 
         
         
-//place order
+       
         if (isset($_POST['place_order'])) {
-            $address = $user_address_details[0];
-
+          
+            //place order
+            
+            $address = $user_address_details;
+            
             if ($this->checklogin) {
-
-                $session_cart = $this->Product_model->cartData($this->user_id);
+                $session_cart = $this->Product_model->cartDataCustome($this->user_id);
             } else {
-                $session_cart = $this->Product_model->cartData();
+                $session_cart = $this->Product_model->cartDataCustome();
             }
 
             $sub_total_price = $session_cart['total_price'];
             $total_quantity = $session_cart['total_quantity'];
-
-//place order
+            
+            //place order
 
             $address = $user_address_details;
             $paymentmathod = $this->input->post('place_order');
@@ -215,7 +217,7 @@ class CartGuest extends CI_Controller {
 
             $this->db->insert('user_order', $order_array);
             $last_id = $this->db->insert_id();
-            $orderno = "BT" . date('Y/m/d') . "/" . $last_id;
+            $orderno = "RT" . date('Y/m/d') . "/" . $last_id;
             $orderkey = md5($orderno);
             $this->db->set('order_no', $orderno);
             $this->db->set('order_key', $orderkey);

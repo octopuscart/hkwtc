@@ -16,7 +16,7 @@
         border: 1px solid #000;
     }
 
-    .cart-page-area .cart-page-top table tr td:last-child {
+    .cart-page-area .cart-page-top .standardmeasurement table tr td:last-child {
         border-right: 1px solid;
     }
 

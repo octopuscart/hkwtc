@@ -26,7 +26,7 @@
 }
 
 .silvergraditant{
-     background: #8e9eab;  /* fallback for old browsers */
+    background: #8e9eab;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
@@ -39,8 +39,8 @@
 }
 
 .is-sticky .logomain{
- height: 59px;
- margin-top: -7px;
+    height: 59px;
+    margin-top: -7px;
 }
 
 
@@ -55,17 +55,17 @@
 }
 
 .goldtextcss a{
-color:	#D5AD6D; /*if no support for background-clip*/
+    color:	#D5AD6D; /*if no support for background-clip*/
 
 }
 
 .goldtextcsst{
-color:	#D5AD6D; /*if no support for background-clip*/
-background: -webkit-linear-gradient(transparent, transparent),
--webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgba(163,126,67,1) 45%, rgba(145,112,59,1) 61%, rgba(213,173,109,1) 100%);
-background: -o-linear-gradient(transparent, transparent);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+    color:	#D5AD6D; /*if no support for background-clip*/
+    background: -webkit-linear-gradient(transparent, transparent),
+        -webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgba(163,126,67,1) 45%, rgba(145,112,59,1) 61%, rgba(213,173,109,1) 100%);
+    background: -o-linear-gradient(transparent, transparent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .header  .nav>li>a:focus, .header .nav>li>a:hover {
@@ -97,7 +97,7 @@ background: -o-linear-gradient(transparent, transparent);
 
 .goldline{
     background: url("../images/gold_line.png");
-        /*background: url(../images/goldline.jpg);*/
+    /*background: url(../images/goldline.jpg);*/
     height: 28px;
     width: 100%;
     float: left;
@@ -108,7 +108,7 @@ background: -o-linear-gradient(transparent, transparent);
 
 .goldline2{
     background: url("../images/gold_line2.png");
-        background: url(../images/gold_line2.png);
+    background: url(../images/gold_line2.png);
     height: 28px;
     width: 100%;
     float: left;
@@ -119,7 +119,7 @@ background: -o-linear-gradient(transparent, transparent);
 
 .goldline3{
     background: url("../images/gold_line3.png");
-        background: url(../images/gold_line3.png);
+    background: url(../images/gold_line3.png);
     height: 128px;
     width: 100%;
     float: left;
@@ -271,7 +271,7 @@ footer {
     right: 0px;
     margin: 0 auto;
     position: absolute;
-        width: 100%;
+    width: 100%;
     margin: 0 auto;
     background: url(../images/gold_line11.png);
     /* content: ""; */
@@ -286,7 +286,7 @@ footer {
     left: 0px;
     width: 50px;
     background: none;
- 
+
 }
 
 
@@ -297,7 +297,7 @@ footer {
 }
 
 .light-gray-bg article .imagblock {
-   background: url(../images/productfram2.png);
+    background: url(../images/productfram2.png);
     background-size: 101% 100%;
     padding: 10px;
     margin: 3px;
@@ -332,7 +332,7 @@ hr {
     background-size: contain;
     float: left;
     background-repeat: no-repeat;
-    
+
 }
 .side-bar .heading h6:after  {
     position: absolute;
@@ -374,29 +374,29 @@ header .user-basket .cart-img {
 }
 
 .scroll_items{
-        max-height: 300px;
+    max-height: 300px;
     overflow-y: auto;
 }
 
 body::-webkit-scrollbar {
- width: 10px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar{
-width: 7px;
+    width: 7px;
     background: -webkit-gradient(linear,left top,right bottom,from(#d6a600),to(#ffffff));
-	background:linear-gradient(top,#d6a600,#ffffff);
+    background:linear-gradient(top,#d6a600,#ffffff);
 }
 ::-webkit-scrollbar-thumb{
-	background:#f7f9f9;
+    background:#f7f9f9;
 }
 ::-webkit-input-placeholder{
-	-webkit-transition:text-indent .5s ease,color .5s ease;
-	color:#899096;
+    -webkit-transition:text-indent .5s ease,color .5s ease;
+    color:#899096;
 }
 
 .cart_button{
-        width: 60px;
+    width: 60px;
     padding: 0px 10px;
     height: 20px;
     background: #D1913C;
@@ -411,7 +411,7 @@ header .is-sticky .sticky .navbar li a {
 }
 
 .desing_view_button{
-        margin-top: -10px;
+    margin-top: -10px;
     padding: 2px 10px;
     font-size: 10px;
     border: none;
@@ -422,19 +422,19 @@ header .is-sticky .sticky .navbar li a {
 }
 
 .custome_summary_popup tr{
-        border-bottom: 1px solid;
+    border-bottom: 1px solid;
 }
 
 .custome_summary_popup td{
     text-align: left;
-     width: 50%;
-     padding: 5px;
-    
+    width: 50%;
+    padding: 5px;
+
 }
 
 .custome_summary_popup th{
     text-align: right;
-        text-align: right;
+    text-align: right;
     padding-right: 12px;
     width: 50%;
     padding: 5px;
@@ -448,4 +448,59 @@ header .is-sticky .sticky .navbar li a {
 .swal2-container.swal2-fade {
 
     z-index: 999999;
+}
+
+.panel-heading {
+
+    background: linear-gradient(to right, #FFD194, #D1913C);
+}
+
+.product-details2-area .product-details-tab-area ul > li {
+    margin: -1px 0px;;
+    display: inline-block;
+    padding: 10px 0;
+    background: #fccc8d;
+}
+
+
+.product-details2-area .product-details-tab-area ul > li.active {
+    background: #d79947;
+}
+
+.product-details2-area .product-details-tab-area ul > li a{
+    padding:10px;
+}
+
+.pricing article li i {
+    margin-left: 0px;
+    margin-right: 10px;
+    color: rgba(0,0,0,0.3);
+    line-height: 30px;
+    float: left;
+}
+
+.pricing article li {
+    list-style: none;
+    line-height: 30px;
+    color: #343538;
+    text-align: left;
+    padding: 0 10px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.pricing article {
+    background: #fff;
+    text-align: left;
+    border: 1px solid #eeeeee;
+    padding-bottom: 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    border-radius: 4px;
+   
+}
+
+.order_box{
+   
+    height: 210px;
+
 }

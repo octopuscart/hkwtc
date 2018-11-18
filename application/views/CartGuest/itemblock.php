@@ -11,7 +11,8 @@
                             <i class="fa fa-shopping-cart fa-stack-1x"></i>
                             <i class="ion-bag fa-stack-1x "></i>
                         </span>   My Shopping Bag
-                        <span style="float: right; line-height: 29px;" class="ng-binding">Total: {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}} (<small style="color: #fff" class="ng-binding">{{globleCartData.total_quantity}}</small>)</span> 
+                        <span style="float: right; line-height: 29px;color: black;
+    font-weight: bold;" class="ng-binding">Total: {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}} ({{globleCartData.total_quantity}})</span> 
                     </a>
                     <?php
                 }
@@ -25,7 +26,8 @@
                             <i class="fa fa-list-ol fa-stack-1x"></i>
                             <i class="ion-bag fa-stack-1x "></i>
                         </span>   Your Size
-                        <span style="float: right; line-height: 29px;font-size: 12px;font-weight: 300" class="ng-binding">
+                        <span style="float: right; line-height: 29px;font-size: 12px;color: black;
+    font-weight: bold;" class="ng-binding">
                             <?php echo $measurement_style_type; ?>
                         </span> 
                     </a>
@@ -43,7 +45,8 @@
                             <i class="fa fa-map-marker fa-stack-1x"></i>
                             <i class="ion-bag fa-stack-1x "></i>
                         </span>   Shipping Address
-                        <span style="float: right; line-height: 29px;font-size: 12px;font-weight: 300" class="ng-binding">
+                        <span style="float: right; line-height: 29px;font-size: 12px;color: black;
+    font-weight: bold;" class="ng-binding">
                             <?php
                             if (count($user_address_details)) {
                                 $value = $user_address_details[0];
@@ -72,7 +75,8 @@
                             <i class="fa fa-money fa-stack-1x"></i>
                             <i class="ion-bag fa-stack-1x "></i>
                         </span>  Payment Method
-                        <span style="float: right; line-height: 29px;font-size: 12px;font-weight: 300" class="ng-binding">
+                        <span style="float: right; line-height: 29px;font-size: 12px;color: black;
+    font-weight: bold;" class="ng-binding">
                             PayPal
                         </span> 
                     </a>

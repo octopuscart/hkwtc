@@ -95,7 +95,7 @@ class PayPalPaymentGuest extends CI_Controller {
             $data["error"] = '<div style="color:red"><b>Error : </b>' . urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]) . '</div>';
             $this->load->view('paypal/error', $data);
         }
-        $this->load->view('paypal/process', $data);
+       // $this->load->view('paypal/process', $data);
     }
 
     public function success() {

@@ -77,21 +77,19 @@ $this->load->view('layout/header');
 
 
 <!-- Inner Page Banner Area Start Here -->
-<div class="inner-page-banner-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="breadcrumb-area">
-                    <h1>Checkout</h1>
-                    <ul>
-                        <li><a href="#">Home</a> /</li>
-                        <li>Checkout</li>
-                    </ul>
-                </div>
-            </div>
+<section class="sub-bnr" data-stellar-background-ratio="0.5" style="margin-bottom: 10px;">
+    <div class="position-center-center">
+        <div class="container">
+            <h4>Checkout</h4>
+
+            <!-- Breadcrumb -->
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Checkout</li>
+            </ol>
         </div>
     </div>
-</div>
+</section>
 <!-- Inner Page Banner Area End Here -->
 
 <!-- Content -->
@@ -120,8 +118,9 @@ $this->load->view('layout/header');
                                     <i class="fa fa-money fa-stack-1x"></i>
                                     <i class="ion-bag fa-stack-1x "></i>
                                 </span>   Payment Method
-                                <span style="float: right; line-height: 29px;font-size: 12px;" class="ng-binding">
-                                    <?php echo DEFAULT_PAYMENT_MODE; ?>
+                                <span style="float: right; line-height: 29px;font-size: 12px;color: black;
+                                      font-weight: bold;" class="ng-binding">
+                                      <?php echo DEFAULT_PAYMENT_MODE; ?>
                                 </span> 
                             </a>
                         </h4>
@@ -181,11 +180,11 @@ $this->load->view('layout/header');
                                                                     <tr>
                                                                         <td colspan="4" class="text_right">
                                                                             <div class="proceed-button pull-left " >
-                                                                                <a href=" <?php echo site_url("Cart".$checkoutmode."/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                                <a href=" <?php echo site_url("Cart" . $checkoutmode . "/checkoutShipping"); ?>" class="btn btn-default checkout_button_pre " ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
                                                                             </div>
                                                                             <div class="proceed-button pull-right ">
 
-                                                                                <a href=" <?php echo site_url("PayPalPayment".$checkoutmode."/process"); ?>" class="btn-apply-coupon checkout_button_next disabled"  onclick="confirmOrder()">Place Order <i class="fa fa-arrow-right"></i></a>
+                                                                                <a href=" <?php echo site_url("PayPalPayment" . $checkoutmode . "/process"); ?>" class="btn btn-default checkout_button_next "  onclick="confirmOrder()">Place Order <i class="fa fa-arrow-right"></i></a>
                                                                             </div>
                                                                         </td>
                                                                     </tr>
@@ -211,10 +210,10 @@ $this->load->view('layout/header');
                                                                     <tr>
                                                                         <td colspan="4" class="text_right">
                                                                             <div class="proceed-button pull-left " >
-                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn btn-default checkout_button_pre " ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
                                                                             </div>
                                                                             <div class="proceed-button pull-right ">
-                                                                                <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Bank Transfer" onclick="confirmOrder()">
+                                                                                <button type="submit" name="place_order" class="btn btn-default checkout_button_next "  value="Bank Transfer" onclick="confirmOrder()">
                                                                                     Place Order <i class="fa fa-arrow-right"></i>
                                                                                 </button>
                                                                             </div>
@@ -243,10 +242,10 @@ $this->load->view('layout/header');
                                                                     <tr>
                                                                         <td colspan="4" class="text_right">
                                                                             <div class="proceed-button pull-left " >
-                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn btn-default checkout_button_pre " ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
                                                                             </div>
                                                                             <div class="proceed-button pull-right ">
-                                                                                <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Cash On Delivery">
+                                                                                <button type="submit" name="place_order" class="btn btn-default checkout_button_next "  value="Cash On Delivery">
                                                                                     Place Order <i class="fa fa-arrow-right"></i>
                                                                                 </button>                                                                  
                                                                             </div>
@@ -275,10 +274,10 @@ $this->load->view('layout/header');
                                                                     <tr>
                                                                         <td colspan="4" class="text_right">
                                                                             <div class="proceed-button pull-left " >
-                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn btn-default checkout_button_pre " ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
                                                                             </div>
                                                                             <div class="proceed-button pull-right ">
-                                                                                <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Cheque On Delivery">
+                                                                                <button type="submit" name="place_order" class="btn btn-default checkout_button_next "  value="Cheque On Delivery">
                                                                                     Place Order <i class="fa fa-arrow-right"></i>
                                                                                 </button>                                                                   
                                                                             </div>
