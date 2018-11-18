@@ -40,14 +40,14 @@ class Cart extends CI_Controller {
 
     function details() {
 
-        $this->load->view('Cart/details_multiple');
-    }
-    
-    function detailsc() {
-
         $this->load->view('Cart/details');
     }
-    
+
+    function detailsc() {
+        redirect('Cart/details');
+        $this->load->view('Cart/details');
+    }
+
     function detailsmulti() {
 
         $this->load->view('Cart/details_multiple');
@@ -70,7 +70,7 @@ class Cart extends CI_Controller {
 
     function checkoutSize() {
         $this->redirectCart();
-       
+
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
@@ -92,9 +92,9 @@ class Cart extends CI_Controller {
         $query = $this->db->get('custome_items');
         $custome_measurements = $query->row();
         $data['customitems'] = $custome_measurements;
-        
-        $data['custome_items'] =  $custome_items;
-        
+
+        $data['custome_items'] = $custome_items;
+
 
         $measurementarray = explode(",", $custome_measurements->measurement);
 
@@ -184,8 +184,8 @@ class Cart extends CI_Controller {
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
         $data['checkoutmode'] = '';
-        
-        
+
+
         $session_data = $this->session->userdata('logged_in');
         if ($session_data) {
             $user_details = $this->User_model->user_details($this->user_id);

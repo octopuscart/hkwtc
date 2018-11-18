@@ -14,13 +14,13 @@ $this->load->view('layout/header');
 
 
 
-    .measurement_text{
-        float: left;
+    .measurement_text{font-size: 20px;
+        float: left;    font-family: sans-serif;
     }
     .fr_value{
-        font-size: 12px;
+        font-size: 15px;
         margin-top: -7px;
-        float: left;
+        float: left;    font-family: sans-serif;
     }
 
     .cartbutton{
@@ -115,21 +115,21 @@ $this->load->view('layout/header');
 
 
 <!-- Inner Page Banner Area Start Here -->
-<div class="inner-page-banner-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="breadcrumb-area">
-                    <h1>Checkout</h1>
-                    <ul>
-                        <li><a href="#">Home</a> /</li>
-                        <li>Checkout</li>
-                    </ul>
-                </div>
-            </div>
+<!-- Slider -->
+<section class="sub-bnr" data-stellar-background-ratio="0.5" style="margin-bottom: 10px;">
+    <div class="position-center-center">
+        <div class="container">
+            <h4>Checkout</h4>
+
+            <!-- Breadcrumb -->
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Checkout</li>
+            </ol>
         </div>
     </div>
-</div>
+</section>
+
 <!-- Inner Page Banner Area End Here -->
 
 <!-- Content -->
@@ -198,12 +198,12 @@ $this->load->view('layout/header');
                                                             <tr>
                                                                 <td colspan="4" class="text_right">
                                                                     <div class="proceed-button pull-left " >
-                                                                        <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
+                                                                        <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn btn-default checkout_button_pre " ><i class="fa fa-arrow-left"></i> View Cart</a>
                                                                     </div>
                                                                     <div class="proceed-button pull-right ">
                                                                         <form action="#" method="post">
                                                                             <input class="input_display_none" type ="hidden1" name="measurement_type" ng-model="measurementstyle.title"  >
-                                                                            <button type="submit" name="submit_measurement" class="btn-apply-coupon checkout_button_next disabled"  value="measurement">
+                                                                            <button type="submit" name="submit_measurement" class="btn btn-default checkout_button_next "  value="measurement">
                                                                                 Choose Shipping Address <i class="fa fa-arrow-right"></i>
                                                                             </button>
                                                                         </form>
@@ -252,7 +252,7 @@ $this->load->view('layout/header');
 
 
                                                             </th>
-                                                            <td>
+                                                            <td style="padding-top: 54px;">
 
                                                                 <div id="slider-pips<?php echo $value['id']; ?>"></div>
 
@@ -299,12 +299,12 @@ $this->load->view('layout/header');
                                                                 <tr>
                                                                     <td colspan="4" class="text_right">
                                                                         <div class="proceed-button pull-left " >
-                                                                            <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
+                                                                            <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn btn-default checkout_button_pre " ><i class="fa fa-arrow-left"></i> View Cart</a>
                                                                         </div>
                                                                         <div class="proceed-button pull-right ">
 
                                                                             <input class="input_display_none" type ="hidden1" name="measurement_type" ng-model="measurementstyle.title"  >
-                                                                            <button type="submit" name="submit_measurement" class="btn-apply-coupon checkout_button_next disabled"  value="measurement">
+                                                                            <button type="submit" name="submit_measurement" class="btn btn-default checkout_button_next "  value="measurement">
                                                                                 Choose Shipping Address <i class="fa fa-arrow-right"></i>
                                                                             </button>
 
@@ -331,11 +331,12 @@ $this->load->view('layout/header');
                                                 <div class="contact-us-right">
                                                     <b>Send to:</b>
                                                     <br/>
-                                                    2nd Floor, 45 Haiphong Road,
-                                                    <br/>
-                                                    Tsim Sha Tsui, Kowloon, Hong Kong<br/>
-                                                    <i class="fa fa-envelope"></i> info@bespoketailorshk.com<br/>
-                                                    <i class="fa fa-phone"></i> +(852) 2730 8566
+
+                                                    Shop A, 2/F Entertainment Building,<br/>
+                                                    30 Queen’s Road, Central, Hong Kong
+<br/>
+                                                    <i class="fa fa-envelope"></i> sales@royaltailor.hk<br/>
+                                                    <i class="fa fa-phone"></i>  +(852) 2655 9778 
 
                                                 </div>
                                                 </p>
@@ -345,12 +346,12 @@ $this->load->view('layout/header');
                                                             <tr>
                                                                 <td colspan="4" class="text_right">
                                                                     <div class="proceed-button pull-left " >
-                                                                        <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
+                                                                        <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn btn-default checkout_button_pre " ><i class="fa fa-arrow-left"></i> View Cart</a>
                                                                     </div>
                                                                     <div class="proceed-button pull-right ">
                                                                         <form action="#" method="post">
                                                                             <input class="input_display_none" type ="hidden1" name="measurement_type" ng-model="measurementstyle.title"  >
-                                                                            <button type="submit" name="submit_measurement" class="btn-apply-coupon checkout_button_next disabled"  value="measurement">
+                                                                            <button type="submit" name="submit_measurement" class="btn btn-default checkout_button_next "  value="measurement">
                                                                                 Choose Shipping Address <i class="fa fa-arrow-right"></i>
                                                                             </button>
                                                                         </form>
@@ -374,12 +375,12 @@ $this->load->view('layout/header');
                                                             <tr>
                                                                 <td colspan="4" class="text_right">
                                                                     <div class="proceed-button pull-left " >
-                                                                        <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
+                                                                        <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn btn-default checkout_button_pre " ><i class="fa fa-arrow-left"></i> View Cart</a>
                                                                     </div>
                                                                     <div class="proceed-button pull-right ">
                                                                         <form action="#" method="post">
                                                                             <input class="input_display_none" type ="hidden1" name="measurement_type" ng-model="measurementstyle.title"  >
-                                                                            <button type="submit" name="submit_measurement" class="btn-apply-coupon checkout_button_next disabled"  value="measurement">
+                                                                            <button type="submit" name="submit_measurement" class="btn btn-default checkout_button_next "  value="measurement">
                                                                                 Choose Shipping Address <i class="fa fa-arrow-right"></i>
                                                                             </button>
                                                                         </form>
@@ -417,7 +418,7 @@ $this->load->view('layout/header');
 
     </div>
 
-<?php
+    <?php
     $this->load->view('Cart/noproduct');
     ?>
 
@@ -432,12 +433,15 @@ $this->load->view('layout/header');
     var custom_items = "<?php echo implode(", ", $custome_items) ?>";
     var avaiblecredits = 0;</script>
 
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/noslider/nouislider.min.css">
+        <script src="<?php echo base_url(); ?>assets/theme/noslider/nouislider.min.js" type="text/javascript"></script>
+
 
 
 <!--angular controllers-->
 <script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
 <?php
-$this->load->view('layout/footer', array('custom_item'=>0, 'custom_id'=>0));
+$this->load->view('layout/footer', array('custom_item' => 0, 'custom_id' => 0));
 ?>
 <script>
 

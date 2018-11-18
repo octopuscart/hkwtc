@@ -149,11 +149,11 @@ $this->load->view('layout/header');
 
                             <!-- SUB TOTAL -->
                             <h2 class=" text-center" style="font-size: 20px;
-                                margin-top: 10px;">TOTAL :<span>{{globleCartData.total_price|currency:"<?php echo globle_currency_type; ?>"}}</span></h2>
+                                margin-top: 10px;">TOTAL: <span>{{globleCartData.total_price|currency:"<?php echo globle_currency_type; ?>"}}</span></h2>
 
                         </div>
                         <div class="col-md-4">
-                            <a href="#" class="btn btn-primary pull-right" >Proceed To Checkout <i class=" fa fa-arrow-right"></i></a>
+                            <a href="<?php echo site_url('CartGuest/checkoutInit')?>" class="btn btn-primary pull-right" >Proceed To Checkout <i class=" fa fa-arrow-right"></i></a>
 
                         </div>
 

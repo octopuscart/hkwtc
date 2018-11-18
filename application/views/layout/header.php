@@ -41,7 +41,7 @@
 
         <!--angular js-->
         <script src="<?php echo base_url(); ?>assets/theme/angular/angular.min.js"></script>
-        <script src='<?php echo base_url(); ?>assets/theme/angular/angular-route.js'></script>
+       
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/css/customstyle.css">
         <link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
 

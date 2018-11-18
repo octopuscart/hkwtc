@@ -146,9 +146,6 @@ class Customization extends CI_Controller {
 
 
     function customizationShirt($product_id=0) {
-        
-        
-        
         $product = $this->Product_model->productDetails($product_id);
         $data['product'] = $product;
         $this->load->view('customization/customization_shirt', $data);
