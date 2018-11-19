@@ -160,7 +160,7 @@ class Shop extends CI_Controller {
     }
 
     public function testinsert() {
-        $foldersstrip = ['7611.jpg', '7670.jpg', '7673.jpg', '7674.jpg', '7675.jpg', '7785.jpg', '7786.jpg', '7818.jpg', '7821.jpg'];
+        $foldersstrip = ['7601.jpg', '7602.jpg', '7606.jpg', '7612.jpg', '7613.jpg', '7630.jpg', '7649.jpg', '7672.jpg', '7677.jpg'];
         foreach ($foldersstrip as $key => $value) {
             $folder = $value;
             $foldermain = str_replace(".jpg", "", $folder);
@@ -172,6 +172,7 @@ class Shop extends CI_Controller {
             $products = array(
                 "category_id" => 44,
                 "sku" => $title,
+                "category_items_id" => 1,
                 "title" => $title,
                 "short_description" => "2 Ply 100% Cotton",
                 "description" => "2 Ply 100% Cotton",
@@ -198,7 +199,7 @@ class Shop extends CI_Controller {
     }
 
     public function testinsertsuit() {
-        $foldercheck = ['300002.jpg', '300005.jpg', '300007.jpg', '300014.jpg', '300029.jpg'];
+        $foldercheck = ['300042.jpg', '300043.jpg', '902402.jpg', '902406.jpg', '902411.jpg', '902414.jpg', '902415.jpg', '902422.jpg', '902424.jpg', '902428.jpg', '902432S.jpg', '902433.jpg', '902442.jpg'];
         $folderchek2 = ['12512.jpg', '12514.jpg', '12601.jpg', '12602.jpg', '12603.jpg', '12604.jpg', '12605.jpg', '12606.jpg', '12611.jpg', '12612.jpg', '12613.jpg', '12615.jpg', '12616.jpg', '12617.jpg', '12618.jpg', '12619.jpg', '12649.jpg', '12650.jpg', '12651.jpg', '12652.jpg', '12653.jpg', '12654.jpg', '12655.jpg', '12656.jpg'];
 
         $folderstrip = ['12546.jpg', '12548.jpg', '12549.jpg', '12550.jpg', '12551.jpg', '12552.jpg', '12553.jpg', '12554.jpg', '12562.jpg', '9733.jpg', '9734.jpg', '9735.jpg', '9736.jpg', '9737.jpg', '9744.jpg', '9749.jpg', '9750.jpg', '9751.jpg'];
