@@ -5,8 +5,8 @@ $this->load->view('layout/header');
 
 <!-- MAP -->
 <section class="map-block">
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14767.634173564973!2d114.15643!3d22.281454!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x84c22a9b94a9a5ff!2sRoyal+Tailor!5e0!3m2!1sen!2sin!4v1539007340506" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe><div class="goldline2 " style="margin-bottom: 30px;"></div>
-<div style="clear: both"></div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14767.634173564973!2d114.15643!3d22.281454!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x84c22a9b94a9a5ff!2sRoyal+Tailor!5e0!3m2!1sen!2sin!4v1539007340506" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe><div class="goldline2 " style="margin-bottom: 30px;"></div>
+    <div style="clear: both"></div>
 </section>
 <div style="clear: both"></div>
 <!-- Content -->
@@ -57,39 +57,59 @@ $this->load->view('layout/header');
                         <!-- Success Msg -->
                         <div id="contact_message" class="success-msg"> <i class="fa fa-paper-plane-o"></i>Thank You. Your Message has been Submitted</div>              
                         <!-- FORM -->
-                        <form role="form" id="contact_form" class="contact-form" method="post" onSubmit="return false">
+                        <form role="form" id="contact_form" action="#" class="contact-form" method="post" >
                             <ul class="row nolist-style">
-                                <li class="col-sm-12">
+                                <li class="col-sm-6">
                                     <label>
-                                        <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                                        <input type="text" class="form-control" name="last_name" id="name" placeholder="Last Name" required="">
+                                    </label>
+                                </li>
+                                <li class="col-sm-5 pull-right">
+                                    <label>
+                                        <input type="text" class="form-control" name="first_name" id="name" placeholder="First Name" required="">
                                     </label>
                                 </li>
                                 <li class="col-sm-12">
                                     <label>
-                                        <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                                        <input type="text" class="form-control" name="email" id="email" placeholder="Email" required="">
                                     </label>
                                 </li>
                                 <li class="col-sm-12">
                                     <label>
-                                        <input type="text" class="form-control" name="company" id="company" placeholder="Phone">
+                                        <input type="text" class="form-control" name="contact" id="company" placeholder="Contact No.">
                                     </label>
                                 </li>
+
                                 <li class="col-sm-12">
                                     <label>
-                                        <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message"></textarea>
+                                        <select name="subject" placeholder="Subject" class="form-control" style="  height: 50px;
+    background: #fafafa; " required="">
+                                            <option>Enquiry</option>
+                                            <option>Send Swatches</option>
+                                            <option>Feedback</option>
+                                            <option>Appointment</option>
+                                            <option>Alteration</option> 
+                                        </select>
+                                    </label>
+                                </li>
+
+
+                                <li class="col-sm-12">
+                                    <label>
+                                        <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" required=""></textarea>
                                     </label>
                                 </li>
                                 <li class="col-sm-12 text-left">
-                                    <button type="submit"  class="btn btn-inverse" value="submit" id="btn_submit" onClick="proceed();">SUBMIT</button>
+                                    <button type="submit"  class="btn btn-inverse" name="sendmessage" value="sendmessage" >SUBMIT</button>
                                 </li>
                             </ul>
                         </form>
                     </div>
                 </div>
             </div>
-             <div class="goldline2 " style="margin-bottom: 30px;"></div>
+            <div class="goldline2 " style="margin-bottom: 30px;"></div>
         </div>
-       
+
     </section>
 
 
