@@ -2,21 +2,22 @@
 $this->load->view('layout/header');
 ?>
 <!-- Inner Page Banner Area Start Here -->
-<div class="inner-page-banner-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="breadcrumb-area">
-                    <h1>My Account</h1>
-                    <ul>
-                        <li><a href="#">Home</a> /</li>
-                        <li>Account</li>
-                    </ul>
-                </div>
-            </div>
+
+<section class="sub-bnr" data-stellar-background-ratio="0.5" style="margin-bottom: 10px;">
+    <div class="position-center-center">
+        <div class="container">
+            <h4>Login/Registration</h4>
+
+            <!-- Breadcrumb -->
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Login</li>
+            </ol>
         </div>
     </div>
-</div>
+</section>
+
+
 <!-- Inner Page Banner Area End Here -->
 <!-- Login Registration Page Area Start Here -->
 <div class="login-registration-page-area" style="padding: 20px 0;">
@@ -35,10 +36,10 @@ $this->load->view('layout/header');
                     <?php
                 }
                 ?>
-                <h5 class="text-center">  By creating an account with our store, you will be able to move through
+                <p class="text-center" style="padding:0px 50px;">  By creating an account with our store, you will be able to move through
                     the checkout process faster, store multiple shipping addresses,
                     view and track your orders in your account and more.
-                </h5>
+                </p>
             </div>
             <?php
             if ($msg) {
@@ -52,46 +53,47 @@ $this->load->view('layout/header');
                 <?php
             }
             ?>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="background: wheat;padding-bottom: 15px;">
                 <div class="login-registration-field">
                     <h2 class="cart-area-title">Login</h2>
                     <form method="post" action="#">
                         <label>Email address *</label>
-                        <input type="email" name="email" placeholder="Email " required=""/>
+                        <input type="email"  class="form-control"name="email" placeholder="Email " required=""/>
                         <label>Password *</label>
-                        <input type="password" name="password" placeholder="Password *" required=""/>
-
-                        <button class="btn-send-message disabled" name="signIn" type="submit" value="signIn">Login</button>
+                        <input type="password"  class="form-control"name="password" placeholder="Password *" required=""/>
+   <br/>
+                        <button class="btn btn-default" name="signIn" type="submit" value="signIn">Login</button>
                         <!--<span><input type="checkbox" name="remember"/>Remember Me</span>-->
                     </form>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-2"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="background: wheat;padding-bottom: 15px;">
                 <div class="login-registration-field">
                     <h2 class="cart-area-title">Register</h2>
                     <form action="#" method="post">
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Last Name *</label>
-                                <input type="text" name="last_name" placeholder="Last Name *" required="">
+                                <input type="text"  class="form-control"name="last_name" placeholder="Last Name *" required="">
                             </div>
                             <div class="col-md-6">
                                 <label>First Name *</label>
-                                <input type="text" name="first_name" placeholder="First Name *" required="">
+                                <input type="text"  class="form-control"name="first_name" placeholder="First Name *" required="">
                             </div>
                         </div>
                         <label>Email address *</label>
-                        <input type="email" name="email" placeholder="Email *" required="">
+                        <input type="email"  class="form-control"name="email" placeholder="Email *" required="">
 
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Password *</label>
-                                <input type="password" class="pass" name="password" placeholder="Password" required="">
+                                <input type="password"  class="form-control"class="pass" name="password" placeholder="Password" required="">
 
                             </div>
                             <div class="col-md-6">
                                 <label>Confirm Password *</label>
-                                <input type="password" class="con_pass" name="con_password" placeholder="Confirm Password" required>
+                                <input type="password"  class="form-control"class="con_pass" name="con_password" placeholder="Confirm Password" required>
 
                             </div>
                         </div>
@@ -100,7 +102,7 @@ $this->load->view('layout/header');
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Gender *</label>
-                                <select name="gender" id="gender"    required >
+                                <select name="gender" id="gender" class="form-control"   required >
                                     <option value="Male" >Male</option>
                                     <option value="Female" >Female</option>
                                 </select>
@@ -110,7 +112,7 @@ $this->load->view('layout/header');
                             <div class="col-md-6">
                                 <input type="hidden" name="birth_date" id="birth_date" value="{{birth_year}}-{{birth_month}}-{{date_birth}}"> 
                                 <label>Date Of Birth *</label>
-                                <select id="birth_year" name="birth_year" ng-model="birth_year" class="r_corners bg_light w_full border_none bith_date_select_year"  required >
+                                <select id="birth_year" name="birth_year"  ng-model="birth_year" class="r_corners bg_light w_full border_none bith_date_select_year"  required >
                                     <option value="" >-YYYY-</option>
                                     <?php
                                     for ($i = (date('Y') - 100); $i <= date('Y'); $i++) {
@@ -146,7 +148,7 @@ $this->load->view('layout/header');
                         <div class="row" style="margin-top: 15px;">
                             <div class="col-md-6">
                                 <label>Profession *</label>
-                                <select name="profession" id="profession_select"  onchange="professionChange()" class="r_corners bg_light w_full border_none" style="width: 100%;height: 40px;padding: 5px;" required >
+                                <select name="profession" id="profession_select" class="form-control" onchange="professionChange()" class="r_corners bg_light w_full border_none" style="width: 100%;height: 40px;padding: 5px;" required >
                                     <option value="" >Select Profession</option>
                                     <option value="Academic" >Academic</option>
                                     <option value="Medicine" >Medicine</option>
@@ -161,7 +163,7 @@ $this->load->view('layout/header');
                             </div>
                             <div class="col-md-6">
                                 <label>Country *</label>
-                                <select name="country" id="country"  onchange="countryChange()" class="r_corners bg_light w_full border_none" style="width: 100%;height: 40px;padding: 5px;" required >
+                                <select name="country" id="country" class="form-control"  onchange="countryChange()" class="r_corners bg_light w_full border_none" style="width: 100%;height: 40px;padding: 5px;" required >
                                    <option value="" >Select Country</option>
                                             <?php
                                             foreach ($countrylist as $key => $value) {
@@ -178,7 +180,7 @@ $this->load->view('layout/header');
                         <br/>
 
 
-                        <button name = "registration" class="btn-send-message disabled" type="submit" value="Login">Register</button>
+                        <button name = "registration" class="btn btn-default" type="submit" value="Login">Register</button>
                     </form>
                 </div>
             </div>

@@ -221,8 +221,8 @@
                                                 <h5>Subtotal: <span>{{globleCartDatac.total_price|currency:" "}}</span></h5>
                                             </li>
                                             <li class="margin-0 padding-0"> 
-                                                <a href="<?php echo site_url("Cart/detailsc"); ?>" class="btn margin-bottom-20">VIEW CART</a> 
-                                                <a href="<?php echo site_url("Cart/details"); ?>" class="btn">CUSTOMIZE</a>
+                                                <a href="<?php echo site_url("Cart/details"); ?>" class="btn margin-bottom-20">VIEW CART</a> 
+                                                <a href="<?php echo site_url("Cart/checkoutInit"); ?>" class="btn">CHECKOUT NOW</a>
                                             </li>
                                         </ul>
 

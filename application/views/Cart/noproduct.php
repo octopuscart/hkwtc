@@ -22,8 +22,7 @@
 
             <!-- Heading -->
             <h1 style="font-size: 40px">No Product Found</h1>
-            <p>Please add product to cart<br>
-                You can go back to</p>
+            <p>To view in cart first customize the product</p>
             <hr class="dotted">
             <a href="<?php echo site_url(); ?>" class="btn-send-message ">BACK TO HOME</a>
         </div>

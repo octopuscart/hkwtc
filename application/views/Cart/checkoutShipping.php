@@ -77,21 +77,19 @@ $this->load->view('layout/header');
 
 
 <!-- Inner Page Banner Area Start Here -->
-<div class="inner-page-banner-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="breadcrumb-area">
-                    <h1>Checkout</h1>
-                    <ul>
-                        <li><a href="#">Home</a> /</li>
-                        <li>Checkout</li>
-                    </ul>
-                </div>
-            </div>
+<section class="sub-bnr" data-stellar-background-ratio="0.5" style="margin-bottom: 10px;">
+    <div class="position-center-center">
+        <div class="container">
+            <h4>Checkout</h4>
+
+            <!-- Breadcrumb -->
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Checkout</li>
+            </ol>
         </div>
     </div>
-</div>
+</section>
 <!-- Inner Page Banner Area End Here -->
 
 <!-- Content -->
@@ -118,7 +116,7 @@ $this->load->view('layout/header');
                                     <i class="ion-bag fa-stack-1x "></i>
                                 </span>   Shopping Address
                                 <span style="float: right; line-height: 29px;" class="ng-binding">
-                                    <button class="btn btn-danger" data-toggle="modal" data-target="#changeAddress" style="margin-left: 20px;padding: 5px 11px;color:white;"><i class="fa fa-plus"></i> Add New</button>
+                                    <button class="btn btn-default" data-toggle="modal" data-target="#changeAddress" style="margin-left: 20px;padding: 5px 11px;"><i class="fa fa-plus"></i> Add New</button>
                                 </span> 
                             </a>
                         </h4>
@@ -150,7 +148,7 @@ $this->load->view('layout/header');
                                                         <?php echo $value['city']; ?>, <?php echo $value['state']; ?> <?php echo $value['zipcode']; ?>
                                                         <br/>
                                                         <?php if ($value['status'] != 'default') { ?> 
-                                                            <a href="<?php echo site_url("Cart/checkoutShipping/?setAddress=" . $value['id']); ?>" class="btn-send-message address_button btn-small ">Select Address</a>
+                                                            <a href="<?php echo site_url("Cart/checkoutShipping/?setAddress=" . $value['id']); ?>" class="btn btn-default address_button btn-small ">Select Address</a>
                                                         <?php } ?> 
                                                     </p>
                                                 </div>
@@ -174,10 +172,10 @@ $this->load->view('layout/header');
                                     <tr>
                                         <td colspan="4" class="text_right">
                                             <div class="proceed-button pull-left " >
-                                                <a href=" <?php echo site_url("Cart/checkoutSize"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Size</a>
+                                                <a href=" <?php echo site_url("Cart/checkoutSize"); ?>" class="btn btn-default checkout_button_pre " ><i class="fa fa-arrow-left"></i> View Size</a>
                                             </div>
                                             <div class="proceed-button pull-right ">
-                                                <a href=" <?php echo site_url("Cart/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>
+                                                <a href=" <?php echo site_url("Cart/checkoutPayment"); ?>" class="btn btn-default checkout_button_next " >Choose Payment Method <i class="fa fa-arrow-right"></i></a>
                                             </div>
                                         </td>
                                     </tr>
@@ -207,7 +205,7 @@ $this->load->view('layout/header');
 
 <!-- Modal -->
 <div class="modal  fade" id="changeAddress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="    z-index: 20000000;">
-    <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-dialog " role="document">
         <form action="#" method="post">
             <div class="modal-content">
                 <div class="modal-header">
@@ -222,7 +220,7 @@ $this->load->view('layout/header');
                                     <span for="name" class=""><b>Address (Line 1)</b></span>
                                 </td>
                                 <td>
-                                    <input type="text" required="" name="address1" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
+                                    <input type="text" required="" name="address1" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style=";">
                                 </td>
                             </tr>
 
@@ -231,7 +229,7 @@ $this->load->view('layout/header');
                                     <span for="name" class=""><b>Address (Line 2)</b></span>
                                 </td>
                                 <td>
-                                    <input type="text" required="" name="address2" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
+                                    <input type="text" required="" name="address2" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style=";">
                                 </td>
                             </tr>
                             <tr>
@@ -240,7 +238,7 @@ $this->load->view('layout/header');
 
                                 </td>
                                 <td>
-                                    <input type="text" required="" name="city" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
+                                    <input type="text" required="" name="city" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style=";">
                                 </td>
                             </tr>
                             <tr>
@@ -248,7 +246,7 @@ $this->load->view('layout/header');
                                     <span for="name"><b>State</b></span>
                                 </td>
                                 <td>
-                                    <input type="text" required="" name="state" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
+                                    <input type="text" required="" name="state" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style=";">
                                 </td>
                             </tr>
 
@@ -258,7 +256,7 @@ $this->load->view('layout/header');
                                     <span for="name"><b>Zip/Postal</b></span>
                                 </td>
                                 <td>
-                                    <input type="text"  name="zipcode" class="form-control " value="" style="height: 10%;">
+                                    <input type="text"  name="zipcode" class="form-control " value="" style=";">
                                 </td>
                             </tr>
                             <tr>
@@ -266,7 +264,7 @@ $this->load->view('layout/header');
                                     <span for="name"><b>Country</b></span>
                                 </td>
                                 <td>
-                                    <input type="text" required="" name="country" class="form-control" value="" style="height: 10%;">
+                                    <input type="text" required="" name="country" class="form-control" value="" style=";">
                                 </td>
                             </tr>
 

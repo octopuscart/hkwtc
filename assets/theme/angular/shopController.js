@@ -100,6 +100,8 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             $scope.globleCartDatanc = rdata.data;
             $scope.globleCartDatanc['grand_total'] = $scope.globleCartDatanc['total_price'];
             
+            
+            
             if($scope.globleCartDatanc.total_quantity==0){
                 $scope.gcheckcartnc.status = 0;
             }
@@ -203,6 +205,10 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             $scope.getCartData();
             $scope.getCartDatac();
             $scope.getCartDatanc();
+            //custome model
+           
+            //
+            
             swal({
                 title: 'Added To Cart',
                 type: 'success',
@@ -217,9 +223,11 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
 
             }).then(
                     function () {
+                        
                     },
                     function (dismiss) {
                         if (dismiss === 'timer') {
+                             $("#productcustome").modal("show");
                         }
                     }
             )
