@@ -112,7 +112,8 @@ $this->load->view('layout/header');
                             <div class="col-md-6">
                                 <input type="hidden" name="birth_date" id="birth_date" value="{{birth_year}}-{{birth_month}}-{{date_birth}}"> 
                                 <label>Date Of Birth *</label>
-                                <select id="birth_year" name="birth_year"  ng-model="birth_year" class="r_corners bg_light w_full border_none bith_date_select_year"  required >
+                               <div class="row" style="    margin: 0;">
+                                <select id="birth_year" name="birth_year"  ng-model="birth_year" class="form-control bg_light w_full border_none bith_date_select_year"  required >
                                     <option value="" >-YYYY-</option>
                                     <?php
                                     for ($i = (date('Y') - 100); $i <= date('Y'); $i++) {
@@ -121,7 +122,7 @@ $this->load->view('layout/header');
                                     ?>
                                 </select>
 
-                                <select id="birth_month" ng-model="birth_month" name="birth_month" class="r_corners bg_light w_full border_none bith_date_select" required >
+                                <select id="birth_month" ng-model="birth_month" name="birth_month" class="form-control bg_light w_full border_none bith_date_select" required >
                                     <option value="" >-MM-</option>
                                      <?php
                                     for ($i = 1; $i <= 12; $i++) {
@@ -131,7 +132,7 @@ $this->load->view('layout/header');
                                     ?>
                                 </select> 
 
-                                <select id="birth_date" name="date_birth" ng-model="date_birth" class="r_corners bg_light w_full border_none bith_date_select"  required >
+                                <select id="birth_date" name="date_birth" ng-model="date_birth" class="form-control bg_light w_full border_none bith_date_select"  required >
                                     <option value="" >-DD-</option>
                                      <?php
                                     for ($i = 1; $i <= 31; $i++) {
@@ -140,6 +141,7 @@ $this->load->view('layout/header');
                                     }
                                     ?>
                                 </select>
+                               </div>
 
                             </div>
                         </div>

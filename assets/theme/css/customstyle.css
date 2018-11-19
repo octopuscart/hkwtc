@@ -504,3 +504,20 @@ header .is-sticky .sticky .navbar li a {
     height: 210px;
 
 }
+
+
+.bith_date_select{
+    width: 28%!important;
+    display: initial;
+        padding: 3px;
+}
+
+.bith_date_select_year{
+    width: 35%!important;
+    display: initial;
+        padding: 3px;
+}
+
+.login-registration-field label{
+    margin-top: 15px;
+}
