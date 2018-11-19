@@ -110,11 +110,11 @@ where pa.product_id = $product_id group by attribute_value_id";
     }
 
     //product prices
-    function category_items_prices_id($category_items_id) {
+    function category_items_prices_id($category_items_id, $item_id) {
 
         $queryr = "SELECT cip.price, ci.item_name, cip.item_id, cip.id FROM custome_items_price as cip
                        join custome_items as ci on ci.id = cip.item_id
-                       where cip.category_items_id = $category_items_id";
+                       where cip.category_items_id = $category_items_id and cip.item_id = $item_id";
         $query = $this->db->query($queryr);
         $category_items_price_array = $query->row();
         return $category_items_price_array;
@@ -129,17 +129,18 @@ where pa.product_id = $product_id group by attribute_value_id";
         if (count($product)) {
             $productobj = $product[0];
 
-            $item_price = $this->category_items_prices_id($productobj['category_items_id']);
+            $item_price = $this->category_items_prices_id($productobj['category_items_id'], $custom_id);
             $productobj['price'] = $item_price->price;
             $productobj['regular_price'] = $item_price->price;
-            $productobj['item_name'] = $item_price->item_name;
-            $productobj['item_id'] = $item_price->item_id;
+
+            $productobj['item_id'] = $custom_id;
 
             if ($custom_id != 0) {
                 $this->db->where('id', $custom_id);
                 $query = $this->db->get('custome_items');
                 $customeitem = $query->row();
             }
+            $productobj['item_name'] = $customeitem->item_name;
             $productattr = $this->singleProductAttrs($productobj['id']);
             $productobj['attrs'] = $productattr;
 
@@ -293,15 +294,11 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $total_credit_limit = 0;
             $custome_items = [];
             $custome_items_name = [];
+            $returndata = array();
+            $returndata['products'] = array();
             foreach ($product as $key => $value) {
-                $productlist[$value['product_id']] = $value;
-                if (isset($value['item_id'])) {
-                    array_push($custome_items, $value['item_id']);
-                    array_push($custome_items_name, $value['item_name']);
-                }
-                $total_price += $value['total_price'];
-                $total_quantity += $value['quantity'];
-                $total_credit_limit += ($value['credit_limit'] * $value['quantity']);
+
+
                 $cart_id = $value['id'];
                 $this->db->where('cart_id', $cart_id);
                 $query = $this->db->get('cart_customization');
@@ -310,7 +307,18 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 foreach ($cartcustom as $key1 => $value1) {
                     $customdata[$value1['style_key']] = $value1['style_value'];
                 }
-                $productlist[$value['product_id']]['custom_dict'] = $customdata;
+                if (count($customdata)) {
+                    $productlist[$value['product_id']] = $value;
+                    if (isset($value['item_id'])) {
+                        array_push($custome_items, $value['item_id']);
+                        array_push($custome_items_name, $value['item_name']);
+                    }
+                    $productlist[$value['product_id']]['custom_dict'] = $customdata;
+
+                    $total_price += $value['total_price'];
+                    $total_quantity += $value['quantity'];
+                    $total_credit_limit += ($value['credit_limit'] * $value['quantity']);
+                }
             }
 
             $cartdata = array(
@@ -427,7 +435,6 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     $returndata['products'][$key] = $value;
                     $returndata['total_quantity'] += $value['quantity'];
                     $returndata['total_price'] += $value['total_price'];
-                    
                 }
             }
             return $returndata;
@@ -1035,19 +1042,21 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'product_id' => $product_id,
                 'op_date_time' => date('Y-m-d H:i:s'),
             );
-            $custom_dict = $value['custom_dict'];
-            $this->db->insert('cart', $product_dict);
-            $last_id = $this->db->insert_id();
-            $display_index = 1;
-            foreach ($custom_dict as $key => $value) {
-                $custom_array = array(
-                    'style_key' => $key,
-                    'style_value' => $value,
-                    'display_index' => $display_index,
-                    'cart_id' => $last_id,
-                );
-                $this->db->insert('cart_customization', $custom_array);
-                $display_index++;
+            if (isset($value['custom_dict'])) {
+                $custom_dict = $value['custom_dict'];
+                $this->db->insert('cart', $product_dict);
+                $last_id = $this->db->insert_id();
+                $display_index = 1;
+                foreach ($custom_dict as $key => $value) {
+                    $custom_array = array(
+                        'style_key' => $key,
+                        'style_value' => $value,
+                        'display_index' => $display_index,
+                        'cart_id' => $last_id,
+                    );
+                    $this->db->insert('cart_customization', $custom_array);
+                    $display_index++;
+                }
             }
         }
     }

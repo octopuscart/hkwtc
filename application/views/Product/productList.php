@@ -39,21 +39,21 @@ $image2 = "";
     }
 
     .colorblock{
-            font-weight: 500;
-    padding: 0px 10px;
-    height: 8px;
-    /* float: left; */
-    width: 15px;
-    position: absolute;
-    /* float: left; */
-    /* margin-top: -71px; */
-    /* position: absolute; */
-    margin: auto;
-    /* border: 1px solid #0000005e; */
-    /* border: 1px solid #0000005e; */
-    text-shadow: 0px 1px 4px #000;
-    /* margin-top: -71px; */
-    margin-left: -7px;
+        font-weight: 500;
+        padding: 0px 10px;
+        height: 8px;
+        /* float: left; */
+        width: 15px;
+        position: absolute;
+        /* float: left; */
+        /* margin-top: -71px; */
+        /* position: absolute; */
+        margin: auto;
+        /* border: 1px solid #0000005e; */
+        /* border: 1px solid #0000005e; */
+        text-shadow: 0px 1px 4px #000;
+        /* margin-top: -71px; */
+        margin-left: -7px;
     }
 
 
@@ -135,7 +135,7 @@ $image2 = "";
         <div class="container">
             <h4><?php
                 echo $custom_item;
-                ?></h4>
+                ?> Customization</h4>
 
             <!-- Breadcrumb -->
             <ol class="breadcrumb">
@@ -273,6 +273,9 @@ $image2 = "";
 
                 <!-- Main Shop Itesm -->          
                 <div class="col-md-9"> 
+                        <button class="btn btn-default btn-small pull-right" style="    position: absolute;
+    right: 10px;
+    top: -45px;" data-toggle="modal" data-target="#productcustome">View Custom Cart</button>
 
                     <div id="content1"  ng-if="productProcess.state == 1" style="padding: 100px 0px;"> 
 
@@ -308,9 +311,9 @@ $image2 = "";
                                             <div class="item-hover" style="background: url(<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/shirt_model10001.png);    background-size: 96%;
                                                  background-color: white;
                                                  background-repeat: no-repeat;"> 
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 9px;">Customize Now
+                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 12px;">Single
                                                 </a> 
-                                                <a href="#." class="btn" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)">add to cart</a> 
+                                                <a href="#." class="btn" style="    font-size: 12px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)">Multiple</a> 
                                             </div>
 
                                             <?php
@@ -321,9 +324,9 @@ $image2 = "";
                                             <div class="item-hover" style="background: url(<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/style_buttons.png);    background-size: 139%;
                                                  background-color: white;
                                                  background-repeat: no-repeat;"> 
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 9px;">Customize Now
+                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 12px;">Single
                                                 </a> 
-                                                <a href="#." class="btn" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)">add to cart</a> 
+                                                <a href="#." class="btn" style="    font-size: 12px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)">Multiple</a> 
                                             </div>
                                             <?php
                                             break;
@@ -333,9 +336,9 @@ $image2 = "";
                                             <div class="item-hover" style="background: url(<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/fabricx0001.png);    background-size: 139%;
                                                  background-color: white;
                                                  background-repeat: no-repeat;"> 
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 9px;">Customize Now
+                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 12px;">Single
                                                 </a> 
-                                                <a href="#." class="btn" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)">add to cart</a> 
+                                                <a href="#." class="btn" style="    font-size: 12px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)">Multiple</a> 
                                             </div>
                                             <?php
                                             break;
@@ -346,9 +349,9 @@ $image2 = "";
                                             <div class="item-hover" style="background: url(<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/style_buttons.png);    background-size: 139%;
                                                  background-color: white;
                                                  background-repeat: no-repeat;"> 
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 9px;">Customize Now
+                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 12px;">Single
                                                 </a> 
-                                                <a href="#." class="btn" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)">add to cart</a> 
+                                                <a href="#." class="btn" style="    font-size: 12px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)">Multiple</a> 
                                             </div>
                                             <?php
                                             break;
@@ -356,9 +359,9 @@ $image2 = "";
                                             echo $custom_item;
                                             ?>
                                             <div class="item-hover" style=""> 
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 9px;">Customize Now
+                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 12px;">Single
                                                 </a> 
-                                                <a href="#." class="btn" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)">add to cart</a> 
+                                                <a href="#." class="btn" style="    font-size: 12px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)">Multiple</a> 
                                             </div>
                                         <?php
                                     }
@@ -420,8 +423,85 @@ $image2 = "";
 <!-- End Content --> 
 
 
+<!-- Modal -->
+<div class="modal  fade" id="productcustome" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="    z-index: 20000000;">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel" style="font-size: 15px">
+                    <?php
+                    echo $custom_item;
+                    ?>
+                </h4>
+            </div>
+
+            <?php
+
+            function createItemBlock($citem_id) {
+
+                switch ($citem_id) {
+                    case '1':
+                        $item_array = array("title" => "Shirt(s)", "link" => site_url("Customization/customizationShirt"));
+                        break;
+                    case '2':
+                        $item_array = array("title" => "Suit(s)", "link" => site_url("Customization/customizationSuitV2"));
+                        break;
+                    case '3':
+                        $item_array = array("title" => "Pant(s)", "link" => site_url("Customization/customizationSuitV2"));
+                        break;
+                    case '4':
+                        $item_array = array("title" => "Jacket(s)", "link" => site_url("Customization/customizationSuitV2"));
+                        break;
+                    default:
+                        $item_array = array("title" => "Shirt(s)", "link" => site_url("Customization/customizationSuitV2"));
+                }
+                ?>
+
+                <!-- Cart Details -->
+                <div class="modal-body checkout-form">
+                    <div class="custom_block_item">
+
+
+                        <div class="row cart-details" >
+                            <div class="col-sm-12 col-md-3" ng-repeat="product in globleCartDatanc.products" ng-if="product.item_id == '<?php echo $citem_id; ?>'">
+                                <div class="thumbnail">
+                                    <img src="{{product.file_name}}" alt="" style="width: auto;" alt="...">
+                                    <div class="caption">
+                                        <h5 style="font-size:15px;">{{product.title}}</h5>
+                                        <p><span class="price">{{product.price|currency:" "}}</span> <a href="#." ng-click="removeCart(product.product_id)" class="pull-right"><i class="icon-close"></i></a> </p>
+                                    </div>
+                               
+                                </div>
+                            </div>
+                        </div>
+
+                       
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="<?php echo $item_array['link']; ?>" class="btn btn-default pull-right">Customize Now <i class="fa fa-arrow-right"></i></a> 
+                </div>
+
+                <?php
+            }
+
+            createItemBlock($custom_id);
+            ?>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
 <script>
-            var category_id = <?php echo $category; ?>;</script>
+    var category_id = <?php echo $category; ?>;</script>
 <!--angular controllers-->
 
 <script src="<?php echo base_url(); ?>assets/theme/js/jquery.pajinate.min.js"></script>
@@ -431,6 +511,8 @@ $image2 = "";
 <?php
 $this->load->view('layout/footer');
 ?>
+
+
 
 <!--angular controllers-->
 <script src="<?php echo base_url(); ?>assets/theme/js/jquery.pajinate.min.js"></script>

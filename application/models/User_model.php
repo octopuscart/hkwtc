@@ -117,7 +117,7 @@ class User_model extends CI_Model {
             );
             $this->db->insert('system_log', $orderlog);
 
-            $subject = "Welcome to Bespoke Tailors - Your account with www.bespoketailorshk.com has been successfully created!";
+            $subject = "Welcome to ".email_sender_name." - Your account has been successfully created!";
             $this->email->subject($subject);
             
             $customerdetails['customer'] = $customer;

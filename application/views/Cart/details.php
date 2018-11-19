@@ -153,7 +153,7 @@ $this->load->view('layout/header');
 
                         </div>
                         <div class="col-md-4">
-                            <a href="<?php echo site_url('CartGuest/checkoutInit')?>" class="btn btn-primary pull-right" >Proceed To Checkout <i class=" fa fa-arrow-right"></i></a>
+                            <a href="<?php echo site_url('Cart/checkoutInit')?>" class="btn btn-primary pull-right" >Proceed To Checkout <i class=" fa fa-arrow-right"></i></a>
 
                         </div>
 
@@ -178,8 +178,7 @@ $this->load->view('layout/header');
 
             <!-- Heading -->
             <h1 style="font-size: 40px">No Product Found</h1>
-            <p>Please add product to cart<br>
-                You can go back to</p>
+            <p>To view in cart first customize the product</p>
             <hr class="dotted">
             <a href="<?php echo site_url(); ?>" class="btn btn-inverse">BACK TO HOME</a>
         </div>
