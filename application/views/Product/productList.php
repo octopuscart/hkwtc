@@ -273,9 +273,9 @@ $image2 = "";
 
                 <!-- Main Shop Itesm -->          
                 <div class="col-md-9"> 
-                        <button class="btn btn-default btn-small pull-right" style="    position: absolute;
-    right: 10px;
-    top: -45px;" data-toggle="modal" data-target="#productcustome">View Custom Cart</button>
+                    <button class="btn btn-default btn-small pull-right" style="    position: absolute;
+                            right: 10px;
+                            top: -45px;" data-toggle="modal" data-target="#productcustome">View Custom Cart</button>
 
                     <div id="content1"  ng-if="productProcess.state == 1" style="padding: 100px 0px;"> 
 
@@ -311,9 +311,9 @@ $image2 = "";
                                             <div class="item-hover" style="background: url(<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/shirt_model10001.png);    background-size: 96%;
                                                  background-color: white;
                                                  background-repeat: no-repeat;"> 
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 12px;">Single
-                                                </a> 
-                                                <a href="#." class="btn" style="    font-size: 12px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)">Multiple</a> 
+
+                                                <a href="#." class="btn by" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)" title="Choose fabric for multiple customization">Design Multiple</a> 
+                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn" style="font-size: 9px;" title="Customize this fabric">Design Single</a> 
                                             </div>
 
                                             <?php
@@ -324,9 +324,9 @@ $image2 = "";
                                             <div class="item-hover" style="background: url(<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/style_buttons.png);    background-size: 139%;
                                                  background-color: white;
                                                  background-repeat: no-repeat;"> 
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 12px;">Single
+                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn" style="font-size: 9px;" title="Customize this fabric">Design Single
                                                 </a> 
-                                                <a href="#." class="btn" style="    font-size: 12px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)">Multiple</a> 
+                                                <a href="#." class="btn by" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)" title="Choose fabric for multiple customization">Design Multiple</a> 
                                             </div>
                                             <?php
                                             break;
@@ -336,9 +336,9 @@ $image2 = "";
                                             <div class="item-hover" style="background: url(<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/fabricx0001.png);    background-size: 139%;
                                                  background-color: white;
                                                  background-repeat: no-repeat;"> 
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 12px;">Single
+                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn" style="font-size: 9px;" title="Customize this fabric">Design Single
                                                 </a> 
-                                                <a href="#." class="btn" style="    font-size: 12px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)">Multiple</a> 
+                                                <a href="#." class="btn by" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)" title="Choose fabric for multiple customization">Design Multiple</a> 
                                             </div>
                                             <?php
                                             break;
@@ -349,9 +349,9 @@ $image2 = "";
                                             <div class="item-hover" style="background: url(<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/style_buttons.png);    background-size: 139%;
                                                  background-color: white;
                                                  background-repeat: no-repeat;"> 
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 12px;">Single
+                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn" style="font-size: 9px;" title="Customize this fabric">Design Single
                                                 </a> 
-                                                <a href="#." class="btn" style="    font-size: 12px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)">Multiple</a> 
+                                                <a href="#." class="btn by" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)" title="Choose fabric for multiple customization">Design Multiple</a> 
                                             </div>
                                             <?php
                                             break;
@@ -359,9 +359,9 @@ $image2 = "";
                                             echo $custom_item;
                                             ?>
                                             <div class="item-hover" style=""> 
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn by" style="font-size: 12px;">Single
+                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn" style="font-size: 9px;" title="Customize this fabric">Design Single
                                                 </a> 
-                                                <a href="#." class="btn" style="    font-size: 12px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)">Multiple</a> 
+                                                <a href="#." class="btn by" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)" title="Choose fabric for multiple customization">Design Multiple</a> 
                                             </div>
                                         <?php
                                     }
@@ -471,12 +471,12 @@ $image2 = "";
                                         <h5 style="font-size:15px;">{{product.title}}</h5>
                                         <p><span class="price">{{product.price|currency:" "}}</span> <a href="#." ng-click="removeCart(product.product_id)" class="pull-right"><i class="icon-close"></i></a> </p>
                                     </div>
-                               
+
                                 </div>
                             </div>
                         </div>
 
-                       
+
 
 
                     </div>

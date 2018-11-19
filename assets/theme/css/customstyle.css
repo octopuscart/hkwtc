@@ -521,3 +521,13 @@ header .is-sticky .sticky .navbar li a {
 .login-registration-field label{
     margin-top: 15px;
 }
+
+
+.shop-content .col-md-9 .shop-artical .btn {
+    left: 20px;
+    padding: 10px 16px;
+}
+.shop-content .col-md-9 .shop-artical .by {
+    left: auto;
+    right: 20px;
+}
