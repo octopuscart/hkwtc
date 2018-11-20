@@ -374,11 +374,18 @@ $image2 = "";
                                             <span style="font-size: 12px">{{product.short_description}} </span>
                                         </a> 
                                         <p style="    margin-bottom: 0px;
-    height: 5px;
-    float: left;
-    width: 100%;" ng-if="product.attr.length">
+                                           height: 5px;
+                                           float: left;
+                                           width: 100%;" ng-if="product.attr.length">
 
                                             <span class="colorblock" style="background: {{product.attr[0]['Colors']}};"></span>
+                                        </p>
+                                        <p style="    margin-bottom: 0px;
+                                           height: 5px;
+                                           float: left;
+                                           width: 100%;" ng-if="product.attr.length==0">
+
+                                            <span class="colorblock" ></span>
                                         </p>
                                         <span class="price">{{<?php echo $item_price; ?>|currency:"<?php echo globle_currency; ?> "}}</span> 
                                     </div>
