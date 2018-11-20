@@ -373,8 +373,8 @@ $image2 = "";
                                             <br>
                                             <span style="font-size: 12px">{{product.short_description}} </span>
                                         </a> 
-                                        <p style="    margin-bottom: -14px;
-    height: 15px;
+                                        <p style="    margin-bottom: 0px;
+    height: 5px;
     float: left;
     width: 100%;" ng-if="product.attr.length">
 
