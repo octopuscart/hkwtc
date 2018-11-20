@@ -492,7 +492,7 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
     $scope.fabricurl = "http://api.octopuscart.com/output/";
     var currencyfilter = $filter('currency');
 
-    var globlecart = baseurl + "ApiMulti/cartOperationShirt";
+    var globlecart = baseurl + "ApiMulti/cartOperationSuit/"+gcustome_id;
     $scope.product_quantity = 1;
 
 
@@ -531,15 +531,29 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
             };
         }
         var viewtype = "front";
-        switch (defaut_view) {
-            case "Jacket":
+        switch (gcustome_id) {
+            case 4:
                 viewtype = "front";
                 break;
-            case "Pant":
+            case 3:
                 viewtype = "pant";
                 break;
             default:
                 viewtype = "front";
+        }
+        var custometype  = "";
+         switch (gcustome_id) {
+            case 4:
+                custometype = "Jacket";
+                break;
+            case 3:
+                custometype = "Pant";
+                break;
+            case 2:
+                custometype = "Suit";
+                break;    
+            default:
+                custometype = "Suit";
         }
 
 
@@ -549,7 +563,7 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
             "productobj": $scope.cartFabrics[0],
             "sku": $scope.cartFabrics[0].sku,
         };
-        var url = baseurl + "customApi/customeElements" + defaut_view;
+        var url = baseurl + "customApi/customeElements" + custometype;
         $http.get(url).then(function (rdata) {
             $scope.data_list = rdata.data.data;
             $scope.cuff_collar_insert = rdata.data.cuff_collar_insert;
@@ -560,7 +574,7 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
             $scope.parents = 'Body Fit';
             for (i in $scope.keys) {
                 var temp = $scope.data_list[$scope.keys[i].title];
-                console.log(temp);
+       
                 for (j in temp) {
                     if (temp[j]['status'] == 1) {
                         for (f in $scope.cartFabrics) {
@@ -767,22 +781,19 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
 
     $scope.getCartDataFabric = function () {
         $http.get(globlecart).then(function (rdata) {
-            console.log(rdata.data)
-            $scope.fabricCartData = [rdata.data];
-            $scope.cartFabrics = [rdata.data];
+            $scope.fabricCartData = rdata.data;
             console.log($scope.fabricCartData)
             $scope.fabricCartData['grand_total'] = $scope.fabricCartData['total_price'];
+            for (pd in $scope.fabricCartData.products) {
+                var pds = $scope.fabricCartData.products[pd];
+                $scope.cartFabrics.push(pds);
 
-            $scope.shirtimplement();
-            $scope.canvasCustom.product = $scope.cartFabrics[0].product_id;
-
-
-
+            }
+            $scope.shirtimplement()
         }, function (r) {
         })
     }
     $scope.getCartDataFabric();
-
 
 
 
@@ -853,7 +864,9 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
 
     //select fabric
     $scope.selectFabric = function (fabric) {
-        $scope.screencustom.fabric = fabric.folder;
+        console.log(fabric)
+        $scope.screencustom.fabric = fabric.product_id;
+        $scope.screencustom.sku = fabric.sku;
         $scope.screencustom.productobj = fabric;
     }
     //
@@ -888,17 +901,11 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
 
     $scope.selectElement = function (obj, element) {
 
-        $scope.screencustom.view_type = obj.viewtype;
+         $scope.screencustom.view_type = obj.viewtype;
         $scope.selecteElements[$scope.screencustom.fabric][obj.title] = element;
         $scope.selecteElements[$scope.screencustom.fabric]['summary'][obj.title] = element.title;
-        if (element.function) {
-            console.log(element);
-            eval(element.function)();
-        }
-        $timeout(function () {
-//            $scope.setImageElements(element.elements, element.canvas_m)
-        }, 100);
-
+         console.log($scope.selecteElements);
+       
 
 
 //        $("html, body").animate({scrollTop: 0}, "slow")
@@ -939,22 +946,29 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
     }
 
     //add to cart
-    $scope.addToCartCustome = function () {
-        var summerydata = $scope.selecteElements[product_id].summary;
-        var customhtmlarray = [];
-        var form = new FormData()
+  $scope.addToCartCustome = function () {
+        var summerydata = $scope.selecteElements;
+        var customarray = [];
+
         for (i in summerydata) {
+            var form = new FormData()
             var ks = i;
             var kv = summerydata[i];
-            form.append("customekey[]", ks);
-            form.append("customevalue[]", kv);
-            console.log(ks, kv);
-            var summaryhtml = "<tr><th>" + ks + "</th><td>" + kv + "</td></tr>";
-            customhtmlarray.push(summaryhtml);
+            console.log(kv.summary)
+            for (kvk in kv.summary) {
+                var kvv = kv.summary[kvk];
+                form.append("customekey[]", kvk);
+                form.append("customevalue[]", kvv);
+            }
+            form.append('product_id', ks);
+            form.append('quantity', 1);
+            form.append('custome_id', 1);
+            console.log(form)
+//            console.log(ks, kv);
+//            var summaryhtml = "<tr><th>" + ks + "</th><td>" + kv + "</td></tr>";
+            customarray.push(form);
         }
-        ;
-        customhtmlarray = customhtmlarray.join("");
-        var customdiv = "<div class='custome_summary_popup'><table>" + customhtmlarray + "</table></div>"
+        console.log(customarray);
 
         swal({
             title: 'Confirm Design',
@@ -963,13 +977,12 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
             confirmButtonColor: '#000',
             cancelButtonColor: 'red',
             confirmButtonText: 'Yes, Add To Cart',
-            cancelButtonText: 'Cancel',
+            cancelButtonText: 'No, Cancel!',
             confirmButtonClass: 'btn btn-success',
             cancelButtonClass: 'btn btn-danger',
-//            title: 'Adding to Cart',
             allowEscapeKey: false,
             allowOutsideClick: false,
-            html: customdiv,
+//            html: customdiv,
             preConfirm: function () {
 
                 swal({
@@ -978,35 +991,57 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
                         swal.showLoading()
                     }
                 });
-                var globlecart = baseurl + "Api/cartOperationCustom";
+                var globlecart = baseurl + "Api/cartOperationCustomMulti";
 
-//                var form = new FormData()
-                form.append('product_id', product_id);
-                form.append('quantity', 1);
-                form.append('custome_id', gcustome_id);
-                $http.post(globlecart, form).then(function (rdata) {
-                    swal.close();
-                    $scope.getCartData();
-                    swal({
-                        title: 'Added To Cart',
-                        type: 'success',
-                        html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, globlecurrency) + ", Quantity: " + rdata.data.quantity + "</p>",
-                        imageUrl: rdata.data.file_name,
-                        imageWidth: 100,
-                        timer: 1500,
-                        imageAlt: 'Custom image',
-                        showConfirmButton: false,
-                        animation: true,
-                        onClose: function () {
-                            window.location = baseurl + "Cart/details";
-                        }
-                    })
-                }, function () {
-                    swal.close();
-                    swal({
-                        title: 'Something Wrong..',
-                    })
-                });
+                function setData(flist, ind) {
+                    var nd = ind;
+                    var fll = flist.length;
+                    console.log(fll, nd)
+                    if (nd == fll) {
+                        window.location = baseurl + "Cart/detailsc";
+                    }
+                    else {
+
+                        var nform = flist[ind];
+                        $http.post(globlecart, nform).then(function (rdata) {
+                            swal.close();
+                            var count = ind + 1;
+                            setData(flist, count)
+                            $scope.getCartData();
+                            swal({
+                                title: 'Added To Cart',
+                                type: 'success',
+                                html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, globlecurrency) + ", Quantity: " + rdata.data.quantity + "</p>",
+                                imageUrl: rdata.data.file_name,
+                                imageWidth: 100,
+                                timer: 1500,
+                                imageAlt: 'Custom image',
+                                showConfirmButton: false,
+                                animation: true,
+                                onClose: function () {
+
+                                }
+                            })
+                        }, function () {
+                            swal.close();
+                            var count = ind + 1;
+                            setData(flist, count)
+                            swal({
+                                title: 'Something Wrong..',
+                            })
+                        });
+
+
+
+                    }
+                }
+
+                setData(customarray, 0)
+                swal.close();
+
+
+
+
             },
         })
     }

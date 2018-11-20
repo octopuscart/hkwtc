@@ -173,16 +173,10 @@ $this->load->view('layout/header');
                             <div class="tab-content">
 
                                 <div class="{{$index === 0?'active':''}} frame1" ng-repeat="fab in cartFabrics" id="fabric_{{fab.product_id}}">
-                                    <!--                                    <button class="btn btn-default btn-lg custom_rotate_button" ng-click="rotateModel()">
-                                                                            <i class="icon ion-refresh"></i>
-                                                                        </button>
-                                                                        <button class="btn btn-default btn-lg custom_rotate_button show_shirt_button" ng-click="show_shirt('with_shirt')" style="margin-right: 65px;">
-                                                                            <img src="<?php echo base_url(); ?>assets/images/customization_suit/jacket_with_shirt.png" class="show_shirt_image" >
-                                                                        </button>
-                                                                        <button class="btn btn-default btn-lg custom_rotate_button show_shirt_button" ng-click="show_shirt('without_shirt')">
-                                                                            <img src="<?php echo base_url(); ?>assets/images/customization_suit/jacket_without_shirt.png" class="show_shirt_image" >
-                                                                        </button>-->
-                                    <div class="fontview_custom customization_block animated zoom "  ng-if="screencustom.view_type == 'front'" >
+                                    
+                                   
+                                    
+                                       <div class="fontview_custom customization_block animated zoom "  ng-if="screencustom.view_type == 'front'" >
                                         <img src="<?php echo custome_image_server; ?>/jacket/output/overlay/shirt2.png" class="fixpos animated" >
                                         <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/sleeve_new120001.png" class="fixpos animated" style="">
                                         <img src="<?php echo custome_image_server; ?>/jacket/output/overlay/sleeve_new_olverlay.png" class="fixpos animated" >
@@ -226,19 +220,7 @@ $this->load->view('layout/header');
                                         <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Jacket Style'].button_hole" >
 
 
-                                        <!--sleeve half-->
-                                        <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/sleeve_2_l0001.png" class="fixpos animated" >
-
-                                        <!--button sleeve-->
-<!--                                        <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Sleeve Buttons'].elements" >
-                                        <img src="<?php echo custome_image_server; ?>/jacket/buttons/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Sleeve Buttons'].buttons" >-->
-
-
-                                        <!--<img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/buttons_flat1_hole0001.png" class="fixpos animated" >-->
-
-
-
-
+                                     
 
                                         <!--lower pocket-->
                                         <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lower Pocket'].elements">
@@ -258,7 +240,7 @@ $this->load->view('layout/header');
                                         </div>
 
 
-                                        
+
 
 
                                         <!--buttons-->
@@ -267,7 +249,7 @@ $this->load->view('layout/header');
 
 
 
-                                    </div>   
+                                    </div>
 
 
                                     <div class="backview_custom customization_block zoom animated " ng-if="screencustom.view_type == 'back'">

@@ -455,13 +455,13 @@ $image2 = "";
                         $item_array = array("title" => "Shirt(s)", "link" => site_url("Customization/customizationShirt"));
                         break;
                     case '2':
-                        $item_array = array("title" => "Suit(s)", "link" => site_url("Customization/customizationSuitV2"));
+                        $item_array = array("title" => "Suit(s)", "link" => site_url("Customization/customizationSuitV2/2"));
                         break;
                     case '3':
-                        $item_array = array("title" => "Pant(s)", "link" => site_url("Customization/customizationSuitV2"));
+                        $item_array = array("title" => "Pant(s)", "link" => site_url("Customization/customizationSuitV2/3"));
                         break;
                     case '4':
-                        $item_array = array("title" => "Jacket(s)", "link" => site_url("Customization/customizationSuitV2"));
+                        $item_array = array("title" => "Jacket(s)", "link" => site_url("Customization/customizationSuitV2/4"));
                         break;
                     default:
                         $item_array = array("title" => "Shirt(s)", "link" => site_url("Customization/customizationSuitV2"));
