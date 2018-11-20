@@ -136,7 +136,7 @@ $this->load->view('layout/header');
 
                                         <!--cuff-->
                                         <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.product_id]['Cuff & Sleeve'].elements" >
-                                        <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{selecteElements[fab.product_id]['Cuff & Sleeve'].buttons}}" class="fixpos animated" ng-if="selecteElements[fab.product_id]['Cuff & Sleeve'].buttons"  >
+                                        <img src="<?php echo custome_image_server; ?>/shirt/overlay/{{selecteElements[fab.product_id]['Cuff & Sleeve'].buttons}}" class="fixpos animated" ng-if="selecteElements[fab.product_id]['Cuff & Sleeve'].buttons"  >
 
                                         <!--collar-->
                                         <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Collar'].elements">
