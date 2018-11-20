@@ -100,15 +100,15 @@ class Customization extends CI_Controller {
 
         $attr_filter = array();
         $pricelist = array();
-     
+
 
         $productArray = array('attributes' => $attr_filter,
             'products' => $product_result,
             'product_count' => count($product_result),
             'price' => $pricelist);
         print_r($productArray);
-        
-       // $this->response($productArray);
+
+        // $this->response($productArray);
     }
 
     //api
@@ -145,26 +145,27 @@ class Customization extends CI_Controller {
     //customization shirt
 
 
-    function customizationShirt($product_id=0) {
+    function customizationShirt($product_id = 0) {
         $product = $this->Product_model->productDetails($product_id);
         $data['product'] = $product;
         $this->load->view('customization/customization_shirt', $data);
     }
-    
-    
+
     function customizationSuit() {
         $session_cart = $this->Product_model->cartData();
         $data = [];
         $this->load->view('Product/customization_suit', $data);
     }
-    
-    
-    function customizationSuitV2() {
-     
+
+    function customizationSuitV2($item_id) {
+        $this->db->where('id', $item_id);
+        $query = $this->db->get('custome_items');
+        $customeitem = $query->row();
         $data = [];
+        $data["custom_item"] = $customeitem->item_name;
+        $data['custom_id'] = $item_id;
         $this->load->view('customization/customization_suit_v2', $data);
     }
-    
 
     //end of customization shrit
 

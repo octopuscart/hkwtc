@@ -1,7 +1,7 @@
 
 <div class="media selected-fabric-block-mobile"  style="cursor:pointer;    padding: 0px 10px;"> 
     <div class="media-left  mobile_view_element_tab">
-        <p class="selected-fabric-block-image" style="margin: 0px;background: url('<?php echo custome_image_server; ?>/coman/output/{{screencustom.productobj.folder}}/fabricx0001.png')"></p>
+        <p class="selected-fabric-block-image" style="margin: 0px;background: url('<?php echo custome_image_server; ?>/coman/output/{{screencustom.productobj.folder}}/cutting20001.png')"></p>
     </div>
     <div class="media-body">
         <h4 class="selected-element-title media-heading">{{screencustom.productobj.title}} - {{screencustom.productobj.item_name}}</h4>
@@ -19,7 +19,7 @@
     <div class="selected-fabric-block elementItemDesktop">
         <div class="media"  style="cursor:pointer"> 
             <div class="media-left media-middle mobile_view_element_tab">
-                <p class="selected-fabric-block-image" style="margin: 0px;background: url('<?php echo custome_image_server; ?>/coman/output/{{screencustom.productobj.folder}}/fabricx0001.png')"></p>
+                <p class="selected-fabric-block-image" style="margin: 0px;background: url('<?php echo custome_image_server; ?>/coman/output/{{screencustom.productobj.folder}}/cutting20001.png')"></p>
             </div>
             <div class="media-body elementItemDesktop">
                 <h4 class="selected-element-title media-heading">{{screencustom.productobj.title}} - {{screencustom.productobj.item_name}}</h4>

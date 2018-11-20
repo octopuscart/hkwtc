@@ -52,7 +52,8 @@ class ApiMulti extends REST_Controller {
 
         $tempss = array();
         foreach ($session_cart['products'] as $key => $value) {
-            if ($value['item_name'] != 'Jacket') {
+            if ($value['item_id'] == '1') {
+                
                 $tempss[$key] = $value;
             };
         }
@@ -60,15 +61,15 @@ class ApiMulti extends REST_Controller {
         $this->response($session_cart);
     }
 
-    function cartOperationSuit_get() {
+    function cartOperationSuit_get($item_id) {
         if ($this->checklogin) {
-            $session_cart = $this->Product_model->cartData($this->user_id);
+            $session_cart = $this->Product_model->cartDataNoCustome($this->user_id);
         } else {
-            $session_cart = $this->Product_model->cartData();
+            $session_cart = $this->Product_model->cartDataNoCustome();
         }
-        $tempss = array();
         foreach ($session_cart['products'] as $key => $value) {
-            if ($value['item_type'] == 'Jacket') {
+            if ($value['item_id'] == $item_id) {
+                
                 $tempss[$key] = $value;
             };
         }

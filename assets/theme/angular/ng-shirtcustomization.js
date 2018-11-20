@@ -623,6 +623,7 @@ App.controller('customizationShirtMulti', function ($scope, $http, $location, $f
         $scope.screencustom.view_type = obj.viewtype;
         $scope.selecteElements[$scope.screencustom.fabric][obj.title] = element;
         $scope.selecteElements[$scope.screencustom.fabric]['summary'][obj.title] = element.title;
+       
         if (obj.title == 'Cuff & Sleeve') {
             $scope.selecteElements[$scope.screencustom.fabric].sleeve = element.sleeve;
             console.log(element.sleeve)
