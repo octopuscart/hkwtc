@@ -296,7 +296,7 @@ $image2 = "";
                     <!--                    <div class="showing-info">
                                             <p class="pull-left">Showing   1 - 12  of   30 results</p>
                                         </div>-->
-                    <div class=""> 
+                    <div class="" id="paging_container1"> 
 
                         <div class="row " ng-if="productProcess.state == 2">
                             <!-- Item -->
@@ -504,18 +504,18 @@ $image2 = "";
     var category_id = <?php echo $category; ?>;</script>
 <!--angular controllers-->
 
-<script src="<?php echo base_url(); ?>assets/theme/js/jquery.pajinate.min.js"></script>
-
-<script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
 
 <?php
 $this->load->view('layout/footer');
 ?>
 
+<script src="<?php echo base_url(); ?>assets/theme/js/jquery.pajinate.min.js"></script>
 
+
+<script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
 
 <!--angular controllers-->
-<script src="<?php echo base_url(); ?>assets/theme/js/jquery.pajinate.min.js"></script>
+
 
 <script type="text/javascript">
             $(document).ready(function () {
