@@ -383,7 +383,7 @@ $image2 = "";
                                         <p style="    margin-bottom: 0px;
                                            height: 5px;
                                            float: left;
-                                           width: 100%;" ng-if="product.attr.length==0">
+                                           width: 100%;" ng-if="product.attr.length == 0">
 
                                             <span class="colorblock" ></span>
                                         </p>
@@ -484,14 +484,15 @@ $image2 = "";
 
                                 </div>
                             </div>
+
+                            
+
                         </div>
-
-
-
 
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer" ng-repeat="product in globleCartDatanc.products" ng-if="(product.item_id == '<?php echo $citem_id; ?>') && $index == 0">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Add More</button>
                     <a href="<?php echo $item_array['link']; ?>" class="btn btn-default pull-right">Customize Now <i class="fa fa-arrow-right"></i></a> 
                 </div>
 
