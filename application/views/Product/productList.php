@@ -373,7 +373,10 @@ $image2 = "";
                                             <br>
                                             <span style="font-size: 12px">{{product.short_description}} </span>
                                         </a> 
-                                        <p style="    margin-bottom: -7px;    height: 12px;" ng-if="product.attr.length">
+                                        <p style="    margin-bottom: -14px;
+    height: 15px;
+    float: left;
+    width: 100%;" ng-if="product.attr.length">
 
                                             <span class="colorblock" style="background: {{product.attr[0]['Colors']}};"></span>
                                         </p>
