@@ -82,7 +82,7 @@ $this->load->view('layout/header');
                                     <button class="btn btn-default btn-lg custom_rotate_button" ng-click="rotateModel()">
                                         <i class="icon ion-refresh"></i>
                                     </button>
-                              <div class="fontview_custom customization_block animated zoom" ng-if="screencustom.view_type == 'front'">
+                                    <div class="fontview_custom customization_block animated zoom" ng-if="screencustom.view_type == 'front'">
                                         <div ng-if="selecteElements[screencustom.fabric]['Monogram Initial']">
                                             <div class="monogramtext_posistion
                                                  {{selecteElements[fab.product_id]['Cuff & Sleeve'].monogram_change_css?selecteElements[fab.product_id]['Cuff & Sleeve'].monogram_change_css :selecteElements[fab.product_id]['Monogram'].css_class}} 
@@ -102,7 +102,7 @@ $this->load->view('layout/header');
                                         </div>
                                         <!--cuff section-->
                                         <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Cuff & Sleeve'].sleeve1">
-                                        <img src="<?php echo custome_image_server; ?>/shirt/overlay/sleeveoverlay.png" class="fixpos animated" ng-if="selecteElements[fab.product_id]['Cuff & Sleeve'].sleeve1[0]=='shirt_sleeve0001.png'">
+                                        <img src="<?php echo custome_image_server; ?>/shirt/overlay/sleeveoverlay.png" class="fixpos animated" ng-if="selecteElements[fab.product_id]['Cuff & Sleeve'].sleeve1[0] == 'shirt_sleeve0001.png'">
 
 
 
@@ -112,10 +112,12 @@ $this->load->view('layout/header');
 
                                         <!--cuff-->
                                         <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.product_id]['Cuff & Sleeve'].elements" >
-                                        <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{selecteElements[fab.product_id]['Cuff & Sleeve'].buttons}}" class="fixpos animated" ng-if="selecteElements[fab.product_id]['Cuff & Sleeve'].buttons"  >
+                                        <img src="<?php echo custome_image_server; ?>/shirt/overlay/{{selecteElements[fab.product_id]['Cuff & Sleeve'].buttons}}" class="fixpos animated" ng-if="selecteElements[fab.product_id]['Cuff & Sleeve'].buttons"  >
 
                                         <!--collar-->
                                         <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Collar'].elements">
+                                        <img src="<?php echo custome_image_server; ?>/shirt/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Collar'].overlay">
+
 
                                         <!--front fly-->
                                         <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Front'].elements">
