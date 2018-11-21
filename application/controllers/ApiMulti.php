@@ -1101,7 +1101,7 @@ class ApiMulti extends REST_Controller {
                 "Lapel Style & Width" => [
                     array(
                         "status" => "1",
-                        "title" => "Notch Laple Morden",
+                        "title" => "Notch Lapel Morden",
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
@@ -1142,7 +1142,7 @@ class ApiMulti extends REST_Controller {
                     ),
                     array(
                         "status" => "0",
-                        "title" => "Notch Laple Classic",
+                        "title" => "Notch Lapel Classic",
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
@@ -1183,7 +1183,7 @@ class ApiMulti extends REST_Controller {
                     ),
                     array(
                         "status" => "0",
-                        "title" => "Peak Laple Morden",
+                        "title" => "Peak Lapel Morden",
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
@@ -1224,7 +1224,7 @@ class ApiMulti extends REST_Controller {
                     ),
                     array(
                         "status" => "0",
-                        "title" => "Peak Laple Classic",
+                        "title" => "Peak Lapel Classic",
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
@@ -1265,7 +1265,7 @@ class ApiMulti extends REST_Controller {
                     ),
                     array(
                         "status" => "0",
-                        "title" => "Shawal Laple Modern",
+                        "title" => "Shawal Lapel Modern",
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
@@ -1298,7 +1298,7 @@ class ApiMulti extends REST_Controller {
                     ),
                     array(
                         "status" => "0",
-                        "title" => "Shawal Laple Classic",
+                        "title" => "Shawal Lapel Classic",
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
