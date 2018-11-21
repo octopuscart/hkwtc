@@ -944,7 +944,7 @@ class CustomApi extends REST_Controller {
                 "Lapel Style" => [
                     array(
                         "status" => "1",
-                        "title" => "Notch Laple",
+                        "title" => "Notch Lapel",
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
@@ -1000,7 +1000,7 @@ class CustomApi extends REST_Controller {
                     ),
                     array(
                         "status" => "0",
-                        "title" => "Peak Laple",
+                        "title" => "Peak Lapel",
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
@@ -1328,7 +1328,7 @@ class CustomApi extends REST_Controller {
                 "Lapel Style" => [
                     array(
                         "status" => "1",
-                        "title" => "Notch Laple",
+                        "title" => "Notch Lapel",
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
@@ -1384,7 +1384,7 @@ class CustomApi extends REST_Controller {
                     ),
                     array(
                         "status" => "0",
-                        "title" => "Peak Laple",
+                        "title" => "Peak Lapel",
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
