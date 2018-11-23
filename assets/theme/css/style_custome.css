@@ -40,7 +40,7 @@ code {
 .fixpos{
     position: absolute;
     left: 0;
-    height: 530px;
+    height: 480px;
 }
 
 
@@ -118,7 +118,7 @@ code {
 }
 
 .shirtcontainer{
-    height: 485px;
+       height: 530px;
 }
 
 

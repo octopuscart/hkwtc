@@ -124,8 +124,25 @@ class CustomApi extends REST_Controller {
                         "title" => "Rounded",
                         "elements" => ["shirtbody_round0001.png"],
                         "customization_category_id" => "6",
-                        "image" => "customization/bottom_rounded.jpeg"
-                    ), array(
+                        "image" => "customization/bottom_rounded.jpeg",
+                        "overlay"=>[]
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Normal Rounded With Slits",
+                        "elements" => ["shirtbody_round0001.png"],
+                        "customization_category_id" => "6",
+                        "image" => "customization/bottom_rounded_normal.jpeg",
+                        "overlay"=>["notmalround_bottom.png"]
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Deep Rounded With Slits",
+                        "elements" => ["shirtbody_round0001.png"],
+                        "customization_category_id" => "6",
+                        "image" => "customization/bottom_rounded_deep.jpeg",
+                        "overlay"=>["deepround_bottom.png"]
+                    ),array(
                         "status" => "0",
                         "title" => "Squared",
                         "elements" => ["shirtbody_squre0001.png"],
@@ -197,6 +214,22 @@ class CustomApi extends REST_Controller {
                         "buttons" => "cuff_s_button10001.png",
                     ), array(
                         "status" => "0",
+                        "title" => "2 Buttons Rounded",
+                        "sleeve1" => ["shirt_sleeve0001.png"],
+                        "elements" => [ "cuff_m_rounded20001.png"],
+                        "insertele" => [ "cuff_m_rounded30001.png"],
+                        "inserteleo" => [ "cuff_m_rounded30001.png"],
+                        "customization_category_id" => "3",
+                        "image" => "customization/2_buttons_rounded.jpg",
+                        "insert_style_css" => "",
+                        "insert_style" => "cuff_m_rounded20001.png",
+                        "insert_overlay" => "cuff_single_insert_overlay.png",
+                        "insert_overlay_css" => "",
+                        "insert_full" => ["cuff_single_rounded0001.png"],
+                        "sleeve" => ["b_full_shirt_sleeve0001.png",],
+                        "buttons" => "cuff_s_button20001.png",
+                    ),array(
+                        "status" => "0",
                         "title" => "2 Buttons Cutaway",
                         "customization_category_id" => "3",
                         "sleeve1" => ["shirt_sleeve0001.png"],
@@ -213,18 +246,18 @@ class CustomApi extends REST_Controller {
                         "buttons" => "cuff_s_button20001.png",
                     ), array(
                         "status" => "0",
-                        "title" => "2 Buttons Rounded",
-                        "sleeve1" => ["shirt_sleeve0001.png"],
-                        "elements" => [ "cuff_m_rounded20001.png"],
-                        "insertele" => [ "cuff_m_rounded30001.png"],
-                        "inserteleo" => [ "cuff_m_rounded30001.png"],
+                        "title" => "2 Buttons Squred",
+                        "elements" => [ "cuff_m_squre20001.png"],
+                        "insertele" => [ "cuff_m_cutaway30001.png"],
+                        "inserteleo" => [ "cuff_m_cutaway30001.png"],
                         "customization_category_id" => "3",
-                        "image" => "customization/2_buttons_rounded.jpg",
+                        "image" => "customization/2_buttons_squre.jpg",
                         "insert_style_css" => "",
-                        "insert_style" => "cuff_m_rounded20001.png",
+                        "sleeve1" => ["shirt_sleeve0001.png"],
+                        "insert_style" => "cuff_m_cutaway20001.png",
                         "insert_overlay" => "cuff_single_insert_overlay.png",
                         "insert_overlay_css" => "",
-                        "insert_full" => ["cuff_single_rounded0001.png"],
+                        "insert_full" => ["cuff_single_cutaway0001.png"],
                         "sleeve" => ["b_full_shirt_sleeve0001.png",],
                         "buttons" => "cuff_s_button20001.png",
                     ), array(
@@ -235,7 +268,7 @@ class CustomApi extends REST_Controller {
                         "elements" => [ "cuff_m_franch_squre_insert0001.png", "cuff_m_franch_squre0001.png"],
                         "insertele" => [ "cuff_m_franch_squre0001.png"],
                         "inserteleo" => [ "cuff_m_franch_squre0001.png"],
-                        "image" => "customization/cuff_franch_rounded.jpg",
+                        "image" => "customization/cuff_franch_squre.jpg",
                         "insert_style_css" => "",
                         "insert_style" => "cuff_m_franch_squre_insert0001.png",
                         "insert_overlay" => "cuff_franch_insert_overlay.png",
@@ -291,7 +324,7 @@ class CustomApi extends REST_Controller {
                         "image" => "customization/back_plain.jpeg"
                     ), array(
                         "status" => "0",
-                        "title" => "Two Side",
+                        "title" => "Side Pleated",
                         "customization_category_id" => "5",
                         "halfsleeve" => ["back_half_sleeve0001.png", "back_half_sleeve_cuff0001.png"],
                         "fullsleeve" => ["b_full_shirt_sleeve0001.png", "b_full_shirt_sleeve0001.png",],
@@ -332,17 +365,61 @@ class CustomApi extends REST_Controller {
                         ),
                     ), array(
                         "status" => "1",
-                        "title" => "1 Pocket",
+                        "title" => "1 Regular Pocket",
                         "customization_category_id" => "7",
                         "elements" => ["shirtbody_pocket_right20001.png",],
                         "image" => "customization/pocket_one.jpeg"
                     ), array(
                         "status" => "0",
-                        "title" => "2 Pocket",
+                        "title" => "2 Regular Pockets",
                         "customization_category_id" => "7",
                         "elements" => ["shirtbody_pocket_right20001.png", "shirtbody_pocket_left20001.png"],
                         "image" => "customization/pocket_two.jpeg"
-                    )],
+                    ),
+                     array(
+                        "status" => "0",
+                        "title" => "1 Rounded Pocket",
+                        "customization_category_id" => "7",
+                        "elements" => ["shirtbody_pocket_round_right0001.png",],
+                        "image" => "customization/pocket_one_r.jpeg"
+                    ), array(
+                        "status" => "0",
+                        "title" => "2 Rounded Pockets",
+                        "customization_category_id" => "7",
+                        "elements" => ["shirtbody_pocket_round_right0001.png", "shirtbody_pocket_round_left0001.png"],
+                        "image" => "customization/pocket_two_r.png"
+                    ),
+                     array(
+                        "status" => "0",
+                        "title" => "1 Rounded Pocket With Pleat",
+                        "customization_category_id" => "7",
+                        "elements" => ["shirtbody_pocket_round_right0001.png",],
+                        "image" => "customization/pocket_one_rf.jpeg",
+                         "overlay"=>["shirtbody_pocket_round_flap_r.png"],
+                    ), array(
+                        "status" => "0",
+                        "title" => "2 Rounded Pockets With Pleat",
+                        "customization_category_id" => "7",
+                        "elements" => ["shirtbody_pocket_round_right0001.png", "shirtbody_pocket_round_left0001.png"],
+                        "image" => "customization/pocket_two_r.png",
+                        "overlay"=>["shirtbody_pocket_round__flap_l.png", "shirtbody_pocket_round_flap_r.png"],
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "1 Rounded Pocket With Button",
+                        "customization_category_id" => "7",
+                        "elements" => ["shirtbody_pocket_round_right0001.png",],
+                        "image" => "customization/pocket_one_rb.jpeg",
+                        "overlay"=>[ "shirtbody_pocket_round_button_r.png"],
+                    ), array(
+                        "status" => "0",
+                        "title" => "2 Rounded Pockets With Button",
+                        "customization_category_id" => "7",
+                        "elements" => ["shirtbody_pocket_round_right0001.png", "shirtbody_pocket_round_left0001.png"],
+                        "image" => "customization/pocket_two_rb.png",
+                        "overlay"=>["shirtbody_pocket_round_button_l.png", "shirtbody_pocket_round_button_r.png"],
+                    ),
+                    ],
                 "Front" => [
                     array(
                         "status" => "0",
