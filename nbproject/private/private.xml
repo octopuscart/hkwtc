@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/royaltailors/application/controllers/Api.php</file>
-            <file>file:/C:/wamp/www/royaltailors/application/views/Product/productList.php</file>
-            <file>file:/C:/wamp/www/royaltailors/application/controllers/Email.php</file>
-            <file>file:/C:/wamp/www/royaltailors/application/models/Product_model.php</file>
-            <file>file:/C:/wamp/www/royaltailors/application/controllers/Cart.php</file>
+            <file>file:/C:/wamp/www/royaltailors/application/controllers/ApiMulti.php</file>
+            <file>file:/C:/wamp/www/royaltailors/application/views/Email/order_mail.php</file>
+            <file>file:/C:/wamp/www/royaltailors/application/controllers/CustomApi.php</file>
+            <file>file:/C:/wamp/www/royaltailors/application/views/Cart/noproduct.php</file>
         </group>
     </open-files>
 </project-private>
