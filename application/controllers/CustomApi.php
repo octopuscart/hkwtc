@@ -64,6 +64,11 @@ class CustomApi extends REST_Controller {
                     "type" => "main",
                 ),
                 array(
+                    "title" => "Stitching",
+                    "viewtype" => "front",
+                    "type" => "main",
+                ),
+                array(
                     "title" => "Buttons",
                     "viewtype" => "front",
                     "type" => "main",
@@ -76,7 +81,7 @@ class CustomApi extends REST_Controller {
                 array(
                     "title" => "Button Hole Color Position",
                     "viewtype" => "front",
-                    "type" => "submain",
+                    "type" => "main",
                 ),
                 array(
                     "title" => "Button Thread Color",
@@ -246,6 +251,25 @@ class CustomApi extends REST_Controller {
                         "title" => "On Front",
                         "ptype" => "4",
                     ),
+                    
+                ],
+                "Stitching" => [
+                    array(
+                        "status" => "0",
+                        "title" => "Close To Size",
+                        "ptype" => "1",
+                    ),
+                    array(
+                        "status" => "1",
+                        "title" => "Standard 1/4",
+                        "ptype" => "2",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Bespoke 3/8",
+                        "ptype" => "3",
+                    ),
+                   
                     
                 ],
                 "Button Hole Color" => [
