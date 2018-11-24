@@ -69,6 +69,21 @@ class CustomApi extends REST_Controller {
                     "type" => "main",
                 ),
                 array(
+                    "title" => "Button Hole Color",
+                    "viewtype" => "front",
+                    "type" => "main",
+                ),
+                array(
+                    "title" => "Button Hole Color Position",
+                    "viewtype" => "front",
+                    "type" => "submain",
+                ),
+                array(
+                    "title" => "Button Thread Color",
+                    "viewtype" => "front",
+                    "type" => "main",
+                ),
+                array(
                     "title" => "Monogram",
                     "viewtype" => "front",
                     "type" => "main",
@@ -90,6 +105,7 @@ class CustomApi extends REST_Controller {
                         "title" => "Collar",
                         "css_class" => "monogramtext_posistion_collar",
                         "not_show_when" => [],
+                        "view_type" => "back",
                         "image" => "customization/monogram_inside_coller_band.jpg"
                     ),
                     array(
@@ -107,92 +123,243 @@ class CustomApi extends REST_Controller {
                         "not_show_when" => ["No Pocket"],
                         "checkwith" => "Pocket",
                         "image" => "customization/monogram_left_chest_pocket.jpg"
-                    )],
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Abdomen",
+                        "css_class" => "monogramtext_posistion_abdomen",
+                        "not_show_when" => ["Short Sleeve Without Cuff", "Short Sleeve With Cuff"],
+                        "checkwith" => "Cuff & Sleeve",
+                        "image" => "customization/left_abdomen.png"
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Shirt Tail",
+                        "css_class" => "monogramtext_posistion_shirt_tail",
+                        "not_show_when" => ["Short Sleeve Without Cuff", "Short Sleeve With Cuff"],
+                        "checkwith" => "Cuff & Sleeve",
+                        "image" => "customization/shirt_tail.png"
+                    ),],
                 "Buttons" => [
-                    
+
                     array(
                         "status" => "0",
                         "title" => "1",
-                        "button"=>"b1",
+                        "button" => "b1",
                         "image" => "customization/buttons/b1.png",
                         "customization_category_id" => "8",
                     ), array(
                         "status" => "0",
                         "title" => "3",
-                        "button"=>"b3",
+                        "button" => "b3",
                         "image" => "customization/buttons/b3.png",
                         "customization_category_id" => "8",
                     ), array(
                         "status" => "0",
                         "title" => "4",
-                        "button"=>"b4",
+                        "button" => "b4",
                         "image" => "customization/buttons/b4.png",
                         "customization_category_id" => "8",
                     ), array(
                         "status" => "0",
                         "title" => "5",
-                        "button"=>"b5",
+                        "button" => "b5",
                         "image" => "customization/buttons/b5.png",
                         "customization_category_id" => "8",
                     ), array(
                         "status" => "0",
                         "title" => "6",
-                        "button"=>"b6",
+                        "button" => "b6",
                         "image" => "customization/buttons/b6.png",
                         "customization_category_id" => "8",
                     ), array(
                         "status" => "0",
                         "title" => "7",
-                        "button"=>"b7",
+                        "button" => "b7",
                         "image" => "customization/buttons/b7.png",
                         "customization_category_id" => "8",
                     ), array(
                         "status" => "0",
                         "title" => "8",
-                        "button"=>"b8",
+                        "button" => "b8",
                         "image" => "customization/buttons/b8.png",
                         "customization_category_id" => "8",
                     ), array(
                         "status" => "0",
                         "title" => "9",
-                        "button"=>"b9",
+                        "button" => "b9",
                         "image" => "customization/buttons/b9.png",
                         "customization_category_id" => "8",
                     ), array(
                         "status" => "1",
                         "title" => "HDR",
-                        "button"=>"b1",
+                        "button" => "b1",
                         "image" => "customization/buttons/b1.png",
                         "customization_category_id" => "8",
                     ), array(
                         "status" => "0",
                         "title" => "SDR",
-                        "button"=>"b2",
+                        "button" => "b2",
                         "image" => "customization/buttons/b2.png",
                         "customization_category_id" => "8",
                     )
                     , array(
                         "status" => "0",
                         "title" => "HBE",
-                        "button"=>"hbe",
+                        "button" => "hbe",
                         "image" => "customization/buttons/hbe.png",
                         "customization_category_id" => "8",
                     )
                     , array(
                         "status" => "0",
                         "title" => "GN",
-                        "button"=>"gn",
+                        "button" => "gn",
                         "image" => "customization/buttons/gn.png",
                         "customization_category_id" => "8",
                     )
                     , array(
                         "status" => "0",
                         "title" => "DBE",
-                        "button"=>"b3",
+                        "button" => "b3",
                         "image" => "customization/buttons/b3.png",
                         "customization_category_id" => "8",
                     )
-                    ],
+                ],
+                "Button Hole Color Position" => [
+                    array(
+                        "status" => "1",
+                        "title" => "All Places",
+                        "ptype" => "1",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "On Cuff",
+                        "ptype" => "2",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "On Cuff And Collar",
+                        "ptype" => "3",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "On Front",
+                        "ptype" => "4",
+                    ),
+                    
+                ],
+                "Button Hole Color" => [
+                    array(
+                        "status" => "1",
+                        "title" => "Matching",
+                        "image" => "customization/hole_thread/matching.png",
+                        "folder" => "Matching",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "4",
+                        "color" => "4",
+                        "image" => "customization/hole_thread/4.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "8",
+                        "color" => "8",
+                        "image" => "customization/hole_thread/8.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "10",
+                        "color" => "10",
+                        "image" => "customization/hole_thread/10.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "11",
+                        "color" => "11",
+                        "image" => "customization/hole_thread/11.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "12",
+                        "color" => "12",
+                        "image" => "customization/hole_thread/12.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "13",
+                        "color" => "13",
+                        "image" => "customization/hole_thread/13.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "14",
+                        "color" => "14",
+                        "image" => "customization/hole_thread/14.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "17",
+                        "color" => "17",
+                        "image" => "customization/hole_thread/17.jpg",
+                    ),
+                ],
+                "Button Thread Color" => [
+                    array(
+                        "status" => "1",
+                        "title" => "Matching",
+                        "image" => "customization/hole_thread/matching.png",
+                        "folder" => "Matching",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "4",
+                        "color" => "4",
+                        "image" => "customization/hole_thread/4.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "8",
+                        "color" => "8",
+                        "image" => "customization/hole_thread/8.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "10",
+                        "color" => "10",
+                        "image" => "customization/hole_thread/10.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "11",
+                        "color" => "11",
+                        "image" => "customization/hole_thread/11.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "12",
+                        "color" => "12",
+                        "image" => "customization/hole_thread/12.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "13",
+                        "color" => "13",
+                        "image" => "customization/hole_thread/13.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "14",
+                        "color" => "14",
+                        "image" => "customization/hole_thread/14.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "17",
+                        "color" => "17",
+                        "image" => "customization/hole_thread/17.jpg",
+                    ),
+                ],
                 "Bottom" => [
                     array(
                         "status" => "1",
@@ -200,7 +367,7 @@ class CustomApi extends REST_Controller {
                         "elements" => ["shirtbody_round0001.png"],
                         "customization_category_id" => "6",
                         "image" => "customization/bottom_rounded.jpeg",
-                        "overlay"=>[]
+                        "overlay" => []
                     ),
                     array(
                         "status" => "0",
@@ -208,7 +375,7 @@ class CustomApi extends REST_Controller {
                         "elements" => ["shirtbody_round0001.png"],
                         "customization_category_id" => "6",
                         "image" => "customization/bottom_rounded_normal.jpeg",
-                        "overlay"=>["notmalround_bottom.png"]
+                        "overlay" => ["notmalround_bottom.png"]
                     ),
                     array(
                         "status" => "0",
@@ -216,8 +383,8 @@ class CustomApi extends REST_Controller {
                         "elements" => ["shirtbody_round0001.png"],
                         "customization_category_id" => "6",
                         "image" => "customization/bottom_rounded_deep.jpeg",
-                        "overlay"=>["deepround_bottom.png"]
-                    ),array(
+                        "overlay" => ["deepround_bottom.png"]
+                    ), array(
                         "status" => "0",
                         "title" => "Squared",
                         "elements" => ["shirtbody_squre0001.png"],
@@ -254,6 +421,8 @@ class CustomApi extends REST_Controller {
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_rounded0001.png"],
                         "sleeve" => ["b_full_shirt_sleeve0001.png",],
+                        "button_hole" => ["cuff_s_hole_10001.png"],
+                        "button_thread" => ["cuff_s_button1_trd0001.png"],
                         "buttons" => "cuff_s_button10001.png",
                     ), array(
                         "status" => "0",
@@ -270,6 +439,8 @@ class CustomApi extends REST_Controller {
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_cutaway0001.png"],
                         "sleeve" => ["b_full_shirt_sleeve0001.png",],
+                        "button_hole" => ["cuff_s_hole_10001.png"],
+                        "button_thread" => ["cuff_s_button1_trd0001.png"],
                         "buttons" => "cuff_s_button10001.png",
                     ), array(
                         "status" => "0",
@@ -286,6 +457,8 @@ class CustomApi extends REST_Controller {
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_cutaway0001.png"],
                         "sleeve" => ["b_full_shirt_sleeve0001.png",],
+                        "button_hole" => ["cuff_s_hole_10001.png"],
+                        "button_thread" => ["cuff_s_button1_trd0001.png"],
                         "buttons" => "cuff_s_button10001.png",
                     ), array(
                         "status" => "0",
@@ -302,8 +475,10 @@ class CustomApi extends REST_Controller {
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_rounded0001.png"],
                         "sleeve" => ["b_full_shirt_sleeve0001.png",],
+                        "button_hole" => ["cuff_s_hole_20001.png"],
+                        "button_thread" => ["cuff_s_button1_trd0001.png", "cuff_s_button2_trd0001.png"],
                         "buttons" => "cuff_s_button20001.png",
-                    ),array(
+                    ), array(
                         "status" => "0",
                         "title" => "2 Buttons Cutaway",
                         "customization_category_id" => "3",
@@ -318,6 +493,8 @@ class CustomApi extends REST_Controller {
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_cutaway0001.png"],
                         "sleeve" => ["b_full_shirt_sleeve0001.png",],
+                        "button_hole" => [ "cuff_s_hole_20001.png"],
+                        "button_thread" => ["cuff_s_button1_trd0001.png", "cuff_s_button2_trd0001.png"],
                         "buttons" => "cuff_s_button20001.png",
                     ), array(
                         "status" => "0",
@@ -334,6 +511,8 @@ class CustomApi extends REST_Controller {
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_cutaway0001.png"],
                         "sleeve" => ["b_full_shirt_sleeve0001.png",],
+                        "button_hole" => [ "cuff_s_hole_20001.png"],
+                        "button_thread" => ["cuff_s_button1_trd0001.png", "cuff_s_button2_trd0001.png"],
                         "buttons" => "cuff_s_button20001.png",
                     ), array(
                         "status" => "0",
@@ -384,6 +563,8 @@ class CustomApi extends REST_Controller {
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_cutaway0001.png"],
                         "sleeve" => ["b_full_shirt_sleeve0001.png",],
+                        "button_hole" => ["cuff_s_hole_10001.png",],
+                        "button_thread" => ["cuff_s_button1_trd0001.png"],
                         "buttons" => "cuff_s_button10001.png",
                     )
                 ],
@@ -451,7 +632,7 @@ class CustomApi extends REST_Controller {
                         "elements" => ["shirtbody_pocket_right20001.png", "shirtbody_pocket_left20001.png"],
                         "image" => "customization/pocket_two.jpeg"
                     ),
-                     array(
+                    array(
                         "status" => "0",
                         "title" => "1 Rounded Pocket",
                         "customization_category_id" => "7",
@@ -464,20 +645,20 @@ class CustomApi extends REST_Controller {
                         "elements" => ["shirtbody_pocket_round_right0001.png", "shirtbody_pocket_round_left0001.png"],
                         "image" => "customization/pocket_two_r.png"
                     ),
-                     array(
+                    array(
                         "status" => "0",
                         "title" => "1 Rounded Pocket With Pleat",
                         "customization_category_id" => "7",
                         "elements" => ["shirtbody_pocket_round_right0001.png",],
                         "image" => "customization/pocket_one_rf.jpeg",
-                         "overlay"=>["shirtbody_pocket_round_flap_r.png"],
+                        "overlay" => ["shirtbody_pocket_round_flap_r.png"],
                     ), array(
                         "status" => "0",
                         "title" => "2 Rounded Pockets With Pleat",
                         "customization_category_id" => "7",
                         "elements" => ["shirtbody_pocket_round_right0001.png", "shirtbody_pocket_round_left0001.png"],
                         "image" => "customization/pocket_two_r.png",
-                        "overlay"=>["shirtbody_pocket_round__flap_l.png", "shirtbody_pocket_round_flap_r.png"],
+                        "overlay" => ["shirtbody_pocket_round__flap_l.png", "shirtbody_pocket_round_flap_r.png"],
                     ),
                     array(
                         "status" => "0",
@@ -485,16 +666,16 @@ class CustomApi extends REST_Controller {
                         "customization_category_id" => "7",
                         "elements" => ["shirtbody_pocket_round_right0001.png",],
                         "image" => "customization/pocket_one_rb.jpeg",
-                        "overlay"=>[ "shirtbody_pocket_round_button_r.png"],
+                        "overlay" => [ "shirtbody_pocket_round_button_r.png"],
                     ), array(
                         "status" => "0",
                         "title" => "2 Rounded Pockets With Button",
                         "customization_category_id" => "7",
                         "elements" => ["shirtbody_pocket_round_right0001.png", "shirtbody_pocket_round_left0001.png"],
                         "image" => "customization/pocket_two_rb.png",
-                        "overlay"=>["shirtbody_pocket_round_button_l.png", "shirtbody_pocket_round_button_r.png"],
+                        "overlay" => ["shirtbody_pocket_round_button_l.png", "shirtbody_pocket_round_button_r.png"],
                     ),
-                    ],
+                ],
                 "Front" => [
                     array(
                         "status" => "0",
@@ -651,39 +832,55 @@ class CustomApi extends REST_Controller {
             ],
             "monogram_style" => [
                 array(
-                    "font_style" => "font-family: 'Orbitron';",
+                    "title" => "1",
+                    "image" => "1.png",
+                ),
+                array(
+                    "title" => "2",
+                    "image" => "2.png",
+                ),
+                array(
+                    "title" => "3",
+                    "image" => "3.png",
+                ),
+                array(
+                    "title" => "4",
+                    "image" => "4.png",
+                ),
+                array(
+                    "title" => "5",
+                    "image" => "5.png",
+                ),
+                array(
+                    "title" => "6",
+                    "image" => "6.png",
+                ),
+                array(
+                    "title" => "7",
+                    "image" => "7.png",
+                ),
+                array(
                     "title" => "8",
-                    "image" => "8.jpg",
+                    "image" => "8.png",
+                ), array(
+                    "title" => "9",
+                    "image" => "9.png",
                 ),
                 array(
-                    "font_style" => "font-family: 'Orbitron';",
                     "title" => "10",
-                    "image" => "10.jpg",
+                    "image" => "10.png",
                 ),
                 array(
-                    "font_style" => "font-family: 'Black Ops One';",
-                    "title" => "13",
-                    "image" => "13.jpg",
+                    "title" => "11",
+                    "image" => "11.png",
                 ),
                 array(
-                    "font_style" => "font-family: 'Bungee';",
-                    "title" => "16",
-                    "image" => "16.jpg",
+                    "title" => "14",
+                    "image" => "14.png",
                 ),
                 array(
-                    "font_style" => "font-family: 'Bungee';",
-                    "title" => "17",
-                    "image" => "17.jpg",
-                ),
-                array(
-                    "font_style" => "font-family: 'Bungee';",
-                    "title" => "19",
-                    "image" => "19.jpg",
-                ),
-                array(
-                    "font_style" => "font-family: 'Wallpoet';",
-                    "title" => "21",
-                    "image" => "21.jpg",
+                    "title" => "15",
+                    "image" => "15.png",
                 ),
             ],
         );
@@ -923,7 +1120,7 @@ class CustomApi extends REST_Controller {
                         "show_buttons" => "true",
                     ),
                 ],
-               "Breast Pocket" => [
+                "Breast Pocket" => [
                     array(
                         "status" => "1",
                         "title" => "Slanted Pocket",
@@ -944,7 +1141,7 @@ class CustomApi extends REST_Controller {
                         "status" => "0",
                         "title" => "No Vent",
                         "customization_category_id" => "4",
-                          "elements" => ["back_sleeve10001.png", "back_upper0001.png", "back_body0001.png",],
+                        "elements" => ["back_sleeve10001.png", "back_upper0001.png", "back_body0001.png",],
                         "image" => "suit_elements/back/back_no_vent.png",
                         "show_buttons" => "true",
                     ), array(
@@ -992,13 +1189,13 @@ class CustomApi extends REST_Controller {
                         "title" => "Yes",
                         "image" => "handstitchno.jpeg"
                     )],
-               "Sleeve Buttons" => [
+                "Sleeve Buttons" => [
                     array(
                         "status" => "1",
                         "title" => "4 Flat Buttons",
                         "customization_category_id" => "4",
                         "elements" => ["sleeve_buttons_10001.png", "sleeve_buttons_comman0001.png", "sleeve_buttons_40001.png",],
-                         "image" => "suit_elements/button/button_4_flat.png",
+                        "image" => "suit_elements/button/button_4_flat.png",
                         "buttons" => ["sleeve_buttons_flat_30001", "sleeve_buttons_flat_3_40001"],
                         "buttonhole" => ["sleeve_button_hole_40001.png", "sleeve_button_hole_comman0001.png", "sleeve_button_hole_10001.png"],
                         "show_buttons" => "true",
@@ -1008,12 +1205,11 @@ class CustomApi extends REST_Controller {
                         "title" => "3 Flat Buttons",
                         "customization_category_id" => "4",
                         "elements" => ["sleeve_buttons_comman0001.png", "sleeve_buttons_40001.png"],
-                         "image" => "suit_elements/button/button_3_flat.png",
+                        "image" => "suit_elements/button/button_3_flat.png",
                         "buttons" => ["sleeve_buttons_flat_30001"],
                         "buttonhole" => ["sleeve_button_hole_40001.png", "sleeve_button_hole_comman0001.png",],
                         "show_buttons" => "true",
                     ),
-
                 ],
                 "Lower Pocket" => [
 
@@ -1021,13 +1217,12 @@ class CustomApi extends REST_Controller {
                         "status" => "1",
                         "title" => "Straight Flap Pocket",
                         "customization_category_id" => "4",
-                        "elements" => ["lower_flap_pocket0001.png", ],
+                        "elements" => ["lower_flap_pocket0001.png",],
                         "image" => "suit_elements/pocket/pocket_flap.png",
                         "show_buttons" => "true",
-                        "style_l"=>"   ",
-                        "style_r"=>"    ",
+                        "style_l" => "   ",
+                        "style_r" => "    ",
                     ),
-
                     array(
                         "status" => "0",
                         "title" => "Slanting Pipe Pocket",
@@ -1049,12 +1244,12 @@ class CustomApi extends REST_Controller {
                         "buttons" => ["buttons_10001"],
                         "button_hole" => ["button_1_hole10001.png"],
                         "show_buttons" => "true",
-                        "overlay" => ["single_overlay2.png","single_overlay.png"],
+                        "overlay" => ["single_overlay2.png", "single_overlay.png"],
                     ), array(
                         "status" => "0",
                         "title" => "2 Buttons",
                         "customization_category_id" => "4",
-                          "elements" => ['body_single_410001.png',],
+                        "elements" => ['body_single_410001.png',],
                         "image" => "suit_elements/suittype/2_button.png",
                         "left" => "body_single_41_r0001.png",
                         "right" => "body_single_41_l0001.png",
@@ -1062,14 +1257,14 @@ class CustomApi extends REST_Controller {
                         "buttons2" => ["buttons_20001"],
                         "button_hole" => ["button_1_hole10001.png", "button_1_hole20001.png"],
                         "show_buttons" => "false",
-                        "overlay" => ["single_overlay2.png","single_overlay.png"],
+                        "overlay" => ["single_overlay2.png", "single_overlay.png"],
                     )
                     , array(
                         "status" => "0",
                         "title" => "4 Buttons 1 Button Fasten",
                         "elements" => ["body_double_left_v40001.png", "body_double_right_v40001.png",],
                         "customization_category_id" => "4",
-                        "image" =>"suit_elements/suittype/41_button.png",
+                        "image" => "suit_elements/suittype/41_button.png",
                         "left" => "body_double_41v2_l0001.png",
                         "right" => "body_double_41v2_r0001.png",
                         "button_hole" => ["button_4_hole_10001.png", "button_4_hole_20001.png"],
@@ -1090,7 +1285,7 @@ class CustomApi extends REST_Controller {
                         "buttons2" => ["button_4_20001"],
                         "image" => "suit_elements/suittype/62_button.png",
                         "show_buttons" => "true",
-                         "overlay" => ["body_double_overlay2.png", "body_double_overlay.png"],
+                        "overlay" => ["body_double_overlay2.png", "body_double_overlay.png"],
                     )
                 ],
                 "Lapel Style" => [
@@ -1112,7 +1307,7 @@ class CustomApi extends REST_Controller {
                                 ],
                                 "stitcing" => ['laple_notch_stitching1.png'],
                                 "hole" => ["laple_double_notch_button_hole0001.png"],
-                                "overelay" => [ ]),
+                                "overelay" => []),
                             "3 Buttons" => array("elements" => [
                                     "laple_single_3_notch_peak_upper0001.png",
                                     "laple_single_3_notch_modern0001.png"
@@ -1204,7 +1399,7 @@ class CustomApi extends REST_Controller {
                                 "overelay" => []),
                         ),
                         "customization_category_id" => "6",
-                         "image" => "suit_elements/laple/peak.png"
+                        "image" => "suit_elements/laple/peak.png"
                     ),
                 ],
             ),
@@ -1254,7 +1449,6 @@ class CustomApi extends REST_Controller {
                     "type" => "main",
                     "style_side" => "    background-size: 19%!important;",
                 ),
-                
             ],
             "collar_cuff_insert" => array(),
             "data" => array(
@@ -1328,7 +1522,7 @@ class CustomApi extends REST_Controller {
                         "status" => "0",
                         "title" => "No Vent",
                         "customization_category_id" => "4",
-                          "elements" => ["back_sleeve10001.png", "back_upper0001.png", "back_body0001.png",],
+                        "elements" => ["back_sleeve10001.png", "back_upper0001.png", "back_body0001.png",],
                         "image" => "suit_elements/back/back_no_vent.png",
                         "show_buttons" => "true",
                     ), array(
@@ -1376,13 +1570,13 @@ class CustomApi extends REST_Controller {
                         "title" => "Yes",
                         "image" => "handstitchno.jpeg"
                     )],
-               "Sleeve Buttons" => [
+                "Sleeve Buttons" => [
                     array(
                         "status" => "1",
                         "title" => "4 Flat Buttons",
                         "customization_category_id" => "4",
                         "elements" => ["sleeve_buttons_10001.png", "sleeve_buttons_comman0001.png", "sleeve_buttons_40001.png",],
-                         "image" => "suit_elements/button/button_4_flat.png",
+                        "image" => "suit_elements/button/button_4_flat.png",
                         "buttons" => ["sleeve_buttons_flat_30001", "sleeve_buttons_flat_3_40001"],
                         "buttonhole" => ["sleeve_button_hole_40001.png", "sleeve_button_hole_comman0001.png", "sleeve_button_hole_10001.png"],
                         "show_buttons" => "true",
@@ -1392,12 +1586,11 @@ class CustomApi extends REST_Controller {
                         "title" => "3 Flat Buttons",
                         "customization_category_id" => "4",
                         "elements" => ["sleeve_buttons_comman0001.png", "sleeve_buttons_40001.png"],
-                         "image" => "suit_elements/button/button_3_flat.png",
+                        "image" => "suit_elements/button/button_3_flat.png",
                         "buttons" => ["sleeve_buttons_flat_30001"],
                         "buttonhole" => ["sleeve_button_hole_40001.png", "sleeve_button_hole_comman0001.png",],
                         "show_buttons" => "true",
                     ),
-
                 ],
                 "Lower Pocket" => [
 
@@ -1405,13 +1598,12 @@ class CustomApi extends REST_Controller {
                         "status" => "1",
                         "title" => "Straight Flap Pocket",
                         "customization_category_id" => "4",
-                        "elements" => ["lower_flap_pocket0001.png", ],
+                        "elements" => ["lower_flap_pocket0001.png",],
                         "image" => "suit_elements/pocket/pocket_flap.png",
                         "show_buttons" => "true",
-                        "style_l"=>"   ",
-                        "style_r"=>"    ",
+                        "style_l" => "   ",
+                        "style_r" => "    ",
                     ),
-
                     array(
                         "status" => "0",
                         "title" => "Slanting Pipe Pocket",
@@ -1433,12 +1625,12 @@ class CustomApi extends REST_Controller {
                         "buttons" => ["buttons_10001"],
                         "button_hole" => ["button_1_hole10001.png"],
                         "show_buttons" => "true",
-                        "overlay" => ["single_overlay2.png","single_overlay.png"],
+                        "overlay" => ["single_overlay2.png", "single_overlay.png"],
                     ), array(
                         "status" => "0",
                         "title" => "2 Buttons",
                         "customization_category_id" => "4",
-                          "elements" => ['body_single_410001.png',],
+                        "elements" => ['body_single_410001.png',],
                         "image" => "suit_elements/suittype/2_button.png",
                         "left" => "body_single_41_r0001.png",
                         "right" => "body_single_41_l0001.png",
@@ -1446,14 +1638,14 @@ class CustomApi extends REST_Controller {
                         "buttons2" => ["buttons_20001"],
                         "button_hole" => ["button_1_hole10001.png", "button_1_hole20001.png"],
                         "show_buttons" => "false",
-                        "overlay" => ["single_overlay2.png","single_overlay.png"],
+                        "overlay" => ["single_overlay2.png", "single_overlay.png"],
                     )
                     , array(
                         "status" => "0",
                         "title" => "4 Buttons 1 Button Fasten",
                         "elements" => ["body_double_left_v40001.png", "body_double_right_v40001.png",],
                         "customization_category_id" => "4",
-                        "image" =>"suit_elements/suittype/41_button.png",
+                        "image" => "suit_elements/suittype/41_button.png",
                         "left" => "body_double_41v2_l0001.png",
                         "right" => "body_double_41v2_r0001.png",
                         "button_hole" => ["button_4_hole_10001.png", "button_4_hole_20001.png"],
@@ -1474,7 +1666,7 @@ class CustomApi extends REST_Controller {
                         "buttons2" => ["button_4_20001"],
                         "image" => "suit_elements/suittype/62_button.png",
                         "show_buttons" => "true",
-                         "overlay" => ["body_double_overlay2.png", "body_double_overlay.png"],
+                        "overlay" => ["body_double_overlay2.png", "body_double_overlay.png"],
                     )
                 ],
                 "Lapel Style" => [
@@ -1588,7 +1780,7 @@ class CustomApi extends REST_Controller {
                                 "overelay" => []),
                         ),
                         "customization_category_id" => "6",
-                         "image" => "suit_elements/laple/peak.png"
+                        "image" => "suit_elements/laple/peak.png"
                     ),
                 ],
             ),
