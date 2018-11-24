@@ -63,11 +63,11 @@ class CustomApi extends REST_Controller {
                     "viewtype" => "front",
                     "type" => "main",
                 ),
-//                array(
-//                    "title" => "Buttons",
-//                    "viewtype" => "front",
-//                    "type" => "main",
-//                ),
+                array(
+                    "title" => "Buttons",
+                    "viewtype" => "front",
+                    "type" => "main",
+                ),
                 array(
                     "title" => "Monogram",
                     "viewtype" => "front",
@@ -109,15 +109,90 @@ class CustomApi extends REST_Controller {
                         "image" => "customization/monogram_left_chest_pocket.jpg"
                     )],
                 "Buttons" => [
+                    
                     array(
-                        "status" => "1",
-                        "title" => "Standard",
+                        "status" => "0",
+                        "title" => "1",
+                        "button"=>"b1",
+                        "image" => "customization/buttons/b1.png",
                         "customization_category_id" => "8",
                     ), array(
                         "status" => "0",
-                        "title" => "Matching",
+                        "title" => "3",
+                        "button"=>"b3",
+                        "image" => "customization/buttons/b3.png",
                         "customization_category_id" => "8",
-                    )],
+                    ), array(
+                        "status" => "0",
+                        "title" => "4",
+                        "button"=>"b4",
+                        "image" => "customization/buttons/b4.png",
+                        "customization_category_id" => "8",
+                    ), array(
+                        "status" => "0",
+                        "title" => "5",
+                        "button"=>"b5",
+                        "image" => "customization/buttons/b5.png",
+                        "customization_category_id" => "8",
+                    ), array(
+                        "status" => "0",
+                        "title" => "6",
+                        "button"=>"b6",
+                        "image" => "customization/buttons/b6.png",
+                        "customization_category_id" => "8",
+                    ), array(
+                        "status" => "0",
+                        "title" => "7",
+                        "button"=>"b7",
+                        "image" => "customization/buttons/b7.png",
+                        "customization_category_id" => "8",
+                    ), array(
+                        "status" => "0",
+                        "title" => "8",
+                        "button"=>"b8",
+                        "image" => "customization/buttons/b8.png",
+                        "customization_category_id" => "8",
+                    ), array(
+                        "status" => "0",
+                        "title" => "9",
+                        "button"=>"b9",
+                        "image" => "customization/buttons/b9.png",
+                        "customization_category_id" => "8",
+                    ), array(
+                        "status" => "1",
+                        "title" => "HDR",
+                        "button"=>"b1",
+                        "image" => "customization/buttons/b1.png",
+                        "customization_category_id" => "8",
+                    ), array(
+                        "status" => "0",
+                        "title" => "SDR",
+                        "button"=>"b2",
+                        "image" => "customization/buttons/b2.png",
+                        "customization_category_id" => "8",
+                    )
+                    , array(
+                        "status" => "0",
+                        "title" => "HBE",
+                        "button"=>"hbe",
+                        "image" => "customization/buttons/hbe.png",
+                        "customization_category_id" => "8",
+                    )
+                    , array(
+                        "status" => "0",
+                        "title" => "GN",
+                        "button"=>"gn",
+                        "image" => "customization/buttons/gn.png",
+                        "customization_category_id" => "8",
+                    )
+                    , array(
+                        "status" => "0",
+                        "title" => "DBE",
+                        "button"=>"b3",
+                        "image" => "customization/buttons/b3.png",
+                        "customization_category_id" => "8",
+                    )
+                    ],
                 "Bottom" => [
                     array(
                         "status" => "1",
