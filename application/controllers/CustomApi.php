@@ -150,9 +150,83 @@ class CustomApi extends REST_Controller {
                         "image" => "customization/shirt_tail.png"
                     ),],
                 "Buttons" => [
-
+                      array(
+                        "status" => "0",
+                        "title" => "HBE",
+                        "button" => "hbe",
+                        "image" => "customization/buttons/hbe.png",
+                        "customization_category_id" => "8",
+                    ),
                     array(
                         "status" => "0",
+                        "title" => "PBE",
+                        "button" => "pbe",
+                        "image" => "customization/buttons/pbe.png",
+                        "customization_category_id" => "8",
+                    ), array(
+                        "status" => "0",
+                        "title" => "DBE",
+                        "button" => "dbe",
+                        "image" => "customization/buttons/dbe.png",
+                        "customization_category_id" => "8",
+                    ), array(
+                        "status" => "0",
+                        "title" => "SDR",
+                        "button" => "sdr",
+                        "image" => "customization/buttons/sdr.png",
+                        "customization_category_id" => "8",
+                    ), array(
+                        "status" => "0",
+                        "title" => "HDR",
+                        "button" => "hdr",
+                        "image" => "customization/buttons/hdr.png",
+                        "customization_category_id" => "8",
+                    )
+                    , array(
+                        "status" => "0",
+                        "title" => "LGN",
+                        "button" => "lgn",
+                        "image" => "customization/buttons/lgn.png",
+                        "customization_category_id" => "8",
+                    ), array(
+                        "status" => "0",
+                        "title" => "GN",
+                        "button" => "gn",
+                        "image" => "customization/buttons/gn.png",
+                        "customization_category_id" => "8",
+                    )
+                    
+                     , array(
+                        "status" => "0",
+                        "title" => "DBN",
+                        "button" => "dbn",
+                        "image" => "customization/buttons/dbn.png",
+                        "customization_category_id" => "8",
+                    )
+                    , array(
+                        "status" => "0",
+                        "title" => "RE",
+                        "button" => "re",
+                        "image" => "customization/buttons/re.png",
+                        "customization_category_id" => "8",
+                    ),
+                     array(
+                        "status" => "0",
+                        "title" => "YW",
+                        "button" => "yw",
+                        "image" => "customization/buttons/yw.png",
+                        "customization_category_id" => "8",
+                    )
+                    ,
+                     array(
+                        "status" => "0",
+                        "title" => "SPK",
+                        "button" => "spk",
+                        "image" => "customization/buttons/spk.png",
+                        "customization_category_id" => "8",
+                    ),
+                    array(
+                        "status" => "1",
                         "title" => "1",
                         "button" => "b1",
                         "image" => "customization/buttons/b1.png",
@@ -199,38 +273,11 @@ class CustomApi extends REST_Controller {
                         "button" => "b9",
                         "image" => "customization/buttons/b9.png",
                         "customization_category_id" => "8",
-                    ), array(
-                        "status" => "1",
-                        "title" => "HDR",
-                        "button" => "b1",
-                        "image" => "customization/buttons/b1.png",
-                        "customization_category_id" => "8",
-                    ), array(
+                    ),array(
                         "status" => "0",
-                        "title" => "SDR",
-                        "button" => "b2",
-                        "image" => "customization/buttons/b2.png",
-                        "customization_category_id" => "8",
-                    )
-                    , array(
-                        "status" => "0",
-                        "title" => "HBE",
-                        "button" => "hbe",
-                        "image" => "customization/buttons/hbe.png",
-                        "customization_category_id" => "8",
-                    )
-                    , array(
-                        "status" => "0",
-                        "title" => "GN",
-                        "button" => "gn",
-                        "image" => "customization/buttons/gn.png",
-                        "customization_category_id" => "8",
-                    )
-                    , array(
-                        "status" => "0",
-                        "title" => "DBE",
-                        "button" => "b3",
-                        "image" => "customization/buttons/b3.png",
+                        "title" => "10",
+                        "button" => "b10",
+                        "image" => "customization/buttons/b10.png",
                         "customization_category_id" => "8",
                     )
                 ],
