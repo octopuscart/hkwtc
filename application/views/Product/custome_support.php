@@ -20,7 +20,7 @@ $this->load->view('Product/custom_select_left');
                         <div class="col-md-3 col-xs-6 custome_element_col" ng-repeat="ele in data_list[k.title]" >
                             <div class="item elementItem {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'' :'noselected' }} "  ng-click='selectElement(k, ele)'>
                                 <div >
-                                    <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/{{ele.image}}')" > </div>
+                                    <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/{{ele.image}}');{{k.style_side}}" > </div>
                                     <div class='customization_title'>
                                         {{ele.title}} 
                                     </div>
@@ -29,14 +29,15 @@ $this->load->view('Product/custom_select_left');
                         </div>
                     </div>
                     <div ng-switch-when="Button Thread Color" class="customization_items ">
-
-                        <h5 class="customization_heading">{{k.title}}</h5>
-                        <div class="col-md-2 col-xs-6 custome_element_col" ng-repeat="ele in data_list[k.title]" >
-                            <div class="item elementItem {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'' :'noselected' }} "  ng-click='selectElement(k, ele)'>
-                                <div >
-                                    <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/{{ele.image}}')" > </div>
-                                    <div class='customization_title'>
-                                        {{ele.title}} 
+                        <div class="col-md-12 row">
+                            <h5 class="customization_heading">{{k.title}}</h5>
+                            <div class="col-md-2 col-xs-6 custome_element_col" ng-repeat="ele in data_list[k.title]" >
+                                <div class="item elementItem {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'' :'noselected' }} "  ng-click='selectElement(k, ele)'>
+                                    <div >
+                                        <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/{{ele.image}}');{{k.style_side}}" > </div>
+                                        <div class='customization_title'>
+                                            {{ele.title}} 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +50,7 @@ $this->load->view('Product/custom_select_left');
                             <div class="col-md-3 col-xs-6 custome_element_col" ng-repeat="ele in data_list[k.title]" >
                                 <div class="item elementItem {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'' :'noselected' }} "  ng-click='selectElement(k, ele)'>
                                     <div >
-                                        <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/{{ele.image}}')" > </div>
+                                        <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/{{ele.image}}');{{k.style_side}}" > </div>
                                         <div class='customization_title'>
                                             {{ele.title}} 
                                         </div>
@@ -59,13 +60,13 @@ $this->load->view('Product/custom_select_left');
                         </div>
                     </div>
                     <div ng-switch-when="Button Hole Color" class="customization_items ">
-                        
+
                         <div class="col-md-12 row">
                             <h5 class="customization_heading">{{k.title}}</h5>
                             <div class="col-md-2 col-xs-6 custome_element_col" ng-repeat="ele in data_list[k.title]" >
                                 <div class="item elementItem {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'' :'noselected' }} "  ng-click='selectElement(k, ele)'>
                                     <div >
-                                        <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/{{ele.image}}')" > </div>
+                                        <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/{{ele.image}}');{{k.style_side}}" > </div>
                                         <div class='customization_title'>
                                             {{ele.title}} 
                                         </div>
@@ -84,7 +85,7 @@ $this->load->view('Product/custom_select_left');
                                 <div class="col-md-3 col-xs-6 custome_element_col" ng-repeat="ele in data_list[k.title]"  ng-if="ele.not_show_when.indexOf(selecteElements[screencustom.fabric][ele.checkwith].title) == (-1)">
                                     <div class="item elementItem {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'' :'noselected' }} "  ng-click='selectElement(k, ele);'>
                                         <div >
-                                            <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/{{ele.image}}')" > </div>
+                                            <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/{{ele.image}}');{{k.style_side}}" > </div>
                                             <div class='customization_title' style="    height: 22px;">
                                                 {{ele.title}} 
                                             </div>
@@ -103,7 +104,7 @@ $this->load->view('Product/custom_select_left');
                                         <h6>Monogram Colors</h6>
                                         <div class="row" style="margin: 0">
                                             <div class="col-md-2 col-xs-4 " style="padding-left: 0px;" ng-repeat="mgc in monogram_colors" ng-click="monogramColor(mgc)" >
-                                                <div class="monogram_color_style" style="background: {{mgc.backcolor}};">
+                                                <div class="monogram_color_style" style="background: {{mgc.backcolor}};{{k.style_side}};">
 
                                                 </div>
                                             </div>
