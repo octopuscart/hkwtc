@@ -85,11 +85,7 @@ $this->load->view('layout/header');
                                        <?php
                                     $this->load->view('customization/shirtBlock');
                                     ?>
-                                    <div class="backview_custom customization_block  animated " ng-if="screencustom.view_type == 'back'" >
-                                        <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/b_collar0001.png" class="fixpos animated" >
-                                        <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{img}}" ng-repeat="img in selecteElements[fab.product_id]['Cuff & Sleeve'].sleeve" class="fixpos animated" >
-                                        <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Back'].elements" >
-                                    </div> 
+                                     
                                 </div>
                             </div>
                         </div>
