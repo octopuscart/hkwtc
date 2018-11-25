@@ -985,6 +985,7 @@ class CustomApi extends REST_Controller {
                     "title" => "Lapel Button Hole Color",
                     "viewtype" => "front",
                     "type" => "main",
+                    "style_side" => "    background-size: 100%!important;height:50px",
                 ),
                 array(
                     "title" => "Breast Pocket",
@@ -1013,10 +1014,10 @@ class CustomApi extends REST_Controller {
                     "style_side" => "    background-size: 100%!important;",
                 ),
                 array(
-                    "title" => "Contrast First Buttons Hole",
+                    "title" => "Contrast First Button Hole",
                     "viewtype" => "front",
                     "type" => "main",
-                    "style_side" => "    background-size: 100%!important;",
+                    "style_side" => "    background-size: 100%!important;height:50px",
                 ),
                 array(
                     "title" => "Number of Pleat",
@@ -1034,6 +1035,11 @@ class CustomApi extends REST_Controller {
                     "type" => "main",
                 ),
                 array(
+                    "title" => "Hidden Pocket",
+                    "viewtype" => "pant",
+                    "type" => "main",
+                ),
+                array(
                     "title" => "Waistband",
                     "viewtype" => "pant",
                     "type" => "main",
@@ -1046,6 +1052,32 @@ class CustomApi extends REST_Controller {
             ],
             "collar_cuff_insert" => array(),
             "data" => array(
+                "Hidden Pocket" => [
+                    array(
+                        "status" => "1",
+                        "title" => "No Pocket",
+                        "customization_category_id" => "4",
+                        "elements" => ["pant_pleat_no0001.png"],
+                        "image" => "pant_elements/waistband/no_belt_loop.png",
+                        "show_buttons" => "true",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Inside Waistband",
+                        "elements" => [],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/hidden_pocket_iw.png",
+                        "show_buttons" => "true",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Outside Waistband",
+                        "elements" => [],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/hidden_pocket_ow.png",
+                        "show_buttons" => "true",
+                    )
+                ],
                 "Number of Pleat" => [
                     array(
                         "status" => "1",
@@ -1100,14 +1132,7 @@ class CustomApi extends REST_Controller {
                         "show_buttons" => "true",
                     ), array(
                         "status" => "0",
-                        "title" => "Piped",
-                        "elements" => ["pant_pocket_pipe.png",],
-                        "customization_category_id" => "4",
-                        "image" => "pant_elements/pocket/pocket_piped.png",
-                        "show_buttons" => "true",
-                    ), array(
-                        "status" => "0",
-                        "title" => "Seam",
+                        "title" => "Straight Pocket",
                         "elements" => ["pant_pocket_seam.png",],
                         "customization_category_id" => "4",
                         "image" => "pant_elements/pocket/pocket_seam.png",
@@ -1117,22 +1142,66 @@ class CustomApi extends REST_Controller {
                 "Number of Back Pocket" => [
                     array(
                         "status" => "0",
-                        "title" => "1 Pocket Right Side",
+                        "title" => "Welt Pocket Right Side",
                         "customization_category_id" => "4",
                         "elements" => ["back_pocket_r0001.png", "back_pocket_l_button0001.png"],
                         "image" => "pant_elements/back_pocket/back_r_pocket.png",
                         "show_buttons" => "true",
                     ), array(
                         "status" => "0",
-                        "title" => "1 Pocket Left Side",
+                        "title" => "Welt Pocket Left Side",
                         "elements" => ["back_pocket_l0001.png", "back_pocket_r_button0001.png"],
                         "customization_category_id" => "4",
                         "image" => "pant_elements/back_pocket/back_l_pocket.png",
                         "show_buttons" => "true",
                     ), array(
                         "status" => "1",
-                        "title" => "2 Pockets",
+                        "title" => "2 Welt Pockets",
                         "elements" => ["back_pocket_r0001.png", "back_pocket_l_button0001.png", "back_pocket_l0001.png", "back_pocket_r_button0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/back_pocket/back_2_pocket.png",
+                        "show_buttons" => "true",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Flap Pocket Right Side",
+                        "customization_category_id" => "4",
+                        "elements" => ["back_pocket_r_flap0001.png"],
+                        "image" => "pant_elements/back_pocket/back_r_pocket.png",
+                        "show_buttons" => "true",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Flap Pocket Left Side",
+                        "elements" => ["back_pocket_l_flap0001.png", ],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/back_pocket/back_l_pocket.png",
+                        "show_buttons" => "true",
+                    ), array(
+                        "status" => "0",
+                        "title" => "2 Flap Pockets",
+                        "elements" => ["back_pocket_r_flap0001.png", "back_pocket_l_flap0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/back_pocket/back_2_pocket.png",
+                        "show_buttons" => "true",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "One Line Pocket Right Side",
+                        "customization_category_id" => "4",
+                        "elements" => ["back_pocket_r_line0001.png", "back_pocket_l_button0001.png"],
+                        "image" => "pant_elements/back_pocket/back_r_pocket.png",
+                        "show_buttons" => "true",
+                    ), array(
+                        "status" => "0",
+                        "title" => "One Line Pocket Left Side",
+                        "elements" => ["back_pocket_l_line0001.png", "back_pocket_r_button0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/back_pocket/back_l_pocket.png",
+                        "show_buttons" => "true",
+                    ), array(
+                        "status" => "0",
+                        "title" => "2 One Line Pockets",
+                        "elements" => ["back_pocket_r_line0001.png", "back_pocket_l_button0001.png", "back_pocket_l_line0001.png", "back_pocket_r_button0001.png"],
                         "customization_category_id" => "4",
                         "image" => "pant_elements/back_pocket/back_2_pocket.png",
                         "show_buttons" => "true",
@@ -1204,6 +1273,64 @@ class CustomApi extends REST_Controller {
                         "show_buttons" => "true",
                     ),
                 ],
+                
+                "Contrast First Button Hole" => [
+                    array(
+                        "status" => "1",
+                        "title" => "Matching",
+                        "image" => "customization/hole_thread/matching.png",
+                        "folder" => "Matching",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "4",
+                        "color" => "4",
+                        "image" => "customization/hole_thread/4.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "8",
+                        "color" => "8",
+                        "image" => "customization/hole_thread/8.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "10",
+                        "color" => "10",
+                        "image" => "customization/hole_thread/10.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "11",
+                        "color" => "11",
+                        "image" => "customization/hole_thread/11.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "12",
+                        "color" => "12",
+                        "image" => "customization/hole_thread/12.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "13",
+                        "color" => "13",
+                        "image" => "customization/hole_thread/13.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "14",
+                        "color" => "14",
+                        "image" => "customization/hole_thread/14.jpg",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "17",
+                        "color" => "17",
+                        "image" => "customization/hole_thread/17.jpg",
+                    ),
+                ],
+                
                 "Breast Pocket" => [
                     array(
                         "status" => "1",
@@ -1364,6 +1491,7 @@ class CustomApi extends REST_Controller {
                         "buttons" => ["sleeve_buttons_flat_30001", "sleeve_buttons_flat_3_40001"],
                         "buttonhole" => ["sleeve_button_hole_40001.png", "sleeve_button_hole_comman0001.png", "sleeve_button_hole_10001.png"],
                         "show_buttons" => "true",
+                        "first_button"=>["sleeve_button_hole_40001.png"]
                     ),
                     array(
                         "status" => "1",
@@ -1374,6 +1502,7 @@ class CustomApi extends REST_Controller {
                         "buttons" => ["sleeve_buttons_flat_30001"],
                         "buttonhole" => ["sleeve_button_hole_40001.png", "sleeve_button_hole_comman0001.png",],
                         "show_buttons" => "true",
+                        "first_button"=>["sleeve_button_hole_40001.png"]
                     ),
                 ],
                 "Lower Pocket" => [
