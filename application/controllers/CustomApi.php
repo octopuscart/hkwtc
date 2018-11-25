@@ -235,20 +235,24 @@ class CustomApi extends REST_Controller {
                         "status" => "1",
                         "title" => "All Places",
                         "ptype" => "1",
+                        "image" => "customization/hole_all_only.jpeg",
                     ),
                     array(
                         "status" => "0",
                         "title" => "On Cuff",
                         "ptype" => "2",
+                        "image" => "customization/hole_cuff_only.jpeg",
                     ),
                     array(
                         "status" => "0",
                         "title" => "On Cuff And Collar",
+                        "image" => "customization/hole_collar_cuff_only.jpeg",
                         "ptype" => "3",
                     ),
                     array(
                         "status" => "0",
                         "title" => "On Front",
+                        "image" => "customization/hole_front_only.jpeg",
                         "ptype" => "4",
                     ),
                     
@@ -258,16 +262,19 @@ class CustomApi extends REST_Controller {
                         "status" => "0",
                         "title" => "Close To Size",
                         "ptype" => "1",
+                        "image" => "customization/stitchclose.jpeg",
                     ),
                     array(
                         "status" => "1",
                         "title" => "Standard 1/4",
                         "ptype" => "2",
+                        "image" => "customization/stitch14.jpeg",
                     ),
                     array(
                         "status" => "0",
                         "title" => "Bespoke 3/8",
                         "ptype" => "3",
+                        "image" => "customization/stitch38.jpeg",
                     ),
                    
                     
@@ -448,6 +455,7 @@ class CustomApi extends REST_Controller {
                         "button_hole" => ["cuff_s_hole_10001.png"],
                         "button_thread" => ["cuff_s_button1_trd0001.png"],
                         "buttons" => "cuff_s_button10001.png",
+                        "franch"=>"0",
                     ), array(
                         "status" => "0",
                         "title" => "Single Cuff Cutaway",
@@ -466,6 +474,7 @@ class CustomApi extends REST_Controller {
                         "button_hole" => ["cuff_s_hole_10001.png"],
                         "button_thread" => ["cuff_s_button1_trd0001.png"],
                         "buttons" => "cuff_s_button10001.png",
+                        "franch"=>"0",
                     ), array(
                         "status" => "0",
                         "title" => "Single Cuff Squred",
@@ -484,6 +493,7 @@ class CustomApi extends REST_Controller {
                         "button_hole" => ["cuff_s_hole_10001.png"],
                         "button_thread" => ["cuff_s_button1_trd0001.png"],
                         "buttons" => "cuff_s_button10001.png",
+                        "franch"=>"0",
                     ), array(
                         "status" => "0",
                         "title" => "2 Buttons Rounded",
@@ -502,6 +512,7 @@ class CustomApi extends REST_Controller {
                         "button_hole" => ["cuff_s_hole_20001.png"],
                         "button_thread" => ["cuff_s_button1_trd0001.png", "cuff_s_button2_trd0001.png"],
                         "buttons" => "cuff_s_button20001.png",
+                        "franch"=>"0",
                     ), array(
                         "status" => "0",
                         "title" => "2 Buttons Cutaway",
@@ -520,6 +531,7 @@ class CustomApi extends REST_Controller {
                         "button_hole" => [ "cuff_s_hole_20001.png"],
                         "button_thread" => ["cuff_s_button1_trd0001.png", "cuff_s_button2_trd0001.png"],
                         "buttons" => "cuff_s_button20001.png",
+                        "franch"=>"0",
                     ), array(
                         "status" => "0",
                         "title" => "2 Buttons Squred",
@@ -538,6 +550,7 @@ class CustomApi extends REST_Controller {
                         "button_hole" => [ "cuff_s_hole_20001.png"],
                         "button_thread" => ["cuff_s_button1_trd0001.png", "cuff_s_button2_trd0001.png"],
                         "buttons" => "cuff_s_button20001.png",
+                        "franch"=>"0",
                     ), array(
                         "status" => "0",
                         "title" => "French Cuff Squred",
@@ -554,6 +567,7 @@ class CustomApi extends REST_Controller {
                         "insert_full" => ["cuff_franch_rounded0001.png"],
                         "buttons" => "cuff_m_franch_squre_button0001.png",
                         "sleeve" => ["b_full_shirt_sleeve0001.png"],
+                        "franch"=>"1",
                     )
                     , array(
                         "status" => "0",
@@ -571,6 +585,7 @@ class CustomApi extends REST_Controller {
                         "insert_full" => ["cuff_franch_rounded0001.png"],
                         "buttons" => "cuff_m_franch_squre_button0001.png",
                         "sleeve" => ["b_full_shirt_sleeve0001.png"],
+                        "franch"=>"1",
                     ),
                     array(
                         "status" => "0",
@@ -590,6 +605,7 @@ class CustomApi extends REST_Controller {
                         "button_hole" => ["cuff_s_hole_10001.png",],
                         "button_thread" => ["cuff_s_button1_trd0001.png"],
                         "buttons" => "cuff_s_button10001.png",
+                        "franch"=>"0",
                     )
                 ],
                 "Back" => [
