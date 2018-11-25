@@ -941,12 +941,12 @@ class CustomApi extends REST_Controller {
                 array(
                     "color" => "red",
                     "backcolor" => "white",
-                    "title" => "Red-White"
+                    "title" => "Red"
                 ),
                 array(
                     "color" => "white",
                     "backcolor" => "red",
-                    "title" => "White-Red"
+                    "title" => "White"
                 ),
             ],
             "monogram_style" => [
@@ -1182,15 +1182,36 @@ class CustomApi extends REST_Controller {
                 "Waistband Adjustment" => [
                     array(
                         "status" => "0",
-                        "title" => "No Belt Loop",
+                        "title" => "No",
                         "customization_category_id" => "4",
                         "elements" => ["pant_waistband0001.png"],
                         "image" => "pant_elements/waistband/no_belt_loop.png",
                         "show_buttons" => "true",
-                    ), array(
+                    )
+                    , array(
                         "status" => "1",
                         "title" => "Belt Loop",
                         "elements" => ["pant_waistband0001.png", "pant_belt_loop0001.png",],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/belt_loop.png",
+                        "backbeltloop" => "true",
+                        "show_buttons" => "true",
+                    )
+                    
+                    , array(
+                        "status" => "0",
+                        "title" => "Adjustment With Button"
+                        . "",
+                        "elements" => ["pant_waistband0001.png", "pant_belt_loop0001.png",],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/belt_loop.png",
+                        "backbeltloop" => "true",
+                        "show_buttons" => "true",
+                    )
+                    , array(
+                        "status" => "0",
+                        "title" => "Belt Loop",
+                        "elements" => [ "adjustable_buckle0001.png",],
                         "customization_category_id" => "4",
                         "image" => "pant_elements/waistband/belt_loop.png",
                         "backbeltloop" => "true",
@@ -1206,6 +1227,7 @@ class CustomApi extends REST_Controller {
                         "elements" => ["pant_waistband0001.png"],
                         "image" => "pant_elements/waistband/waistband1b.png",
                         "show_buttons" => "true",
+                        "overlay"=>["pant_waistbandoverlay.png", "pant_waistband1_button.png"]
                     ), array(
                         "status" => "0",
                          "title" => "Standard 2 Buttons",
@@ -1214,6 +1236,7 @@ class CustomApi extends REST_Controller {
                         "image" => "pant_elements/waistband/waistband2b.png",
                         "backbeltloop" => "true",
                         "show_buttons" => "true",
+                        "overlay"=>["pant_waistbandboverlay.png", "pant_waistbandb2_buttons.png"]
                     )
                     , array(
                         "status" => "0",
@@ -1223,6 +1246,7 @@ class CustomApi extends REST_Controller {
                         "image" => "pant_elements/waistband/waistband1h.png",
                         "backbeltloop" => "true",
                         "show_buttons" => "true",
+                        "overlay"=>["pant_waistbandoverlay.png"]
                     )
                     , array(
                         "status" => "0",
@@ -1232,6 +1256,7 @@ class CustomApi extends REST_Controller {
                         "image" => "pant_elements/waistband/waistband2h.png",
                         "backbeltloop" => "true",
                         "show_buttons" => "true",
+                        "overlay"=>["pant_waistbandboverlay.png"]
                       
                     ),
                     array(
@@ -1241,6 +1266,7 @@ class CustomApi extends REST_Controller {
                         "elements" => ["pant_waistband_m0001.png"],
                         "image" => "pant_elements/waistband/waistbandc1b.png",
                         "show_buttons" => "true",
+                        "overlay"=>["pant_waistband_moverlay.png", "pant_waistband_m1_button.png"]
                     ), array(
                         "status" => "0",
                          "title" => "Center 2 Buttons",
@@ -1249,6 +1275,7 @@ class CustomApi extends REST_Controller {
                         "image" => "pant_elements/waistband/waistbandc2b.png",
                         "backbeltloop" => "true",
                         "show_buttons" => "true",
+                        "overlay"=>["pant_waistband_mboverlay.png", "pant_waistband_m2_button.png"]
                     )
                     , array(
                         "status" => "0",
@@ -1258,6 +1285,7 @@ class CustomApi extends REST_Controller {
                         "image" => "pant_elements/waistband/waistbandc1h.png",
                         "backbeltloop" => "true",
                         "show_buttons" => "true",
+                        "overlay"=>["pant_waistband_moverlay.png"]
                     )
                     , array(
                         "status" => "0",
@@ -1267,8 +1295,10 @@ class CustomApi extends REST_Controller {
                         "image" => "pant_elements/waistband/waistbandc2h.png",
                         "backbeltloop" => "true",
                         "show_buttons" => "true",
+                        "overlay"=>["pant_waistband_mboverlay.png"]
                       
                     ),
+                    
                     array(
                         "status" => "0",
                         "title" => "long 1 Button",
@@ -1276,6 +1306,7 @@ class CustomApi extends REST_Controller {
                         "elements" => ["pant_waistband_l0001.png"],
                         "image" => "pant_elements/waistband/waistbandl1b.png",
                         "show_buttons" => "true",
+                        "overlay"=>["pant_waistband_loverlay.png", "pant_waistband_l1_button.png"]
                     ), array(
                         "status" => "0",
                          "title" => "long 2 Buttons",
@@ -1284,6 +1315,7 @@ class CustomApi extends REST_Controller {
                         "image" => "pant_elements/waistband/waistbandl2b.png",
                         "backbeltloop" => "true",
                         "show_buttons" => "true",
+                         "overlay"=>["pant_waistband_lboverlay.png", "pant_waistband_lb2_buttons.png"]
                     )
                     , array(
                         "status" => "0",
@@ -1293,6 +1325,7 @@ class CustomApi extends REST_Controller {
                         "image" => "pant_elements/waistband/waistbandl1h.png",
                         "backbeltloop" => "true",
                         "show_buttons" => "true",
+                         "overlay"=>["pant_waistband_loverlay.png"]
                     )
                     , array(
                         "status" => "0",
@@ -1302,6 +1335,7 @@ class CustomApi extends REST_Controller {
                         "image" => "pant_elements/waistband/waistbandl2h.png",
                         "backbeltloop" => "true",
                         "show_buttons" => "true",
+                         "overlay"=>["pant_waistband_lboverlay.png"]
                       
                     )
                 ],

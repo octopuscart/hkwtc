@@ -233,7 +233,7 @@ code {
 .monogramtext_posistion{
     color: white;
     padding: 0 2px;
-    background: black;
+    /*background: black;*/
     height: 10px;
     z-index: 200;
     font-size: 8px;
@@ -247,7 +247,7 @@ code {
 }
 
 .monogramtext_posistion_collar {
-    left: 248px;
+    left: 225px;
     display: block;
     top: 26px;
 }
@@ -261,10 +261,10 @@ code {
 
 
 .monogramtext_posistion_cuff_left {
-    left: 362px;
+       left: 331px;
     display: block;
-    top: 325px;
-    transform: rotate(29deg);
+    top: 304px;
+    transform: rotate(42deg)
 }
 
 .multicustom .monogramtext_posistion_cuff_left {
@@ -276,15 +276,45 @@ code {
 
 
 .monogramtext_posistion_left_pocket {
-    left: 310px;
+    left: 279px;
     display: block;
-    top: 152px;
+    top: 139px;
 }
 .multicustom .monogramtext_posistion_left_pocket {
     left: 277px;
     display: block;
     top: 136px;
 }
+
+.monogramtext_posistion_abdomen{
+    left: 250px;
+    display: block;
+    top: 285px;
+    /*transform: rotate(43deg);*/
+} 
+           
+
+.monogramtext_posistion_shirt_tail{
+        left: 251px;
+    display: block;
+    top: 431px;
+}
+
+
+.multicustom .monogramtext_posistion_abdomen{
+    left: 250px;
+    display: block;
+    top: 285px;
+    /*transform: rotate(43deg);*/
+} 
+           
+
+.multicustom .monogramtext_posistion_shirt_tail{
+        left: 251px;
+    display: block;
+    top: 431px;
+}
+
 
 
 
