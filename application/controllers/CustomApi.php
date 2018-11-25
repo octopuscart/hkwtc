@@ -1153,36 +1153,106 @@ class CustomApi extends REST_Controller {
                 
                 "Waistband" => [
                     array(
-                        "status" => "0",
+                        "status" => "1",
                         "title" => "Standard 1 Button",
                         "customization_category_id" => "4",
                         "elements" => ["pant_waistband0001.png"],
-                        "image" => "pant_elements/waistband/no_belt_loop.png",
+                        "image" => "pant_elements/waistband/waistband1b.png",
                         "show_buttons" => "true",
                     ), array(
-                        "status" => "1",
+                        "status" => "0",
                          "title" => "Standard 2 Buttons",
-                        "elements" => ["pant_waistband0001.png", "pant_belt_loop0001.png",],
+                        "elements" => ["pant_waistbandb0001.png", ],
                         "customization_category_id" => "4",
-                        "image" => "pant_elements/waistband/belt_loop.png",
+                        "image" => "pant_elements/waistband/waistband2b.png",
                         "backbeltloop" => "true",
                         "show_buttons" => "true",
                     )
                     , array(
-                        "status" => "1",
+                        "status" => "0",
                          "title" => "Standard 1 Hook",
-                        "elements" => ["pant_waistband0001.png", "pant_belt_loop0001.png",],
+                         "elements" => ["pant_waistband0001.png", ],
                         "customization_category_id" => "4",
-                        "image" => "pant_elements/waistband/belt_loop.png",
+                        "image" => "pant_elements/waistband/waistband1h.png",
                         "backbeltloop" => "true",
                         "show_buttons" => "true",
                     )
                     , array(
-                        "status" => "1",
+                        "status" => "0",
                          "title" => "Standard 2 Hooks",
-                        "elements" => ["pant_waistband0001.png", "pant_belt_loop0001.png",],
+                         "elements" => ["pant_waistbandb0001.png", ],
                         "customization_category_id" => "4",
-                        "image" => "pant_elements/waistband/belt_loop.png",
+                        "image" => "pant_elements/waistband/waistband2h.png",
+                        "backbeltloop" => "true",
+                        "show_buttons" => "true",
+                      
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Center 1 Button",
+                        "customization_category_id" => "4",
+                        "elements" => ["pant_waistband_m0001.png"],
+                        "image" => "pant_elements/waistband/waistbandc1b.png",
+                        "show_buttons" => "true",
+                    ), array(
+                        "status" => "0",
+                         "title" => "Center 2 Buttons",
+                        "elements" => ["pant_waistband_mb0001.png", ],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/waistbandc2b.png",
+                        "backbeltloop" => "true",
+                        "show_buttons" => "true",
+                    )
+                    , array(
+                        "status" => "0",
+                         "title" => "Center 1 Hook",
+                         "elements" => ["pant_waistband_m0001.png", ],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/waistbandc1h.png",
+                        "backbeltloop" => "true",
+                        "show_buttons" => "true",
+                    )
+                    , array(
+                        "status" => "0",
+                         "title" => "Center 2 Hooks",
+                         "elements" => ["pant_waistband_mb0001.png", ],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/waistbandc2h.png",
+                        "backbeltloop" => "true",
+                        "show_buttons" => "true",
+                      
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "long 1 Button",
+                        "customization_category_id" => "4",
+                        "elements" => ["pant_waistband_l0001.png"],
+                        "image" => "pant_elements/waistband/waistbandl1b.png",
+                        "show_buttons" => "true",
+                    ), array(
+                        "status" => "0",
+                         "title" => "long 2 Buttons",
+                        "elements" => ["pant_waistband_lb0001.png", ],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/waistbandl2b.png",
+                        "backbeltloop" => "true",
+                        "show_buttons" => "true",
+                    )
+                    , array(
+                        "status" => "0",
+                         "title" => "long 1 Hook",
+                         "elements" => ["pant_waistband_l0001.png", ],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/waistbandl1h.png",
+                        "backbeltloop" => "true",
+                        "show_buttons" => "true",
+                    )
+                    , array(
+                        "status" => "0",
+                         "title" => "long 2 Hooks",
+                         "elements" => ["pant_waistband_lb0001.png", ],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/waistbandl2h.png",
                         "backbeltloop" => "true",
                         "show_buttons" => "true",
                       
