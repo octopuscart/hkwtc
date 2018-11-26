@@ -1,18 +1,20 @@
 <div class="fontview_custom customization_block animated zoom" ng-if="screencustom.view_type == 'front'">
     <div ng-if="selecteElements[screencustom.fabric]['Monogram Initial']">
-        <div class="monogramtext_posistion
-             {{selecteElements[fab.product_id]['Cuff & Sleeve'].monogram_change_css?selecteElements[fab.product_id]['Cuff & Sleeve'].monogram_change_css :selecteElements[fab.product_id]['Monogram'].css_class}} 
-             {{selecteElements[fab.product_id]['Pocket'].monogram_change_css?selecteElements[fab.product_id]['Pocket'].monogram_change_css :selecteElements[fab.product_id]['Monogram'].css_class}} 
-             monogramcss_main"
-             style="
-             color: {{selecteElements[fab.product_id]['Monogram Background']}};
+        <div ng-if="selecteElements[fab.product_id]['Monogram'].title != 'Collar'">
+            <div class="monogramtext_posistion
+                 {{selecteElements[fab.product_id]['Cuff & Sleeve'].monogram_change_css?selecteElements[fab.product_id]['Cuff & Sleeve'].monogram_change_css :selecteElements[fab.product_id]['Monogram'].css_class}} 
+                 {{selecteElements[fab.product_id]['Pocket'].monogram_change_css?selecteElements[fab.product_id]['Pocket'].monogram_change_css :selecteElements[fab.product_id]['Monogram'].css_class}} 
+                 monogramcss_main"
+                 style="
+                 color: {{selecteElements[fab.product_id]['Monogram Background']}};
 
-             {{selecteElements[fab.product_id]['Monogram'].title=='Collar'?selecteElements[fab.product_id]['Collar'].monogram_style:''}} ;
-             margin-left: {{(-1) * (2 * (selecteElements[screencustom.fabric]['Monogram Initial'].length - 3))}}px;z-index:2000;
-             {{selecteElements[screencustom.fabric]['Monogram Font'].font_style}};
-             " 
-             ng-if="selecteElements[fab.product_id]['Monogram'].title != 'No'">
-            {{selecteElements[screencustom.fabric]['Monogram Initial']}}
+                 {{selecteElements[fab.product_id]['Monogram'].title=='Collar'?selecteElements[fab.product_id]['Collar'].monogram_style:''}} ;
+                 margin-left: {{(-1) * (2 * (selecteElements[screencustom.fabric]['Monogram Initial'].length - 3))}}px;z-index:2000;
+                 {{selecteElements[screencustom.fabric]['Monogram Font'].font_style}};
+                 " 
+                 ng-if="selecteElements[fab.product_id]['Monogram'].title != 'No'">
+                {{selecteElements[screencustom.fabric]['Monogram Initial']}}
+            </div>
         </div>
     </div>
     <!--cuff section-->
@@ -98,19 +100,21 @@
 
 <div class="backview_custom customization_block  animated " ng-if="screencustom.view_type == 'back'" >
     <div ng-if="selecteElements[screencustom.fabric]['Monogram Initial']">
-        <div class="monogramtext_posistion
-             {{selecteElements[fab.product_id]['Cuff & Sleeve'].monogram_change_css?selecteElements[fab.product_id]['Cuff & Sleeve'].monogram_change_css :selecteElements[fab.product_id]['Monogram'].css_class}} 
-             {{selecteElements[fab.product_id]['Pocket'].monogram_change_css?selecteElements[fab.product_id]['Pocket'].monogram_change_css :selecteElements[fab.product_id]['Monogram'].css_class}} 
-             monogramcss_main"
-             style="
-             color: {{selecteElements[fab.product_id]['Monogram Background']}};
+        <div ng-if="selecteElements[fab.product_id]['Monogram'].title == 'Collar'">
+            <div class="monogramtext_posistion
+                 {{selecteElements[fab.product_id]['Cuff & Sleeve'].monogram_change_css?selecteElements[fab.product_id]['Cuff & Sleeve'].monogram_change_css :selecteElements[fab.product_id]['Monogram'].css_class}} 
+                 {{selecteElements[fab.product_id]['Pocket'].monogram_change_css?selecteElements[fab.product_id]['Pocket'].monogram_change_css :selecteElements[fab.product_id]['Monogram'].css_class}} 
+                 monogramcss_main"
+                 style="
+                 color: {{selecteElements[fab.product_id]['Monogram Background']}};
 
-             {{selecteElements[fab.product_id]['Monogram'].title=='Collar'?selecteElements[fab.product_id]['Collar'].monogram_style:''}} ;
-             margin-left: {{(-1) * (2 * (selecteElements[screencustom.fabric]['Monogram Initial'].length - 3))}}px;z-index:2000;
-             {{selecteElements[screencustom.fabric]['Monogram Font'].font_style}};
-             " 
-             ng-if="selecteElements[fab.product_id]['Monogram'].title != 'No'">
-            {{selecteElements[screencustom.fabric]['Monogram Initial']}}
+                 {{selecteElements[fab.product_id]['Monogram'].title=='Collar'?selecteElements[fab.product_id]['Collar'].monogram_style:''}} ;
+                 margin-left: {{(-1) * (2 * (selecteElements[screencustom.fabric]['Monogram Initial'].length - 3))}}px;z-index:2000;
+                 {{selecteElements[screencustom.fabric]['Monogram Font'].font_style}};
+                 " 
+                 ng-if="selecteElements[fab.product_id]['Monogram'].title != 'No'">
+                {{selecteElements[screencustom.fabric]['Monogram Initial']}}
+            </div>
         </div>
     </div>
     <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/b_collar0001.png" class="fixpos animated" >

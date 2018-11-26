@@ -32,7 +32,7 @@
 
 
     <!--buttons-->
-    <img src="<?php echo custome_image_server; ?>/jacket/buttons/buttonlipsell/{{img}}.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Jacket Style'].buttons2" >
+    <img src="<?php echo custome_image_server; ?>/jacket/buttons/{{selecteElements[fab.product_id]['Buttons'].folder}}/{{img}}.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Jacket Style'].buttons2" >
 
     <!--jacket body right-->
     <!--<img src="<?php echo custome_image_server; ?>/jacket/output/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Jacket Style'].overlay" >-->
@@ -78,7 +78,7 @@
 
 
     <!--buttons-->
-    <img src="<?php echo custome_image_server; ?>/jacket/buttons/buttonlipsell/{{img}}.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Jacket Style'].buttons" >
+    <img src="<?php echo custome_image_server; ?>/jacket/buttons/{{selecteElements[fab.product_id]['Buttons'].folder}}/{{img}}.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Jacket Style'].buttons" >
 
     <img src="<?php echo custome_image_server; ?>/jacket/output/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Jacket Style'].overlay" >
 
@@ -108,6 +108,9 @@
     <img src="<?php echo custome_image_server; ?>/jacket/output/overlay/zipper.png" class="fixpos animated" >
     <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Waistband'].elements">
     <img src="<?php echo custome_image_server; ?>/jacket/output/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Waistband'].overlay">
+
+    <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Waistband Adjustment'].elements" style="{{selecteElements[fab.product_id]['Waistband'].adjustmentposition}}">
+    <img src="<?php echo custome_image_server; ?>/jacket/output/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Waistband Adjustment'].overlay" style="{{selecteElements[fab.product_id]['Waistband'].adjustmentposition}}">
 
         <!--<img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Waistband Adjustment'].elements">-->
     <img src="<?php echo custome_image_server; ?>/jacket/output/overlay//{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Cuff'].elements">
