@@ -5,8 +5,7 @@
              {{selecteElements[fab.product_id]['Pocket'].monogram_change_css?selecteElements[fab.product_id]['Pocket'].monogram_change_css :selecteElements[fab.product_id]['Monogram'].css_class}} 
              monogramcss_main"
              style="
-             background: {{selecteElements[fab.product_id]['Monogram Background']}};
-             color: {{selecteElements[fab.product_id]['Monogram Color']}};
+             color: {{selecteElements[fab.product_id]['Monogram Background']}};
 
              {{selecteElements[fab.product_id]['Monogram'].title=='Collar'?selecteElements[fab.product_id]['Collar'].monogram_style:''}} ;
              margin-left: {{(-1) * (2 * (selecteElements[screencustom.fabric]['Monogram Initial'].length - 3))}}px;z-index:2000;
