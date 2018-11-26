@@ -250,12 +250,14 @@ code {
     left: 225px;
     display: block;
     top: 26px;
+        transform: rotate(0deg);
 }
 
 .multicustom .monogramtext_posistion_collar {
     left: 223px;
     display: block;
     top: 24px;
+        transform: rotate(0deg);
 
 }
 
@@ -279,17 +281,20 @@ code {
     left: 279px;
     display: block;
     top: 139px;
+        transform: rotate(0deg);
 }
 .multicustom .monogramtext_posistion_left_pocket {
     left: 277px;
     display: block;
     top: 136px;
+        transform: rotate(0deg);
 }
 
 .monogramtext_posistion_abdomen{
     left: 250px;
     display: block;
     top: 285px;
+        transform: rotate(0deg);
     /*transform: rotate(43deg);*/
 } 
            
@@ -298,6 +303,7 @@ code {
         left: 251px;
     display: block;
     top: 431px;
+        transform: rotate(0deg);
 }
 
 
@@ -305,6 +311,7 @@ code {
     left: 250px;
     display: block;
     top: 285px;
+        transform: rotate(0deg);
     /*transform: rotate(43deg);*/
 } 
            
@@ -313,6 +320,7 @@ code {
         left: 251px;
     display: block;
     top: 431px;
+        transform: rotate(0deg);
 }
 
 

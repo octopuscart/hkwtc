@@ -107,7 +107,8 @@ class CustomApi extends REST_Controller {
                         "css_class" => "monogramtext_posistion_none",
                         "not_show_when" => [],
                         "checkwith" => "",
-                        "image" => "customization/no_monogram.jpg"
+                        "image" => "customization/no_monogram.jpg",
+                        "view_type" => "front",
                     ),
                     array(
                         "status" => "0",
@@ -123,6 +124,7 @@ class CustomApi extends REST_Controller {
                         "css_class" => "monogramtext_posistion_cuff_left",
                         "not_show_when" => ["Short Sleeve Without Cuff", "Short Sleeve With Cuff"],
                         "checkwith" => "Cuff & Sleeve",
+                        "view_type" => "front",
                         "image" => "customization/monogram_left_cuff.jpg"
                     ),
                     array(
@@ -131,6 +133,7 @@ class CustomApi extends REST_Controller {
                         "css_class" => "monogramtext_posistion_left_pocket",
                         "not_show_when" => ["No Pocket"],
                         "checkwith" => "Pocket",
+                        "view_type" => "front",
                         "image" => "customization/monogram_left_chest_pocket.jpg"
                     ),
                     array(
@@ -139,6 +142,7 @@ class CustomApi extends REST_Controller {
                         "css_class" => "monogramtext_posistion_abdomen",
                         "not_show_when" => [],
                         "checkwith" => "Cuff & Sleeve",
+                        "view_type" => "front",
                         "image" => "customization/left_abdomen.png"
                     ),
                     array(
@@ -147,6 +151,7 @@ class CustomApi extends REST_Controller {
                         "css_class" => "monogramtext_posistion_shirt_tail",
                         "not_show_when" => [],
                         "checkwith" => "Cuff & Sleeve",
+                        "view_type" => "front",
                         "image" => "customization/shirt_tail.png"
                     ),],
                 "Buttons" => [
