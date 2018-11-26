@@ -137,7 +137,7 @@ class CustomApi extends REST_Controller {
                         "status" => "0",
                         "title" => "Abdomen",
                         "css_class" => "monogramtext_posistion_abdomen",
-                        "not_show_when" => ["Short Sleeve Without Cuff", "Short Sleeve With Cuff"],
+                        "not_show_when" => [],
                         "checkwith" => "Cuff & Sleeve",
                         "image" => "customization/left_abdomen.png"
                     ),
@@ -145,7 +145,7 @@ class CustomApi extends REST_Controller {
                         "status" => "0",
                         "title" => "Shirt Tail",
                         "css_class" => "monogramtext_posistion_shirt_tail",
-                        "not_show_when" => ["Short Sleeve Without Cuff", "Short Sleeve With Cuff"],
+                        "not_show_when" => [],
                         "checkwith" => "Cuff & Sleeve",
                         "image" => "customization/shirt_tail.png"
                     ),],
