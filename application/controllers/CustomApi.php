@@ -1445,7 +1445,7 @@ class CustomApi extends REST_Controller {
                         "show_buttons" => "true",
                     ), array(
                         "status" => "0",
-                        "title" => "Cuff 1 1/3",
+                        "title" => "Cuff 1 3/8",
                         "elements" => ["pant_cuff13.png",],
                         "customization_category_id" => "4",
                         "image" => "pant_elements/pant_cuff/pant_cuff13t.png",
