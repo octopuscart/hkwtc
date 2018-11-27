@@ -53,7 +53,8 @@
     </div>
 
 
-    <img src="<?php echo custome_image_server; ?>/shirt/buttons/{{selecteElements[fab.product_id]['Buttons'].button}}/{{selecteElements[fab.product_id]['Cuff & Sleeve'].buttons}}" class="fixpos animated" ng-if="selecteElements[fab.product_id]['Cuff & Sleeve'].buttons"  >
+    <img src="<?php echo custome_image_server; ?>/shirt/buttons/{{selecteElements[fab.product_id]['Buttons'].button}}/{{selecteElements[fab.product_id]['Cuff & Sleeve'].buttons}}" class="fixpos animated" ng-if="selecteElements[fab.product_id]['Cuff & Sleeve'].french == '0'"  >
+    <img src="<?php echo custome_image_server; ?>/shirt/overlay/{{selecteElements[fab.product_id]['Cuff & Sleeve'].buttons}}" class="fixpos animated" ng-if="selecteElements[fab.product_id]['Cuff & Sleeve'].french == '1'"  >
     <img src="<?php echo custome_image_server; ?>/shirt/hole_thread/{{selecteElements[fab.product_id]['Button Thread Color'].color}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Cuff & Sleeve'].button_thread"  >
 
 
