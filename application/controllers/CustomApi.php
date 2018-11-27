@@ -544,7 +544,7 @@ class CustomApi extends REST_Controller {
                         "franch" => "0",
                     ), array(
                         "status" => "0",
-                        "title" => "Single Cuff Squred",
+                        "title" => "Single Cuff Squared",
                         "elements" => [ "cuff_m_squre20001.png"],
                         "insertele" => [ "cuff_m_cutaway30001.png"],
                         "inserteleo" => [ "cuff_m_cutaway30001.png"],
@@ -601,7 +601,7 @@ class CustomApi extends REST_Controller {
                         "franch" => "0",
                     ), array(
                         "status" => "0",
-                        "title" => "2 Buttons Squred",
+                        "title" => "2 ButtonsSquared",
                         "elements" => [ "cuff_m_squre20001.png"],
                         "insertele" => [ "cuff_m_cutaway30001.png"],
                         "inserteleo" => [ "cuff_m_cutaway30001.png"],
@@ -620,7 +620,7 @@ class CustomApi extends REST_Controller {
                         "franch" => "0",
                     ), array(
                         "status" => "0",
-                        "title" => "French Cuff Squred",
+                        "title" => "French CuffSquared",
                         "sleeve1" => ["shirt_sleeve0001.png"],
                         "customization_category_id" => "3",
                         "elements" => [ "cuff_m_franch_squre_insert0001.png", "cuff_m_franch_squre0001.png"],
@@ -1733,6 +1733,28 @@ class CustomApi extends REST_Controller {
                         "show_buttons" => "true",
                         "first_button" => ["sleeve_button_hole_40001.png"]
                     ),
+                    array(
+                        "status" => "0",
+                        "title" => "4 Kissing Buttons",
+                        "customization_category_id" => "4",
+                        "elements" => ["sleeve_buttons_4_k0001.png","sleeve_buttons_comman_k0001.png","sleeve_buttons_1_k0001.png", ],
+                        "image" => "suit_elements/button/button_4_kissing.png",
+                        "buttons" => ["sleeve_buttons_flat_30001", "sleeve_buttons_flat_3_40001"],
+                        "buttonhole" => ["sleeve_button_hole_4_k0001.png", "sleeve_button_hole_comman_k0001.png", "sleeve_button_hole_1_k0001.png"],
+                        "show_buttons" => "true",
+                        "first_button" => ["sleeve_button_hole_4_k0001.png"]
+                    ),
+                    array(
+                        "status" => "1",
+                        "title" => "3 Kissing Buttons",
+                        "customization_category_id" => "4",
+                        "elements" => ["sleeve_buttons_4_k0001.png","sleeve_buttons_comman_k0001.png", ],
+                        "image" => "suit_elements/button/button_3_kissing.png",
+                        "buttons" => ["sleeve_buttons_flat_30001"],
+                        "buttonhole" => ["sleeve_button_hole_4_k0001.png", "sleeve_button_hole_comman_k0001.png",],
+                        "show_buttons" => "true",
+                        "first_button" => ["sleeve_button_hole_4_k0001.png"]
+                    ),
                 ],
                 "Lower Pocket" => [
 
@@ -1749,10 +1771,29 @@ class CustomApi extends REST_Controller {
                     ),
                     array(
                         "status" => "0",
-                        "title" => "Slanting Pipe Pocket",
+                        "title" => "Straight Pipe Pocket",
                         "elements" => ["pocket_lower_pipe_left0001.png", "pocket_lower_pipe_right0001.png"],
                         "customization_category_id" => "4",
                         "image" => "suit_elements/pocket/pocket_pipe.png",
+                        "show_buttons" => "true",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Slanting Flap Pocket",
+                        "customization_category_id" => "4",
+                        "overlay" => [],
+                        "elements" => ["pocket_lower_flap_left_slanting0001.png","pocket_lower_flap_right_slanting0001.png"],
+                        "image" => "suit_elements/pocket/pocket_flap_slanting.png",
+                        "show_buttons" => "true",
+                        "style_l" => "   ",
+                        "style_r" => "    ",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Slanting Pipe Pocket",
+                        "elements" => ["pocket_lower_pipe_left_slanting0001.png", "pocket_lower_pipe_right_slanting0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "suit_elements/pocket/pocket_pipe_slanting.png",
                         "show_buttons" => "true",
                     )
                 ],
