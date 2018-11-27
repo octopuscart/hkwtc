@@ -281,6 +281,27 @@ class CustomApi extends REST_Controller {
                         "button" => "b10",
                         "image" => "customization/buttons/b10.png",
                         "customization_category_id" => "8",
+                    ),array(
+                        "status" => "0",
+                        "title" => "MOP Brown",
+                        "button" => "mop_brown",
+                        "image" => "customization/buttons/mop_brown.png",
+                        "extracost"=>"10",
+                        "customization_category_id" => "8",
+                    ), array(
+                        "status" => "0",
+                        "title" => "MOP White",
+                        "button" => "mop_white",
+                        "image" => "customization/buttons/mop_white.png",
+                        "extracost"=>"10",
+                        "customization_category_id" => "8",
+                    ), array(
+                        "status" => "0",
+                        "title" => "MOP Gray",
+                        "button" => "mop_gray",
+                        "image" => "customization/buttons/mop_gray.png",
+                        "extracost"=>"10",
+                        "customization_category_id" => "8",
                     )
                 ],
                 "Button Hole Color Position" => [
@@ -1370,6 +1391,7 @@ class CustomApi extends REST_Controller {
                         "image" => "suit_elements/buttons/bwl.jpg",
                         "folder" => "bwl",
                         "show_buttons" => "true",
+                        "extracost"=>"30",
                     ), array(
                         "status" => "0",
                         "title" => "Black Lipshell",
@@ -1377,6 +1399,7 @@ class CustomApi extends REST_Controller {
                         "customization_category_id" => "4",
                         "image" => "suit_elements/buttons/bll.jpg",
                         "show_buttons" => "true",
+                        "extracost"=>"30",
                     ),
                     array(
                         "status" => "0",
@@ -1385,6 +1408,7 @@ class CustomApi extends REST_Controller {
                         "customization_category_id" => "4",
                         "image" => "suit_elements/buttons/mop.jpg",
                         "show_buttons" => "true",
+                        "extracost"=>"30",
                     ),
                     
                     

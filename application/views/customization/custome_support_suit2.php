@@ -182,6 +182,9 @@
                                     <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/customization_suit/{{ele.image}}'); {{k.style_side}}" > </div>
                                     <div class='customization_title'>
                                         {{ele.title}} 
+                                        <span ng-if="ele.extracost">
+                                            <br/>{{ele.extracost|currency:"<?php echo globle_currency_type; ?>"}}
+                                        </span>
                                     </div>
                                 </div>
                             </div>

@@ -42,9 +42,9 @@
                             <p class="elementItemImage" style="margin: 0px;background: url(<?php echo base_url(); ?>assets/images/{{selecteElements[screencustom.fabric][k.title].image}})"></p>
                         </div>
                         <div class="media-body elementItemDesktop">
-                            <h4 class="selected-element-title media-heading">{{k.title}}</h4>
+                            <h4 class="selected-element-title media-heading">{{k.title}} </h4>
                             
-                            <p class="selected-element-result">{{selecteElements[screencustom.fabric]['summary'][k.title]}}</p>
+                            <p class="selected-element-result">{{selecteElements[screencustom.fabric]['summary'][k.title]}}  </p>
                         </div>
                     </div>
                 </a>
