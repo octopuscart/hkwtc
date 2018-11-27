@@ -601,7 +601,7 @@ class CustomApi extends REST_Controller {
                         "franch" => "0",
                     ), array(
                         "status" => "0",
-                        "title" => "2 ButtonsSquared",
+                        "title" => "2 Buttons Squared",
                         "elements" => [ "cuff_m_squre20001.png"],
                         "insertele" => [ "cuff_m_cutaway30001.png"],
                         "inserteleo" => [ "cuff_m_cutaway30001.png"],
@@ -620,7 +620,7 @@ class CustomApi extends REST_Controller {
                         "franch" => "0",
                     ), array(
                         "status" => "0",
-                        "title" => "French CuffSquared",
+                        "title" => "French Cuff Squared",
                         "sleeve1" => ["shirt_sleeve0001.png"],
                         "customization_category_id" => "3",
                         "elements" => [ "cuff_m_franch_squre_insert0001.png", "cuff_m_franch_squre0001.png"],
