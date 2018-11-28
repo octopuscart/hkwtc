@@ -265,6 +265,9 @@
                                     <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/customization/{{ele.image}}')" > </div>
                                     <div class='customization_title'>
                                         {{ele.title}} 
+                                        <span ng-if="ele.extracost">
+                                            <br/>{{ele.extracost}}
+                                        </span>
                                     </div>
                                 </div>
                             </div>
