@@ -148,11 +148,19 @@ function sizeTable($ctype, $lable) {
     </table>
     <?php
 }
+$mesdatacheck = array_unique($items);
+$anotherarray = array();
+foreach ($mesdatacheck as $key => $value) {
+    $anotherarray[$value] = $key;
+}
 
+if(isset($anotherarray[1])){
 sizeTable($shirtsize, 'Shirt');
-
+}
+if(isset($anotherarray[4])){
 sizeTable($jacketsize, 'Jacket');
-
-
-sizeTable($panttsize, 'Pant')
+}
+if(isset($anotherarray[3])){
+sizeTable($panttsize, 'Pant');
+}
 ?>
