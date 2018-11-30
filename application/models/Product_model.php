@@ -130,6 +130,7 @@ where pa.product_id = $product_id group by attribute_value_id";
             $productobj = $product[0];
 
             $item_price = $this->category_items_prices_id($productobj['category_items_id'], $custom_id);
+          
             $productobj['price'] = $item_price->price;
             $productobj['regular_price'] = $item_price->price;
 
@@ -824,7 +825,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 
     //custom product model
     //cart operation session 
-    public function cartOperationCustom($product_id, $quantity, $custom_id, $customekey, $customevalue, $user_id = 0, $setSession = 0) {
+    public function cartOperationCustom($product_id, $quantity, $custom_id, $customekey, $customevalue, $extracost = 0, $user_id = 0, $setSession = 0) {
 
         $this->db->where('id', $custom_id);
         $query = $this->db->get('custome_items');
@@ -904,20 +905,21 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 
             if (isset($session_cart['products'][$product_id])) {
                 $product_dict = $session_cart['products'][$product_id];
-                $qauntity = $product_dict['quantity'] + $quantity;
-                $price = $product_dict['price'] * $qauntity;
+                $qauntity = ($product_dict['quantity']) + $quantity;
+                $price = ($product_dict['price']+$extracost) * $qauntity;
                 $session_cart['products'][$product_id]['quantity'] = $qauntity;
                 $session_cart['products'][$product_id]['total_price'] = $price;
                 $this->session->set_userdata('session_cart', $session_cart);
             } else {
                 $product_details = $this->productDetails($product_id, $item_id);
+                
                 $product_dict = array(
                     'title' => $product_details['title'],
-                    'price' => $product_details['price'],
+                    'price' => ($product_details['price']+($extracost)),
                     'sku' => $product_details['sku'], 'folder' => $product_details['folder'],
                     'attrs' => "",
                     'vendor_id' => $product_details['user_id'],
-                    'total_price' => $product_details['price'],
+                    'total_price' => ($product_details['price']+($extracost)),
                     'file_name' => custome_image_server . PRODUCT_PATH_PRE . $product_details['folder'] . PRODUCT_PATH_POST,
                     'quantity' => 1,
                     'item_id' => $item_id,
@@ -934,7 +936,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         }
     }
 
-    public function cartOperationCustomMulti($product_id, $quantity, $custom_id, $customekey, $customevalue, $user_id = 0, $setSession = 0) {
+    public function cartOperationCustomMulti($product_id, $quantity, $custom_id, $customekey, $customevalue, $extra_cost=0, $user_id = 0, $setSession = 0) {
 
         $this->db->where('id', $custom_id);
         $query = $this->db->get('custome_items');
@@ -1004,6 +1006,10 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         } else {
             $session_cart = $this->session->userdata('session_cart');
             if ($session_cart) {
+                $extprice = $session_cart['products'][$product_id]['price']+$extra_cost;
+                $quantity = $session_cart['products'][$product_id]['quantity'];
+                $session_cart['products'][$product_id]['price'] = $extprice;
+                  $session_cart['products'][$product_id]['total_price'] = $extprice*$quantity;
                 $session_cart['products'][$product_id]['custom_dict'] = $custom_dict;
                 $this->session->set_userdata('session_cart', $session_cart);
             } else {

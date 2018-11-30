@@ -449,12 +449,13 @@ class Api extends REST_Controller {
         $custome_id = $this->post('custome_id');
         $customekey = $this->post('customekey');
         $customevalue = $this->post('customevalue');
+        $extra_cost = $this->post('extra_price');
 
         if ($this->checklogin) {
-            $session_cart = $this->Product_model->cartOperationCustom($product_id, $quantity, $custome_id, $customekey, $customevalue, $this->user_id);
+            $session_cart = $this->Product_model->cartOperationCustom($product_id, $quantity, $custome_id, $customekey, $customevalue, $extra_cost, $this->user_id);
             $session_cart = $this->Product_model->cartDataCustome($this->user_id);
         } else {
-            $session_cart = $this->Product_model->cartOperationCustom($product_id, $quantity, $custome_id, $customekey, $customevalue);
+            $session_cart = $this->Product_model->cartOperationCustom($product_id, $quantity, $custome_id, $customekey, $customevalue, $extra_cost);
             $session_cart = $this->Product_model->cartDataCustome();
         }
 
@@ -468,12 +469,13 @@ class Api extends REST_Controller {
         $custome_id = $this->post('custome_id');
         $customekey = $this->post('customekey');
         $customevalue = $this->post('customevalue');
+        $extra_cost = $this->post('extra_price');
 
         if ($this->checklogin) {
-            $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue, $this->user_id);
+            $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue,$extra_cost, $this->user_id);
             $session_cart = $this->Product_model->cartData($this->user_id);
         } else {
-            $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue);
+            $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue,$extra_cost);
             $session_cart = $this->Product_model->cartData();
         }
 
