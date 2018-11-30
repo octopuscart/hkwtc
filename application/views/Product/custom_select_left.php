@@ -28,6 +28,10 @@
                 </p>
                 <p class="selected-element-title_text_price">
                     {{screencustom.productobj.price|currency:"<?php echo globle_currency_type; ?>"}}
+                    <span ng-if="screencustom.extracost">
+                       + {{screencustom.extracost}}
+                    </span>
+                    
                 </p>
             </div>
 

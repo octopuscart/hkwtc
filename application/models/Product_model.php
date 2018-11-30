@@ -130,6 +130,7 @@ where pa.product_id = $product_id group by attribute_value_id";
             $productobj = $product[0];
 
             $item_price = $this->category_items_prices_id($productobj['category_items_id'], $custom_id);
+          
             $productobj['price'] = $item_price->price;
             $productobj['regular_price'] = $item_price->price;
 

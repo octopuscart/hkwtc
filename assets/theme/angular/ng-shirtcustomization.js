@@ -25,13 +25,16 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
                 "Monogram Background": "black",
                 "Monogram Style": "10",
                 "summary": {},
+                "extraprice": {},
             };
         }
         $scope.screencustom = {
+            'extracost': 0,
             'view_type': 'front',
             "fabric": $scope.cartFabrics[0].product_id,
             "productobj": $scope.cartFabrics[0],
             "sku": $scope.cartFabrics[0].sku,
+            "staycost": $scope.cartFabrics[0].price,
         };
         var url = baseurl + "customApi/customeElements";
         $http.get(url).then(function (rdata) {
@@ -156,6 +159,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
         $scope.screencustom.fabric = fabric.product_id;
         $scope.screencustom.sku = fabric.sku;
         $scope.screencustom.productobj = fabric;
+        $scope.screencustom.staycost = fabric.price;
     }
     //
 
@@ -215,6 +219,20 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
 
     // monogram style 
 
+    $scope.extracostcalculation = function () {
+        var array = $scope.selecteElements[$scope.screencustom.fabric]['extraprice'];
+        console.log(array);
+//        $scope.screencustom.productobj.price  = Number($scope.screencustom.staycost.price);
+        $scope.screencustom.extracost = 0;
+        for (i in array) {
+            var prc = array[i];
+            $scope.screencustom.extracost += Number(prc);
+        }
+        console.log($scope.screencustom, Number($scope.screencustom.extracost));
+        $scope.screencustom.staycost = Number($scope.screencustom.productobj.price) + Number($scope.screencustom.extracost);
+
+    }
+
 
     $scope.selectElement = function (obj, element) {
         console.log(element)
@@ -227,6 +245,12 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
         else {
             $scope.selecteElements[$scope.screencustom.fabric]['summary'][obj.title] = element.title;
 
+        }
+        if (element.extracost) {
+            $scope.selecteElements[$scope.screencustom.fabric]['extraprice'][obj.title] = element.extracost;
+        }
+        else {
+            $scope.selecteElements[$scope.screencustom.fabric]['extraprice'][obj.title] = 0;
         }
 
         if (obj.title == 'Cuff & Sleeve') {
@@ -246,6 +270,8 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
             }
         }
         $scope.monogramSetting();
+        $scope.extracostcalculation();
+
 //        $("html, body").animate({scrollTop: 0}, "slow")
     }
 
@@ -624,7 +650,19 @@ App.controller('customizationShirtMulti', function ($scope, $http, $location, $f
 
     // monogram style 
 
+    $scope.extracostcalculation = function () {
+        var array = $scope.selecteElements[$scope.screencustom.fabric]['extraprice'];
+        console.log(array);
+//        $scope.screencustom.productobj.price  = Number($scope.screencustom.staycost.price);
+        $scope.screencustom.extracost = 0;
+        for (i in array) {
+            var prc = array[i];
+            $scope.screencustom.extracost += Number(prc);
+        }
+        console.log($scope.screencustom, Number($scope.screencustom.extracost));
+        $scope.screencustom.staycost = Number($scope.screencustom.productobj.price) + Number($scope.screencustom.extracost);
 
+    }
     $scope.selectElement = function (obj, element) {
         console.log(element)
 

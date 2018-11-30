@@ -41,6 +41,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
                 "Monogram Background": "black",
                 "Monogram Style": "Style 1",
                 "summary": {},
+                "extraprice": {},
             };
         }
         var viewtype = "front";
@@ -291,7 +292,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
 
 
     $scope.selectElement = function (obj, element) {
-        console.log(element)
+        
 
         $scope.screencustom.view_type = obj.viewtype;
         $scope.selecteElements[$scope.screencustom.fabric][obj.title] = element;
@@ -300,8 +301,15 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
         }
         else {
             $scope.selecteElements[$scope.screencustom.fabric]['summary'][obj.title] = element.title;
-
         }
+        
+        if (element.extracost) {
+            $scope.selecteElements[$scope.screencustom.fabric]['extraprice'][obj.title] = element.extracost;
+        }
+        else {
+            $scope.selecteElements[$scope.screencustom.fabric]['extraprice'][obj.title] = 0;
+        }
+        
         if (obj.title == 'Cuff & Sleeve') {
             $scope.selecteElements[$scope.screencustom.fabric].sleeve = element.sleeve;
 
@@ -317,7 +325,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
                 $scope.selecteElements[$scope.screencustom.fabric]['Monogram'] = element.monogram_position;
             }
         }
-
+console.log($scope.selecteElements[$scope.screencustom.fabric])
 //        $("html, body").animate({scrollTop: 0}, "slow")
     }
 
