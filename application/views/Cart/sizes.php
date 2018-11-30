@@ -149,26 +149,33 @@ function sizeTable($ctype, $lable) {
     <?php
 }
 
-sizeTable($shirtsize, 'Shirt');
-
-sizeTable($jacketsize, 'Jacket');
-
-
-sizeTable($panttsize, 'Pant');
-        
-//        
-//        $mesdatacheck = array_unique($items);
-//$anotherarray = array();
-//foreach ($mesdatacheck as $key => $value) {
-//    $anotherarray[$value] = $key;
-//}
-//
-//if(isset($anotherarray[1])){
 //sizeTable($shirtsize, 'Shirt');
-//}
-//if(isset($anotherarray[4])){
+//
 //sizeTable($jacketsize, 'Jacket');
-//}
-//if(isset($anotherarray[3])){
+//
+//
 //sizeTable($panttsize, 'Pant');
+        
+        
+        $mesdatacheck = array_unique($items);
+$anotherarray = array();
+foreach ($mesdatacheck as $key => $value) {
+    $anotherarray[$value] = $key;
+}
+
+
+if(isset($anotherarray[1])){
+sizeTable($shirtsize, 'Shirt');
+}
+if(isset($anotherarray[4])){
+sizeTable($jacketsize, 'Jacket');
+}
+if(isset($anotherarray[2])){
+sizeTable($jacketsize, 'Jacket');
+sizeTable($panttsize, 'Pant');
+}
+
+if(isset($anotherarray[3])){
+sizeTable($panttsize, 'Pant');
+}
 ?>
