@@ -442,7 +442,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
                         showConfirmButton: false,
                         animation: true,
                         onClose: function () {
-                           // window.location = baseurl + "Cart/details";
+                            window.location = baseurl + "Cart/details";
                         }
                     })
                 }, function () {
