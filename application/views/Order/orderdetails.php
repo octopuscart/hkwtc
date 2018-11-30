@@ -266,7 +266,7 @@ $paymentstatus = "";
                                         </center>
                                         </td>
 
-                                        <td style="width: 300px;">
+                                        <td style="width: 200px;">
 
                                             <?php echo $product->title; ?> - <?php echo $product->item_name; ?>
                                             <br/>
@@ -309,8 +309,13 @@ $paymentstatus = "";
                                             <?php
                                             if ($product->extra_price > 0) {
                                                 ?>
-                                                {{ <?php echo $product->price - $product->extra_price; ?> |currency:""}}
-                                                {{ <?php echo $product->extra_price; ?> |currency:""}}
+                                            <span  style="font-size: 12px;
+                                          font-weight: 600;
+                                          text-align: center;">
+                                        <br/>
+                                        P: {{ <?php echo $product->price - $product->extra_price; ?> |currency:""}}
+                                              + E: {{ <?php echo $product->extra_price; ?> |currency:""}}
+                                                </span>
                                                 <?php
                                             }
                                             ?>
