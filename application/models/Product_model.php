@@ -644,7 +644,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 $this->get_children($pid, $container);
             }
 
-            print_r($category);
+           
             return $category;
         } else {
             
@@ -972,7 +972,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 
         if ($user_id != 0) {
             $cartdata = $this->cartDataNoCustome($user_id);
-            $product_details = $this->productDetails($product_id, $item_id);
+            $product_details = $cartdata['products'][$product_id];
 
             if (isset($cartdata['products'][$product_id])) {
 
@@ -997,7 +997,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                         'display_index' => $display_index,
                         'cart_id' => $cid,
                     );
-                    $this->db->insert('cart_customization', $custom_array);
+                   $this->db->insert('cart_customization', $custom_array);
                     $display_index++;
                 }
             }
