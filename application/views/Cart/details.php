@@ -70,7 +70,7 @@ $this->load->view('layout/header');
                             <li class="col-sm-1"> </li>
                         </ul>
                     </div>
-                    <ul class="row cart-details" ng-repeat="product in globleCartData.products" >
+                    <ul class="row cart-details" ng-repeat="product in globleCartData.products  >
                         <li class="col-sm-5">
                             <div class="media"> 
                                 <!-- Media Image -->
