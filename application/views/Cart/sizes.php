@@ -88,7 +88,7 @@ $shirtsize = array(
 
 function sizeTable($ctype, $lable) {
     ?>
-    <table class="standardmeasurement">
+    <table class="standardmeasurement" id="id<?php echo $lable;?>">
         <tr>
             <td rowspan="4" class="mestitle"><?php
                 echo $lable;

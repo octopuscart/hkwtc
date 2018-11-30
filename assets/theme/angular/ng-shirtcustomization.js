@@ -26,6 +26,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
                 "Monogram Style": "10",
                 "summary": {},
                 "extraprice": {},
+                "totalextracost":0,
             };
         }
         $scope.screencustom = {
@@ -221,16 +222,11 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
 
     $scope.extracostcalculation = function () {
         var array = $scope.selecteElements[$scope.screencustom.fabric]['extraprice'];
-        console.log(array);
-//        $scope.screencustom.productobj.price  = Number($scope.screencustom.staycost.price);
-        $scope.screencustom.extracost = 0;
+        $scope.selecteElements[$scope.screencustom.fabric].totalextracost = 0;
         for (i in array) {
             var prc = array[i];
-            $scope.screencustom.extracost += Number(prc);
+            $scope.selecteElements[$scope.screencustom.fabric].totalextracost += Number(prc);
         }
-        console.log($scope.screencustom, Number($scope.screencustom.extracost));
-        $scope.screencustom.staycost = Number($scope.screencustom.productobj.price) + Number($scope.screencustom.extracost);
-
     }
 
 
@@ -310,6 +306,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
     //add to cart
     $scope.addToCartCustome = function () {
         var summerydata = $scope.selecteElements[product_id].summary;
+        var extraprice = $scope.selecteElements[product_id].totalextracost;
         var customhtmlarray = [];
         var form = new FormData()
         for (i in summerydata) {
@@ -353,6 +350,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
                 form.append('product_id', product_id);
                 form.append('quantity', 1);
                 form.append('custome_id', 1);
+                form.append('extra_price', extraprice);
                 $http.post(globlecart, form).then(function (rdata) {
                     swal.close();
                     $scope.getCartData();
@@ -436,7 +434,8 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
 });
 
 App.controller('customizationShirtMulti', function ($scope, $http, $location, $filter) {
-
+    
+    
     var globlecart = baseurl + "ApiMulti/cartOperationShirt";
     $scope.product_quantity = 1;
 
@@ -459,6 +458,8 @@ App.controller('customizationShirtMulti', function ($scope, $http, $location, $f
                 "Monogram Background": "black",
                 "Monogram Style": "10",
                 "summary": {},
+                 "extraprice": {},
+                 "totalextracost":0,
             };
         }
         $scope.screencustom = {
@@ -592,6 +593,7 @@ App.controller('customizationShirtMulti', function ($scope, $http, $location, $f
         $scope.screencustom.fabric = fabric.product_id;
         $scope.screencustom.sku = fabric.sku;
         $scope.screencustom.productobj = fabric;
+         $scope.screencustom.staycost = fabric.price;
     }
     //
 
@@ -652,23 +654,34 @@ App.controller('customizationShirtMulti', function ($scope, $http, $location, $f
 
     $scope.extracostcalculation = function () {
         var array = $scope.selecteElements[$scope.screencustom.fabric]['extraprice'];
-        console.log(array);
-//        $scope.screencustom.productobj.price  = Number($scope.screencustom.staycost.price);
-        $scope.screencustom.extracost = 0;
+        $scope.selecteElements[$scope.screencustom.fabric].totalextracost = 0;
         for (i in array) {
             var prc = array[i];
-            $scope.screencustom.extracost += Number(prc);
+            $scope.selecteElements[$scope.screencustom.fabric].totalextracost += Number(prc);
         }
-        console.log($scope.screencustom, Number($scope.screencustom.extracost));
-        $scope.screencustom.staycost = Number($scope.screencustom.productobj.price) + Number($scope.screencustom.extracost);
-
     }
+    
+    
     $scope.selectElement = function (obj, element) {
         console.log(element)
 
         $scope.screencustom.view_type = obj.viewtype;
         $scope.selecteElements[$scope.screencustom.fabric][obj.title] = element;
         $scope.selecteElements[$scope.screencustom.fabric]['summary'][obj.title] = element.title;
+        if (element.extracost) {
+            $scope.selecteElements[$scope.screencustom.fabric]['summary'][obj.title] = element.title + " ($" + element.extracost + ")";
+        }
+        else {
+            $scope.selecteElements[$scope.screencustom.fabric]['summary'][obj.title] = element.title;
+
+        }
+        if (element.extracost) {
+            $scope.selecteElements[$scope.screencustom.fabric]['extraprice'][obj.title] = element.extracost;
+        }
+        else {
+            $scope.selecteElements[$scope.screencustom.fabric]['extraprice'][obj.title] = 0;
+        }
+        $scope.extracostcalculation();
 
         if (obj.title == 'Cuff & Sleeve') {
             $scope.selecteElements[$scope.screencustom.fabric].sleeve = element.sleeve;
@@ -731,7 +744,7 @@ App.controller('customizationShirtMulti', function ($scope, $http, $location, $f
             var form = new FormData()
             var ks = i;
             var kv = summerydata[i];
-            console.log(kv.summary)
+            var extraprice = kv.totalextracost;
             for (kvk in kv.summary) {
                 var kvv = kv.summary[kvk];
                 form.append("customekey[]", kvk);
@@ -740,6 +753,7 @@ App.controller('customizationShirtMulti', function ($scope, $http, $location, $f
             form.append('product_id', ks);
             form.append('quantity', 1);
             form.append('custome_id', 1);
+            form.append('extra_price', extraprice);
             console.log(form)
 //            console.log(ks, kv);
 //            var summaryhtml = "<tr><th>" + ks + "</th><td>" + kv + "</td></tr>";

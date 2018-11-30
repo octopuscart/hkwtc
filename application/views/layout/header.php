@@ -195,10 +195,10 @@
                             <div class="nav-right">
                                 <ul >
                                     <li class="dropdown user-basket"> <span class="cart-num">{{globleCartDatac.total_quantity}}</span> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="fa fa-shopping-cart"></i> </a>
-                                        <ul class="dropdown-menu" ng-if="globleCartDatac.total_quantity">
+                                        <ul class="dropdown-menu">
 
                                             <!--prodcut cart list-->
-                                            <div class="scroll_items">
+                                            <div class="scroll_items"  ng-if="globleCartDatac.total_quantity">
                                             <li ng-repeat="product in globleCartDatac.products" class="animated flipInX">
                                                 <div class="media-left">
                                                     <div class="cart-img"> 
@@ -211,7 +211,7 @@
                                                     <h6 class="media-heading" style="font-size: 12px;">{{product.title}} - {{product.item_name}}</h6>
                                                     <span class="price">{{product.quantity}}    X    {{product.price|currency:" "}}</span> 
                                                 </div>
-                                                <a href="#." class="remov" ng-click="removeCart(product.product_id)">
+                                                <a href="#" class="remov" ng-click="removeCart(product.product_id)">
                                                     <i class="fa fa-times"></i>
                                                 </a> 
                                             </li>

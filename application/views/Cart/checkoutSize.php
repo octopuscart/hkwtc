@@ -15,7 +15,7 @@ $this->load->view('layout/header');
 
 
     .measurement_text{font-size: 20px;
-        float: left;    font-family: sans-serif;
+                      float: left;    font-family: sans-serif;
     }
     .fr_value{
         font-size: 15px;
@@ -334,7 +334,7 @@ $this->load->view('layout/header');
 
                                                     Shop A, 2/F Entertainment Building,<br/>
                                                     30 Queen’s Road, Central, Hong Kong
-<br/>
+                                                    <br/>
                                                     <i class="fa fa-envelope"></i> sales@royaltailor.hk<br/>
                                                     <i class="fa fa-phone"></i>  +(852) 2655 9778 
 
@@ -434,7 +434,7 @@ $this->load->view('layout/header');
     var avaiblecredits = 0;</script>
 
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/noslider/nouislider.min.css">
-        <script src="<?php echo base_url(); ?>assets/theme/noslider/nouislider.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>assets/theme/noslider/nouislider.min.js" type="text/javascript"></script>
 
 
 
@@ -562,6 +562,22 @@ foreach ($measurements_list as $key => $value) {
 
         $scope.slidedemostandard = function () {
             console.log($scope.standard_measurement);
+            var checksizes = [];
+            for (i in $scope.standard_measurement) {
+                var mobject = $scope.standard_measurement[i];
+                if (mobject == "") {
+                    console.log("#id" + i)
+                    checksizes.push("#id" + i)
+//                  $("#id"+i).css("display", "none");
+                }
+                else {
+
+                }
+            }
+            var hidecss = checksizes.join(", ");
+            console.log(hidecss);
+            
+            $(hidecss).css("display", "none");
             var stsize = [$scope.standard_measurement.Jacket, $scope.standard_measurement.Shirt, $scope.standard_measurement.Pant];
 
             var trsize = (stsize.join("  ")).trim();
