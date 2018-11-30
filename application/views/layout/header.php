@@ -140,6 +140,7 @@
                                     <li > 
                                         <a href="<?php echo site_url("Shop/contactus"); ?>">Contact Us</a>
                                     </li>
+                                    
 
 
                                     <!--                                     Mega Menu Nav 
@@ -181,8 +182,8 @@
                                         <?php
                                     } else {
                                         ?>
-    <!--                                        <li> <a href="<?php echo site_url("Account/login"); ?>" >Sign In / Sign Up </a>
-                                        </li>-->
+                                            <li> <a href="<?php echo site_url("Account/login"); ?>" >Sign In / Sign Up </a>
+                                        </li>
 
                                         <?php
                                     }

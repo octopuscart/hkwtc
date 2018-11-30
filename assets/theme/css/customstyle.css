@@ -531,3 +531,7 @@ header .is-sticky .sticky .navbar li a {
     left: auto;
     right: 20px;
 }
+
+b.extrapricesummry {
+    color: red;
+}
