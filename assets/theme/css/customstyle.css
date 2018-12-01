@@ -535,3 +535,10 @@ header .is-sticky .sticky .navbar li a {
 b.extrapricesummry {
     color: red;
 }
+
+b.extrapricesummryorder {
+    color: red;
+    background: white;
+    border-radius: 9px;
+    padding: 2px;
+}

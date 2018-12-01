@@ -32,20 +32,20 @@ $paymentstatus = "";
         border: 6px solid #ff3b3b;
     }
     .icon-circle {
-    font-size: 19px;
-    height: 31px;
-    width: 31px;
-    background-color: #b28c06;
-    float: left;
-    border-radius: 50%;
-    color: #fff;
-    line-height: 28px;
-    text-align: center;
-}
+        font-size: 19px;
+        height: 31px;
+        width: 31px;
+        background-color: #b28c06;
+        float: left;
+        border-radius: 50%;
+        color: #fff;
+        line-height: 28px;
+        text-align: center;
+    }
     .headerorder{
         padding: 2px 10px;
         /*text-align: center;*/
-      
+
         margin-bottom: 10px;
         font-weight: 600;
         font-size: 18px;
@@ -61,7 +61,7 @@ $paymentstatus = "";
 
             <!-- Breadcrumb -->
             <ol class="breadcrumb">
-               <li>Order No. #<?php echo $order_data->order_no; ?></li>
+                <li>Order No. #<?php echo $order_data->order_no; ?></li>
             </ol>
         </div>
     </div>
@@ -274,7 +274,7 @@ $paymentstatus = "";
 
                                             <h4 class="panel-title">
                                                 <a role="button" class="btn  btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $product->id; ?>" aria-expanded="true" aria-controls="collapseOne" style="    margin: 5px 0px;
-    padding: 4px;">
+                                                   padding: 4px;">
                                                     View Summary
                                                 </a>
                                             </h4>
@@ -284,7 +284,18 @@ $paymentstatus = "";
                                                     <?php
                                                     echo "<ul class='list-group'>";
                                                     foreach ($product->custom_dict as $key => $value) {
-                                                        echo "<li class='list-group-item'>$key <span class='badge'>$value</span></li>";
+                                                        $checkextra = $value;
+                                                        $isextra = strpos($value, "$");
+                                                        if ($isextra) {
+                                                            $extraarry = explode(" ", $value);
+                                                            $prefix = array_slice($extraarry, 0, count($extraarry) - 1);
+                                                            $sufix = "<b class='extrapricesummryorder'>" . $extraarry[count($extraarry) - 1] . "</b>";
+                                                            array_push($prefix, $sufix);
+                                                            $fvalue = (implode(" ", $prefix));
+                                                            echo "<li class='list-group-item'>$key <span class='badge'>$fvalue</span></li>";
+                                                        } else {
+                                                            echo "<li class='list-group-item'>$key <span class='badge'>$value</span></li>";
+                                                        }
                                                     }
                                                     echo "</ul>";
                                                     ?>                                            </div>
@@ -295,6 +306,14 @@ $paymentstatus = "";
 
                                         <td style="text-align: right">
                                             {{ <?php echo $product->price; ?> |currency:"<?php echo globle_currency; ?> "}}
+                                            <?php
+                                            if ($product->extra_price > 0) {
+                                                ?>
+                                                {{ <?php echo $product->price - $product->extra_price; ?> |currency:""}}
+                                                {{ <?php echo $product->extra_price; ?> |currency:""}}
+                                                <?php
+                                            }
+                                            ?>
                                         </td>
 
                                         <td style="text-align: right">
