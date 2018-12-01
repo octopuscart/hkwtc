@@ -216,6 +216,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         if ($user_id != 0) {
             $this->db->where('user_id', $user_id);
             $this->db->where('order_id', '0');
+            $this->db->order_by("item_id", "asc");
             $query = $this->db->get('cart');
             $product = $query->result_array();
             $productlist = array();
@@ -289,6 +290,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         if ($user_id != 0) {
             $this->db->where('user_id', $user_id);
             $this->db->where('order_id', '0');
+            $this->db->order_by("item_id", "asc");
             $query = $this->db->get('cart');
             $product = $query->result_array();
             $productlist = array();
@@ -372,6 +374,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         if ($user_id != 0) {
             $this->db->where('user_id', $user_id);
             $this->db->where('order_id', '0');
+            $this->db->order_by("item_id", "asc");
             $query = $this->db->get('cart');
             $product = $query->result_array();
             $productlist = array();
