@@ -1036,7 +1036,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $product_details = $this->productDetails($product_id, $item_id);
             $product_dict = array(
                 'title' => $product_details['title'],
-                'price' => $product_details['price'],
+                'price' => $value['price'],
+                'extra_price' => isset($value['extra_price'])?$value['extra_price']:0,
                 'sku' => $product_details['sku'], 'folder' => $product_details['folder'],
                 'attrs' => "",
                 'vendor_id' => $product_details['user_id'],
@@ -1082,7 +1083,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $product_details = $this->productDetails($product_id, $item_id);
             $product_dict = array(
                 'title' => $product_details['title'],
-                'price' => $product_details['price'],
+                'price' => $value['price'],
+                'extra_price' => isset($value['extra_price'])?$value['extra_price']:0,
                 'sku' => $product_details['sku'], 'folder' => $product_details['folder'],
                 'attrs' => "",
                 'vendor_id' => $product_details['user_id'],
