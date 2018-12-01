@@ -266,7 +266,7 @@ $paymentstatus = "";
                                         </center>
                                         </td>
 
-                                        <td style="width: 200px;">
+                                        <td style="width: 300px;">
 
                                             <?php echo $product->title; ?> - <?php echo $product->item_name; ?>
                                             <br/>
@@ -292,9 +292,9 @@ $paymentstatus = "";
                                                             $sufix = "<b class='extrapricesummryorder'>" . $extraarry[count($extraarry) - 1] . "</b>";
                                                             array_push($prefix, $sufix);
                                                             $fvalue = (implode(" ", $prefix));
-                                                            echo "<li class='list-group-item'>$key <span class='badge'>$fvalue</span></li>";
+                                                            echo "<li class='list-group-item' style='font-size:12px'>$key <span class='badge'>$fvalue</span></li>";
                                                         } else {
-                                                            echo "<li class='list-group-item'>$key <span class='badge'>$value</span></li>";
+                                                            echo "<li class='list-group-item'  style='font-size:12px'>$key <span class='badge'>$value</span></li>";
                                                         }
                                                     }
                                                     echo "</ul>";
@@ -321,7 +321,7 @@ $paymentstatus = "";
                                             ?>
                                         </td>
 
-                                        <td style="text-align: right">
+                                        <td style="text-align: right;width: 50px;">
                                             <?php echo $product->quantity; ?> 
                                         </td>
 
