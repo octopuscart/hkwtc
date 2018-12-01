@@ -313,8 +313,8 @@ $paymentstatus = "";
                                           font-weight: 600;
                                           text-align: center;">
                                         <br/>
-                                        P: {{ <?php echo $product->price - $product->extra_price; ?> |currency:""}}
-                                              + E: {{ <?php echo $product->extra_price; ?> |currency:""}}
+                                       {{ <?php echo $product->price - $product->extra_price; ?> |currency:""}}
+                                              + {{ <?php echo $product->extra_price; ?> |currency:""}}
                                                 </span>
                                                 <?php
                                             }
