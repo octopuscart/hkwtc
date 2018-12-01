@@ -473,10 +473,10 @@ class Api extends REST_Controller {
 
         if ($this->checklogin) {
             $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue,$extra_cost, $this->user_id);
-            $session_cart = $this->Product_model->cartData($this->user_id);
+            $session_cart = $this->Product_model->cartDataCustome($this->user_id);
         } else {
             $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue,$extra_cost);
-            $session_cart = $this->Product_model->cartData();
+            $session_cart = $this->Product_model->cartDataCustome();
         }
 
         $this->response($session_cart['products'][$product_id]);

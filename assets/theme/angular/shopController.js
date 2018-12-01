@@ -337,7 +337,21 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
         for (i in styleobj) {
             var ks = i;
             var kv = styleobj[i];
+            console.log(kv);
+            var checkdl = kv.indexOf("$");
+            if(checkdl>-1){
+                var brkstr = kv.split(" ");
+                var brkstrl = brkstr.length;
+                var prestr = brkstr.splice(0, brkstrl-1).join(" ");
+                console.log(brkstr, brkstrl, prestr);
+                var poststr = " <b class='extrapricesummry'>"+brkstr[0]+"</b>";
+                console.log(poststr);
+                var finalstr = prestr+poststr;
+                 var summaryhtml = "<tr><th>" + ks + "</th><td>" + finalstr + "</td></tr>";
+            }
+            else{
             var summaryhtml = "<tr><th>" + ks + "</th><td>" + kv + "</td></tr>";
+        }
             customhtmlarray.push(summaryhtml);
         }
         customhtmlarray = customhtmlarray.join("");
@@ -348,7 +362,9 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             imageUrl: product.file_name,
             imageWidth: 100,
             confirmButtonClass: 'btn btn-default',
-        })
+        });
+        
+      
     }
 
 
