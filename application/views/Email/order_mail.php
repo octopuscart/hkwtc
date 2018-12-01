@@ -185,6 +185,19 @@
 
                         <td style="text-align: right">
                             <?php echo $product->price; ?>
+                            <?php
+                            if ($product->extra_price > 0) {
+                                ?>
+                                <span  style="font-size: 10px;
+                                       font-weight: 600;
+                                       text-align: center;">
+                                    <br/>
+                                    {{ <?php echo $product->price - $product->extra_price; ?> |currency:""}}
+                                    + {{ <?php echo $product->extra_price; ?> |currency:""}}
+                                </span>
+                                <?php
+                            }
+                            ?>
                         </td>
 
                         <td style="text-align: right">
