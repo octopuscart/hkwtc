@@ -1795,7 +1795,7 @@ class CustomApi extends REST_Controller {
                                 "stitcing" => ['laple_notch_stitching1.png'],
                                 "hole" => ["laple_double_notch_button_hole0001.png"],
                                 "overelay" => []),
-                            "3 Row 2" => array("elements" => [
+                            "3 Row 2 Buttons" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_notch_v20001.png"
                                 ],
@@ -1859,7 +1859,7 @@ class CustomApi extends REST_Controller {
                                 "stitcing" => ['laple_peak_stitch.png'],
                                 "hole" => ["laple_double_peak_button_hole0001.png"],
                                 "overelay" => ["laple_peak_overlay.png"]),
-                            "3 Row 2" => array("elements" => [
+                            "3 Row 2 Buttons" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_peak_v20001.png"
                                 ],
@@ -1923,7 +1923,7 @@ class CustomApi extends REST_Controller {
                                 "hole" => ["laple_double_shawl_button_hole0001.png"],
                                 "backoverelay" => ["laple_shwal_v20001_overlay.png"],
                                 "overelay" => []),
-                            "3 Row 2" => array("elements" => [
+                            "3 Row 2 Buttons" => array("elements" => [
                                     "laple_shwal_v20001.png"
                                 ],
                                 "stitcing" => ['laple_notch_stitching1.png'],
