@@ -185,7 +185,7 @@ $this->load->view('layout/header');
 
                                                 <div class="row">
                                                     <?php
-                                                    $this->load->view('Cart/sizes', array('vtype' => 'items'));
+                                                    $this->load->view('Cart/sizes', array('vtype' => 'items', 'items'=>$custome_items));
                                                     ?>
 
 
@@ -428,7 +428,6 @@ $this->load->view('layout/header');
 
 
 
-
 <script type="text/javascript">
     var custom_items = "<?php echo implode(", ", $custome_items) ?>";
     var avaiblecredits = 0;</script>
@@ -574,10 +573,7 @@ foreach ($measurements_list as $key => $value) {
 
                 }
             }
-            var hidecss = checksizes.join(", ");
-            console.log(hidecss);
-            
-            $(hidecss).css("display", "none");
+
             var stsize = [$scope.standard_measurement.Jacket, $scope.standard_measurement.Shirt, $scope.standard_measurement.Pant];
 
             var trsize = (stsize.join("  ")).trim();
