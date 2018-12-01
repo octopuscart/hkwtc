@@ -1010,6 +1010,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 $extprice = $session_cart['products'][$product_id]['price'] + $extra_cost;
                 $quantity = $session_cart['products'][$product_id]['quantity'];
                 $session_cart['products'][$product_id]['price'] = $extprice;
+                $session_cart['products'][$product_id]['extra_price'] = $extra_cost;
                 $session_cart['products'][$product_id]['total_price'] = $extprice * $quantity;
                 $session_cart['products'][$product_id]['custom_dict'] = $custom_dict;
                 $this->session->set_userdata('session_cart', $session_cart);
