@@ -1734,7 +1734,7 @@ class CustomApi extends REST_Controller {
                         "overlay" => ["single_overlay2.png", "single_overlay.png"],
                     ), array(
                         "status" => "0",
-                        "title" => "3 Row 2",
+                        "title" => "3 Row 2 Buttons",
                         "customization_category_id" => "4",
                         "elements" => ['body_single_410001.png',],
                         "image" => "suit_elements/suittype/2_button.png",
