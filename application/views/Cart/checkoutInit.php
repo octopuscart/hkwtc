@@ -169,7 +169,12 @@ $this->load->view('layout/header');
 
                                     <!-- PRICE -->
                                     <li class="col-sm-2">
-                                        <div class="position-center-center"> <span class="price">{{product.price|currency:" "}}</span> </div>
+                                        <div class="position-center-center"> <span class="price">{{product.price|currency:" "}}<span ng-if="product.extra_price > 0" style="font-size: 12px;
+                                          font-weight: 600;
+                                          text-align: center;">
+                                        <br/>
+                                        Price: {{product.price - product.extra_price}} + Extra Price:{{product.extra_price}} 
+                                    </span></span> </div>
                                     </li>
 
                                     <!-- QTY -->
