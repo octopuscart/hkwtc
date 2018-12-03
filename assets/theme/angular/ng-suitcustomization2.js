@@ -53,6 +53,9 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
             case "Pant":
                 viewtype = "pant";
                 break;
+            case "TuxedoPant":
+                viewtype = "pant";
+                break;
             default:
                 viewtype = "front";
         }
@@ -567,23 +570,29 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
             case 3:
                 viewtype = "pant";
                 break;
+            
+            case 7:
+                viewtype = "pant";
+                break;
+                
             default:
                 viewtype = "front";
         }
-        var custometype = "";
-        switch (gcustome_id) {
-            case 4:
-                custometype = "Jacket";
-                break;
-            case 3:
-                custometype = "Pant";
-                break;
-            case 2:
-                custometype = "Suit";
-                break;
-            default:
-                custometype = "Suit";
-        }
+        var custometype = defaut_view;
+       
+//        switch (gcustome_id) {
+//            case 4:
+//                custometype = "Jacket";
+//                break;
+//            case 3:
+//                custometype = "Pant";
+//                break;
+//            case 2:
+//                custometype = "Suit";
+//                break;
+//            default:
+//                custometype = "Suit";
+//        }
 
 
         $scope.screencustom = {
