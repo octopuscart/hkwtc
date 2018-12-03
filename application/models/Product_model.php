@@ -275,12 +275,21 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $session_cart['total_price'] = 0;
             $custome_items = [];
             foreach ($session_cart['products'] as $key => $value) {
-                if (isset($value['item_id'])) {
-                    array_push($session_cart['custome_items'], $value['item_id']);
-                    array_push($session_cart['custome_items_name'], $value['item_name']);
+                if (isset($value['product_id'])) {
+                    if (isset($value['item_id'])) {
+                        array_push($session_cart['custome_items'], $value['item_id']);
+                        array_push($session_cart['custome_items_name'], $value['item_name']);
+                    }
+
+                    $session_cart['total_quantity'] += $value['quantity'];
+                    $session_cart['total_price'] += $value['total_price'];
                 }
-                $session_cart['total_quantity'] += $value['quantity'];
-                $session_cart['total_price'] += $value['total_price'];
+                else{
+                 
+                    unset($session_cart['products'][$key]);
+                    $this->session->set_userdata('session_cart', $session_cart);
+               
+                }
             }
             return $session_cart;
         }
@@ -647,7 +656,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 $this->get_children($pid, $container);
             }
 
-           
+
             return $category;
         } else {
             
@@ -1000,7 +1009,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                         'display_index' => $display_index,
                         'cart_id' => $cid,
                     );
-                   $this->db->insert('cart_customization', $custom_array);
+                    $this->db->insert('cart_customization', $custom_array);
                     $display_index++;
                 }
             }
@@ -1037,7 +1046,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $product_dict = array(
                 'title' => $product_details['title'],
                 'price' => $value['price'],
-                'extra_price' => isset($value['extra_price'])?$value['extra_price']:0,
+                'extra_price' => isset($value['extra_price']) ? $value['extra_price'] : 0,
                 'sku' => $product_details['sku'], 'folder' => $product_details['folder'],
                 'attrs' => "",
                 'vendor_id' => $product_details['user_id'],
@@ -1084,7 +1093,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $product_dict = array(
                 'title' => $product_details['title'],
                 'price' => $value['price'],
-                'extra_price' => isset($value['extra_price'])?$value['extra_price']:0,
+                'extra_price' => isset($value['extra_price']) ? $value['extra_price'] : 0,
                 'sku' => $product_details['sku'], 'folder' => $product_details['folder'],
                 'attrs' => "",
                 'vendor_id' => $product_details['user_id'],
