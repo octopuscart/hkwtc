@@ -73,6 +73,11 @@ $image2 = "";
                 min-height: 390px;
                 <?php
                 break;
+            case "5":
+                ?>
+                min-height: 390px;
+                <?php
+                break;
             case "3":
                 ?>
                 min-height: 262px;
@@ -104,6 +109,11 @@ $image2 = "";
                 <?php
                 break;
             case "2":
+                ?>
+                min-height: 520px;
+                <?php
+                break;
+             case "5":
                 ?>
                 min-height: 520px;
                 <?php
@@ -330,6 +340,18 @@ $image2 = "";
                                             </div>
                                             <?php
                                             break;
+                                        case "5":
+                                            ?>
+                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product">
+                                            <div class="item-hover" style="background: url(<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/style_buttons.png);    background-size: 139%;
+                                                 background-color: white;
+                                                 background-repeat: no-repeat;"> 
+                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn" style="font-size: 9px;" title="Customize this fabric">Design Single
+                                                </a> 
+                                                <a href="#." class="btn by" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)" title="Choose fabric for multiple customization">Design Multiple</a> 
+                                            </div>
+                                            <?php
+                                            break;
                                         case "3":
                                             ?>
                                             <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/pant_style10001.png" alt="product">
@@ -456,6 +478,9 @@ $image2 = "";
                         break;
                     case '2':
                         $item_array = array("title" => "Suit(s)", "link" => site_url("Customization/customizationSuitV2/2"));
+                        break;
+                    case '5':
+                        $item_array = array("title" => "Tuxedo Suit(s)", "link" => site_url("Customization/customizationSuitV2/5"));
                         break;
                     case '3':
                         $item_array = array("title" => "Pant(s)", "link" => site_url("Customization/customizationSuitV2/3"));
