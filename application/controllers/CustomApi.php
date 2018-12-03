@@ -1361,6 +1361,24 @@ class CustomApi extends REST_Controller {
                     ),
                     array(
                         "status" => "0",
+                        "title" => "Black Horn",
+                        "customization_category_id" => "4",
+                        "image" => "suit_elements/buttons/bhb.jpg",
+                        "folder" => "bhb",
+                        "show_buttons" => "true",
+                      
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Brown Horn",
+                        "customization_category_id" => "4",
+                        "image" => "suit_elements/buttons/bhbr.jpg",
+                        "folder" => "bhbr",
+                        "show_buttons" => "true",
+                       
+                    ),
+                    array(
+                        "status" => "0",
                         "title" => "Brown Lipshell",
                         "customization_category_id" => "4",
                         "image" => "suit_elements/buttons/bwl.jpg",
