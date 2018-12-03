@@ -1,6 +1,20 @@
 
 <div class="fontview_custom customization_block animated zoom "  ng-if="screencustom.view_type == 'front'" >
-    <img src="<?php echo custome_image_server; ?>/jacket/output/overlay/shirt2.png" class="fixpos animated" >
+
+    <?php
+    if ($tuxedotype == '1') {
+        ?>
+        <img src="<?php echo custome_image_server; ?>/jacket/output/overlay/shirttuxedo.png" class="fixpos animated" >
+
+        <?php
+    } else {
+        ?>
+        <img src="<?php echo custome_image_server; ?>/jacket/output/overlay/shirt2.png" class="fixpos animated" >
+        <?php
+    }
+    ?>
+
+
     <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/sleeve_new120001.png" class="fixpos animated" style="">
     <img src="<?php echo custome_image_server; ?>/jacket/output/overlay/sleeve_new_olverlay.png" class="fixpos animated" >
     <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/pant_suit_model0001.png" class="fixpos animated " >
@@ -60,13 +74,11 @@
 
 
     <?php
-    if ($custom_item == 'TuxedoSuit') {
+    if ($tuxedotype == '1') {
         ?>
-    
-    
-            <img src="<?php echo custome_image_server; ?>/jacket/tuxedofabric/{{selecteElements[fab.product_id]['Lapel Facing'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lapel Style'].laple_style[selecteElements[fab.product_id]['Jacket Style'].title].elements">
+        <img src="<?php echo custome_image_server; ?>/jacket/tuxedofabric/{{selecteElements[fab.product_id]['Lapel Facing'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lapel Style'].laple_style[selecteElements[fab.product_id]['Jacket Style'].title].elements">
 
-            <?php
+        <?php
     } else {
         ?>
         <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lapel Style'].laple_style[selecteElements[fab.product_id]['Jacket Style'].title].elements">
@@ -116,6 +128,19 @@
     <!--<img src="<?php echo base_url(); ?>assets/images/pant_elements/base.png" class="fixpos animated">-->
     <!--font-->
     <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Number of Pleat'].elements">
+    <?php
+    if ($tuxedotype == '1') {
+        ?>
+
+
+        <img src="<?php echo custome_image_server; ?>/jacket/tuxedofabric/{{selecteElements[fab.product_id]['Ribbon on Side Seam'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Ribbon on Side Seam'].elements">
+
+        <?php
+    } else {
+        ?>
+        <?php
+    }
+    ?>
     <img src="<?php echo custome_image_server; ?>/jacket/output/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Front Pocket Style'].elements">  
     <img src="<?php echo custome_image_server; ?>/jacket/output/overlay/zipper.png" class="fixpos animated" >
     <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Waistband'].elements">
@@ -126,6 +151,10 @@
 
         <!--<img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Waistband Adjustment'].elements">-->
     <img src="<?php echo custome_image_server; ?>/jacket/output/overlay//{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Cuff'].elements">
+
+
+
+
 
 </div> 
 

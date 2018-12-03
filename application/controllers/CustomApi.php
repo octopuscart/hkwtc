@@ -1710,6 +1710,23 @@ class CustomApi extends REST_Controller {
                     "image" => "suit_elements/tuxedo/grosgrain.jpeg",
                 ),
             ],
+            "Ribbon on Side Seam" => [
+                array(
+                    "status" => "1",
+                    "title" => "Satin",
+                    "customization_category_id" => "4",
+                    "folder" => "satin",
+                    "elements" => ['pant_side_seamst0001.png',],
+                    "image" => "suit_elements/tuxedo/sidesatin.png",
+                ),
+                array(
+                    "status" => "0",
+                    "title" => "Grosgrain",
+                    "elements" => ['pant_side_seam0001.png',],
+                    "folder" => "satin",
+                    "image" => "suit_elements/tuxedo/sidegrosgrain.png",
+                ),
+            ],
             "Jacket Style" => [
                 array(
                     "status" => "1",
@@ -2182,6 +2199,12 @@ class CustomApi extends REST_Controller {
                     "colrow" => "4",
                 ),
                 array(
+                    "title" => "Ribbon on Side Seam",
+                    "viewtype" => "pant",
+                    "type" => "main",
+                    "colrow" => "4",
+                ),
+                array(
                     "title" => "Front Pocket Style",
                     "viewtype" => "pant",
                     "type" => "main",
@@ -2250,9 +2273,191 @@ class CustomApi extends REST_Controller {
                 "image" => "suit_elements/buttons/grosgrainbutton.png",
                 "show_buttons" => "true",
             ),
-            
         ];
         $customeele["data"]["Jacket Style"] = $jacketstyle;
+        $customeele["data"]["Lapel Style"][2]["status"] = 1;
+        $this->response($customeele);
+    }
+    function customeElementsTuxedoJacket_get() {
+        $customeele = array(
+            "keys" => [
+                array(
+                    "title" => "Jacket Style",
+                    "viewtype" => "front",
+                    "type" => "main",
+                    "colrow" => "4",
+                ),
+                array(
+                    "title" => "Lapel Style",
+                    "viewtype" => "front",
+                    "type" => "main",
+                    "colrow" => "4",
+                ),
+                array(
+                    "title" => "Lapel Facing",
+                    "viewtype" => "front",
+                    "type" => "main",
+                    "colrow" => "4",
+                ),
+                array(
+                    "title" => "Lapel Button Hole",
+                    "viewtype" => "front",
+                    "type" => "main",
+                    "colrow" => "4",
+                ),
+                array(
+                    "title" => "Lapel Button Hole Color",
+                    "viewtype" => "front",
+                    "type" => "main",
+                    "style_side" => "    background-size: 100%!important;height:50px",
+                    "colrow" => "4",
+                ),
+                array(
+                    "title" => "Breast Pocket",
+                    "viewtype" => "front",
+                    "type" => "main",
+                    "colrow" => "4",
+                ),
+                array(
+                    "title" => "Lower Pocket",
+                    "viewtype" => "front",
+                    "type" => "main",
+                    "colrow" => "4",
+                ),
+                array(
+                    "title" => "Ticket Pocket",
+                    "viewtype" => "front",
+                    "type" => "main",
+                    "colrow" => "4",
+                ),
+                array(
+                    "title" => "Back Vent",
+                    "viewtype" => "back",
+                    "type" => "main",
+                    "colrow" => "4",
+                ),
+                array(
+                    "title" => "Buttons",
+                    "viewtype" => "front",
+                    "type" => "main",
+                    "colrow" => "4",
+                    "style_side" => "    background-size:70%!important;",
+                ),
+                array(
+                    "title" => "Sleeve Buttons",
+                    "viewtype" => "front",
+                    "type" => "main",
+                    "colrow" => "4",
+                    "style_side" => "    background-size: 100%!important;",
+                ),
+                array(
+                    "title" => "Contrast First Button Hole",
+                    "viewtype" => "front",
+                    "type" => "main",
+                    "style_side" => "    background-size: 100%!important;height:50px",
+                    "colrow" => "4",
+                ),
+                
+            ],
+            "collar_cuff_insert" => array(),
+            "data" => $this->suitCustomeElements()
+        );
+
+
+        $jacketstyle = array('1 Button' => '', '2 Buttons' => '');
+
+        foreach ($customeele["data"]["Jacket Style"] as $key => $value) {
+            if (isset($jacketstyle[$value["title"]])) {
+                $jacketstyle[$value["title"]] = $value;
+            }
+        }
+
+        $customeele["data"]["Buttons"] = [
+            array(
+                "status" => "1",
+                "title" => "Satin Covered",
+                "folder" => "satinbutton",
+                "customization_category_id" => "4",
+                "image" => "buttongold.png",
+                "image" => "suit_elements/buttons/satinbutton.png",
+                "show_buttons" => "true",
+            ),
+            array(
+                "status" => "0",
+                "title" => "Grosgrain Covered",
+                "folder" => "grosgrainbutton",
+                "customization_category_id" => "4",
+                "image" => "buttongold.png",
+                "image" => "suit_elements/buttons/grosgrainbutton.png",
+                "show_buttons" => "true",
+            ),
+        ];
+        $customeele["data"]["Jacket Style"] = $jacketstyle;
+        $customeele["data"]["Lapel Style"][2]["status"] = 1;
+        $this->response($customeele);
+    }
+    function customeElementsTuxedoPant_get() {
+        $customeele = array(
+            "keys" => [
+               
+                array(
+                    "title" => "Number of Pleat",
+                    "viewtype" => "pant",
+                    "type" => "main",
+                    "colrow" => "4",
+                ),
+                array(
+                    "title" => "Ribbon on Side Seam",
+                    "viewtype" => "pant",
+                    "type" => "main",
+                    "colrow" => "4",
+                ),
+                array(
+                    "title" => "Front Pocket Style",
+                    "viewtype" => "pant",
+                    "type" => "main",
+                    "colrow" => "4",
+                ),
+                array(
+                    "title" => "Number of Back Pocket",
+                    "viewtype" => "pantback",
+                    "type" => "main",
+                    "colrow" => "4",
+                ),
+                array(
+                    "title" => "Hidden Pocket",
+                    "viewtype" => "pant",
+                    "type" => "main",
+                    "colrow" => "4",
+                ),
+                array(
+                    "title" => "Waistband",
+                    "viewtype" => "pant",
+                    "type" => "main",
+                    "colrow" => "3",
+                ),
+                array(
+                    "title" => "Waistband Adjustment",
+                    "viewtype" => "pant",
+                    "type" => "main",
+                    "colrow" => "4",
+                ),
+                array(
+                    "title" => "Cuff",
+                    "viewtype" => "pant",
+                    "type" => "main",
+                    "colrow" => "4",
+                ),
+            ],
+            "collar_cuff_insert" => array(),
+            "data" => $this->suitCustomeElements()
+        );
+
+
+        
+
+       
+     
         $this->response($customeele);
     }
 

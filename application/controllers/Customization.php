@@ -162,8 +162,35 @@ class Customization extends CI_Controller {
         $query = $this->db->get('custome_items');
         $customeitem = $query->row();
         $data = [];
-        $data["custom_item"] = $customeitem->item_name;
+        $data['tuxedotype'] = "0";
+
         $data['custom_id'] = $item_id;
+
+        switch ($item_id) {
+            case 2:
+                $data["custom_item"] = "Suit";
+                break;
+            case 3:
+                $data["custom_item"] = "Pant";
+                break;
+            case 4:
+                $data["custom_item"] = "Jacket";
+                break;
+            case 5:
+                $data["custom_item"] = "TuxedoSuit";
+                $data['tuxedotype'] = "1";
+                break;
+            case 6:
+                $data["custom_item"] = "TuxedoJacket";
+                $data['tuxedotype'] = "1";
+                break;
+            case 7:
+                $data["custom_item"] = "TuxedoPant";
+                $data['tuxedotype'] = "1";
+                break;
+            default:
+        }
+
         $this->load->view('customization/customization_suit_v2', $data);
     }
 
