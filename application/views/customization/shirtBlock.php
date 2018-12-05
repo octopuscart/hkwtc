@@ -29,11 +29,31 @@
     <img src="<?php echo custome_image_server; ?>/shirt/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Bottom'].overlay">
 
     <!--cuff-->
-
-
-
     <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.product_id]['Cuff & Sleeve'].elements" >
+    <img src="<?php echo custome_image_server; ?>/shirt/output_insert/{{selecteElements[fab.product_id]['Cuff Insert']}}/{{selecteElements[fab.product_id]['Cuff & Sleeve'].insert_style}}" class="fixpos animated"   ng-if="selecteElements[fab.product_id]['Cuff Insert'] != 'No'">
+    <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Cuff & Sleeve'].insertele">
+
+    <div ng-if="selecteElements[fab.product_id]['Cuff Insert Full'] == 'Outer'">
+        <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{selecteElements[fab.product_id]['Cuff & Sleeve'].insert_style}}" class="fixpos animated"   >
+        <img src="<?php echo custome_image_server; ?>/shirt/output_insert/{{selecteElements[fab.product_id]['Cuff Insert']}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Cuff & Sleeve'].inserteleo">
+    </div>
+
+    <div ng-if="selecteElements[fab.product_id]['Cuff Insert Full'] == 'Full Insert'">
+        <img src="<?php echo custome_image_server; ?>/shirt/output_insert/{{selecteElements[fab.product_id]['Cuff Insert']}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Cuff & Sleeve'].elements" >
+    </div>
+
     <img src="<?php echo custome_image_server; ?>/shirt/overlay/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.product_id]['Cuff & Sleeve'].overlay" >
+
+    <div ng-switch="selecteElements[fab.product_id]['Stitching'].ptype">
+        <div ng-switch-when="0">
+        </div>
+        <div ng-switch-when="1">
+            <img src="<?php echo custome_image_server; ?>/shirt/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Cuff & Sleeve'].stitching14"  >
+        </div>
+        <div ng-switch-when="2">
+            <img src="<?php echo custome_image_server; ?>/shirt/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Cuff & Sleeve'].stitching38"  >
+        </div>
+    </div>
 
     <img src="<?php echo custome_image_server; ?>/shirt/hole_thread/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Cuff & Sleeve'].button_hole"  >
 
@@ -60,11 +80,54 @@
 
     <!--collar-->
     <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Collar'].elements">
+    <div  ng-if="selecteElements[fab.product_id]['Collar Insert'] != 'No'">
+        <img src="<?php echo custome_image_server; ?>/shirt/output_insert/{{selecteElements[fab.product_id]['Collar Insert']}}/{{selecteElements[fab.product_id]['Collar'].insert_style}}" class="fixpos animated" style="{{selecteElements[fab.product_id]['Collar'].insert_style_css}}"   >
+        <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Collar'].insert_collar" >
+    </div>
+
+    <div ng-if="selecteElements[fab.product_id]['Collar Insert Full'] == 'Outer'">
+        <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Collar'].elements">
+        <img src="<?php echo custome_image_server; ?>/shirt/output_insert/{{selecteElements[fab.product_id]['Collar Insert']}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.product_id]['Collar'].insert_full" style="{{selecteElements[fab.folder]['Collar'].element}}" >
+    </div>
+
+    <div ng-if="selecteElements[fab.product_id]['Collar Insert Full'] == 'Full Insert'">
+        <img src="<?php echo custome_image_server; ?>/shirt/output_insert/{{selecteElements[fab.product_id]['Collar Insert']}}/{{selecteElements[fab.product_id]['Collar'].insert_style}}" class="fixpos animated" style="{{selecteElements[fab.product_id]['Collar'].insert_style_css}}"   >
+        <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Collar'].insert_collar" >
+        <img src="<?php echo custome_image_server; ?>/shirt/output_insert/{{selecteElements[fab.product_id]['Collar Insert']}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.product_id]['Collar'].insert_full" style="{{selecteElements[fab.folder]['Collar'].element}}" >
+
+    </div>
+
+
+
     <img src="<?php echo custome_image_server; ?>/shirt/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Collar'].overlay">
+
+    <div ng-switch="selecteElements[fab.product_id]['Stitching'].ptype">
+        <div ng-switch-when="0">
+        </div>
+        <div ng-switch-when="1">
+            <img src="<?php echo custome_image_server; ?>/shirt/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Collar'].stitching14"  >
+        </div>
+        <div ng-switch-when="2">
+            <img src="<?php echo custome_image_server; ?>/shirt/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Collar'].stitching38"  >
+        </div>
+    </div>
+
+
 
     <!--front fly-->
     <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Front'].elements">
     <img src="<?php echo custome_image_server; ?>/shirt/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Front'].overlay">
+
+    <div ng-switch="selecteElements[fab.product_id]['Stitching'].ptype">
+        <div ng-switch-when="0">
+        </div>
+        <div ng-switch-when="1">
+            <img src="<?php echo custome_image_server; ?>/shirt/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Front'].stitching14"  >
+        </div>
+        <div ng-switch-when="2">
+            <img src="<?php echo custome_image_server; ?>/shirt/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Front'].stitching38"  >
+        </div>
+    </div>
 
 
     <!--pocket-->
