@@ -573,8 +573,8 @@ class CustomApi extends REST_Controller {
                         "status" => "0",
                         "title" => "Single Cuff Squared",
                         "elements" => [ "cuff_m_squre20001.png"],
-                        "insertele" => [ "cuff_m_cutaway30001.png"],
-                        "inserteleo" => [ "cuff_m_cutaway30001.png"],
+                        "insertele" => [ "cuff_m_squre30001.png"],
+                        "inserteleo" => [ "cuff_m_squre30001.png"],
                         "stitching38" => [ "cuff_m_squre20001st38.png"],
                         "stitching14" => [ "cuff_m_squre20001st14.png"],
                         "customization_category_id" => "3",
@@ -636,8 +636,8 @@ class CustomApi extends REST_Controller {
                         "status" => "0",
                         "title" => "2 Buttons Squared",
                         "elements" => [ "cuff_m_squre20001.png"],
-                        "insertele" => [ "cuff_m_cutaway30001.png"],
-                        "inserteleo" => [ "cuff_m_cutaway30001.png"],
+                        "insertele" => [ "cuff_m_squre30001.png"],
+                        "inserteleo" => [ "cuff_m_squre30001.png"],
                         "stitching38" => [ "cuff_m_squre20001st38.png"],
                         "stitching14" => [ "cuff_m_squre20001st14.png"],
                         "customization_category_id" => "3",
@@ -658,14 +658,15 @@ class CustomApi extends REST_Controller {
                         "title" => "French Cuff Rounded",
                         "sleeve1" => ["shirt_sleeve0001.png"],
                         "customization_category_id" => "3",
-                        "elements" => [ "cuff_m_franch_rounded0001.png"],
-                        "insertele" => [ "cuff_m_franch_squre0001.png"],
-                        "inserteleo" => [ "cuff_m_franch_squre0001.png"],
+//                        "elements" => [ "cuff_m_franch_rounded0001.png"],
+                        "elements" => [ "cuff_m_franch_rounded_insert0001.png", "cuff_m_franch_rounded0001.png"],
+                        "insertele" => [ "cuff_m_franch_rounded0001.png"],
+                        "inserteleo" => [ "cuff_m_franch_rounded0001.png"],
                         "stitching38" => [ "cuff_m_franch_rounded0001st38.png"],
                         "stitching14" => [ "cuff_m_franch_rounded0001st14.png"],
                         "image" => "customization/cuff_franch_rounded.jpg",
                         "insert_style_css" => "",
-                        "insert_style" => "cuff_m_franch_squre_insert0001.png",
+                        "insert_style" => "cuff_m_franch_rounded_insert0001.png",
                         "insert_overlay" => "cuff_franch_insert_overlay.png",
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_franch_rounded0001.png"],
@@ -698,17 +699,17 @@ class CustomApi extends REST_Controller {
                         "title" => "French Cuff Cutaway",
                         "sleeve1" => ["shirt_sleeve0001.png"],
                         "customization_category_id" => "3",
-                        "elements" => [ "cuff_m_franch_cutaway20001.png"],
-                        "insertele" => [],
-                        "inserteleo" => [ "cuff_m_franch_squre0001.png"],
+                        "elements" => [ "cuff_m_franch_cutaway_insert0001.png", "cuff_m_franch_cutaway0001.png"],
+                        "insertele" => ["cuff_m_franch_cutaway0001.png"],
+                        "inserteleo" => [ "cuff_m_franch_cutaway0001.png"],
                         "stitching38" => [ "cuff_m_franch_cutaway20001st38.png"],
                         "stitching14" => [ "cuff_m_franch_cutaway20001st14.png"],
                         "image" => "customization/cufffranchcuffcutaway.jpeg",
                         "insert_style_css" => "",
-                        "insert_style" => "",
+                        "insert_style" => "cuff_m_franch_cutaway_insert0001.png",
                         "insert_overlay" => "cuff_franch_insert_overlay.png",
                         "insert_overlay_css" => "",
-                        "insert_full" => ["cuff_franch_rounded0001.png"],
+                        "insert_full" => ["cuff_m_franch_cutaway0001.png"],
                         "buttons" => "cuff_m_franch_squre_button0001.png",
                         "sleeve" => ["b_full_shirt_sleeve0001.png"],
                         "french" => "1",
@@ -957,7 +958,7 @@ class CustomApi extends REST_Controller {
                         "title" => "Hidden Button Down",
                         "customization_category_id" => "2",
                         "elements" => [ "collar_hidden_button_down_5w0001.png"],
-                         "insert_collar" => [ "collar_hidden_button_down_5w_ins0001.png"],
+                        "insert_collar" => [ "collar_hidden_button_down_5w_ins0001.png"],
                         "stitching38" => [ "collar_hidden_button_down_5w0001st38.png"],
                         "stitching14" => [ "collar_hidden_button_down_5w0001st14.png"],
                         "overlay" => [ "hidden_button_down_overlay.png"],
@@ -1744,6 +1745,14 @@ class CustomApi extends REST_Controller {
                     "customization_category_id" => "4",
                     "image" => "suit_elements/pocket/pocket_pipe_slanting.png",
                     "show_buttons" => "true",
+                ),
+                array(
+                    "status" => "0",
+                    "title" => "Patch Pocket",
+                    "elements" => ["pocket_lower_patch_left10001.png", "pocket_lower_patch_right10001.png"],
+                    "customization_category_id" => "4",
+                    "image" => "suit_elements/pocket/pocket_patch.png",
+                    "show_buttons" => "true",
                 )
             ],
             "Lapel Facing" => [
@@ -2330,6 +2339,7 @@ class CustomApi extends REST_Controller {
         $customeele["data"]["Lapel Style"][2]["status"] = 1;
         $this->response($customeele);
     }
+
     function customeElementsTuxedoJacket_get() {
         $customeele = array(
             "keys" => [
@@ -2409,7 +2419,6 @@ class CustomApi extends REST_Controller {
                     "style_side" => "    background-size: 100%!important;height:50px",
                     "colrow" => "4",
                 ),
-                
             ],
             "collar_cuff_insert" => array(),
             "data" => $this->suitCustomeElements()
@@ -2448,10 +2457,11 @@ class CustomApi extends REST_Controller {
         $customeele["data"]["Lapel Style"][2]["status"] = 1;
         $this->response($customeele);
     }
+
     function customeElementsTuxedoPant_get() {
         $customeele = array(
             "keys" => [
-               
+
                 array(
                     "title" => "Number of Pleat",
                     "viewtype" => "pant",
@@ -2506,10 +2516,10 @@ class CustomApi extends REST_Controller {
         );
 
 
-        
 
-       
-     
+
+
+
         $this->response($customeele);
     }
 
