@@ -1162,6 +1162,7 @@ class CustomApi extends REST_Controller {
                     "elements" => [],
                     "image" => "pant_elements/waistband/nobeltloop.png",
                     "show_buttons" => "true",
+                    "wbtype" => "all",
                 )
                 , array(
                     "status" => "1",
@@ -1172,6 +1173,7 @@ class CustomApi extends REST_Controller {
                     "image" => "pant_elements/waistband/beltloop.png",
                     "backbeltloop" => "true",
                     "show_buttons" => "true",
+                    "wbtype" => "all",
                 )
                 , array(
                     "status" => "0",
@@ -1182,6 +1184,7 @@ class CustomApi extends REST_Controller {
                     "image" => "pant_elements/waistband/fastenbutton.png",
                     "backbeltloop" => "true",
                     "show_buttons" => "true",
+                    "wbtype" => "all",
                 )
                 , array(
                     "status" => "0",
@@ -1192,6 +1195,17 @@ class CustomApi extends REST_Controller {
                     "image" => "pant_elements/waistband/fastenbuckle.png",
                     "backbeltloop" => "true",
                     "show_buttons" => "true",
+                    "wbtype" => "all",
+                ), array(
+                    "status" => "0",
+                    "title" => "1 Right Belt Loop With Buckle",
+                    "elements" => [ "adjustable_buckle0001.png", "pant_belt_loopwbr0001.png"],
+                    "overlay" => ["adjustable_buckleoverlay.png"],
+                    "customization_category_id" => "4",
+                    "image" => "pant_elements/waistband/fastenbuckleloop.png",
+                    "backbeltloop" => "true",
+                    "show_buttons" => "true",
+                    "wbtype" => "long",
                 )
             ],
             "Waistband" => [
@@ -1202,6 +1216,18 @@ class CustomApi extends REST_Controller {
                     "elements" => ["pant_waistband0001.png"],
                     "image" => "pant_elements/waistband/waistband1b.png",
                     "show_buttons" => "true",
+                    "wbtype" => "all",
+                    "longele" => array(
+                        "status" => "1",
+                        "title" => "Belt Loop",
+                        "elements" => ["pant_belt_loopwb0001.png",],
+                        "overlay" => ["pant_belt_loopwboverlay.png"],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/beltloop.png",
+                        "backbeltloop" => "true",
+                        "show_buttons" => "true",
+                        "wbtype" => "all",
+                    ),
                     "overlay" => ["pant_waistbandoverlay.png", "pant_waistband1_button.png", "pant_waistband0001_overlay.png"]
                 ), array(
                     "status" => "0",
@@ -1211,6 +1237,18 @@ class CustomApi extends REST_Controller {
                     "image" => "pant_elements/waistband/waistband2b.png",
                     "backbeltloop" => "true",
                     "show_buttons" => "true",
+                    "wbtype" => "all",
+                    "longele" => array(
+                        "status" => "1",
+                        "title" => "Belt Loop",
+                        "elements" => ["pant_belt_loopwb0001.png",],
+                        "overlay" => ["pant_belt_loopwboverlay.png"],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/beltloop.png",
+                        "backbeltloop" => "true",
+                        "show_buttons" => "true",
+                        "wbtype" => "all",
+                    ),
                     "adjustmentposition" => "    margin-top: -3px;",
                     "overlay" => ["pant_waistbandboverlay.png", "pant_waistbandb2_buttons.png", "pant_waistbandb0001_overlay.png"]
                 )
@@ -1222,6 +1260,18 @@ class CustomApi extends REST_Controller {
                     "image" => "pant_elements/waistband/waistband1h.png",
                     "backbeltloop" => "true",
                     "show_buttons" => "true",
+                    "wbtype" => "all",
+                    "longele" => array(
+                        "status" => "1",
+                        "title" => "Belt Loop",
+                        "elements" => ["pant_belt_loopwb0001.png",],
+                        "overlay" => ["pant_belt_loopwboverlay.png"],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/beltloop.png",
+                        "backbeltloop" => "true",
+                        "show_buttons" => "true",
+                        "wbtype" => "all",
+                    ),
                     "overlay" => ["pant_waistbandoverlay.png", "pant_waistband0001_overlay.png"]
                 ),
                 array(
@@ -1231,6 +1281,18 @@ class CustomApi extends REST_Controller {
                     "elements" => ["pant_waistband_m0001.png"],
                     "image" => "pant_elements/waistband/waistbandc1b.png",
                     "show_buttons" => "true",
+                    "wbtype" => "all",
+                    "longele" => array(
+                        "status" => "1",
+                        "title" => "Belt Loop",
+                        "elements" => ["pant_belt_loopwb0001.png",],
+                        "overlay" => ["pant_belt_loopwboverlay.png"],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/beltloop.png",
+                        "backbeltloop" => "true",
+                        "show_buttons" => "true",
+                        "wbtype" => "all",
+                    ),
                     "overlay" => ["pant_waistband_moverlay.png", "pant_waistband_m1_button.png", "pant_waistband_m0001overlay.png"]
                 )
                 , array(
@@ -1241,6 +1303,18 @@ class CustomApi extends REST_Controller {
                     "image" => "pant_elements/waistband/waistbandc1h.png",
                     "backbeltloop" => "true",
                     "show_buttons" => "true",
+                    "wbtype" => "all",
+                    "longele" => array(
+                        "status" => "1",
+                        "title" => "Belt Loop",
+                        "elements" => ["pant_belt_loopwb0001.png",],
+                        "overlay" => ["pant_belt_loopwboverlay.png"],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/beltloop.png",
+                        "backbeltloop" => "true",
+                        "show_buttons" => "true",
+                        "wbtype" => "all",
+                    ),
                     "overlay" => ["pant_waistband_moverlay.png", "pant_waistband_m0001overlay.png"]
                 )
                 ,
@@ -1251,7 +1325,19 @@ class CustomApi extends REST_Controller {
                     "elements" => ["pant_waistband_l0001.png"],
                     "image" => "pant_elements/waistband/waistbandl1b.png",
                     "show_buttons" => "true",
-                    "overlay" => ["pant_waistband_loverlay.png", "pant_waistband_lsboverlay.png", "pant_waistband_l1_button.png"]
+                    "wbtype" => "long",
+                    "overlay" => ["pant_waistband_loverlay.png", "pant_waistband_lsboverlay.png", "pant_waistband_l1_button.png"],
+                    "longele" => array(
+                        "status" => "0",
+                        "title" => "1 Right Belt Loop With Buckle",
+                        "elements" => [ "adjustable_buckle0001.png", "pant_belt_loopwbr0001.png"],
+                        "overlay" => ["adjustable_buckleoverlay.png"],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/fastenbuckleloop.png",
+                        "backbeltloop" => "true",
+                        "show_buttons" => "true",
+                        "wbtype" => "long",
+                    ),
                 ), array(
                     "status" => "0",
                     "title" => "Long 2 Buttons",
@@ -1260,8 +1346,20 @@ class CustomApi extends REST_Controller {
                     "image" => "pant_elements/waistband/waistbandl2b.png",
                     "backbeltloop" => "true",
                     "show_buttons" => "true",
+                    "wbtype" => "long",
                     "adjustmentposition" => "    margin-top: 0px;",
-                    "overlay" => ["pant_waistband_lboverlay.png","pant_waistband_lbsboverlay.png", "pant_waistband_lb2_buttons.png"]
+                    "longele" => array(
+                        "status" => "0",
+                        "title" => "1 Right Belt Loop With Buckle",
+                        "elements" => [ "adjustable_buckle0001.png", "pant_belt_loopwbr0001.png"],
+                        "overlay" => ["adjustable_buckleoverlay.png"],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/fastenbuckleloop.png",
+                        "backbeltloop" => "true",
+                        "show_buttons" => "true",
+                        "wbtype" => "long",
+                    ),
+                    "overlay" => ["pant_waistband_lboverlay.png", "pant_waistband_lbsboverlay.png", "pant_waistband_lb2_buttons.png"]
                 )
                 , array(
                     "status" => "0",
@@ -1271,6 +1369,18 @@ class CustomApi extends REST_Controller {
                     "image" => "pant_elements/waistband/waistbandl1h.png",
                     "backbeltloop" => "true",
                     "show_buttons" => "true",
+                    "wbtype" => "long",
+                    "longele" => array(
+                        "status" => "0",
+                        "title" => "1 Right Belt Loop With Buckle",
+                        "elements" => [ "adjustable_buckle0001.png", "pant_belt_loopwbr0001.png"],
+                        "overlay" => ["adjustable_buckleoverlay.png"],
+                        "customization_category_id" => "4",
+                        "image" => "pant_elements/waistband/fastenbuckleloop.png",
+                        "backbeltloop" => "true",
+                        "show_buttons" => "true",
+                        "wbtype" => "long",
+                    ),
                     "overlay" => ["pant_waistband_loverlay.png", "pant_waistband_lsboverlay.png",]
                 )
             ],

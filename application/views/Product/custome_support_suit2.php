@@ -134,6 +134,23 @@ $this->load->view('Product/custom_select_left');
                             </div>
                         </div>
                     </div>
+                    
+                    
+                    <div ng-switch-when="Waistband Adjustment">
+                        
+                        <h5 class="customization_heading">{{k.title}} {{selecteElements[screencustom.fabric]["Waistband Adjustment"].wbtype}} {{selecteElements[screencustom.fabric]["Waistband"].wbtype}} </h5>
+                        <div class="col-md-4 col-xs-6 custome_element_col" ng-repeat="ele in data_list[k.title]" ng-if='selecteElements[screencustom.fabric]["Waistband"].wbtype ==ele.wbtype'>
+                            <div class="item elementItem {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'' :'noselected' }} "  ng-click='selectElement(k, ele)'>
+                                <div >
+                                    <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/{{ele.image}}'); {{k.style_side}}" > </div>
+                                    <div class='customization_title'>
+                                        {{ele.title}} 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div ng-switch-when="Contrast First Button Hole">
                         <h5 class="customization_heading">{{k.title}}</h5>
                         <div class="col-md-2 col-xs-6 custome_element_col" ng-repeat="ele in data_list[k.title]" >

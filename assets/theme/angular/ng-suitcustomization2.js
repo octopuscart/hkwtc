@@ -339,7 +339,29 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
                 $scope.selecteElements[$scope.screencustom.fabric]['Monogram'] = element.monogram_position;
             }
         }
-        console.log($scope.selecteElements[$scope.screencustom.fabric])
+
+        if (obj.title == 'Waistband') {
+            if ($scope.selecteElements[$scope.screencustom.fabric]['Waistband'].wbtype == 'long') {
+                var longele = $scope.selecteElements[$scope.screencustom.fabric]['Waistband'].longele;
+                $scope.selecteElements[$scope.screencustom.fabric]['Waistband Adjustment'] = longele;
+                $scope.selecteElements[$scope.screencustom.fabric]['summary']['Waistband Adjustment'] = longele.title;
+            }
+            else {
+                var wbsummary = $scope.selecteElements[$scope.screencustom.fabric]['Waistband Adjustment'];
+                console.log(wbsummary);
+                if (wbsummary.wbtype == 'long') {
+                    var longele = $scope.selecteElements[$scope.screencustom.fabric]['Waistband'].longele;
+                    console.log(longele);
+                    $scope.selecteElements[$scope.screencustom.fabric]['Waistband Adjustment'] = longele;
+                    $scope.selecteElements[$scope.screencustom.fabric]['summary']['Waistband Adjustment'] = longele.title;
+
+                }
+                else {
+
+                }
+            }
+        }
+
 //        $("html, body").animate({scrollTop: 0}, "slow")
     }
 
@@ -386,7 +408,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
     $scope.addToCartCustome = function () {
         var summerydata = $scope.selecteElements[product_id].summary;
         var extraprice = $scope.selecteElements[product_id].totalextracost;
-    
+
         var customhtmlarray = [];
         var form = new FormData()
         for (i in summerydata) {
@@ -570,16 +592,16 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
             case 3:
                 viewtype = "pant";
                 break;
-            
+
             case 7:
                 viewtype = "pant";
                 break;
-                
+
             default:
                 viewtype = "front";
         }
         var custometype = defaut_view;
-       
+
 //        switch (gcustome_id) {
 //            case 4:
 //                custometype = "Jacket";
