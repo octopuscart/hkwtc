@@ -1745,6 +1745,14 @@ class CustomApi extends REST_Controller {
                     "customization_category_id" => "4",
                     "image" => "suit_elements/pocket/pocket_pipe_slanting.png",
                     "show_buttons" => "true",
+                ),
+                array(
+                    "status" => "0",
+                    "title" => "Patch Pocket",
+                    "elements" => ["pocket_lower_patch_left10001.png", "pocket_lower_patch_right10001.png"],
+                    "customization_category_id" => "4",
+                    "image" => "suit_elements/pocket/pocket_patch.png",
+                    "show_buttons" => "true",
                 )
             ],
             "Lapel Facing" => [
