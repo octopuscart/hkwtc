@@ -1241,7 +1241,7 @@ class CustomApi extends REST_Controller {
                     "image" => "pant_elements/waistband/waistbandc1h.png",
                     "backbeltloop" => "true",
                     "show_buttons" => "true",
-                    "overlay" => ["pant_waistband_moverlay.png"]
+                    "overlay" => ["pant_waistband_moverlay.png", "pant_waistband_m0001overlay.png"]
                 )
                 ,
                 array(
@@ -1251,7 +1251,7 @@ class CustomApi extends REST_Controller {
                     "elements" => ["pant_waistband_l0001.png"],
                     "image" => "pant_elements/waistband/waistbandl1b.png",
                     "show_buttons" => "true",
-                    "overlay" => ["pant_waistband_loverlay.png", "pant_waistband_l1_button.png"]
+                    "overlay" => ["pant_waistband_loverlay.png", "pant_waistband_lsboverlay.png", "pant_waistband_l1_button.png"]
                 ), array(
                     "status" => "0",
                     "title" => "Long 2 Buttons",
@@ -1260,8 +1260,8 @@ class CustomApi extends REST_Controller {
                     "image" => "pant_elements/waistband/waistbandl2b.png",
                     "backbeltloop" => "true",
                     "show_buttons" => "true",
-                    "adjustmentposition" => "    margin-top: -3px;",
-                    "overlay" => ["pant_waistband_lboverlay.png", "pant_waistband_lb2_buttons.png"]
+                    "adjustmentposition" => "    margin-top: 0px;",
+                    "overlay" => ["pant_waistband_lboverlay.png","pant_waistband_lbsboverlay.png", "pant_waistband_lb2_buttons.png"]
                 )
                 , array(
                     "status" => "0",
@@ -1271,7 +1271,7 @@ class CustomApi extends REST_Controller {
                     "image" => "pant_elements/waistband/waistbandl1h.png",
                     "backbeltloop" => "true",
                     "show_buttons" => "true",
-                    "overlay" => ["pant_waistband_loverlay.png"]
+                    "overlay" => ["pant_waistband_loverlay.png", "pant_waistband_lsboverlay.png",]
                 )
             ],
             "Front Pocket Style" => [
