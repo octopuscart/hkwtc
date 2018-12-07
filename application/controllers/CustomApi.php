@@ -1014,8 +1014,126 @@ class CustomApi extends REST_Controller {
             ),
             "cuff_collar_insert" => ["p10", "p11", "p2", "p18"],
             "monogram_colors" => [
+                
                 array(
-                    "color" => "#fff",
+                    "color" => "#000",
+                    "backcolor" => "#c0c0c0",
+                    "title" => "Silver"
+                ),
+               
+                array(
+                    "color" => "white",
+                    "backcolor" => "white",
+                    "title" => "White"
+                ),
+               
+                array(
+                    "color" => "#f5f5dc",
+                    "backcolor" => "#f5f5dc",
+                    "title" => "Beige"
+                ),
+                array(
+                    "color" => "#fffdd0",
+                    "backcolor" => "#fffdd0",
+                    "title" => "Cream"
+                ),
+                array(
+                    "color" => "#add8e6",
+                    "backcolor" => "#add8e6",
+                    "title" => "Light Blue"
+                ),
+                array(
+                    "color" => "#028482",
+                    "backcolor" => "#028482",
+                    "title" => "Aqua"
+                ),
+                array(
+                    "color" => "#ffc0cb",
+                    "backcolor" => "#ffc0cb",
+                    "title" => "Pink"
+                ),
+                array(
+                    "color" => "#60708e",
+                    "backcolor" => "#60708e",
+                    "title" => "Medium Blue"
+                ),
+                array(
+                    "color" => "#d2b48c",
+                    "backcolor" => "#d2b48c",
+                    "title" => "Tan"
+                ),
+                array(
+                    "color" => "#ffa500",
+                    "backcolor" => "#ffa500",
+                    "title" => "Orange"
+                ),
+                array(
+                    "color" => "#808080",
+                    "backcolor" => "#808080",
+                    "title" => "Grey"
+                ),
+                array(
+                    "color" => "#00ff00",
+                    "backcolor" => "#00ff00",
+                    "title" => "Green"
+                ),
+                array(
+                    "color" => "#ffff00",
+                    "backcolor" => "#ffff00",
+                    "title" => "Yellow"
+                ),
+                array(
+                    "color" => "#008080",
+                    "backcolor" => "#008080",
+                    "title" => "Teal"
+                ),
+                array(
+                    "color" => "#b03060",
+                    "backcolor" => "#b03060",
+                    "title" => "Maroon"
+                ),
+                array(
+                    "color" => "#ff0000",
+                    "backcolor" => "#ff0000",
+                    "title" => "Red"
+                ),
+                array(
+                    "color" => "#8c001a",
+                    "backcolor" => "#8c001a",
+                    "title" => "Burgundy"
+                ),
+                array(
+                    "color" => "#c04000",
+                    "backcolor" => "#c04000",
+                    "title" => "Mahogany"
+                ),
+                array(
+                    "color" => "#b87333",
+                    "backcolor" => "#b87333",
+                    "title" => "Khaki / Copper"
+                ),
+                array(
+                    "color" => "#663300",
+                    "backcolor" => "#663300",
+                    "title" => "Brown"
+                ),
+                array(
+                    "color" => "#800080",
+                    "backcolor" => "#800080",
+                    "title" => "Purple"
+                ),
+                array(
+                    "color" => "#0000ff",
+                    "backcolor" => "#0000ff",
+                    "title" => "Blue"
+                ),
+                array(
+                    "color" => "#000080",
+                    "backcolor" => "#000080",
+                    "title" => "Dark Blue"
+                ),
+                array(
+                    "color" => "#000080",
                     "backcolor" => "#000080",
                     "title" => "Navy Blue"
                 ),
@@ -1023,21 +1141,6 @@ class CustomApi extends REST_Controller {
                     "color" => "white",
                     "backcolor" => "#000",
                     "title" => "Black"
-                ),
-                array(
-                    "color" => "#000",
-                    "backcolor" => "#c0c0c0",
-                    "title" => "Silver"
-                ),
-                array(
-                    "color" => "red",
-                    "backcolor" => "white",
-                    "title" => "Red"
-                ),
-                array(
-                    "color" => "white",
-                    "backcolor" => "red",
-                    "title" => "White"
                 ),
             ],
             "monogram_style" => [
