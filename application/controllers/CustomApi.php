@@ -228,7 +228,7 @@ class CustomApi extends REST_Controller {
                         "customization_category_id" => "8",
                     ),
                     array(
-                        "status" => "1",
+                        "status" => "0",
                         "title" => "1",
                         "button" => "b1",
                         "image" => "customization/buttons/b1.png",
@@ -276,7 +276,7 @@ class CustomApi extends REST_Controller {
                         "image" => "customization/buttons/b9.png",
                         "customization_category_id" => "8",
                     ), array(
-                        "status" => "0",
+                        "status" => "1",
                         "title" => "10",
                         "button" => "b10",
                         "image" => "customization/buttons/b10.png",
@@ -528,7 +528,7 @@ class CustomApi extends REST_Controller {
                         ),
                     ),
                     array(
-                        "status" => "1",
+                        "status" => "0",
                         "title" => "Single Cuff Rounded",
                         "elements" => [ "cuff_m_rounded20001.png"],
                         "insertele" => [ "cuff_m_rounded30001.png"],
@@ -549,7 +549,7 @@ class CustomApi extends REST_Controller {
                         "buttons" => "cuff_s_button10001.png",
                         "french" => "0",
                     ), array(
-                        "status" => "0",
+                        "status" => "1",
                         "title" => "Single Cuff Cutaway",
                         "elements" => [ "cuff_m_cutaway20001.png"],
                         "insertele" => [ "cuff_m_cutaway30001.png"],
@@ -739,7 +739,7 @@ class CustomApi extends REST_Controller {
                 ],
                 "Back" => [
                     array(
-                        "status" => "1",
+                        "status" => "0",
                         "title" => "Plain",
                         "customization_category_id" => "5",
                         "halfsleeve" => ["back_half_sleeve0001.png", "back_half_sleeve_cuff0001.png"],
@@ -766,7 +766,7 @@ class CustomApi extends REST_Controller {
                         "elements" => [ "b_shirtbody_round0001.png", "b_shirtbody_squre0001.png", "shirtbody_pleat_box0001.png", "yoke0001.png"],
                         "image" => "customization/back_box_pleat.jpeg"
                     ), array(
-                        "status" => "0",
+                        "status" => "1",
                         "title" => "Dart",
                         "customization_category_id" => "5",
                         "halfsleeve" => ["back_half_sleeve0001.png", "back_half_sleeve_cuff0001.png"],
@@ -777,7 +777,7 @@ class CustomApi extends REST_Controller {
                     )],
                 "Pocket" => [
                     array(
-                        "status" => "0",
+                        "status" => "1",
                         "title" => "No Pocket",
                         "customization_category_id" => "7",
                         "elements" => [],
@@ -789,7 +789,7 @@ class CustomApi extends REST_Controller {
                             "css_class" => "monogramtext_posistion_collar",
                         ),
                     ), array(
-                        "status" => "1",
+                        "status" => "0",
                         "title" => "1 Regular Pocket",
                         "customization_category_id" => "7",
                         "elements" => ["shirtbody_pocket_right20001.png",],
@@ -847,7 +847,7 @@ class CustomApi extends REST_Controller {
                 ],
                 "Front" => [
                     array(
-                        "status" => "0",
+                        "status" => "1",
                         "title" => "Plain Front",
                         "customization_category_id" => "4",
                         "elements" => [],
@@ -864,7 +864,7 @@ class CustomApi extends REST_Controller {
                         "show_buttons" => "false",
                     )
                     , array(
-                        "status" => "1",
+                        "status" => "0",
                         "title" => "Pleated",
                         "elements" => [ "flyfront0001.png"],
                         "stitching38" => [ "flyfront0001st38.png"],
@@ -886,7 +886,7 @@ class CustomApi extends REST_Controller {
                 ],
                 "Collar" => [
                     array(
-                        "status" => "1",
+                        "status" => "0",
                         "title" => "Regular",
                         "elements" => [ "collar_ragular_5w0001.png"],
                         "stitching38" => [ "collar_ragular_5w0001st38.png"],
@@ -899,7 +899,7 @@ class CustomApi extends REST_Controller {
                         "image" => "customization/collar_regular.jpeg",
                         "buttons" => "buttonsh1.png",
                     ), array(
-                        "status" => "0",
+                        "status" => "1",
                         "title" => "Medium Spread",
                         "customization_category_id" => "2",
                         "insert_style" => "collar_m_comman_insert20001.png",
@@ -1744,7 +1744,7 @@ class CustomApi extends REST_Controller {
             ],
             "Lapel Button Hole" => [
                 array(
-                    "status" => "0",
+                    "status" => "1",
                     "title" => "Yes",
                     "customization_category_id" => "4",
                     "elements" => ["back_sleeve0001.png", "back_side__no_vent0001.png"],
@@ -1752,7 +1752,7 @@ class CustomApi extends REST_Controller {
                     "show_buttons" => "true",
                     "insert" => "Matching",
                 ), array(
-                    "status" => "1",
+                    "status" => "0",
                     "title" => "No",
                     "elements" => ["back_sleeve0001.png", "back_side_center_vent0001.png"],
                     "customization_category_id" => "4",
@@ -1900,7 +1900,7 @@ class CustomApi extends REST_Controller {
             ],
             "Jacket Style" => [
                 array(
-                    "status" => "1",
+                    "status" => "0",
                     "title" => "1 Button",
                     "customization_category_id" => "4",
                     "elements" => ['body_single_410001.png',],
@@ -1912,7 +1912,7 @@ class CustomApi extends REST_Controller {
                     "show_buttons" => "true",
                     "overlay" => ["single_overlay2.png", "single_overlay.png"],
                 ), array(
-                    "status" => "0",
+                    "status" => "1",
                     "title" => "2 Buttons",
                     "customization_category_id" => "4",
                     "elements" => ['body_single_410001.png',],
@@ -2710,6 +2710,33 @@ class CustomApi extends REST_Controller {
             "collar_cuff_insert" => array(),
             "data" => $this->suitCustomeElements(),
         );
+
+        $customeele["data"]["Back Vent"] = [
+            array(
+                "status" => "0",
+                "title" => "No Vent",
+                "customization_category_id" => "4",
+                "elements" => ["back_sleeve10001.png", "back_upper0001.png", "back_body0001.png",],
+                "image" => "suit_elements/back/back_no_vent.png",
+                "show_buttons" => "true",
+            ), array(
+                "status" => "1",
+                "title" => "Center Vent",
+                "elements" => ["back_sleeve0001.png", "back_upper0001.png", "back_body0001.png",],
+                "customization_category_id" => "4",
+                "image" => "suit_elements/back/back_center_vent.png",
+                "show_buttons" => "false",
+                "overlay" => ["centervent.png"],
+            ), array(
+                "status" => "0",
+                "title" => "Side Vent",
+                "elements" => ["back_sleeve10001.png", "back_upper0001.png", "back_body0001.png",],
+                "customization_category_id" => "4",
+                "image" => "suit_elements/back/back_side_vent.png",
+                "show_buttons" => "true",
+                "overlay" => ["sidevent.png"],
+        )];
+
         foreach ($customeele as $key => $value) {
             
         }
