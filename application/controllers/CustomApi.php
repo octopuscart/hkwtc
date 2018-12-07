@@ -1014,19 +1014,17 @@ class CustomApi extends REST_Controller {
             ),
             "cuff_collar_insert" => ["p10", "p11", "p2", "p18"],
             "monogram_colors" => [
-                
+
                 array(
                     "color" => "#000",
                     "backcolor" => "#c0c0c0",
                     "title" => "Silver"
                 ),
-               
                 array(
                     "color" => "white",
                     "backcolor" => "white",
                     "title" => "White"
                 ),
-               
                 array(
                     "color" => "#f5f5dc",
                     "backcolor" => "#f5f5dc",
@@ -2076,9 +2074,14 @@ class CustomApi extends REST_Controller {
                     "title" => "Notch Lapel",
                     "elements" => ["body_round0001.png"],
                     "laple_style" => array(
-                        "1 Button" => array("elements" => [
+                        "1 Button" => array(
+                            "elements" => [
                                 "laple_notch_peak_upper_v40001.png",
                                 "laple_notch_v20001.png"
+                            ],
+                            "elementst" => [
+                                "laple_notch_peak_upper_v4_t0001.png",
+                                "laple_notch_v2_t0001.png"
                             ],
                             "stitcing" => ['laple_notch_stitching1.png'],
                             "hole" => ["laple_double_notch_button_hole0001.png"],
@@ -2087,6 +2090,11 @@ class CustomApi extends REST_Controller {
                                 "laple_notch_peak_upper_v40001.png",
                                 "laple_notch_v20001.png"
                             ],
+                            "elementst" => [
+                                "laple_notch_peak_upper_v4_t0001.png",
+                                "laple_notch_v2_t0001.png"
+                            ],
+                            
                             "stitcing" => ['laple_notch_stitching1.png'],
                             "hole" => ["laple_double_notch_button_hole0001.png"],
                             "overelay" => []),
@@ -2143,12 +2151,20 @@ class CustomApi extends REST_Controller {
                                 "laple_notch_peak_upper_v40001.png",
                                 "laple_peak_v20001.png"
                             ],
+                            "elementst" => [
+                                "laple_notch_peak_upper_v4_t0001.png",
+                                "laple_peak_v2_t0001.png"
+                            ],
                             "stitcing" => ['laple_peak_stitch.png'],
                             "hole" => ["laple_double_peak_button_hole0001.png"],
                             "overelay" => ["laple_peak_overlay.png"]),
                         "2 Buttons" => array("elements" => [
                                 "laple_notch_peak_upper_v40001.png",
                                 "laple_peak_v20001.png"
+                            ],
+                            "elementst" => [
+                                "laple_notch_peak_upper_v4_t0001.png",
+                                "laple_peak_v2_t0001.png"
                             ],
                             "stitcing" => ['laple_peak_stitch.png'],
                             "hole" => ["laple_double_peak_button_hole0001.png"],
@@ -2206,12 +2222,20 @@ class CustomApi extends REST_Controller {
 
                                 "laple_shwal_v20001.png"
                             ],
+                            "elementst" => [
+
+                                "laple_shwal_v2_t0001.png"
+                            ],
                             "stitcing" => ['laple_notch_stitching1.png'],
                             "hole" => ["laple_double_shawl_button_hole0001.png"],
                             "backoverelay" => ["laple_shwal_v20001_overlay.png"],
                             "overelay" => []),
                         "2 Buttons" => array("elements" => [
                                 "laple_shwal_v20001.png"
+                            ],
+                            "elementst" => [
+
+                                "laple_shwal_v2_t0001.png"
                             ],
                             "stitcing" => ['laple_notch_stitching1.png'],
                             "hole" => ["laple_double_shawl_button_hole0001.png"],
