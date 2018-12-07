@@ -76,7 +76,14 @@
     <?php
     if ($tuxedotype == '1') {
         ?>
-        <img src="<?php echo custome_image_server; ?>/jacket/tuxedofabric/{{selecteElements[fab.product_id]['Lapel Facing'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lapel Style'].laple_style[selecteElements[fab.product_id]['Jacket Style'].title].elements">
+        <div ng-if="selecteElements[fab.product_id]['Lapel Facing'].folder == 'satin'">
+            <img src="<?php echo custome_image_server; ?>/jacket/grossgrain/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lapel Style'].laple_style[selecteElements[fab.product_id]['Jacket Style'].title].elementst">
+        </div>
+        <div ng-if="selecteElements[fab.product_id]['Lapel Facing'].folder == 'grossgrain'">
+            <img src="<?php echo custome_image_server; ?>/jacket/grossgrain/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lapel Style'].laple_style[selecteElements[fab.product_id]['Jacket Style'].title].elements">
+        </div>
+
+
 
         <?php
     } else {
