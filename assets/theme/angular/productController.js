@@ -8,7 +8,7 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
     $scope.init = 0;
     $scope.checkproduct = 0;
     $scope.pricerange = {'min': 0, 'max': 0};
-    $scope.productProcess = {'state': 1};
+    $scope.productProcess = {'state': 1, 'pagination': {'paginate': [1, 12], 'perpage': 12}, 'products': []};
 
     $scope.getProducts = function (attrs) {
         $scope.productProcess.state = 1;
@@ -62,6 +62,7 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
                 }
             }
 
+
             if ($scope.productResults.products.length) {
                 $scope.productProcess.state = 2;
             }
@@ -81,6 +82,7 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
                     num_page_links_to_display: 5,
                 });
 
+                $scope.checkProduct();
 
                 $(".page_link").click(function () {
                     $("html, body").animate({scrollTop: 0}, "slow")
@@ -115,7 +117,7 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
                     }
                 })
 
-                
+
                 $("#amount").val("$" + $("#price-range").slider("values", 0) + " - $" + $("#price-range").slider("values", 1));
             }, 1000)
 
@@ -195,8 +197,53 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
 
     $scope.filterPrice = function () {
         $scope.getProducts();
+    }
+
+    $scope.checkProduct = function () {
+        var countdata = $(".info_text").text().split(" ")[1];
+        if (countdata) {
+            var countdata1 = countdata.split("-");
+            countdata = [Number(countdata1[0]), Number(countdata1[1])];
+        }
+        else {
+            countdata = [1, 12];
+        }
+        $timeout(function () {
+            $scope.productProcess.pagination.paginate = countdata;
+            $scope.productProcess.pagination.perpage = '12';
+            $scope.productProcess.products = $scope.productResults.products.slice(countdata[0]-1, countdata[1]);
+        }, 100)
+
+
+
 
     }
+
+    $(document).on("click", ".page_link", function () {
+        $scope.productProcess.currentpage = $(this).attr("longdesc");
+        $scope.checkProduct();
+    });
+
+    $(document).on("click", ".last_link", function () {
+        $scope.productProcess.currentpage = "last";
+        $scope.checkProduct();
+    });
+    $(document).on("click", ".first_link", function () {
+        $scope.productProcess.currentpage = "last";
+        $scope.checkProduct();
+    });
+
+    $(document).on("click", ".next_link", function () {
+        $scope.productProcess.currentpage = Number($scope.productProcess.currentpage) + 1;
+        $scope.checkProduct();
+    });
+    $(document).on("click", ".previous_link", function () {
+        $scope.productProcess.currentpage = Number($scope.productProcess.currentpage) - 1;
+        $scope.checkProduct();
+    });
+
+
+
 
 
 })
