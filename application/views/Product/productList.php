@@ -113,7 +113,7 @@ $image2 = "";
                 min-height: 520px;
                 <?php
                 break;
-             case "5":
+            case "5":
                 ?>
                 min-height: 520px;
                 <?php
@@ -163,7 +163,7 @@ $image2 = "";
 <div id="content" ng-controller="ProductController"> 
 
     <!-- Shop Content -->
-    <div class="shop-content pad-t-b-60">
+    <div class="shop-content pad-t-b-60" >
         <div class="container">
             <div class="row"> 
 
@@ -283,6 +283,7 @@ $image2 = "";
 
                 <!-- Main Shop Itesm -->          
                 <div class="col-md-9"> 
+
                     <button class="btn btn-default btn-small pull-right" style="    position: absolute;
                             right: 10px;
                             top: -45px;" data-toggle="modal" data-target="#productcustome">View Custom Cart</button>
@@ -303,14 +304,15 @@ $image2 = "";
                     </div>
 
                     <!-- SHOWING INFO -->
-                    <!--                    <div class="showing-info">
-                                            <p class="pull-left">Showing   1 - 12  of   30 results</p>
-                                        </div>-->
-                    <div class="" id="paging_container1"> 
 
-                        <div class="row " ng-if="productProcess.state == 2">
+
+
+
+                    <div class="" > 
+
+                        <div class="row products-container content" ng-if="productProcess.state == 2">
                             <!-- Item -->
-                            <div class="col-sm-4 animated zoomIn"  ng-repeat="(k, product) in productResults.products">
+                            <div class="col-sm-4 animated zoomIn"  ng-repeat="(k, product) in productProcess.products">
                                 <article class="shop-artical"> 
                                     <?php
                                     switch ($custom_id) {
@@ -364,7 +366,7 @@ $image2 = "";
                                             </div>
                                             <?php
                                             break;
-                                        
+
                                         case "7":
                                             ?>
                                             <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product">
@@ -377,7 +379,7 @@ $image2 = "";
                                             </div>
                                             <?php
                                             break;
-                                        
+
                                         case "3":
                                             ?>
                                             <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/pant_style10001.png" alt="product">
@@ -473,6 +475,21 @@ $image2 = "";
                                             <li><a href="#.">....</a></li>
                                             <li><a href="#.">&gt;</a></li>
                                         </ul>-->
+
+                    <div class="col-md-12" id="paging_container1">
+                        <div class="showing-info">
+                            <p class="text-center"><span class="info_text ">Showing {0}-{1} of {2} results</span></p>
+                        </div>
+                        <div class="row products-container content" ng-if="productProcess.state == 2">
+                            <!-- Item -->
+                            <div class="col-sm-4 animated zoomIn"  ng-repeat="(k, product) in productResults.products">
+                            </div>
+                        </div>
+                        <center>
+                            <div class="page_navigation"></div>
+                        </center>
+                        <div style="clear: both"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -542,7 +559,7 @@ $image2 = "";
                                 </div>
                             </div>
 
-                            
+
 
                         </div>
 
