@@ -155,7 +155,7 @@ class Api extends REST_Controller {
     }
 
     //ProductList APi
-    public function productListApi_get($category_id) {
+    public function productListApi_get($category_id, $custom_id) {
         $attrdatak = $this->get();
         $products = [];
         $countpr = 0;
@@ -220,6 +220,9 @@ class Api extends REST_Controller {
 
         foreach ($product_result as $key => $value) {
             $value['attr'] = $this->Product_model->singleProductAttrs($value['product_id']);
+            $item_price = $this->Product_model->category_items_prices_id($value['category_items_id'], $custom_id);
+
+            $value['price'] =$item_price ? $item_price->price :0;
             array_push($productListSt, $value['product_id']);
             array_push($pricecount, $value['price']);
             array_push($productListFinal, $value);
