@@ -13,7 +13,7 @@
             <p>We're sorry, the page you requested cannot be found.<br>
                 You can go back to</p>
             <hr class="dotted">
-            <a href="http://classapartstore.com" class="btn btn-inverse">BACK TO HOME</a>
+            <a href="/" class="btn btn-inverse">BACK TO HOME</a>
         </div>
     </section>
 </div>
