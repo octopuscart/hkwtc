@@ -526,12 +526,26 @@ p.selected-element-title_text_price{
     .monogramtext_posistion {
         color: white;
         padding: 0 2px;
-        background: black;
+
         height: 8px;
         z-index: 200;
         font-size: 6px;
         position: absolute;
         display: block;
+    }
+
+    .multicustom .monogramtext_posistion_abdomen {
+        left: 174px;
+        display: block;
+        top: 200px;
+        transform: rotate(0deg);
+        /* transform: rotate(43deg); */
+    }
+    .multicustom .monogramtext_posistion_shirt_tail {
+        left: 170px;
+        display: block;
+        top: 295px;
+        transform: rotate(0deg);
     }
 
 
@@ -613,6 +627,13 @@ p.selected-element-title_text_price{
 
     .multicustom .fixpos {
         height: auto!important;
+    }
+
+    .multicustom .monogramtext_posistion_cuff_left {
+        left: 222px;
+        display: block;
+        top: 208px;
+        transform: rotate(43deg);
     }
 
 }
