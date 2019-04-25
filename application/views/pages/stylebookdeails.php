@@ -30,10 +30,6 @@ function truncate($str, $len) {
                     <!--date,category,likes-->
 
 
-
-
-
-
                     <!--post content-->
                     <figure>
                         <img src="<?php echo base_url(); ?>assets/styletips/<?php echo $styleobj->image; ?>" alt="" class="r_corners m_bottom_20" >

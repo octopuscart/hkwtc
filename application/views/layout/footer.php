@@ -1,12 +1,12 @@
 <!-- Footer -->
 <style>
-    .social-links a{
+   .footer-shop .social-links a{
         border: 1px solid;
         padding: 10px;
         margin-left: 10px;
         float: left;
     }
-    .social-links{
+   .footer-shop .social-links{
         float: right;
     }
 
