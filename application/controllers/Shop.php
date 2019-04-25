@@ -123,7 +123,7 @@ class Shop extends CI_Controller {
                 $this->email->from(email_bcc, $sendername);
                 $this->email->to($this->input->post('email'));
                 $this->email->bcc(email_bcc);
-                $subjectt = "Bespoke Tailors Appointment : ".$appointment['select_date']." (".$appointment['select_time'].")";
+                $subjectt = "Bespoke Tailors Appointment : " . $appointment['select_date'] . " (" . $appointment['select_time'] . ")";
                 $orderlog = array(
                     'log_type' => 'Appointment',
                     'log_datetime' => date('Y-m-d H:i:s'),
@@ -159,99 +159,27 @@ class Shop extends CI_Controller {
         $this->load->view('pages/appointment');
     }
 
-    public function testinsert() {
-        $foldersstrip = ['7601.jpg', '7602.jpg', '7606.jpg', '7612.jpg', '7613.jpg', '7630.jpg', '7649.jpg', '7672.jpg', '7677.jpg'];
-        foreach ($foldersstrip as $key => $value) {
-            $folder = $value;
-            $foldermain = str_replace(".jpg", "", $folder);
-            //$titles = explode("_", $folder);
-
-
-            $title = "RT" . $foldermain;
-
-            $products = array(
-                "category_id" => 44,
-                "sku" => $title,
-                "category_items_id" => 1,
-                "title" => $title,
-                "short_description" => "2 Ply 100% Cotton",
-                "description" => "2 Ply 100% Cotton",
-                "video_link" => "",
-                "regular_price" => "95",
-                "sale_price" => "0",
-                "credit_limit" => "",
-                "price" => "95",
-                "file_name" => $foldermain . "shirt_model20001.png",
-                "file_name1" => $foldermain . "shirt_model10001.png",
-                "file_name2" => $foldermain . "fabricx0001.png",
-                "file_name3" => "",
-                "user_id" => "10",
-                "op_date_time" => "",
-                "status" => "1",
-                "home_slider" => "",
-                "home_bottom" => "",
-                "keywords" => "",
-                "stock_status" => "In Stock",
-                "variant_product_of" => "",
-                "folder" => $foldermain);
-            # $this->db->insert('products', $products);
+    public function lookbook() {
+        $suitsimagelist = [31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+            1, 2, 3, 4, 5, 6, 7, 15, 16, 17, 18, 19, 20, 21, 22, 23,
+            24, 25, 26, 27, 28, 29
+        ];
+        $stylearray = array();
+        foreach ($suitsimagelist as $key => $value) {
+            $temp = array(
+                "style_no" => "90$value",
+                "title" => "SUPER 130'S",
+                "short_description" => "SUPER 130'S MADE IN ITALY",
+                "image" => "suits/$value.jpg",
+            );
+            array_push($stylearray, $temp);
         }
+        $data['stylearray'] = $stylearray;
+         $this->load->view('pages/lookbook', $data);
     }
 
-    public function testinsertsuit() {
-        $foldercheck = ['4027_4085.jpg', '4028_4027.jpg', '4029_4028.jpg', '4030_4029.jpg', '4031_4030.jpg', '4032_4126.jpg', '4033_4032.jpg', '4034_4033.jpg', '4035_4034.jpg', '4036_4035.jpg', '4038_4036.jpg', '4039_4038.jpg', '4040_4128.jpg', '4041_4040.jpg', '4042_4041.jpg', '4043_4042.jpg', '4044_4043.jpg', '4045_4044.jpg', '4046_4045.jpg', '4047.jpg', '4048.jpg', '4049.jpg', '4050.jpg', '4051.jpg', '4052.jpg', '4055.jpg', '4056.jpg', '4058.jpg', '4059.jpg', '4060.jpg', '4061.jpg', '4062.jpg', '4063.jpg', '4064.jpg', '4065.jpg', '4066.jpg', '4067.jpg', '4068.jpg', '4069.jpg', '4070.jpg', '4071.jpg', '4072.jpg', '4073.jpg', '4074.jpg', '4075.jpg', '4076.jpg', '4077.jpg', '4078.jpg', '4079.jpg', '4080.jpg', '4081.jpg', '4083.jpg', '4084.jpg', '4085.jpg', '4114.jpg', '4115.jpg', '4116.jpg', '4119.jpg', '4120.jpg', '4121.jpg', '4122.jpg', '4123.jpg', '4124.jpg', '4125.jpg', '4126.jpg', '4127.jpg', '4128.jpg'];
-        $folderchek2 = ['225801.jpg', '225802.jpg', '225803.jpg', '225804.jpg', '225805.jpg', '225806.jpg', '225807.jpg', '225808.jpg', '225809.jpg', '225810.jpg', '225812.jpg', '225813.jpg', '225814.jpg', '225815.jpg', '225816.jpg', '225817.jpg', '225818.jpg', '225819.jpg', '225821.jpg', '225822.jpg', '225823.jpg', '225824.jpg', '225825.jpg', '225826.jpg', '225827.jpg', '225828.jpg', '225829.jpg', '225830.jpg', '225831.jpg', '225832.jpg', '225833.jpg', '225834.jpg', '225835.jpg', '225836.jpg', '225837.jpg', '225838.jpg', '225839.jpg', '225840.jpg', '225841.jpg', '225842.jpg', '225843.jpg', '225844.jpg', '225845.jpg'];
-
-        $folderstrip = ['12546.jpg', '12548.jpg', '12549.jpg', '12550.jpg', '12551.jpg', '12552.jpg', '12553.jpg', '12554.jpg', '12562.jpg', '9733.jpg', '9734.jpg', '9735.jpg', '9736.jpg', '9737.jpg', '9744.jpg', '9749.jpg', '9750.jpg', '9751.jpg'];
-
-        $foldersolid = ['9706.jpg', '9708.jpg', '9709.jpg', '9710.jpg', '9711.jpg', '9712.jpg', '9714.jpg', '9718.jpg', '9781.jpg', '9782.jpg', '9783.jpg', '9784.jpg'];
-
-        $foldersolid2 = ['12529.jpg', '12530.jpg', '12531.jpg', '12536.jpg', '12539.jpg', '12540.jpg', '12541.jpg', '12542.jpg', '12543.jpg', '12544.jpg', '12545.jpg', '12596.jpg', '12599.jpg', '12600.jpg'];
-
-        $foldertexture = ['12506.jpg', '12519.jpg', '12520.jpg', '12522.jpg', '12523.jpg', '12526.jpg', '12526_2.jpg', '12527.jpg', '12599.jpg', '12600.jpg', '12607.jpg', '12608.jpg', '12609.jpg', '12610.jpg', '9738.jpg', '9739.jpg', '9740.jpg'];
-
-        foreach ($folderchek2 as $key => $value) {
-            $folder = $value;
-            $foldermain = str_replace(".jpg", "", $folder);
-
-            if (strpos($folder, '_')) {
-                $titles = explode("_", $foldermain);
-                $title = "RT" . $titles[1];
-            } else {
-                $title = "RT" . $foldermain;
-            }
-
-
-
-
-            $products = array(
-                "category_id" => 52,
-                "sku" => $title,
-                "category_items_id" => 3,
-                "title" => $title,
-                "short_description" => "100% Wool",
-                "description" => "100% Wool",
-                "video_link" => "",
-                "regular_price" => "800",
-                "sale_price" => "0",
-                "credit_limit" => "",
-                "price" => "800",
-                "file_name" => $foldermain . "s1_master_style60001.png",
-                "file_name1" => $foldermain . "style_buttons.png",
-                "file_name2" => $foldermain . "fabricx0001.png",
-                "file_name3" => "",
-                "user_id" => "10",
-                "op_date_time" => "",
-                "status" => "1",
-                "home_slider" => "",
-                "home_bottom" => "",
-                "keywords" => "",
-                "stock_status" => "In Stock",
-                "variant_product_of" => "",
-                "folder" => $foldermain);
-
-            #$this->db->insert('products', $products);
-        }
+    public function blog() {
+        
     }
 
     public function countrylist() {

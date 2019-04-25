@@ -132,11 +132,11 @@
                                     </li>
                         
                                     <li > 
-                                        <a href="<?php echo site_url("/"); ?>">Look Book</a>
+                                        <a href="<?php echo site_url("Shop/lookbook"); ?>">Look Book</a>
                                     </li>
-                                    <li > 
-                                        <a href="<?php echo site_url("/"); ?>">Offers</a>
-                                    </li>
+<!--                                    <li > 
+                                        <a href="<?php echo site_url("Shop/offers"); ?>">Offers</a>
+                                    </li>-->
                                     <li > 
                                         <a href="<?php echo site_url("Shop/blog"); ?>">Our Blog</a>
                                     </li>

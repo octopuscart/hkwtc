@@ -407,7 +407,7 @@ body::-webkit-scrollbar {
 }
 
 header .is-sticky .sticky .navbar li a {
-    padding: 0;
+    /*padding: 0;*/
 }
 
 .desing_view_button{
