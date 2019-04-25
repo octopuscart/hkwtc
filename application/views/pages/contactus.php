@@ -37,11 +37,11 @@ $this->load->view('layout/header');
                     </div>
                     <div class="social-links">
                         <ul>
-                            <li><a href="#."><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#."><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#."><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://www.facebook.com/royaltailorhk/"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/RoyalTailorHK"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/royal_tailor_/"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://en.tripadvisor.com.hk/Profile/Royaltailor"><i class="fa fa-tripadvisor"></i></a></li>
                             <li><a href="#."><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="#."><i class="fa fa-google-plus"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ $this->load->view('layout/header');
                                 <li class="col-sm-12">
                                     <label>
                                         <select name="subject" placeholder="Subject" class="form-control" style="  height: 50px;
-    background: #fafafa; " required="">
+                                                background: #fafafa; " required="">
                                             <option>Enquiry</option>
                                             <option>Send Swatches</option>
                                             <option>Feedback</option>
