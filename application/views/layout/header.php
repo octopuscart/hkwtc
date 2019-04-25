@@ -134,11 +134,9 @@
                                     <li > 
                                         <a href="<?php echo site_url("Shop/lookbook"); ?>">Look Book</a>
                                     </li>
-<!--                                    <li > 
-                                        <a href="<?php echo site_url("Shop/offers"); ?>">Offers</a>
-                                    </li>-->
+                              
                                     <li > 
-                                        <a href="<?php echo site_url("Shop/blog"); ?>">Our Blog</a>
+                                        <a href="<?php echo site_url("Shop/stylingTips"); ?>">Our Blog</a>
                                     </li>
                                     <li > 
                                         <a href="<?php echo site_url("Shop/contactus"); ?>">Contact Us</a>

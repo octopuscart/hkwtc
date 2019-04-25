@@ -178,8 +178,62 @@ class Shop extends CI_Controller {
          $this->load->view('pages/lookbook', $data);
     }
 
-    public function blog() {
-        
+   
+    
+    
+    
+      public function stylingTips() {
+        $query = $this->db->get('style_tips');
+        $data['stylebook'] = $query->result_array();
+        $this->load->view('pages/stylebook', $data);
+    }
+
+    function styleTipsDetails($style_index, $title) {
+        $this->db->where('id', $style_index);
+        $query = $this->db->get('style_tips');
+
+        $styleobj = $query->row();
+        $data['styleobj'] = $styleobj;
+
+        $configuration = $this->config->load('seo_config');
+
+        //$seotitle_o = $this->config->item("seo_title");
+
+        $seotitle1 = "Royal Tailor | " . $styleobj->title;
+        $seodescription = $styleobj->description;
+
+        $this->config->set_item('seo_title', $seotitle1);
+        $this->config->set_item('seo_desc', $seodescription);
+
+
+        $this->db->from('style_tips');
+        $this->db->order_by("id", "desc");
+        $this->db->limit(5);
+        $query = $this->db->get();
+        $stylebook = $query->result_array();
+
+
+        $data['stylebook'] = $stylebook;
+
+        $this->db->from('style_tips');
+        $this->db->order_by("id", "desc");
+        $query = $this->db->get();
+        $stylebook1 = $query->result_array();
+
+        $tagarray1 = array();
+        foreach ($stylebook1 as $key => $value) {
+            $tags = $value['tag'];
+            $tagarray = explode(", ", $tags);
+            foreach ($tagarray as $key1 => $value1) {
+                $tagarray1[$value1] = [];
+            }
+        }
+
+        $data['tagsarray'] = $tagarray1;
+
+
+
+        $this->load->view('pages/stylebookdeails', $data);
     }
 
     public function countrylist() {
@@ -208,5 +262,9 @@ class Shop extends CI_Controller {
             }
         }
     }
+    
+    
+    
+    
 
 }
