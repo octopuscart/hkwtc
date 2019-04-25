@@ -113,7 +113,7 @@
                             <!-- NAV -->
                             <div class="collapse navbar-collapse goldtextcss" id="nav-open-btn">
                                 <ul class="nav">
-                                    <li class="dropdown"> <a  href="#" class="dropdown-toggle " data-toggle="dropdown">Home</a>
+                                    <li class="dropdown"> <a  href="<?php echo site_url("/"); ?>" class="dropdown-toggle " data-toggle="dropdown">Home</a>
                                         <ul class="dropdown-menu">
                                             <li><a href="<?php echo site_url("Shop/aboutus"); ?>">About Us</a></li>
                                             <li><a href="">FAQ'S</a></li>
