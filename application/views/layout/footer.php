@@ -1,12 +1,12 @@
 <!-- Footer -->
 <style>
-   .footer-shop .social-links a{
+   .goldergradiant .social-links a{
         border: 1px solid;
         padding: 10px;
         margin-left: 10px;
         float: left;
     }
-   .footer-shop .social-links{
+   .goldergradiant .social-links{
         float: right;
     }
 
