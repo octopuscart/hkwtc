@@ -1,14 +1,28 @@
 <!-- Footer -->
+<style>
+    .social-links a{
+        border: 1px solid;
+        padding: 10px;
+        margin-left: 10px;
+        float: left;
+    }
+    .social-links{
+        float: right;
+    }
+
+</style>
+
+
 <footer class="footer-shop">
     <div class="container"> 
         <div class="row"> 
             <div class="col-md-2">
-                        <center>
+                <center>
 
-            <img src="<?php echo base_url(); ?>assets/images/spacial/turismlogo.png" class="spacial_text" style="height: 198px;
-    margin-top: 10px;
-">      
-            </center>
+                    <img src="<?php echo base_url(); ?>assets/images/spacial/turismlogo.png" class="spacial_text" style="height: 198px;
+                         margin-top: 10px;
+                         ">      
+                </center>
             </div>
 
             <!-- Contact -->
@@ -67,11 +81,11 @@
             </div>
             <div class="col-sm-6 text-right">                 
                 <div class="social-links"> 
-                    <a href="#."><i class="fa fa-facebook"></i></a> 
-                    <a href="#."><i class="fa fa-twitter"></i></a> 
-                    <a href="#."><i class="fa fa-instagram"></i></a> 
-                    <a href="#."><i class="fa fa-pinterest"></i></a> 
-                    <a href="#."><i class="fa fa-google"></i></a> 
+                    <a href="https://www.facebook.com/royaltailorhk/" target="_blank"><i class="fa fa-facebook"></i></a> 
+                    <a href="https://twitter.com/RoyalTailorHK" target="_blank"><i class="fa fa-twitter"></i></a> 
+                    <a href="https://www.instagram.com/royal_tailor_/" target="_blank"><i class="fa fa-instagram"></i></a> 
+                    <a href="https://en.tripadvisor.com.hk/Profile/Royaltailor" target="_blank"><i class="fa fa-tripadvisor"></i></a> 
+                    <a href="" target="_blank"><i class="fa fa-pinterest"></i></a> 
                 </div>
             </div>
         </div>
