@@ -1929,6 +1929,7 @@ class CustomApi extends REST_Controller {
                     "show_buttons" => "true",
                     "style_l" => "   ",
                     "style_r" => "    ",
+                    "tuxedopocket"=>["pocket_lower_pipe_left0001.png", "pocket_lower_pipe_right0001.png"],
                 ),
                 array(
                     "status" => "0",
@@ -1937,6 +1938,7 @@ class CustomApi extends REST_Controller {
                     "customization_category_id" => "4",
                     "image" => "suit_elements/pocket/pocket_pipe.png",
                     "show_buttons" => "true",
+                    "tuxedopocket"=>["pocket_lower_pipe_left0001.png", "pocket_lower_pipe_right0001.png"],
                 ),
                 array(
                     "status" => "0",
@@ -1948,6 +1950,7 @@ class CustomApi extends REST_Controller {
                     "show_buttons" => "true",
                     "style_l" => "   ",
                     "style_r" => "    ",
+                    "tuxedopocket"=>["pocket_lower_pipe_left_slanting0001.png", "pocket_lower_pipe_right_slanting0001.png"],
                 ),
                 array(
                     "status" => "0",
@@ -1956,6 +1959,7 @@ class CustomApi extends REST_Controller {
                     "customization_category_id" => "4",
                     "image" => "suit_elements/pocket/pocket_pipe_slanting.png",
                     "show_buttons" => "true",
+                    "tuxedopocket"=>["pocket_lower_pipe_left_slanting0001.png", "pocket_lower_pipe_right_slanting0001.png"],
                 ),
                 array(
                     "status" => "0",
@@ -1964,6 +1968,7 @@ class CustomApi extends REST_Controller {
                     "customization_category_id" => "4",
                     "image" => "suit_elements/pocket/pocket_patch.png",
                     "show_buttons" => "true",
+                    "tuxedopocket"=>["pocket_lower_pipe_left0001.png", "pocket_lower_pipe_right0001.png"],
                 )
             ],
             "Lapel Facing" => [

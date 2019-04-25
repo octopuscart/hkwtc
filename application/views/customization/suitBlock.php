@@ -19,8 +19,8 @@
     <img src="<?php echo custome_image_server; ?>/jacket/output/overlay/sleeve_new_olverlay.png" class="fixpos animated" >
     <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/pant_suit_model0001.png" class="fixpos animated " >
 
-    <!--breast pocket-->
-    <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Breast Pocket'].elements">
+
+
 
 
     <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Sleeve Buttons'].buttonhole" >
@@ -55,6 +55,27 @@
     <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Breast Pocket'].elements" >
     <!--<img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/breast_pocket0001.png" class="fixpos animated" >-->
 
+    <!--breast pocket-->
+    <?php
+    if ($tuxedotype == '1') {
+        ?>
+        <div ng-if="selecteElements[fab.product_id]['Lapel Facing'].folder == 'satin'">
+            <img src="<?php echo custome_image_server; ?>/jacket/tuxedofabric/satin/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Breast Pocket'].elements">
+
+        </div>
+        <div ng-if="selecteElements[fab.product_id]['Lapel Facing'].folder == 'grossgrain'">
+            <img src="<?php echo custome_image_server; ?>/jacket/tuxedofabric/grossgrain/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Breast Pocket'].elements">
+
+        </div>
+        <?php
+    } else {
+        ?>
+        <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Breast Pocket'].elements">
+        <?php
+    }
+    ?>
+
+
 
     <!--button holes-->
     <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Jacket Style'].button_hole" >
@@ -64,7 +85,30 @@
 
     <!--lower pocket-->
     <img src="<?php echo custome_image_server; ?>/jacket/output/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lower Pocket'].overlay">
+
+
     <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lower Pocket'].elements">
+
+    <?php
+    if ($tuxedotype == '1') {
+        ?>
+        <div ng-if="selecteElements[fab.product_id]['Lapel Facing'].folder == 'satin'">
+            <img src="<?php echo custome_image_server; ?>/jacket/tuxedofabric/satin/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lower Pocket'].tuxedopocket">
+
+        </div>
+        <div ng-if="selecteElements[fab.product_id]['Lapel Facing'].folder == 'grossgrain'">
+            <img src="<?php echo custome_image_server; ?>/jacket/tuxedofabric/grossgrain/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lower Pocket'].tuxedopocket">
+
+        </div>
+        <?php
+    } else {
+        ?>
+        <?php
+    }
+    ?>
+
+
+
     <img src="<?php echo custome_image_server; ?>/jacket/output/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Ticket Pocket'].overlay">
     <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Ticket Pocket'].elements">
 

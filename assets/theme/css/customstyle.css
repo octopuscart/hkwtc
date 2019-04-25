@@ -552,3 +552,13 @@ span.badge {
     font-size: 11px;
     background: black;
 }
+@media only screen and (max-width: 768px) {
+
+.sticky-wrapper .logomain {
+    height: 60px;
+    
+}
+.products-container {
+    margin-top: 100px;
+}
+}
