@@ -243,7 +243,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li> <a href="javascript:void(0);" class="search-open"><i class="fa fa-search"></i></a>
+                                    <li> <a href="<?php echo site_url("Account/login"); ?>" ><i class="fa fa-lock"></i></a>
                                         <div class="search-inside animated-4s fadeIn"> <i class="lnr lnr-cross search-close"></i>
                                             <div class="search-overlay"></div>
                                             <div class="position-center-center">
