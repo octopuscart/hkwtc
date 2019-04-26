@@ -30,6 +30,10 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
         var elempx = "minprice=" + pmm;
 
 
+        if(searchdata){
+            var search = "search="+searchdata;
+            argsk.push(search);
+        }
 
         if (pmm.trim()) {
             $scope.pricerange.max = pmx;

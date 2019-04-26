@@ -171,8 +171,8 @@ $image2 = "";
                 <div class="col-md-3">
                     <div class="side-bar">
                         <div class="search">
-                            <form>
-                                <input type="text" placeholder="SEARCH">
+                            <form action="#">
+                                <input type="text" name="search" placeholder="SEARCH">
                                 <button type="submit"> <i class="fa fa-search"></i></button>
                             </form>
                         </div>
@@ -588,6 +588,9 @@ $image2 = "";
 <script>
     var category_id = <?php echo $cattempid; ?>;
 var custom_id = <?php echo $custom_id; ?>;
+
+var searchdata = <?php echo isset($_GET["search"])?($_GET["search"]!=''?$_GET["search"]:'0'):"0"; ?>;
+
 </script>
 <!--angular controllers-->
 
