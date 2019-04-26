@@ -193,7 +193,7 @@ $image2 = "";
                                     ?>  
 
                                     <li>
-                                        <a href="<?php echo site_url("Product/ProductList/" . $custom_id . "/" . $value['id']); ?>">
+                                        <a class="<?php echo $cattempid==$value['id']?'active':'';?>" href="<?php echo site_url("Product/ProductList/" . $custom_id . "/" . $value['id']); ?>">
                                             <i class="flaticon-left-arrow"></i>
                                             <?php echo $value['category_name']; ?>
 

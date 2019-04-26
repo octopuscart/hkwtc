@@ -496,11 +496,11 @@ header .is-sticky .sticky .navbar li a {
     padding-bottom: 50px;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
     border-radius: 4px;
-   
+
 }
 
 .order_box{
-   
+
     height: 210px;
 
 }
@@ -509,13 +509,13 @@ header .is-sticky .sticky .navbar li a {
 .bith_date_select{
     width: 28%!important;
     display: initial;
-        padding: 3px;
+    padding: 3px;
 }
 
 .bith_date_select_year{
     width: 35%!important;
     display: initial;
-        padding: 3px;
+    padding: 3px;
 }
 
 .login-registration-field label{
@@ -544,7 +544,7 @@ b.extrapricesummryorder {
 }
 
 .badgesum{
-        font-size: 12px;
+    font-size: 12px;
     font-weight: 500;
 }
 span.badge {
@@ -554,11 +554,41 @@ span.badge {
 }
 @media only screen and (max-width: 768px) {
 
-.sticky-wrapper .logomain {
-    height: 60px;
-    
+    .sticky-wrapper .logomain {
+        height: 60px;
+
+    }
+    .products-container {
+        margin-top: 100px;
+    }
 }
-.products-container {
-    margin-top: 100px;
+
+.search button {
+    color: #202020;
+    float: right;
+    position: relative;
+    margin-top: -30px;
+    font-size: 14px;
+    margin-right: 10px;
+    background: none;
+    border: none;
 }
+
+
+.search input {
+    display: inline-block;
+    width: 100%;
+    border: none;
+    height: 38px;
+    padding: 0 20px;
+    font-size: 12px;
+    background: #f5f5f5;
+}
+
+.side-bar .cate li a.active {
+    color: #333333;
+    width: 100%;
+    font-weight: 700;
+    font-size: 14px;
+    display: inline-block;
 }
