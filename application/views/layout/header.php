@@ -69,10 +69,10 @@
 
 
             var App = angular.module('App', []).config(function ($interpolateProvider, $httpProvider) {
-            //$interpolateProvider.startSymbol('{$');
-            //$interpolateProvider.endSymbol('$}');
-            $httpProvider.defaults.headers.common = {};
-            $httpProvider.defaults.headers.post = {};
+                //$interpolateProvider.startSymbol('{$');
+                //$interpolateProvider.endSymbol('$}');
+                $httpProvider.defaults.headers.common = {};
+                $httpProvider.defaults.headers.post = {};
             });
             var baseurl = "<?php echo site_url(); ?>";
             var imageurlg = "<?php echo imageserver; ?>";
@@ -88,12 +88,42 @@
                 line-height: 25px;
             }
 
+            .linkheader .social-links a {
+                border: 1px solid;
+                padding: 0px;
+                margin-left: 10px;
+                float: left;
+                width: 25px;
+                text-align: center;
+                color: white;
+            }
+
         </style>
 
 
         <!-- Page Wrapper -->
         <div id="wrap" class="shop-page" ng-controller="ShopController"> 
-
+            <!-- Rights -->
+            <div class="rights  linkheader hideonmobile " style="    padding: 0;    background: #161409;">
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-sm-6 " >
+                            <p style="color:white"><i class="fa fa-phone"></i>+(852) 2655 9778&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-envelope"></i></b> lyra@royaltailor.hk</p>
+                        </div>
+                        <div class="col-sm-6 text-right" >                 
+                            <div class="social-links" style="    float: right;
+                                 margin-top: 4px;"> 
+                                <a href="https://www.facebook.com/royaltailorhk/" target="_blank"><i class="fa fa-facebook"></i></a> 
+                                <a href="https://twitter.com/RoyalTailorHK" target="_blank"><i class="fa fa-twitter"></i></a> 
+                                <a href="https://www.instagram.com/royal_tailor_/" target="_blank"><i class="fa fa-instagram"></i></a> 
+                                <a href="https://en.tripadvisor.com.hk/Profile/Royaltailor" target="_blank"><i class="fa fa-tripadvisor"></i></a> 
+                                <a href="" target="_blank"><i class="fa fa-pinterest"></i></a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Footer -->  
             <!-- Header -->
             <header class="header ">
                 <div class="sticky ">

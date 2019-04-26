@@ -561,6 +561,9 @@ span.badge {
     .products-container {
         margin-top: 100px;
     }
+    .hideonmobile{
+        display: none;
+    }
 }
 
 .search button {

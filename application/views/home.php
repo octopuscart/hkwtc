@@ -744,7 +744,7 @@ function truncate($str, $len) {
                     We always listen to the expressed and unexpressed wish of our guests. We have over 6000 fabric choices to attire different style and need. We tailor-made every lining color and detail for each unique and personalized character.
                 </p>
             </div>
-            <div class="text-center"> <a href="#." class="btn">TRY US</a> </div>
+            <div class="text-center"> <a href="<?php echo site_url("Shop/appointment"); ?>" class="btn">Book An Appointment</a> </div>
         </div>
     </section>
 

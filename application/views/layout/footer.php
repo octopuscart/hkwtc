@@ -1,14 +1,14 @@
 <!-- Footer -->
 <style>
-   .goldergradiant .social-links a{
+    .goldergradiant .social-links a{
         border: 1px solid;
         padding: 10px;
         margin-left: 10px;
         float: left;
-            width: 40px;
-    text-align: center;
+        width: 40px;
+        text-align: center;
     }
-   .goldergradiant .social-links{
+    .goldergradiant .social-links{
         float: right;
     }
 
@@ -18,7 +18,7 @@
 <footer class="footer-shop">
     <div class="container"> 
         <div class="row"> 
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <center>
 
                     <img src="<?php echo base_url(); ?>assets/images/spacial/turismlogo.png" class="spacial_text" style="height: 198px;
@@ -41,26 +41,18 @@
             <div class="col-md-2">
                 <h4>Categories</h4>
                 <ul class="links-footer">
-                    <li ><a href="#">Shirts</a></li>
-                    <li ><a href="#">Suits</a></li>
-                    <li ><a href="#">Jackets</a></li>
-                    <li ><a href="#">Pants</a></li>
+                    <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirts</a></li>
+                    <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suits</a></li>
+                    <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jackets</a></li>
+                    <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pants</a></li>
+                    <li><a href="<?php echo site_url('Product/ProductList/5/0') ?>">Tuxedo Suits</a></li>
                 </ul>
             </div>
 
-            <!-- Categories -->
-            <div class="col-md-2">
-                <h4>Customer Services</h4>
-                <ul class="links-footer">
-                    <li><a href="#.">Shipping & Returns</a></li>
-                    <li><a href="#.">Secure Shopping</a></li>
-                    <li><a href="#.">International Shipping</a></li>
-                    <li><a href="#.">Terms & Conditions</a></li>
-                </ul>
-            </div>
+
 
             <!-- Categories -->
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <h4>Information</h4>
                 <ul class="links-footer">
                     <li><a href="#.">Our Blog</a></li>
