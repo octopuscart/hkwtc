@@ -109,9 +109,7 @@ class Shop extends CI_Controller {
 
     public function appointment() {
         $timing = [];
-        for($i=11;$i<=8;$i++){
-            
-        }
+        
         
         
         if (isset($_POST['submit'])) {
