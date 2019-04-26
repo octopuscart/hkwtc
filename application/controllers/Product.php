@@ -25,7 +25,10 @@ class Product extends CI_Controller {
 
        
         $cat_id = $customeitem->category_id;
-       
+       if ($cat_id == 0) {
+            $cat_id = $customeitem->category_id;
+            $cattempid = $cat_id;
+        }
 
         $categories = $this->Product_model->productListCategories($cat_id, $custom_id);
         $data["categorie_parent"] = $this->Product_model->getparent($cat_id);
