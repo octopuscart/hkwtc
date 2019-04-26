@@ -1,7 +1,13 @@
 <?php
+
 $this->load->view('layout/header');
 ?>
-
+<style>
+    .shop_timing{
+        float: left;
+        width: 135px;
+    }
+</style>
 
 <!-- MAP -->
 <section class="map-block">
@@ -29,6 +35,12 @@ $this->load->view('layout/header');
                             <a href="#"><span class="fa fa-fax"></span></b> +(852) 2655 9768</a></li>
                         <li><i class="flaticon-mail"></i> <a href="#">lyra@royaltailor.hk</a> <br>
                             <a href="#">sales@royaltailor.hk</a></li>
+                        <li><i class="fa fa-calendar-o"></i>
+                            <h5 style="font-size: 18px">Timing</h5>
+                            <a href="#"><span class="shop_timing">Monday - Friday</span>: 10:00 AM to 08:00 PM</a> <br>
+                            <a href="#"><span class="shop_timing">Saturday</span>: 11:00 AM to 07:00 PM</a> <br>
+                            <a href="#"><span class="shop_timing">Sun & Pub. Holidays</span>: 12:00 AM to 05:00 PM</a> <br>
+
                     </ul>
 
                     <!-- Main Heading -->
@@ -111,8 +123,9 @@ $this->load->view('layout/header');
         </div>
 
     </section>
-
+</div>
 
     <?php
+
     $this->load->view('layout/footer');
     ?>
