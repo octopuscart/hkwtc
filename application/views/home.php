@@ -777,7 +777,7 @@ function truncate($str, $len) {
 
 
                                 <a href="<?php echo site_url("styleTips/" . $value['id'] . "/" . $value['title']) ?>" class="news-tittle" style="    margin-top: 10px;
-    margin-bottom: 5px;"><?php echo truncate($value['title'], 100); ?></a>
+                                   margin-bottom: 5px;"><?php echo truncate($value['title'], 100); ?></a>
                                 <p><?php echo truncate($value['description'], 200); ?></p>
                                 <a href="<?php echo site_url("styleTips/" . $value['id'] . "/" . $value['title']) ?>" class="red-more">Read More</a> </article>
                         </div>
