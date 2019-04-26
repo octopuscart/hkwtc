@@ -677,7 +677,7 @@ function truncate($str, $len) {
                         <div class="position-center-center">
                             <h6></h6>
                         </div>
-                        <a href="#" class="btn by">Shop NOW</a> 
+                        <a href="<?php echo site_url('Product/ProductList/2/0') ?>" class="btn by">Shop NOW</a> 
                     </article>
                 </div>
 
@@ -692,7 +692,7 @@ function truncate($str, $len) {
                         <div class="position-center-center">
                             <h6></h6>
                         </div>
-                        <a href="#" class="btn by">Shop NOW</a> 
+                        <a href="<?php echo site_url('Product/ProductList/1/0') ?>" class="btn by">Shop NOW</a> 
                     </article>
                 </div>
 
@@ -708,7 +708,7 @@ function truncate($str, $len) {
                         <div class="position-center-center">
                             <h6></h6>
                         </div>
-                        <a href="#" class="btn by">Shop NOW</a> 
+                        <a href="<?php echo site_url('Product/ProductList/2/0') ?>" class="btn by">Shop NOW</a> 
                     </article>
                 </div>
 
