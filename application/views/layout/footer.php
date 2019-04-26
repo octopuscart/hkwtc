@@ -5,6 +5,8 @@
         padding: 10px;
         margin-left: 10px;
         float: left;
+            width: 40px;
+    text-align: center;
     }
    .goldergradiant .social-links{
         float: right;

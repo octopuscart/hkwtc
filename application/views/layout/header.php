@@ -69,10 +69,10 @@
 
 
             var App = angular.module('App', []).config(function ($interpolateProvider, $httpProvider) {
-                //$interpolateProvider.startSymbol('{$');
-                //$interpolateProvider.endSymbol('$}');
-                $httpProvider.defaults.headers.common = {};
-                $httpProvider.defaults.headers.post = {};
+            //$interpolateProvider.startSymbol('{$');
+            //$interpolateProvider.endSymbol('$}');
+            $httpProvider.defaults.headers.common = {};
+            $httpProvider.defaults.headers.post = {};
             });
             var baseurl = "<?php echo site_url(); ?>";
             var imageurlg = "<?php echo imageserver; ?>";
@@ -116,7 +116,7 @@
                                     <li> 
                                         <a href="<?php echo site_url("/"); ?>">Home</a>
                                     </li>
-                                    
+
                                     <li> 
                                         <a href="<?php echo site_url("Shop/aboutus"); ?>">About Us</a>
                                     </li>
@@ -139,7 +139,10 @@
                                     <li > 
                                         <a href="<?php echo site_url("Shop/stylingTips"); ?>">Our Blog</a>
                                     </li>
-                                    
+                                    <li > 
+                                        <a href="<?php echo site_url("Shop/appointment"); ?>">Appointment</a>
+                                    </li>
+
                                     <li > 
                                         <a href="<?php echo site_url("Shop/contactus"); ?>">Contact Us</a>
                                     </li>
@@ -150,49 +153,29 @@
 
 
 
-                                    <!--                                     Mega Menu Nav 
-                                                                        <li class="dropdown megamenu"> <a href="#." class="dropdown-toggle" data-toggle="dropdown">Shop Now </a>
-                                                                            <div class="dropdown-menu">
-                                                                                <div class="mega-inside">
-                                                                                    <div class="row">
-                                                                                        <div class="col-sm-3" ng-repeat="catv in categoriesMenu" >
-                                                                                            <h6 style="margin-bottom: 0px">
-                                                                                                <a href="<?php echo site_url("Product/ProductList/"); ?>{{catv.id}}" >{{catv.category_name}}</a>
-                                                                                            </h6>
-                                                                                            <ul>
-                                                                                                <li ng-repeat="subv in catv.sub_category">
-                                                                                                    <a href="<?php echo site_url("Product/ProductList/"); ?>{{subv.id}}" >{{subv.category_name}}</a>
-                                                                                                </li>
-                                                                                                <li></li>
-                                                                                            </ul>
-                                                                                        </div>
-                                    
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>-->
-
 
 
 
                                     <?php
-                                    $session_data = $this->session->userdata('logged_in');
-                                    if ($session_data) {
-                                        ?>
-                                        <li class="dropdown"> <a href="contact_us_1.html" class="dropdown-toggle" data-toggle="dropdown">Hi, <?php echo $session_data['first_name'] ? $session_data['first_name'] : 'User'; ?>! </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="<?php echo site_url("Account/profile"); ?>">Profile</a></li>
-                                                <li><a href="<?php echo site_url("Account/orderList"); ?>">My Order</a></li>
-                                                <li><a href="<?php echo site_url("Account/logout"); ?>">Logout</a></li>
-                                            </ul>
-                                        </li>
-                                        <?php
-                                    } else {
-                                        ?>
-                                        <li> <a href="<?php echo site_url("Account/login"); ?>" >Sign In / Sign Up </a>
-                                        </li>
+                                    if (0) {
+                                        $session_data = $this->session->userdata('logged_in');
+                                        if ($session_data) {
+                                            ?>
+                                            <li class="dropdown"> <a href="contact_us_1.html" class="dropdown-toggle" data-toggle="dropdown">Hi, <?php echo $session_data['first_name'] ? $session_data['first_name'] : 'User'; ?>! </a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="<?php echo site_url("Account/profile"); ?>">Profile</a></li>
+                                                    <li><a href="<?php echo site_url("Account/orderList"); ?>">My Order</a></li>
+                                                    <li><a href="<?php echo site_url("Account/logout"); ?>">Logout</a></li>
+                                                </ul>
+                                            </li>
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <li> <a href="<?php echo site_url("Account/login"); ?>" >Sign In / Sign Up </a>
+                                            </li>
 
-                                        <?php
+                                            <?php
+                                        }
                                     }
                                     ?>
 

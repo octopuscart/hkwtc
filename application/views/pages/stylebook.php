@@ -39,19 +39,19 @@ function truncate($str, $len) {
                         ?>
                         <!-- POST -->
                         <div class="col-md-4 item-mas " >
-                         
-                                    <article style="padding: 10px;"> <img class="img-responsive" src="<?php echo base_url(); ?>assets/styletips/<?php echo $value['image']; ?>" alt="" > 
-                                        <!--<span>By Admin</span> <span>10 Nov, 2018</span>--> 
-                                        <a href="<?php echo site_url("styleTips/" . $value['id'] . "/" . $value['title']) ?>" class="news-tittle padding-top-30" style="    padding-bottom: 0px;
-    margin-bottom: 0px;">
-                                            <?php echo truncate($value['title'], 100); ?>
-                                        </a>
-                                        <p style="line-height: 24px;
-    margin: 10px 0px;;">
-                                            <?php echo truncate($value['description'], 200); ?>                                    </p>
-                                        <a class="" href="<?php echo site_url("styleTips/" . $value['id'] . "/" . $value['title']) ?>" class="red-more"><b>Read More</b></a> 
-                                    </article>
-                                
+
+                            <article style="padding: 10px;"> <img class="img-responsive" src="<?php echo base_url(); ?>assets/styletips/<?php echo $value['image']; ?>" alt="" > 
+                                <!--<span>By Admin</span> <span>10 Nov, 2018</span>--> 
+                                <a href="<?php echo site_url("styleTips/" . $value['id'] . "/" . $value['title']) ?>" class="news-tittle padding-top-30" style="    padding-bottom: 0px;
+                                   margin-bottom: 0px;">
+                                   <?php echo truncate($value['title'], 100); ?>
+                                </a>
+                                <p style="line-height: 24px;
+                                   margin: 10px 0px;;">
+                                    <?php echo truncate($value['description'], 200); ?>                                    </p>
+                                <a class="" href="<?php echo site_url("styleTips/" . $value['id'] . "/" . $value['title']) ?>" class="red-more"><b>Read More</b></a> 
+                            </article>
+
                         </div>
 
                         <?php

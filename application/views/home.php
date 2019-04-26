@@ -1,5 +1,12 @@
 <?php
 $this->load->view('layout/header');
+
+function truncate($str, $len) {
+    $tail = max(0, $len - 10);
+    $trunk = substr($str, 0, $tail);
+    $trunk .= strrev(preg_replace('~^..+?[\s,:]\b|^...~', '...', strrev(substr($str, $tail, $len - $tail))));
+    return $trunk;
+}
 ?>
 <style>
     .product_image_back {
@@ -132,7 +139,7 @@ $this->load->view('layout/header');
                          data-elementdelay="0.1" 
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
-                         data-captionhidden="on"> <a href="#." class="btn">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="btn btn-1">Discover</a> </div>
+                         data-captionhidden="on"> <a href="<?php echo site_url('Product/ProductList/2/0') ?>" class="btn">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="<?php echo site_url('Shop/appointment') ?>" class="btn btn-1">Discover</a> </div>
                 </li>
 
 
@@ -267,10 +274,11 @@ $this->load->view('layout/header');
                          data-elementdelay="0.1" 
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
-                         data-captionhidden="on"> <a href="#." class="btn btn-1">CUSTOMIZE NOW</a> </div>
+                         data-captionhidden="on"> 
+                        <a href="<?php echo site_url('Product/ProductList/4/0') ?>" class="btn btn-1">CUSTOMIZE NOW</a> </div>
                 </li>
 
-             
+
 
 
                 <!-- Slider 4 -->
@@ -327,7 +335,7 @@ $this->load->view('layout/header');
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
                          data-captionhidden="on"
-                         style="z-index: 10;"> <a href="#." class="btn">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="btn btn-1">Discover</a> </div>
+                         style="z-index: 10;"> <a href="<?php echo site_url("Shop/appointment"); ?>" class="btn">Book An Appointment</a> </div>
                 </li>
 
 
@@ -385,7 +393,7 @@ $this->load->view('layout/header');
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
                          data-captionhidden="on"
-                         style="z-index: 10;"> <a href="#." class="btn">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="btn btn-1">Discover</a> </div>
+                         style="z-index: 10;"> <a href="<?php echo site_url('Product/ProductList/2/0') ?>" class="btn">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="<?php echo site_url("Shop/appointment"); ?>" class="btn btn-1">Discover</a> </div>
                 </li>
 
                 <!-- Slider 3 -->
@@ -406,7 +414,7 @@ $this->load->view('layout/header');
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
                          data-captionhidden="on"
-                         style="color: #fff; font-size: 60px; text-transform: uppercase; font-weight: 900; letter-spacing:3px;"> NEW ARRIVAL </div>
+                         style="color: #fff; font-size: 60px; text-transform: uppercase; font-weight: 900; letter-spacing:3px;">Our Look Book</div>
 
                     <!-- Layer -->
                     <div class="tp-caption sfb tp-resizeme  font-playfair text-center rs-parallaxlevel-4" 
@@ -424,7 +432,7 @@ $this->load->view('layout/header');
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
                          data-captionhidden="on"
-                         style="color: #fff; font-size: 18px; line-height:36px; font-weight: 500; letter-spacing:0px;">We Have Worlds Best Italian Fabrics.<br></div>
+                         style="color: #fff; font-size: 18px; line-height:36px; font-weight: 500; letter-spacing:0px;"> Choose the perfect style for your jacket and pants.<br></div>
 
                     <!-- Layer -->
                     <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4" 
@@ -442,7 +450,7 @@ $this->load->view('layout/header');
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
                          data-captionhidden="on"
-                         style="z-index: 10;"> <a href="#." class="btn">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="btn btn-1">Discover</a> </div>
+                         style="z-index: 10;"> <a href="<?php echo site_url("Shop/lookbook"); ?>" class="btn">Look Book</a>  </div>
                 </li>
 
 
@@ -500,7 +508,7 @@ $this->load->view('layout/header');
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
                          data-captionhidden="on"
-                         style="z-index: 10;"> <a href="#." class="btn">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="btn btn-1">Discover</a> </div>
+                         style="z-index: 10;"> <a href="<?php echo site_url('Product/ProductList/2/0') ?>" class="btn">Shop Now</a> </div>
                 </li>
 
 
@@ -522,7 +530,7 @@ $this->load->view('layout/header');
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
                          data-captionhidden="on"
-                         style="color: #fff; font-size: 60px; text-transform: uppercase; font-weight: 900; letter-spacing:3px;"> NEW ARRIVAL </div>
+                         style="color: #fff; font-size: 60px; text-transform: uppercase; font-weight: 900; letter-spacing:3px;"> Our Style Blog </div>
 
                     <!-- Layer -->
                     <div class="tp-caption sfb tp-resizeme  font-playfair text-center rs-parallaxlevel-4" 
@@ -540,7 +548,7 @@ $this->load->view('layout/header');
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
                          data-captionhidden="on"
-                         style="color: #fff; font-size: 18px; line-height:36px; font-weight: 500; letter-spacing:0px;">We Have Worlds Best Italian Fabrics.<br></div>
+                         style="color: #fff; font-size: 18px; line-height:36px; font-weight: 500; letter-spacing:0px;">Get the latest fashion and style trends.<br></div>
 
                     <!-- Layer -->
                     <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4" 
@@ -558,7 +566,7 @@ $this->load->view('layout/header');
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
                          data-captionhidden="on"
-                         style="z-index: 10;"> <a href="#." class="btn">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="btn btn-1">Discover</a> </div>
+                         style="z-index: 10;"> <a href="<?php echo site_url("Shop/stylingTips"); ?>" class="btn">Explore Now</a> </div>
                 </li>
 
 
@@ -576,22 +584,22 @@ $this->load->view('layout/header');
 <!-- About US -->
 <section class="light-gray-bg pad-t-b-30" style="background: url(<?php echo base_url(); ?>assets/images/spacial/middle3.jpg)">
 
-    
-  
-        <div class="container">
-            <center>
+
+
+    <div class="container">
+        <center>
 
             <img src="<?php echo base_url(); ?>assets/images/spacial/middle.png" class="spacial_text">      
-            </center>
+        </center>
 
-            
-        </div> 
+
+    </div> 
 
     <div class="goldline2 " style="margin-bottom: 30px;"></div>
-    
-    
-   
-    
+
+
+
+
     <div class="container"> 
 
         <!-- Heading -->
@@ -613,20 +621,20 @@ $this->load->view('layout/header');
                     <?php
                     $testdev = 1;
                     foreach ($product_home_slider_bottom['home_bottom'] as $key => $value) {
-                        if($testdev==1){
-                        ?>
-                        <!-- Item -->
-                        <div class="item">
-                            <article class="shop-artical"> 
-                                <div class="imagblock">
-                                    <img class="img-responsive" src="http://bespoketailorsadmin.costcointernational.com/assets_main/productimages/<?php echo $value['file_name']; ?>" alt="" >
-                                </div>
-                                <div class="item-hover"> <a href="#." class="btn">add to cart</a>  </div>
-                            </article>
-                            <div class="info"> <a href="#.">Winkle Free Cotton </a> <span class="price">US$ 1010.00</span> </div>
-                        </div>
-                        <?php
-                    }
+                        if ($testdev == 1) {
+                            ?>
+                            <!-- Item -->
+                            <div class="item">
+                                <article class="shop-artical"> 
+                                    <div class="imagblock">
+                                        <img class="img-responsive" src="http://bespoketailorsadmin.costcointernational.com/assets_main/productimages/<?php echo $value['file_name']; ?>" alt="" >
+                                    </div>
+                                    <div class="item-hover"> <a href="#." class="btn">add to cart</a>  </div>
+                                </article>
+                                <div class="info"> <a href="#.">Winkle Free Cotton </a> <span class="price">US$ 1010.00</span> </div>
+                            </div>
+                            <?php
+                        }
                     }
                     ?>
 
@@ -759,22 +767,26 @@ $this->load->view('layout/header');
             <!-- News Post -->
             <div class="news-post">
                 <div class="row">
-                    <div class="col-md-4">
-                        <article> <img class="img-responsive" src="<?php echo base_url(); ?>assets/theme/images/blogimage1.jpg" alt=""> <span>By Admin</span> <span><?php echo date("d M, Y"); ?></span> <a href="#." class="news-tittle">J Winter Fashion Show 6th Feb 2018 atop Costa neoRomantica cruise</a>
-                            <p>Royal Tailor was invited to collaborate with the iconic J Winter Fashion Show atop Costa neoRomantica cruise ship produced by supermodel Jessica Minh Anh</p>
-                            <a href="#." class="red-more">Read More</a> </article>
-                    </div>
-                    <div class="col-md-4">
-                        <article> <img class="img-responsive" src="<?php echo base_url(); ?>assets/theme/images/blogimage1.jpg" alt=""> <span>By Admin</span> <span><?php echo date("d M, Y"); ?></span> <a href="#." class="news-tittle">J Winter Fashion Show 6th Feb 2018 atop Costa neoRomantica cruise</a>
-                            <p>Royal Tailor was invited to collaborate with the iconic J Winter Fashion Show atop Costa neoRomantica cruise ship produced by supermodel Jessica Minh Anh</p>
-                            <a href="#." class="red-more">Read More</a> </article>
-                    </div>
-                    <div class="col-md-4">
-                        <article> <img class="img-responsive" src="<?php echo base_url(); ?>assets/theme/images/blogimage1.jpg" alt=""> <span>By Admin</span> <span><?php echo date("d M, Y"); ?></span> <a href="#." class="news-tittle">J Winter Fashion Show 6th Feb 2018 atop Costa neoRomantica cruise</a>
-                            <p>Royal Tailor was invited to collaborate with the iconic J Winter Fashion Show atop Costa neoRomantica cruise ship produced by supermodel Jessica Minh Anh</p>
-                            <a href="#." class="red-more">Read More</a> </article>
-                    </div>
+                    <?php
+                    foreach ($stylebook as $key => $value) {
+                        ?>
+
+                        <div class="col-md-4">
+                            <article> 
+                                <img class="img-responsive" src="<?php echo base_url(); ?>assets/styletips/<?php echo $value['image']; ?>" alt="" style="height: 200px;">
+
+
+                                <a href="<?php echo site_url("styleTips/" . $value['id'] . "/" . $value['title']) ?>" class="news-tittle"><?php echo truncate($value['title'], 100); ?></a>
+                                <p><?php echo truncate($value['description'], 200); ?></p>
+                                <a href="<?php echo site_url("styleTips/" . $value['id'] . "/" . $value['title']) ?>" class="red-more">Read More</a> </article>
+                        </div>
+
+                        <?php
+                    }
+                    ?>
+
                 </div>
+                <div class="text-center margin-top-50 animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;"> <a href="<?php echo site_url("Shop/stylingTips"); ?>" class="btn btn-inverse">VIEW MORE</a> </div>
             </div>
         </div>
     </section>

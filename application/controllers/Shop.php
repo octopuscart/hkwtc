@@ -26,6 +26,16 @@ class Shop extends CI_Controller {
 
         $query = $this->db->get('sliders');
         $data['sliders'] = $query->result();
+        
+        
+        $this->db->from('style_tips');
+        $this->db->order_by("id", "desc");
+        $this->db->limit(3);
+        $query = $this->db->get();
+        $stylebook = $query->result_array();
+
+
+        $data['stylebook'] = $stylebook;
 
         $this->load->view('home', $data);
     }
