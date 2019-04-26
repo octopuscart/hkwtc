@@ -586,7 +586,7 @@ $image2 = "";
 
 
 <script>
-    var category_id = <?php echo $category; ?>;
+    var category_id = <?php echo $cattempid; ?>;
 var custom_id = <?php echo $custom_id; ?>;
 </script>
 <!--angular controllers-->

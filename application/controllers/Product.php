@@ -30,7 +30,7 @@ class Product extends CI_Controller {
         $categories = $this->Product_model->productListCategories($cat_id, $custom_id);
         $data["categorie_parent"] = $this->Product_model->getparent($cat_id);
         $data["categories"] = $categories;
-        $data["category"] = $cat_id;
+        $data["category"] = $cattempid;
         $data["custom_item"] = $customeitem->item_name;
         $data["custom_id"] = $custom_id;
         $data["item_price"] = $customeitem->price;
