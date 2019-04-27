@@ -107,10 +107,39 @@ class Shop extends CI_Controller {
         $this->load->view('pages/catalogue');
     }
 
+    
+    public function test(){
+        $mon_fri=[10,11,12,1,2,3,4,5,6,7,8];
+        $sut = [11,12,1,2,3,4,5,6,7];
+        $sunholi = [12,1,2,3,4,5];
+        $timeing = [];
+        $timeing_array = array();
+        foreach ($mon_fri as $key => $value) {
+            $t1 =  $value>9?"$value:00 AM":"0$value:00 PM";
+            array_push($timeing, $t1);
+            $t2=  $value>9?"$value:30 AM":"0$value:30 PM";
+            array_push($timeing, $t2);
+        }
+        foreach ($timeing as $key => $value) {
+            echo "'$value',";
+        }
+        print_r($timeing);
+    }
+    
     public function appointment() {
-        $timing = [];
-        $mon_fri=[];
+    
+        $timing_array = array(
+            'mon_fri'=>['10:00 AM','10:30 AM','11:00 AM','11:30 AM','12:00 AM','12:30 AM','01:00 PM',
+                        '01:30 PM','02:00 PM','02:30 PM','03:00 PM','03:30 PM','04:00 PM','04:30 PM',
+                        '05:00 PM','05:30 PM','06:00 PM','06:30 PM','07:00 PM','07:30 PM','08:00 PM'],
+            '6'=>['11:00 AM','11:30 AM','12:00 AM','12:30 AM','01:00 PM',
+                        '01:30 PM','02:00 PM','02:30 PM','03:00 PM','03:30 PM','04:00 PM','04:30 PM',
+                        '05:00 PM','05:30 PM','06:00 PM','06:30 PM','07:00 PM'],
+            '0'=>['12:00 AM','12:30 AM','01:00 PM','01:30 PM','02:00 PM','02:30 PM','03:00 PM','03:30 PM',
+                '04:00 PM','04:30 PM', '05:00 PM'],
+        );
         
+        $data['timing_data'] = $timing_array;
         
         if (isset($_POST['submit'])) {
             $appointment = array(
@@ -137,7 +166,7 @@ class Shop extends CI_Controller {
                 $this->email->from(email_bcc, $sendername);
                 $this->email->to($this->input->post('email'));
                 $this->email->bcc(email_bcc);
-                $subjectt = "Bespoke Tailors Appointment : " . $appointment['select_date'] . " (" . $appointment['select_time'] . ")";
+                $subjectt = email_sender_name." Appointment : " . $appointment['select_date'] . " (" . $appointment['select_time'] . ")";
                 $orderlog = array(
                     'log_type' => 'Appointment',
                     'log_datetime' => date('Y-m-d H:i:s'),
@@ -151,12 +180,12 @@ class Shop extends CI_Controller {
 
                 $appointment['appointment'] = $appointment;
 
-                $checksend = 1;
+                $checksend = 0;
                 $htmlsmessage = $this->load->view('Email/appointment', $appointment, true);
                 if ($checksend) {
                     $this->email->message($htmlsmessage);
                     $this->email->print_debugger();
-                    $send = $this->email->send();
+                   // $send = $this->email->send();
                     if ($send) {
                         echo json_encode("send");
                     } else {
@@ -170,7 +199,7 @@ class Shop extends CI_Controller {
 
             redirect('Shop/appointment');
         }
-        $this->load->view('pages/appointment');
+        $this->load->view('pages/appointment', $data);
     }
 
     public function lookbook() {
