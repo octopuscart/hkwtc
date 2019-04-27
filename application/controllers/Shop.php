@@ -109,7 +109,7 @@ class Shop extends CI_Controller {
 
     public function appointment() {
         $timing = [];
-        
+        $mon_fri=[];
         
         
         if (isset($_POST['submit'])) {

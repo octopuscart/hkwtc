@@ -39,7 +39,7 @@ $this->load->view('layout/header');
                             <h5 style="font-size: 18px">Timing</h5>
                             <a href="#"><span class="shop_timing">Monday - Friday</span>: 10:00 AM to 08:00 PM</a> <br>
                             <a href="#"><span class="shop_timing">Saturday</span>: 11:00 AM to 07:00 PM</a> <br>
-                            <a href="#"><span class="shop_timing">Sun & Pub. Holidays</span>: 12:00 AM to 05:00 PM</a> <br>
+                            <a href="#"><span class="shop_timing">Sun & Pub. Holidays</span>: 12:00 PM to 05:00 PM</a> <br>
 
                     </ul>
 
