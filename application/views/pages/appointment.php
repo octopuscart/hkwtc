@@ -56,7 +56,8 @@ $this->load->view('layout/header');
                                         <input type="text" class="form-control" name="last_name" id="name" placeholder="Last Name" required="">
                                     </label>
                                 </li>
-                                <li class="col-sm-6 pull-right">
+                                <div class="col-sm-1 "></div>
+                                <li class="col-sm-6 ">
                                     <label>
                                         <input type="text" class="form-control" name="first_name" id="name" placeholder="First Name" required="">
                                     </label>
@@ -68,19 +69,19 @@ $this->load->view('layout/header');
                                 </li>
                                 <li class="col-sm-12">
                                     <label>
-                                        <input type="text" class="form-control" name="contact" id="company" placeholder="Contact No.">
+                                        <input type="text" class="form-control" name="contact_no" id="contact_no" placeholder="Contact No.">
                                     </label>
                                 </li>
 
                                 <li class="col-sm-5">
                                     <label>
-                                        <input type="text" id="datepicker" ng-model="selection.date" class="form-control" name="select_date" id="name" placeholder="Date"  required="" min="<?php echo date('Y-m-d'); ?>" value="{{selection.date}}" disabled="" ng-change="changeTimeSlot()" style="width:90% ">
+                                        <input type="hidden" class="form-control" name="select_date"  value="{{selection.date}}"  >
+
+                                        <input type="text" id="datepicker" ng-model="selection.date" class="form-control"  placeholder="Date"  required="" min="<?php echo date('Y-m-d'); ?>" value="{{selection.date}}" disabled="" ng-change="changeTimeSlot()" style="width:90% ">
                                     </label>
-
-
-
                                 </li>
-                                <li class="col-sm-6 pull-right">
+                                <div class="col-sm-1 "></div>
+                                <li class="col-sm-6">
                                     <label>
                                         <select class="form-control" name="select_time" style=" padding: 0px 20px;   line-height: 50px;
                                                 height: 50px;
@@ -95,11 +96,11 @@ $this->load->view('layout/header');
 
                                 <li class="col-sm-12">
                                     <label>
-                                        <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" required=""></textarea>
+                                        <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" ></textarea>
                                     </label>
                                 </li>
                                 <li class="col-sm-12 text-left">
-                                    <button type="submit"  class="btn btn-inverse" name="sendmessage" value="sendmessage" >SUBMIT</button>
+                                    <button type="submit"  class="btn btn-inverse" name="submit" value="sendmessage" >SUBMIT</button>
                                 </li>
                             </ul>
                         </form>
@@ -134,7 +135,7 @@ $this->load->view('layout/header');
 
             var selectedday = "" + cday;
             console.log(cday, typeof (cday))
-            if (cday < 6 && cday >0) {
+            if (cday < 6 && cday > 0) {
                 selectedday = "mon_fri";
                 console.log("positon1");
             } else if (cday == 6) {
@@ -144,10 +145,10 @@ $this->load->view('layout/header');
                 selectedday = "0";
                 console.log("positon3");
             }
-        $timeout(function(){
-             $scope.selection.time = $scope.timeSlot[selectedday];
-        },100)
-           
+            $timeout(function () {
+                $scope.selection.time = $scope.timeSlot[selectedday];
+            }, 100)
+
 
         }
         $scope.changeTimeSlot($scope.selection.date);

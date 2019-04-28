@@ -149,8 +149,8 @@ class Shop extends CI_Controller {
                 'contact_no' => $this->input->post('contact_no'),
                 'select_time' => $this->input->post('select_time'),
                 'select_date' => $this->input->post('select_date'),
-                'no_of_person' => $this->input->post('no_of_person'),
-                'referral' => $this->input->post('referral'),
+                'no_of_person' => 1,
+                'referral' => "Web",
                 'datetime' => date("Y-m-d H:i:s a"),
                 'appointment_type' => "Local",
             );
