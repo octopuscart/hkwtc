@@ -93,8 +93,6 @@
                         <p> Thank you for choosing to book an appointment with <?php echo email_sender_name;?>. </p>
                         <p>We have booked your appointment to see our Chief Tailor, on <b><?php echo date_format($opdater = date_create($appointment['select_date'] . ' ' . $appointment['select_time']), "l, d F Y"); ?>, <?php echo $appointment['select_time']; ?></b> at our shop.</p> 
 
-                        <p>For any appointment related queries, please email us at <?php echo email_bcc;?></p>
-
                         <br/>
                         <div style="height: 200px;">
                             <?php echo EMAIL_FOOTER; ?>
