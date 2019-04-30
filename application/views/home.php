@@ -773,10 +773,11 @@ function truncate($str, $len) {
 
                         <div class="col-md-4">
                             <article> 
-                                <img class="img-responsive" src="<?php echo base_url(); ?>assets/styletips/<?php echo $value['image']; ?>" alt="" style="height: 200px;">
+                                <img class="img-responsive" src="<?php echo base_url(); ?>assets/styletips/<?php echo $value['image']; ?>" alt="" >
 
 
-                                <a href="<?php echo site_url("styleTips/" . $value['id'] . "/" . $value['title']) ?>" class="news-tittle"><?php echo truncate($value['title'], 100); ?></a>
+                                <a href="<?php echo site_url("styleTips/" . $value['id'] . "/" . $value['title']) ?>" class="news-tittle" style="    margin-top: 10px;
+                                   margin-bottom: 5px;"><?php echo truncate($value['title'], 100); ?></a>
                                 <p><?php echo truncate($value['description'], 200); ?></p>
                                 <a href="<?php echo site_url("styleTips/" . $value['id'] . "/" . $value['title']) ?>" class="red-more">Read More</a> </article>
                         </div>

@@ -31,9 +31,10 @@ function truncate($str, $len) {
 
 
                     <!--post content-->
-                    <figure>
-                        <img src="<?php echo base_url(); ?>assets/styletips/<?php echo $styleobj->image; ?>" alt="" class="r_corners m_bottom_20" >
-
+                    <figure >
+                        <div class="thumbnail">
+                        <img src="<?php echo base_url(); ?>assets/styletips/<?php echo $styleobj->image; ?>" alt="" class="r_corners m_bottom_20"  >
+                        </div>
                         <figcaption>
                             <h3 class="fw_light color_dark"><?php echo $styleobj->title; ?></h3>
 
