@@ -180,7 +180,7 @@ class Api extends REST_Controller {
         foreach ($attrdatak as $key => $atv) {
             if ($atv) {
                 $countpr += 1;
-                $key = str_replace("a", "", $key);
+                $key = str_replace("a47", "", $key);
                 $val = str_replace("-", ", ", $atv);
                 $query_attr = "SELECT product_id FROM product_attribute
                            where  attribute_id in ($key) and attribute_value_id in ($val)
