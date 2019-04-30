@@ -65,6 +65,16 @@
                 margin-top: 0px;
                 width: 20px;
             }
+
+            .bankdetails td {
+                padding: 1px 10px;
+                border-color: #9E9E9E;
+            }
+            .bankdetails th {
+                padding: 1px 10px;
+                text-align: left;
+                border-color: #9E9E9E;
+            }
         </style>
     </head>
     <body style="margin: 0;
@@ -189,10 +199,10 @@
                             if ($product->extra_price > 0) {
                                 ?>
                                 <span  style="font-size: 10px;
-                                       
+
                                        ">
                                     <br/>
-                                     <?php echo $product->price - $product->extra_price; ?> 
+                                    <?php echo $product->price - $product->extra_price; ?> 
                                     + <?php echo $product->extra_price; ?>
                                 </span>
                                 <?php
@@ -262,6 +272,45 @@
                     <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->total_price, 2, '.', ''); ?> </td>
                 </tr>
 
+                <?php if ($order_data->payment_mode == 'Bank Transfer') { ?>
+                    <tr><td colspan="6" style="font-size: 12px;">
+                            <table class="bankdetails">
+                                <tbody>
+                                    <tr>
+                                        <th style="width: 120px;text-align: left" colspan="4">Company Name: Royal Trading</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Bank Name</th>
+                                        <td>Bank Of China</td>
+                                        <th>A/c No.</th>
+                                        <td>012 721 00092404</td>
+                                    </tr>
+                                    <tr>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th>Bank Code</th>
+                                        <td>012</td>
+                                         <th>Branch Code</th>
+                                        <td>721</td>
+                                    </tr>
+                                    <tr>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <th>Swift Code</th>
+                                        <td>BKCHHKHH</td>
+                                        <th>Address</th>
+                                        <td>1 Garden Road, Hong Kong</td>
+                                    </tr>
+                                  
+                                </tbody></table>
+                        </td>
+
+                    </tr>
+                    <?php
+                }
+                ?>
 
                 <tr>
                     <td colspan="6" style="font-size: 12px;">

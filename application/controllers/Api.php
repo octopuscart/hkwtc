@@ -417,7 +417,7 @@ class Api extends REST_Controller {
     }
 
     function order_mailchecksend_get($order_id, $order_no) {
-        $subject = "Order Confirmation - Your Order with www.bespoketailorshk.com [$order_no] has been successfully placed!";
+        $subject = "Order Confirmation - Your Order with www.royaltailor.hk [$order_no] has been successfully placed!";
         $this->Product_model->order_mail($order_id, $subject);
     }
 
