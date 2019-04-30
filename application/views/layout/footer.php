@@ -55,11 +55,11 @@
             <div class="col-md-3">
                 <h4>Information</h4>
                 <ul class="links-footer">
-                    <li><a href="#.">Our Blog</a></li>
-                    <li><a href="#.">About Us</a></li>
-                    <li><a href="#.">Look Book</a></li>
-                    <li><a href="#.">Store Locations</a></li>
-                    <li><a href="#.">FAQs</a></li>
+                    <li><a href="<?php echo site_url("Shop/stylingTips"); ?>">Our Blog</a></li>
+                    <li><a href="<?php echo site_url("Shop/aboutus"); ?>">About Us</a></li>
+                    <li><a href="<?php echo site_url("Shop/lookbook"); ?>">Look Book</a></li>
+                    <li><a href="<?php echo site_url("Shop/appointment"); ?>">Appointment</a></li>
+                    <li><a href="<?php echo site_url("Shop/faqs"); ?>">FAQs</a></li>
                 </ul>
             </div>
         </div>
