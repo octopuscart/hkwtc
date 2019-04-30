@@ -154,7 +154,7 @@
                                         <ul class="dropdown-menu">
                                             <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirts</a></li>
                                             <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suits</a></li>
-                                            <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jackets</a></li>
+                                            <li><a href="<?php echo site_url('Product/ProductList/4/49') ?>">Jackets</a></li>
                                             <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pants</a></li>
                                             <li><a href="<?php echo site_url('Product/ProductList/5/0') ?>">Tuxedo Suits</a></li>
                                             <li><a href="<?php echo site_url('Product/ProductList/6/0') ?>">Tuxedo Jackets</a></li>
