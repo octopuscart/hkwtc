@@ -183,7 +183,7 @@ class Api extends REST_Controller {
                 $key = str_replace("a47", "", $key);
                 $val = str_replace("-", ", ", $atv);
                 $query_attr = "SELECT product_id FROM product_attribute
-                           where  attribute_id in ($key) and attribute_value_id in ($val)
+                           where  attribute_id in (47) and attribute_value_id in ($val)
                            group by product_id";
                 $queryat = $this->db->query($query_attr);
                 $productslist = $queryat->result();
@@ -202,7 +202,7 @@ class Api extends REST_Controller {
         //print_r($productcheck);
 
         foreach ($productcheck as $key => $value) {
-            if ($value == $countpr) {
+            if ($value == 1) {
                 array_push($productdict, $key);
             }
         }
