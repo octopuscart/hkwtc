@@ -31,10 +31,10 @@ $this->load->view('layout/header');
                     <ul class="studio-loc padding-right-100">
                         <li><i class="flaticon-route"></i> Shop A, 2/F Entertainment Building,<br/>
                             30 Queen’s Road, Central, Hong Kong</li>
-                        <li><i class="flaticon-smartphone"></i> <a href="#"><b><span class="fa fa-phone"></span></b> +(852) 2655 9778</a> <br>
-                            <a href="#"><span class="fa fa-fax"></span></b> +(852) 2655 9768</a></li>
-                        <li><i class="flaticon-mail"></i> <a href="#">lyra@royaltailor.hk</a> <br>
-                            <a href="#">sales@royaltailor.hk</a></li>
+                        <li><i class="flaticon-smartphone"></i> <a href="tel:85226559778" ><b><span class="fa fa-phone"></span></b> +(852) 2655 9778</a> <br>
+                            <a href="tel:85226559768" ><span class="fa fa-fax"></span></b> +(852) 2655 9768</a></li>
+                        <li><i class="flaticon-mail"></i> <a  href="mailto:lyra@royaltailor.hk">lyra@royaltailor.hk</a> <br>
+                            <a  href="mailto:sales@royaltailor.hk">sales@royaltailor.hk</a></li>
                         <li><i class="fa fa-calendar-o"></i>
                             <h5 style="font-size: 18px">Timing</h5>
                             <a href="#"><span class="shop_timing">Monday - Friday</span>: 10:00 AM to 08:00 PM</a> <br>
@@ -125,7 +125,7 @@ $this->load->view('layout/header');
     </section>
 </div>
 
-    <?php
+<?php
 
-    $this->load->view('layout/footer');
-    ?>
+$this->load->view('layout/footer');
+?>

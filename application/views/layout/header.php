@@ -108,7 +108,7 @@
                 <div class="container ">
                     <div class="row">
                         <div class="col-sm-6 " >
-                            <p style="color:white"><i class="fa fa-phone"></i>+(852) 2655 9778&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-envelope"></i></b> lyra@royaltailor.hk</p>
+                            <p style="color:white"><i class="fa fa-phone"></i><a href="tel:85226559778" style="color:white"> +(852) 2655 9778</a>&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-envelope"></i></b><a href="mailto:lyra@royaltailor.hk"  style="color:white">lyra@royaltailor.hk</a></p>
                         </div>
                         <div class="col-sm-6 text-right" >                 
                             <div class="social-links" style="    float: right;
