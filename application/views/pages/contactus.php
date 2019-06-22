@@ -53,7 +53,7 @@ $this->load->view('layout/header');
                             <li><a href="https://twitter.com/RoyalTailorHK"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="https://www.instagram.com/royal_tailor_/"><i class="fa fa-instagram"></i></a></li>
                             <li><a href="https://en.tripadvisor.com.hk/Profile/Royaltailor"><i class="fa fa-tripadvisor"></i></a></li>
-                            <li><a href="#."><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="https://www.pinterest.com/royaltailorhk"><i class="fa fa-pinterest"></i></a></li>
                         </ul>
                     </div>
                 </div>

@@ -79,7 +79,7 @@
                     <a href="https://twitter.com/RoyalTailorHK" target="_blank"><i class="fa fa-twitter"></i></a> 
                     <a href="https://www.instagram.com/royal_tailor_/" target="_blank"><i class="fa fa-instagram"></i></a> 
                     <a href="https://en.tripadvisor.com.hk/Profile/Royaltailor" target="_blank"><i class="fa fa-tripadvisor"></i></a> 
-                    <a href="" target="_blank"><i class="fa fa-pinterest"></i></a> 
+                    <a href="https://www.pinterest.com/royaltailorhk" target="_blank"><i class="fa fa-pinterest"></i></a> 
                 </div>
             </div>
         </div>
