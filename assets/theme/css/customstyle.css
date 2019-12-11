@@ -254,6 +254,7 @@ footer .social-links a {
     float: left;
     padding: 10px;
     border: 1px solid #f5bc71;
+        height: 250px;
 }
 
 footer {
