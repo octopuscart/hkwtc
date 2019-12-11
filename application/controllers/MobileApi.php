@@ -108,7 +108,8 @@ class MobileApi extends REST_Controller {
                 $this->db->where('id', $product_id);
                 $query = $this->db->get('products');
                 $product = $query->row();
-                $productarray[$item] = $product;
+                $product->item_name = $item;
+                $productarray[$product_id] = $product;
             }
 
 
