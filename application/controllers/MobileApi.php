@@ -142,7 +142,7 @@ class MobileApi extends REST_Controller {
             "country" => "Hong Kong",
             "city_state" => "Kowloon,  T. S. T",
             "hotel" => "Showroom",
-            "address" => "2nd Floor, 45 Haiphong Road, <br/>Tsim Sha Tsui, Kowloon,<br/>Hong Kong",
+            "address" => "",
             'last_name' => $this->post('last_name'),
             'first_name' => $this->post('first_name'),
             'email' => $this->post('email'),
@@ -157,8 +157,8 @@ class MobileApi extends REST_Controller {
 
 
         $this->db->insert('appointment_list', $appointment);
-        $appointment['contact_no2'] = "+(852) 2730 8566";
-        $appointment['address2'] = "2nd Floor, 45 Haiphong Road, <br/>Tsim Sha Tsui, Kowloon,<br/>Hong Kong";
+        $appointment['contact_no2'] = "";
+        $appointment['address2'] = "";
         $appointment['type'] = "local";
 
 
@@ -170,8 +170,8 @@ class MobileApi extends REST_Controller {
             $this->email->set_newline("\r\n");
             $this->email->from(email_bcc, $sendername);
             $this->email->to($this->post('email'));
-            $this->email->bcc(email_bcc);
-            $subjectt = "Bespoke Tailors Appointment : " . $appointment['select_date'] . " (" . $appointment['select_time'] . ")";
+//            $this->email->bcc(email_bcc);
+            $subjectt = "Royal Tailor - Hong Kong Appointment : " . $appointment['select_date'] . " (" . $appointment['select_time'] . ")";
             $orderlog = array(
                 'log_type' => 'Appointment',
                 'log_datetime' => date('Y-m-d H:i:s'),
