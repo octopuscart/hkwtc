@@ -1,67 +1,115 @@
 
-<!doctype html>
-<html class="no-js" lang="en">
-
-    <!-- Mirrored from demos.webicode.com/html/BizTo/html/shop-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Feb 2018 16:18:20 GMT -->
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="author" content="" />
-        <!-- Document Title -->
+        <meta name="author" content="SemiColonWeb" />
+
+        <!-- Stylesheets
+        ============================================= -->
+        <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700|Arimo:400,700|Playfair+Display:400,400i,700|Cookie" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/style.css" type="text/css" />
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/dark.css" type="text/css" />
+
+        <!-- spa Demo Specific Stylesheet -->
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/style/fab/spa.css" type="text/css" />
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/style/fab/css/fonts/spa-icons.css" type="text/css" />
+        <!-- / -->
+
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/font-icons.css" type="text/css" />
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/animate.css" type="text/css" />
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/magnific-popup.css" type="text/css" />
+
+        <link rel="stylesheet" href="href="<?php echo base_url(); ?>assets/theme2/style/fab/css/fonts.css" type="text/css" />
+
+              <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/responsive.css" type="text/css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/colors.php?color=78c9d1" type="text/css" />
+
+        <!-- SLIDER REVOLUTION 5.x CSS SETTINGS -->
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/css/settings.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/css/layers.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/css/navigation.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/custom.css">
+        <!-- Document Title
+        ============================================= -->
         <?php
         meta_tags();
         ?>
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="<?php echo base_url() . 'assets/images/logo731.png'; ?>" type="image/x-icon">
-        <link rel="icon" href="<?php echo base_url() . 'assets/images/logo731.png'; ?>" type="image/x-icon">
 
-        <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme/rs-plugin/css/settings.css" media="screen" />
+        <style>
 
-        <!-- StyleSheets -->
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/css/ionicons.min.css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/css/font-awesome.min.css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/css/main.css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/css/style.css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/css/responsive.css">
+            .tp-caption.Fashion-SmallText, .Fashion-SmallText,
+            .tp-caption.Fashion-TextBlock, .Fashion-TextBlock {
+                font-family: 'Lato';
+                color: #FFF;
+            }
 
+            .tp-caption.Fashion-BigDisplay, .Fashion-BigDisplay {
+                font-family: 'Cookie';
+                letter-spacing: 1px;
+                font-weight: 700;
+                color: #FFF;
+                text-transform: capitalize;
+            }
 
-        <!-- Fonts Online -->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900|Raleway:200,300,400,500,600,700,800,900" rel="stylesheet">
+            .restaurant-reviews .flex-control-nav {
+                top: auto;
+                bottom: 25px;
+            }
+        </style>
 
-
-        <!-- JavaScripts -->
-        <script src="<?php echo base_url(); ?>assets/theme/js/vendors/modernizr.js"></script>
-
-        <!--sweet alert-->
-        <script src="<?php echo base_url(); ?>assets/theme/sweetalert2/sweetalert2.min.js"></script>
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/sweetalert2/sweetalert2.min.css">
-
-
-        <!--angular js-->
-        <script src="<?php echo base_url(); ?>assets/theme/angular/angular.min.js"></script>
-
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/css/customstyle.css">
-        <link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
-
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-            <![endif]-->
     </head>
+
+    <body class="stretched" data-loader-color="#103e4d">
+
+        <!-- Document Wrapper
+        ============================================= -->
+        <div id="wrapper" class="clearfix">
+
+            <!-- Header
+            ============================================= -->
+            <header id="header" class="no-sticky transparent-header dark" data-responsive-class="dark">
+
+                <div id="header-wrap">
+
+                    <div class="container clearfix">
+
+                        <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                        <!-- Logo
+                        ============================================= -->
+                        <div id="logo">
+                            <a href="" class="standard-logo"><img src="<?php echo base_url(); ?>assets/theme2/images/logo.png" alt="Logo"></a>
+                            <a href="" class="retina-logo"><img src="<?php echo base_url(); ?>assets/theme2/images/logo.png" alt=" Logo"></a>
+                        </div><!-- #logo end -->
+
+                        <!-- Primary Navigation
+                        ============================================= -->
+                        <nav id="primary-menu" class="not-dark">
+
+                            <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="0">
+                                <li class="current"><a href="#" data-href="#slider"><div>Home</div></a></li>
+                                <li><a href="#" data-href="#section-about"><div>About</div></a></li>
+                                <li><a href="#" data-href="#section-price"><div>Suits</div></a></li>
+                                <li><a href="#" data-href="#section-testimonials"><div>Shirts</div></a></li>
+                                 <li><a href="#" data-href="#section-testimonials"><div>Lining </div></a></li>
+                                <li><a href="#" data-href="#section-contact"><div>Contact</div></a></li>
+                            </ul>
+
+                        </nav>
+
+                    </div>
+
+                </div>
+
+            </header><!-- #header end -->
     <body ng-app="App">
 
-        <!--LOADER--> 
-        <div id="loader">
-            <div class="position-center-center">
-                <img src="<?php echo base_url(); ?>assets/theme/images/crown.gif"  style="    height: 50px;">
-                <!--<div class="loader"></div>-->
-            </div>
-        </div>
+      
 
 
 
@@ -100,185 +148,6 @@
 
         </style>
 
+            <section id="content">
 
-        <!-- Page Wrapper -->
-        <div id="wrap" class="shop-page" ng-controller="ShopController"> 
-            <!-- Rights -->
-            <div class="rights  linkheader hideonmobile " style="    padding: 0;    background: #161409;">
-                <div class="container ">
-                    <div class="row">
-                        <div class="col-sm-6 " >
-                            <p style="color:white"><i class="fa fa-phone"></i><a href="tel:85226559778" style="color:white"> +(852) 2655 9778</a>&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-envelope"></i></b><a href="mailto:lyra@royaltailor.hk"  style="color:white">lyra@royaltailor.hk</a></p>
-                        </div>
-                        <div class="col-sm-6 text-right" >                 
-                            <div class="social-links" style="    float: right;
-                                 margin-top: 4px;"> 
-                                <a href="https://www.facebook.com/royaltailorhk/" target="_blank"><i class="fa fa-facebook"></i></a> 
-                                <a href="https://twitter.com/RoyalTailorHK" target="_blank"><i class="fa fa-twitter"></i></a> 
-                                <a href="https://www.instagram.com/royal_tailor_/" target="_blank"><i class="fa fa-instagram"></i></a> 
-                                <a href="https://en.tripadvisor.com.hk/Profile/Royaltailor" target="_blank"><i class="fa fa-tripadvisor"></i></a> 
-                                <a href="https://www.pinterest.com/royaltailorhk" target="_blank"><i class="fa fa-pinterest"></i></a> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Footer -->  
-            <!-- Header -->
-            <header class="header ">
-                <div class="sticky ">
-                    <div class="container">
-                        <div class="logo">
-                            <a href="<?php echo site_url("/"); ?>" style="font-size: 31px;">
-                                <img src="<?php echo base_url() . 'assets/images/logo73_2.png'; ?>" class="logomain">                          
-                            </a> 
-                        </div>
-
-                        <!-- Nav -->
-                        <nav class="navbar ownmenu">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-open-btn" aria-expanded="false"> <span><i class="fa fa-navicon"></i></span> </button>
-                            </div>
-
-                            <!-- NAV -->
-                            <div class="collapse navbar-collapse goldtextcss" id="nav-open-btn">
-                                <ul class="nav">
-                                    <li> 
-                                        <a href="<?php echo site_url("/"); ?>">Home</a>
-                                    </li>
-
-                                    <li> 
-                                        <a href="<?php echo site_url("Shop/aboutus"); ?>">About Us</a>
-                                    </li>
-                                    <li class="dropdown"> <a  href="<?php echo site_url('Product/ProductList/1/0') ?>" class="dropdown-toggle " data-toggle="dropdown">Shop Now</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirts</a></li>
-                                            <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suits</a></li>
-                                            <li><a href="<?php echo site_url('Product/ProductList/4/49') ?>">Jackets</a></li>
-                                            <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pants</a></li>
-                                            <li><a href="<?php echo site_url('Product/ProductList/5/0') ?>">Tuxedo Suits</a></li>
-                                            <li><a href="<?php echo site_url('Product/ProductList/6/0') ?>">Tuxedo Jackets</a></li>
-                                            <li><a href="<?php echo site_url('Product/ProductList/7/0') ?>">Tuxedo Pants</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li> 
-                                        <a href="<?php echo site_url("Shop/lookbook"); ?>">Look Book</a>
-                                    </li>
-
-                                    <li > 
-                                        <a href="<?php echo site_url("Shop/stylingTips"); ?>">Our Blog</a>
-                                    </li>
-                                    <li > 
-                                        <a href="<?php echo site_url("Shop/appointment"); ?>">Appointment</a>
-                                    </li>
-
-                                    <li > 
-                                        <a href="<?php echo site_url("Shop/contactus"); ?>">Contact Us</a>
-                                    </li>
-
-                                    <li > 
-                                        <a href="<?php echo site_url("Shop/faqs"); ?>">FAQ's</a>
-                                    </li>
-
-
-
-
-
-
-                                    <?php
-                                    if (0) {
-                                        $session_data = $this->session->userdata('logged_in');
-                                        if ($session_data) {
-                                            ?>
-                                            <li class="dropdown"> <a href="contact_us_1.html" class="dropdown-toggle" data-toggle="dropdown">Hi, <?php echo $session_data['first_name'] ? $session_data['first_name'] : 'User'; ?>! </a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="<?php echo site_url("Account/profile"); ?>">Profile</a></li>
-                                                    <li><a href="<?php echo site_url("Account/orderList"); ?>">My Order</a></li>
-                                                    <li><a href="<?php echo site_url("Account/logout"); ?>">Logout</a></li>
-                                                </ul>
-                                            </li>
-                                            <?php
-                                        } else {
-                                            ?>
-                                            <li> <a href="<?php echo site_url("Account/login"); ?>" >Sign In / Sign Up </a>
-                                            </li>
-
-                                            <?php
-                                        }
-                                    }
-                                    ?>
-
-                                </ul>
-                            </div>
-
-                            <!-- NAV RIGHT -->
-                            <div class="nav-right">
-                                <ul >
-                                    <li class="dropdown user-basket"> <span class="cart-num">{{globleCartDatac.total_quantity}}</span> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="fa fa-shopping-cart"></i> </a>
-                                        <ul class="dropdown-menu">
-
-                                            <!--prodcut cart list-->
-                                            <div class="scroll_items"  ng-if="globleCartDatac.total_quantity">
-                                                <li ng-repeat="product in globleCartDatac.products" class="animated flipInX">
-                                                    <div class="media-left">
-                                                        <div class="cart-img"> 
-                                                            <a href="#"> 
-                                                                <img class="media-object img-responsive" src="{{product.file_name}}" alt="..."> 
-                                                            </a> 
-                                                        </div>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h6 class="media-heading" style="font-size: 12px;">{{product.title}} - {{product.item_name}}</h6>
-                                                        <span class="price">{{product.quantity}}    X    {{product.price|currency:" "}}</span> 
-                                                    </div>
-                                                    <a href="#" class="remov" ng-click="removeCart(product.product_id)">
-                                                        <i class="fa fa-times"></i>
-                                                    </a> 
-                                                </li>
-                                            </div>
-                                            <!--end of product cart list-->
-                                            <li class="margin-0 padding-0 price-cart-drop" style="background: #fff!important;">
-                                                <h5>Subtotal: <span>{{globleCartDatac.total_price|currency:" "}}</span></h5>
-                                            </li>
-                                            <li class="margin-0 padding-0"> 
-                                                <a href="<?php echo site_url("Cart/details"); ?>" class="btn margin-bottom-20">VIEW CART</a> 
-                                                <a href="<?php echo site_url("Cart/checkoutInit"); ?>" class="btn">CHECKOUT NOW</a>
-                                            </li>
-                                        </ul>
-
-                                        <ul class="dropdown-menu" ng-if="globleCartDatac.products.length == 0">
-                                            <li class="margin-0 padding-0 price-cart-drop">
-                                                <h5>No Item Found</h5>
-                                            </li>
-                                            <li class="margin-0 padding-0"> 
-                                                <a href="<?php echo site_url(); ?>" class="btn margin-bottom-20">HOME</a> 
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li> <a href="<?php echo site_url("Account/login"); ?>" ><i class="fa fa-lock"></i></a>
-                                        <div class="search-inside animated-4s fadeIn"> <i class="lnr lnr-cross search-close"></i>
-                                            <div class="search-overlay"></div>
-                                            <div class="position-center-center">
-                                                <div class="container">
-                                                    <div class="search">
-                                                        <form>
-                                                            <input type="search" placeholder="Type Your Search...">
-                                                            <button type="submit"><i class="lnr lnr-magnifier"></i></button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-
-
-
-                        </nav>
-                    </div>
-                </div>
-                <div class="goldline padding-bottom-30"></div>
-            </header>
-            <!-- End Header --> 
+                <div class="content-wrap notoppadding">

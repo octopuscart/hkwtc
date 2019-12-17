@@ -1,0 +1,56 @@
+#logo a.standard-logo {
+    display: block;
+    margin-top: 20px;
+}
+
+#logo a.standard-logo img{
+    height: 60px;
+}
+
+.color, .top-cart-item-desc a:hover, .portfolio-filter.style-3 li.activeFilter a, .faqlist li a:hover, .tagcloud a:hover, .dark .top-cart-item-desc a:hover, .iconlist-color li i, .dark.overlay-menu #header-wrap:not(.not-dark) #primary-menu > ul > li:hover > a, .dark.overlay-menu #header-wrap:not(.not-dark) #primary-menu > ul > li.current > a, .overlay-menu #primary-menu.dark > ul > li:hover > a, .overlay-menu #primary-menu.dark > ul > li.current > a, .nav-tree li:hover > a, .nav-tree li.current > a, .nav-tree li.active > a {
+    color: #000000 !important;
+}
+
+#content p {
+    line-height: 1.8;
+    color: black;
+}
+
+
+article.preview {
+    padding: 75px 0px 75px;
+}   
+
+article.preview.pattern01 {
+   
+    background: url(./style/fab/images/others/background-pattern01.png) left bottom repeat-x transparent;
+}
+
+article.preview.pattern02 {
+
+    background: url(./style/fab/images/others/background-pattern02.png) left bottom repeat-x transparent;
+}
+article.preview.pattern03 {
+
+    background: url(./style/fab/images/others/background-pattern03.png) left bottom repeat-x transparent;
+}
+
+#whatsappcall {
+    display: block;
+    z-index: 299;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    background-color: rgba(0,0,0,0.3);
+    font-size: 20px;
+    line-height: 36px;
+    text-align: center;
+    color: #FFF;
+    top: auto;
+    left: auto;
+    right: 30px;
+    bottom: 50px;
+    cursor: pointer;
+    border-radius: 2px;
+}
