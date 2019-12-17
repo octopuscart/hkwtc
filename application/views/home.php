@@ -84,7 +84,10 @@
                         ============================================= -->
                         <div id="logo">
                             <a href="" class="standard-logo"><img src="<?php echo base_url(); ?>assets/theme2/images/logo.png" alt="Logo"></a>
-                            <a href="" class="retina-logo"><img src="<?php echo base_url(); ?>assets/theme2/images/logo.png" alt=" Logo"></a>
+                            <a href="" class="retina-logo"><img src="<?php echo base_url(); ?>as
+                                                                
+                                                                
+                                                                sets/theme2/images/logo.png" alt=" Logo"></a>
                         </div><!-- #logo end -->
 
                         <!-- Primary Navigation
@@ -98,7 +101,7 @@
                                 <li><a href="#" data-href="#section-testimonials"><div>Shirts</div></a></li>
                                  <li><a href="#" data-href="#section-testimonials"><div>Lining </div></a></li>
                                   <li><a href="#" data-href="#section-about"><div>About</div></a></li>
-                                <li><a href="#" data-href="#section-contact"><div>Contact</div></a></li>
+                                <li><a href="<?php echo site_url("Shop/contactus");?>" data-href="#section-contact"><div>Contact</div></a></li>
                             </ul>
 
                         </nav>
