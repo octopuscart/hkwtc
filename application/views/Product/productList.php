@@ -285,11 +285,7 @@ $image2 = "";
                 <!-- Main Shop Itesm -->          
                 <div class="col-md-9"> 
 
-                    <button class="btn btn-default btn-small pull-right" style="    position: absolute;
-                            right: 10px;
-                            top: -45px;" data-toggle="modal" data-target="#productcustome">View Custom Cart</button>
-
-
+        
 
                     <!-- SHOWING INFO -->
 

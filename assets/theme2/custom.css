@@ -1,5 +1,5 @@
 #logo a.standard-logo {
-    display: block;
+
     margin-top: 20px;
 }
 
@@ -22,7 +22,7 @@ article.preview {
 }   
 
 article.preview.pattern01 {
-   
+
     background: url(./style/fab/images/others/background-pattern01.png) left bottom repeat-x transparent;
 }
 
@@ -69,4 +69,29 @@ article.preview.pattern03 {
     margin-top: -90px;
     background-position: center center;
     z-index: 99999999;
+}
+
+
+#logo a.retina-logo {
+
+    padding-top: 28px;
+}
+
+#header, #header-wrap, #logo img {
+    height: 50px;}
+
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .product {
+        width: 50%;
+    }
+}
+
+
+
+@media (max-width: 991px){
+    .product {
+        width: 50%;
+    }
 }

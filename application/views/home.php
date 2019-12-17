@@ -84,10 +84,7 @@
                         ============================================= -->
                         <div id="logo">
                             <a href="" class="standard-logo"><img src="<?php echo base_url(); ?>assets/theme2/images/logo.png" alt="Logo"></a>
-                            <a href="" class="retina-logo"><img src="<?php echo base_url(); ?>as
-                                                                
-                                                                
-                                                                sets/theme2/images/logo.png" alt=" Logo"></a>
+                            <a href="" class="retina-logo"><img src="<?php echo base_url(); ?>assets/theme2/images/logo.png" alt=" Logo"></a>
                         </div><!-- #logo end -->
 
                         <!-- Primary Navigation
