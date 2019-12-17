@@ -13,7 +13,7 @@ $this->load->view('layout/header');
 
 <div style="clear: both"></div>
 <!-- Content -->
-<div id=""> 
+<div id="contactus"> 
     <!-- Contact Us -->
     <section class="lets-talk pad-t-b-30">
         <div class="container"> 

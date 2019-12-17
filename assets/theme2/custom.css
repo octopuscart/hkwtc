@@ -95,3 +95,11 @@ article.preview.pattern03 {
         width: 50%;
     }
 }
+
+
+#header.transparent-header {
+    background: transparent;
+    border-bottom: none;
+    z-index: 199;
+    height: 100px;
+}
