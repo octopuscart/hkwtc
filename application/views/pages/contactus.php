@@ -10,10 +10,7 @@ $this->load->view('layout/header');
 </style>
 
 <!-- MAP -->
-<section class="map-block">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14767.634173564973!2d114.15643!3d22.281454!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x84c22a9b94a9a5ff!2sRoyal+Tailor!5e0!3m2!1sen!2sin!4v1539007340506" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe><div class="goldline2 " style="margin-bottom: 30px;"></div>
-    <div style="clear: both"></div>
-</section>
+
 <div style="clear: both"></div>
 <!-- Content -->
 <div id="content"> 
@@ -29,18 +26,30 @@ $this->load->view('layout/header');
                         <h3 class="text-transform-none letter-space-0">Our Location</h3>
                     </div>
                     <ul class="studio-loc padding-right-100">
-                        <li><i class="flaticon-route"></i> Shop A, 2/F Entertainment Building,<br/>
-                            30 Queen’s Road, Central, Hong Kong</li>
-                        <li><i class="flaticon-smartphone"></i> <a href="tel:85226559778" ><b><span class="fa fa-phone"></span></b> +(852) 2655 9778</a> <br>
-                            <a href="tel:85226559768" ><span class="fa fa-fax"></span></b> +(852) 2655 9768</a></li>
-                        <li><i class="flaticon-mail"></i> <a  href="mailto:lyra@royaltailor.hk">lyra@royaltailor.hk</a> <br>
-                            <a  href="mailto:sales@royaltailor.hk">sales@royaltailor.hk</a></li>
-                        <li><i class="fa fa-calendar-o"></i>
-                            <h5 style="font-size: 18px">Timing</h5>
-                            <a href="#"><span class="shop_timing">Monday - Friday</span>: 10:00 AM to 08:00 PM</a> <br>
-                            <a href="#"><span class="shop_timing">Saturday</span>: 11:00 AM to 07:00 PM</a> <br>
-                            <a href="#"><span class="shop_timing">Sun & Pub. Holidays</span>: 12:00 PM to 05:00 PM</a> <br>
-
+                      <div class="widget clearfix">
+                                    <div>
+                                        <h5><i class='icon-map-marker'></i> Address:</h5>
+                                        <address class="nobottommargin">
+                                            <div class="text-muted">
+                                                <p class="nobottommargin">
+                                                    Flat D3 11/F, Mirador Mansion,<br/>
+                                                    54-64B Nathan Rd,<br/>
+                                                    Kowloon 
+                                                    Hong Kong
+                                                </p>
+                                            </div>
+                                        </address>
+                                    </div>
+                                </div>
+                      <div class="widget clearfix">
+                                    <div>
+                                        <h5><i class='icon-phone-sign'></i> Contact:</h5>
+                                        <address class="nobottommargin">
+                                            <abbr title="Phone Number"><strong>Phone:</strong></abbr> +(852) 3619 7457<br>
+                                            <abbr title="Email Address"><strong>Email:</strong></abbr> sales@hkwoolentextile.com
+                                        </address>
+                                    </div>
+                                </div>  
                     </ul>
 
                     <!-- Main Heading -->
@@ -48,13 +57,35 @@ $this->load->view('layout/header');
                         <h3 class="text-transform-none letter-space-0">Follow Us</h3>
                     </div>
                     <div class="social-links">
-                        <ul>
-                            <li><a href="https://www.facebook.com/royaltailorhk/"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://twitter.com/RoyalTailorHK"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://www.instagram.com/royal_tailor_/"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="https://en.tripadvisor.com.hk/Profile/Royaltailor"><i class="fa fa-tripadvisor"></i></a></li>
-                            <li><a href="https://www.pinterest.com/royaltailorhk"><i class="fa fa-pinterest"></i></a></li>
-                        </ul>
+                               <div class="topmargin-sm clearfix">
+                                    <a href="#" class="social-icon si-small si-colored si-facebook">
+                                        <i class="icon-facebook"></i>
+                                        <i class="icon-facebook"></i>
+                                    </a>
+
+                                    <a href="#" class="social-icon si-small si-colored si-twitter">
+                                        <i class="icon-twitter"></i>
+                                        <i class="icon-twitter"></i>
+                                    </a>
+
+                                    <a href="#" class="social-icon si-small si-colored si-instagram">
+                                        <i class="icon-instagram"></i>
+                                        <i class="icon-instagram"></i>
+                                    </a>
+
+
+                                    <a href="#" class="social-icon si-small si-colored si-pinterest">
+                                        <i class="icon-pinterest"></i>
+                                        <i class="icon-pinterest"></i>
+                                    </a>
+
+
+
+                                    <a href="#" class="social-icon si-small si-colored si-youtube">
+                                        <i class="icon-youtube"></i>
+                                        <i class="icon-youtube"></i>
+                                    </a>
+                                </div>
                     </div>
                 </div>
 
@@ -65,58 +96,69 @@ $this->load->view('layout/header');
                         <h3 class="text-transform-none letter-space-0">Conatct Us</h3>
                     </div>
 
-                    <div class="contact">               
-                        <!-- Success Msg -->
-                        <div id="contact_message" class="success-msg"> <i class="fa fa-paper-plane-o"></i>Thank You. Your Message has been Submitted</div>              
-                        <!-- FORM -->
-                        <form role="form" id="contact_form" action="#" class="contact-form" method="post" >
-                            <ul class="row nolist-style">
-                                <li class="col-sm-6">
-                                    <label>
-                                        <input type="text" class="form-control" name="last_name" id="name" placeholder="Last Name" required="">
-                                    </label>
-                                </li>
-                                <li class="col-sm-5 pull-right">
-                                    <label>
-                                        <input type="text" class="form-control" name="first_name" id="name" placeholder="First Name" required="">
-                                    </label>
-                                </li>
-                                <li class="col-sm-12">
-                                    <label>
-                                        <input type="text" class="form-control" name="email" id="email" placeholder="Email" required="">
-                                    </label>
-                                </li>
-                                <li class="col-sm-12">
-                                    <label>
-                                        <input type="text" class="form-control" name="contact" id="company" placeholder="Contact No.">
-                                    </label>
-                                </li>
+                 <div class="postcontent nobottommargin" style="width: 100%;">
 
-                                <li class="col-sm-12">
-                                    <label>
-                                        <select name="subject" placeholder="Subject" class="form-control" style="  height: 50px;
-                                                background: #fafafa; " required="">
-                                            <option>Enquiry</option>
-                                            <option>Send Swatches</option>
-                                            <option>Feedback</option>
-                                            <option>Appointment</option>
-                                            <option>Alteration</option> 
-                                        </select>
-                                    </label>
-                                </li>
+						
 
+						<div class="contact-widget">
 
-                                <li class="col-sm-12">
-                                    <label>
-                                        <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" required=""></textarea>
-                                    </label>
-                                </li>
-                                <li class="col-sm-12 text-left">
-                                    <button type="submit"  class="btn btn-inverse" name="sendmessage" value="sendmessage" >SUBMIT</button>
-                                </li>
-                            </ul>
-                        </form>
-                    </div>
+							<div class="contact-form-result"></div>
+
+							<form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail.php" method="post">
+
+								<div class="form-process"></div>
+
+								<div class="col_one_third">
+									<label for="template-contactform-name">Name <small>*</small></label>
+									<input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
+								</div>
+
+								<div class="col_one_third">
+									<label for="template-contactform-email">Email <small>*</small></label>
+									<input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
+								</div>
+
+								<div class="col_one_third col_last">
+									<label for="template-contactform-phone">Phone</label>
+									<input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
+								</div>
+
+								<div class="clear"></div>
+
+								<div class="col_two_third">
+									<label for="template-contactform-subject">Subject <small>*</small></label>
+									<input type="text" id="template-contactform-subject" name="template-contactform-subject" value="" class="required sm-form-control" />
+								</div>
+
+								<div class="col_one_third col_last">
+									<label for="template-contactform-service">Services</label>
+									<select id="template-contactform-service" name="template-contactform-service" class="sm-form-control">
+										<option value="">-- Select One --</option>
+										<option value="Enquiry">Enquiry</option>
+										<option value="Feedback">Feedback</option>
+
+									</select>
+								</div>
+
+								<div class="clear"></div>
+
+								<div class="col_full">
+									<label for="template-contactform-message">Message <small>*</small></label>
+									<textarea class="required sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="30"></textarea>
+								</div>
+
+								<div class="col_full hidden">
+									<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
+								</div>
+
+								<div class="col_full">
+									<button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Send Message</button>
+								</div>
+
+							</form>
+						</div>
+
+					</div><!-- .postcontent end -->
                 </div>
             </div>
             <div class="goldline2 " style="margin-bottom: 30px;"></div>
