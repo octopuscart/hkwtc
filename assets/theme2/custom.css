@@ -54,3 +54,19 @@ article.preview.pattern03 {
     cursor: pointer;
     border-radius: 2px;
 }
+
+.css3-spinner:after {
+    content: '';
+    position: absolute;
+    background-image: url(./style/fab/images/others/loader.png);
+    background-repeat: no-repeat;
+    top: 50%;
+    background-size: contain;
+    left: 50%;
+    width: 98px;
+    height: 98px;
+    margin-left: -48px;
+    margin-top: -90px;
+    background-position: center center;
+    z-index: 99999999;
+}

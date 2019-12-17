@@ -34,7 +34,10 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/css/layers.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/css/navigation.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/custom.css">
+                <script src="<?php echo base_url(); ?>assets/theme/angular/angular.min.js"></script>
+
         <!-- Document Title
+        
         ============================================= -->
         <?php
         meta_tags();
@@ -68,7 +71,7 @@
 
         <!-- Document Wrapper
         ============================================= -->
-        <div id="wrapper" class="clearfix">
+        <div id="wrapper" class="clearfix" style='    background: black;'>
 
             <!-- Header
             ============================================= -->
@@ -94,7 +97,7 @@
                             <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="0">
                                 <li class="current"><a href="#" data-href="#slider"><div>Home</div></a></li>
                                 <li><a href="#" data-href="#section-about"><div>About</div></a></li>
-                                <li><a href="#" data-href="#section-price"><div>Suits</div></a></li>
+                                <li><a href="<?php echo site_url("Product/ProductList/2/0");?>" ><div>Suits</div></a></li>
                                 <li><a href="#" data-href="#section-testimonials"><div>Shirts</div></a></li>
                                  <li><a href="#" data-href="#section-testimonials"><div>Lining </div></a></li>
                                 <li><a href="#" data-href="#section-contact"><div>Contact</div></a></li>

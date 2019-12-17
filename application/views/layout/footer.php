@@ -13,110 +13,117 @@
     }
 
 </style>
-
-
-<footer class="footer-shop">
-    <div class="container"> 
-        <div class="row"> 
-            <div class="col-md-3">
-                <center>
-
-                    <img src="<?php echo base_url(); ?>assets/images/spacial/turismlogo.png" class="spacial_text" style="height: 198px;
-                         margin-top: 10px;
-                         ">      
-                </center>
-            </div>
-
-            <!-- Contact -->
-            <div class="col-md-4">
-                <h4 >Contact Information!</h4>
-                <p><b><i class="fa fa-location-arrow"></i></b> Shop A, 2/F Entertainment Building,<br/>
-                    30 Queen’s Road, Central, Hong Kong</p>
-                <p><b><i class="fa fa-phone"></i></b><a href="tel:85226559778" style="color:white"> +(852) 2655 9778</a></p>
-                <p><b><i class="fa fa-fax"></i></b><a href="tel:85226559768"  style="color:white"> +(852) 2655 9768</a></p>
-                <p><b><i class="fa fa-envelope"></i></b><a href="mailto:lyra@royaltailor.hk"  style="color:white">lyra@royaltailor.hk</a></p>
-            </div>
-
-            <!-- Categories -->
-            <div class="col-md-2">
-                <h4>Categories</h4>
-                <ul class="links-footer">
-                    <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirts</a></li>
-                    <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suits</a></li>
-                    <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jackets</a></li>
-                    <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pants</a></li>
-                    <li><a href="<?php echo site_url('Product/ProductList/5/0') ?>">Tuxedo Suits</a></li>
-                </ul>
-            </div>
-
-
-
-            <!-- Categories -->
-            <div class="col-md-3">
-                <h4>Information</h4>
-                <ul class="links-footer">
-                    <li><a href="<?php echo site_url("Shop/stylingTips"); ?>">Our Blog</a></li>
-                    <li><a href="<?php echo site_url("Shop/aboutus"); ?>">About Us</a></li>
-                    <li><a href="<?php echo site_url("Shop/lookbook"); ?>">Look Book</a></li>
-                    <li><a href="<?php echo site_url("Shop/appointment"); ?>">Appointment</a></li>
-                    <li><a href="<?php echo site_url("Shop/faqs"); ?>">FAQs</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- Rights -->
-<div class="rights goldergradiant">
-    <div class="container ">
-        <div class="row">
-            <div class="col-sm-6 " >
-                <p style="color:black">Copyright © <?php echo date('Y') ?> <a href="#." class="ri-li" style="color:black"> www.royaltailor.hk </a>  All rights reserved</p>
-            </div>
-            <div class="col-sm-6 text-right">                 
-                <div class="social-links"> 
-                    <a href="https://www.facebook.com/royaltailorhk/" target="_blank"><i class="fa fa-facebook"></i></a> 
-                    <a href="https://twitter.com/RoyalTailorHK" target="_blank"><i class="fa fa-twitter"></i></a> 
-                    <a href="https://www.instagram.com/royal_tailor_/" target="_blank"><i class="fa fa-instagram"></i></a> 
-                    <a href="https://en.tripadvisor.com.hk/Profile/Royaltailor" target="_blank"><i class="fa fa-tripadvisor"></i></a> 
-                    <a href="https://www.pinterest.com/royaltailorhk" target="_blank"><i class="fa fa-pinterest"></i></a> 
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
-<!-- End Footer -->  
 
-<!-- GO TO TOP  --> 
-<a href="#" class="cd-top"><i class="fa fa-angle-up"></i></a> 
-<!-- GO TO TOP End --> 
-</div>
-<!-- End Page Wrapper --> 
+            </section><!-- #content end -->
 
-<!--angular controllers-->
-<script src="<?php echo base_url(); ?>assets/theme/angular/shopController.js"></script>
+<!-- Footer
+            ============================================= -->
+            <footer id="footer" class="noborder" style="background-color: #F5F5F5;">
 
-<!-- JavaScripts --> 
-<script src="<?php echo base_url(); ?>assets/theme/js/vendors/jquery/jquery.min.js"></script> 
-<script src="<?php echo base_url(); ?>assets/theme/js/vendors/wow.min.js"></script> 
-<script src="<?php echo base_url(); ?>assets/theme/js/vendors/bootstrap.min.js"></script> 
-<script src="<?php echo base_url(); ?>assets/theme/js/vendors/jquery.magnific-popup.min.js"></script> 
-<script src="<?php echo base_url(); ?>assets/theme/js/vendors/own-menu.js"></script> 
-<script src="<?php echo base_url(); ?>assets/theme/js/vendors/jquery.sticky.js"></script> 
-<script src="<?php echo base_url(); ?>assets/theme/js/vendors/owl.carousel.min.js"></script> 
+                <!-- Copyrights
+                ============================================= -->
+                <div id="copyrights" class="nobg">
 
-<!-- SLIDER REVOLUTION 4.x SCRIPTS  --> 
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/theme/rs-plugin/js/jquery.tp.t.min.js"></script> 
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/theme/rs-plugin/js/jquery.tp.min.js"></script> 
-<script src="<?php echo base_url(); ?>assets/theme/js/main.js"></script> 
+                    <div class="container clearfix">
 
-<!-- type ahead-->
-<script src="<?php echo base_url(); ?>assets/handlebars.js" type="text/javascript"></script>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="widget clearfix">
+                                    <div>
+                                        <h5><i class='icon-map-marker'></i> Address:</h5>
+                                        <address class="nobottommargin">
+                                            <div class="text-muted">
+                                                <p class="nobottommargin">
+                                                    Flat D3 11/F, Mirador Mansion,<br/>
+                                                    54-64B Nathan Rd,<br/>
+                                                    Kowloon 
+                                                    Hong Kong
+                                                </p>
+                                            </div>
+                                        </address>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="widget clearfix">
+                                    <div>
+                                        <h5><i class='icon-phone-sign'></i> Contact:</h5>
+                                        <address class="nobottommargin">
+                                            <abbr title="Phone Number"><strong>Phone:</strong></abbr> +(852) 3619 7457<br>
+                                            <abbr title="Email Address"><strong>Email:</strong></abbr> sales@hkwoolentextile.com
+                                        </address>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 tright">
+                                <div class="fright topmargin-sm clearfix">
+                                    <a href="#" class="social-icon si-small si-colored si-facebook">
+                                        <i class="icon-facebook"></i>
+                                        <i class="icon-facebook"></i>
+                                    </a>
 
-<!-- type ahead-->
-<script src="<?php echo base_url(); ?>assets/typeahead.bundle.js" type="text/javascript"></script>
+                                    <a href="#" class="social-icon si-small si-colored si-twitter">
+                                        <i class="icon-twitter"></i>
+                                        <i class="icon-twitter"></i>
+                                    </a>
 
-</body>
+                                    <a href="#" class="social-icon si-small si-colored si-instagram">
+                                        <i class="icon-instagram"></i>
+                                        <i class="icon-instagram"></i>
+                                    </a>
 
-<!-- Mirrored from demos.webicode.com/html/BizTo/html/shop-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Feb 2018 16:18:20 GMT -->
+
+                                    <a href="#" class="social-icon si-small si-colored si-pinterest">
+                                        <i class="icon-pinterest"></i>
+                                        <i class="icon-pinterest"></i>
+                                    </a>
+
+
+
+                                    <a href="#" class="social-icon si-small si-colored si-youtube">
+                                        <i class="icon-youtube"></i>
+                                        <i class="icon-youtube"></i>
+                                    </a>
+                                </div>
+                                <div class="clear"></div>
+                                <?php echo date("Y"); ?> All Rights Reserved.
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div><!-- #copyrights end -->
+
+            </footer><!-- #footer end -->
+
+        </div><!-- #wrapper end -->
+
+        <!-- Go To Top
+        ============================================= -->
+        <div id="whatsappcall" class="icon-"></div>
+        <div id="gotoTop" class="icon-angle-up"></div>
+
+        <!-- External JavaScripts
+        ============================================= -->
+        <script src="<?php echo base_url(); ?>assets/theme2/js/jquery.js"></script>
+        <script src="<?php echo base_url(); ?>assets/theme2/js/plugins.js"></script>
+
+        <!-- Footer Scripts
+        ============================================= -->
+        <script src="<?php echo base_url(); ?>assets/theme2/js/functions.js"></script>
+
+        <!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
+        <script src="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+        <script src="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+
+ 
+
+    </body>
 </html>
