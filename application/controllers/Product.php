@@ -16,7 +16,7 @@ class Product extends CI_Controller {
     }
 
     //function for product list
-    function ProductList($custom_id, $cat_id) {
+    function ProductList($custom_id, $cat_id, $producttype) {
 
         $cattempid = $cat_id;
         $this->db->where('id', $custom_id);
@@ -38,6 +38,7 @@ class Product extends CI_Controller {
         $data["custom_id"] = $custom_id;
         $data["item_price"] = $customeitem->price;
         $data["cattempid"] = $cattempid;
+        $data["producttype"] = $producttype;
 
         $this->load->view('Product/productList', $data);
     }

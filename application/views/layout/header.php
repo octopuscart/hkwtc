@@ -32,7 +32,7 @@
         <!-- SLIDER REVOLUTION 5.x CSS SETTINGS -->
 
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/custom.css">
-                <script src="<?php echo base_url(); ?>assets/theme/angular/angular.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/theme/angular/angular.min.js"></script>
 
         <!-- Document Title
         
@@ -41,7 +41,7 @@
         meta_tags();
         ?>
 
-        
+
         <?php
         $this->load->view('layout/whatappwidget');
         ?>
@@ -98,12 +98,12 @@
 
                             <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="0">
                                 <li class="current">
-                                    <a href="<?php echo site_url("/");?>" ><div>Home</div></a></li>
-                               
-                                <li><a href="<?php echo site_url("Product/ProductList/2/0");?>" ><div>Suits</div></a></li>
-                                <li><a href="#" data-href="#section-testimonials"><div>Shirts</div></a></li>
-                                 <li><a href="#" data-href="#section-testimonials"><div>Linings </div></a></li> <li><a href="#" data-href="#section-about"><div>About</div></a></li>
-                                <li><a href="<?php echo site_url("Shop/contactus");?>" ><div>Contact</div></a></li>
+                                    <a href="<?php echo site_url("/"); ?>" ><div>Home</div></a></li>
+
+                                <li><a href="<?php echo site_url("Product/ProductList/1/0/suits"); ?>" ><div>Suits</div></a></li>
+                                <li><a href="<?php echo site_url("Product/ProductList/1/0/shirts"); ?>"><div>Shirts</div></a></li>
+                                <li><a href="<?php echo site_url("Product/ProductList/1/0/linings"); ?>"><div>Linings </div></a></li> <li><a href="#" data-href="#section-about"><div>About</div></a></li>
+                                <li><a href="<?php echo site_url("Shop/contactus"); ?>" ><div>Contact</div></a></li>
 
                             </ul>
 
@@ -114,47 +114,47 @@
                 </div>
 
             </header><!-- #header end -->
-    <body ng-app="App">
-
-      
+            <body ng-app="App">
 
 
 
-        <script>
 
 
-            var App = angular.module('App', []).config(function ($interpolateProvider, $httpProvider) {
-                //$interpolateProvider.startSymbol('{$');
-                //$interpolateProvider.endSymbol('$}');
-                $httpProvider.defaults.headers.common = {};
-                $httpProvider.defaults.headers.post = {};
-            });
-            var baseurl = "<?php echo site_url(); ?>";
-            var imageurlg = "<?php echo imageserver; ?>";
-            var globlecurrency = "<?php echo globle_currency; ?>";
-            var avaiblecredits = 0;</script>
+                <script>
 
-        <style>
-            .ownmenu .dropdown.megamenu .dropdown-menu li:last-child{
-                margin-bottom: 20px;
-            }
 
-            .ownmenu .dropdown.megamenu .dropdown-menu li a{
-                line-height: 25px;
-            }
+                    var App = angular.module('App', []).config(function ($interpolateProvider, $httpProvider) {
+                        //$interpolateProvider.startSymbol('{$');
+                        //$interpolateProvider.endSymbol('$}');
+                        $httpProvider.defaults.headers.common = {};
+                        $httpProvider.defaults.headers.post = {};
+                    });
+                    var baseurl = "<?php echo site_url(); ?>";
+                    var imageurlg = "<?php echo imageserver; ?>";
+                    var globlecurrency = "<?php echo globle_currency; ?>";
+                    var avaiblecredits = 0;</script>
 
-            .linkheader .social-links a {
-                border: 1px solid;
-                padding: 0px;
-                margin-left: 10px;
-                float: left;
-                width: 25px;
-                text-align: center;
-                color: white;
-            }
+                <style>
+                    .ownmenu .dropdown.megamenu .dropdown-menu li:last-child{
+                        margin-bottom: 20px;
+                    }
 
-        </style>
+                    .ownmenu .dropdown.megamenu .dropdown-menu li a{
+                        line-height: 25px;
+                    }
 
-            <section id="content">
+                    .linkheader .social-links a {
+                        border: 1px solid;
+                        padding: 0px;
+                        margin-left: 10px;
+                        float: left;
+                        width: 25px;
+                        text-align: center;
+                        color: white;
+                    }
 
-                <div class="content-wrap notoppadding">
+                </style>
+
+                <section id="content">
+
+                    <div class="content-wrap notoppadding">

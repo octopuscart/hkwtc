@@ -179,8 +179,8 @@ $image2 = "";
          background: #E0E0E0;">
     <div class="position-center-center">
         <div class="container   ">
-            <h2 class="heading_product"><?php
-                echo $custom_item;
+            <h2 class="heading_product" style="text-transform: capitalize"><?php
+                echo $producttype;
                 ?> </h2>
 
             <!-- Breadcrumb -->
