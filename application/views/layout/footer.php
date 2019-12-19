@@ -50,7 +50,8 @@
                                     <div>
                                         <h5><i class='icon-phone-sign'></i> Contact:</h5>
                                         <address class="nobottommargin">
-                                            <abbr title="Phone Number"><strong>Phone:</strong></abbr> +(852) 3619 7457<br>
+                                            <abbr title="Phone Number"><strong>Mob:</strong></abbr> +(852) 6388 6067<br>
+                                            <abbr title="Phone Number"><strong>Tel:</strong></abbr> +(852) 3619 7457<br>
                                             <abbr title="Email Address"><strong>Email:</strong></abbr> sales@hkwoolentextile.com
                                         </address>
                                     </div>
