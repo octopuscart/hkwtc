@@ -10,58 +10,64 @@ foreach ($categorie_parent as $key => $value) {
     array_push($linklist, $liobj);
 }
 
+
+$productextdata = array(
+    "suits" => array("ext" => "png"),
+    "linings" => array("ext" => "jpg"),
+ );
+$productext = $productextdata[$producttype];
 $productlistdata = array("suits" => [
-        "hk01.png",
-        "hk02.png",
-        "hk03.png",
-        "hk04.png",
-        "hk05.png",
-        "hk06.png",
-        "hk07.png",
-        "hk08.png",
-        "hk09.png",
-        "hk10.png",
-        "hk11.png",
-        "hk12.png",
-        "hk13.png",
-        "hk14.png",
-        "hk15.png",
-        "hk16.png",
-        "hk17.png",
-        "hk18.png",
-        "hk19.png",
-        "hk20.png",
-        "hk21.png",
-        "hk22.png",
-        "hk23.png",
-        "hk24.png",
+        "hk01",
+        "hk02",
+        "hk03",
+        "hk04",
+        "hk05",
+        "hk06",
+        "hk07",
+        "hk08",
+        "hk09",
+        "hk10",
+        "hk11",
+        "hk12",
+        "hk13",
+        "hk14",
+        "hk15",
+        "hk16",
+        "hk17",
+        "hk18",
+        "hk19",
+        "hk20",
+        "hk21",
+        "hk22",
+        "hk23",
+        "hk24",
     ],
     "linings" => [
-        "HK4401.jpg",
-"HK4402.jpg",
-"HK4403.jpg",
-"HK4404.jpg",
-"HK4405.jpg",
-"HK4406.jpg",
-"HK4407.jpg",
-"HK4408.jpg",
-"HK4409.jpg",
-"HK4410.jpg",
-"HK4411.jpg",
-"HK4412.jpg",
-"HK4413.jpg",
-"HK4414.jpg",
-"HK4415.jpg",
-"HK4416.jpg",
-"HK4417.jpg",
-"HK4418.jpg",
-"HK4419.jpg",
-"HK4420.jpg",
-"HK4421.jpg",
-"HK4422.jpg",
-"HK4423.jpg",
-"HK4424.jpg",
-"HK4425.jpg"
+        "HK4401",
+        "HK4402",
+        "HK4403",
+        "HK4404",
+        "HK4405",
+        "HK4406",
+        "HK4407",
+        "HK4408",
+        "HK4409",
+        "HK4410",
+        "HK4411",
+        "HK4412",
+        "HK4413",
+        "HK4414",
+        "HK4415",
+        "HK4416",
+        "HK4417",
+        "HK4418",
+        "HK4419",
+        "HK4420",
+        "HK4421",
+        "HK4422",
+        "HK4423",
+        "HK4424",
+        "HK4425"
     ],
 );
 $productslistdata = $productlistdata[$producttype];
@@ -78,6 +84,10 @@ $image2 = "";
 
 
 <style>
+    .product-title {
+    margin-bottom: 7px;
+    text-transform: uppercase;
+}
     .page_navigation a {
         padding: 5px 10px;
         border: 1px solid #000;
@@ -153,7 +163,7 @@ $image2 = "";
             default:
                 ?>
                 min-height: 260px;<?php
-}
+        }
         ?>
     }
 
@@ -193,7 +203,7 @@ $image2 = "";
             default:
                 ?>
                 min-height: 260px;<?php
-}
+        }
         ?>
     }
 
@@ -207,8 +217,8 @@ $image2 = "";
     <div class="position-center-center">
         <div class="container   ">
             <h2 class="heading_product" style="text-transform: capitalize"><?php
-        echo $producttype;
-        ?> </h2>
+                echo $producttype;
+                ?> </h2>
 
             <!-- Breadcrumb -->
             <ol class="breadcrumb">
@@ -371,15 +381,15 @@ $image2 = "";
                                 ?>
                                 <div class="product clearfix col-md-4">
                                     <div class="product-image">
-                                        <a href="#"><img src="http://files.costcokart.com/hkwtc/<?php echo $value; ?>" alt="Slim Fit Chinos"></a>
-                                        <a href="#"><img src="http://files.costcokart.com/hkwtc/<?php echo $value; ?>" alt="Slim Fit Chinos"></a>
+                                        <a href="#"><img src="http://files.costcokart.com/hkwtc/<?php echo $value; ?>.<?php echo $productext["ext"];?>" alt="Slim Fit Chinos"></a>
+                                        <a href="#"><img src="http://files.costcokart.com/hkwtc/<?php echo $value; ?>.<?php echo $productext["ext"];?>" alt="Slim Fit Chinos"></a>
                                         <div class="product-overlay">
                                             <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
                                             <a href="#" class="item-quick-view" ><i class="icon-zoom-in2"></i><span> Quick View</span></a>
                                         </div>
                                     </div>
                                     <div class="product-desc">
-                                        <div class="product-title"><h3><a href="#">HK000<?php echo $key + 1; ?></a></h3></div>
+                                        <div class="product-title"><h3><a href="#"><?php echo $value; ?></a></h3></div>
                                         <div class="product-short-dest"><p>2 PLY 100% COTTON</p></div>
                                         <div class="product-rating">
                                             <i class="icon-star3"></i>
@@ -426,35 +436,35 @@ $image2 = "";
 
 
 
-                <!-- Cart Details -->
-                <div class="modal-body checkout-form">
-                    <div class="custom_block_item">
+            <!-- Cart Details -->
+            <div class="modal-body checkout-form">
+                <div class="custom_block_item">
 
 
-                        <div class="row cart-details" >
-                            <div class="col-sm-12 col-md-3" ng-repeat="product in globleCartDatanc.products" ng-if="product.item_id == '<?php echo $citem_id; ?>'">
-                                <div class="thumbnail">
-                                    <img src="{{product.file_name}}" alt="" style="width: auto;" alt="...">
-                                    <div class="caption">
-                                        <h5 style="font-size:15px;">{{product.title}}</h5>
-                                        <p><span class="price">{{product.price|currency:" "}}</span> <a href="#." ng-click="removeCart(product.product_id)" class="pull-right"><i class="icon-close"></i></a> </p>
-                                    </div>
-
+                    <div class="row cart-details" >
+                        <div class="col-sm-12 col-md-3" ng-repeat="product in globleCartDatanc.products" ng-if="product.item_id == '<?php echo $citem_id; ?>'">
+                            <div class="thumbnail">
+                                <img src="{{product.file_name}}" alt="" style="width: auto;" alt="...">
+                                <div class="caption">
+                                    <h5 style="font-size:15px;">{{product.title}}</h5>
+                                    <p><span class="price">{{product.price|currency:" "}}</span> <a href="#." ng-click="removeCart(product.product_id)" class="pull-right"><i class="icon-close"></i></a> </p>
                                 </div>
+
                             </div>
-
-
-
                         </div>
 
-                    </div>
-                </div>
-                <div class="modal-footer" ng-repeat="product in globleCartDatanc.products" ng-if="(product.item_id == '<?php echo $citem_id; ?>') && $index == 0">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Add More</button>
-                    <a href="<?php echo $item_array['link']; ?>" class="btn btn-default pull-right">Customize Now <i class="fa fa-arrow-right"></i></a> 
-                </div>
 
-           
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer" ng-repeat="product in globleCartDatanc.products" ng-if="(product.item_id == '<?php echo $citem_id; ?>') && $index == 0">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Add More</button>
+                <a href="<?php echo $item_array['link']; ?>" class="btn btn-default pull-right">Customize Now <i class="fa fa-arrow-right"></i></a> 
+            </div>
+
+
 
 
 
