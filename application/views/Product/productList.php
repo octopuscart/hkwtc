@@ -385,7 +385,7 @@ $image2 = "";
                                         <a href="#"><img src="http://files.costcokart.com/hkwtc/<?php echo $value; ?>.<?php echo $productext["ext"];?>" alt="Slim Fit Chinos"></a>
                                         <div class="product-overlay">
                                             <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Enquiry</span></a>
-                                            <a href="#" class="item-quick-view" ><i class="icon-zoom-in2"></i><span> Quick View</span></a>
+                                            <a href="#" class="item-quick-view" ng-click="productlook('<?php echo $value; ?>')"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
                                         </div>
                                     </div>
                                     <div class="product-desc">
@@ -417,9 +417,45 @@ $image2 = "";
             </div>
         </div>
     </div>
-</div>
-<!-- End Content --> 
 
+<!-- End Content --> 
+<!-- Modal -->
+<div class="modal  fade" id="productlook" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="    z-index: 20000000;">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel" style="font-size: 15px">
+                   
+                </h4>
+            </div>
+
+
+
+            <!-- Cart Details -->
+            <div class="modal-body checkout-form">
+                <div class="custom_block_item">
+
+
+                    <div class="row cart-details" >
+                        <div class="col-sm-12 col-md-3" ng-repeat="product in globleCartDatanc.products" ng-if="product.item_id == '<?php echo $citem_id; ?>'">
+                            <div class="thumbnail">
+                                <img src="{{product.file_name}}" alt="" style="width: auto;" alt="...">
+                             
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+          
+
+        </div>
+    </div>
+</div>
 
 <!-- Modal -->
 <div class="modal  fade" id="productcustome" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="    z-index: 20000000;">
@@ -472,7 +508,7 @@ $image2 = "";
         </div>
     </div>
 </div>
-
+</div>
 
 
 <script>
