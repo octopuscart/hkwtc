@@ -10,34 +10,61 @@ foreach ($categorie_parent as $key => $value) {
     array_push($linklist, $liobj);
 }
 
-
-$productslistdata = [
-    "VT12539",
-    "VT12536",
-    "VT12540",
-    "VT12541",
-    "VT12543",
-    "VT12544",
-    "VT12545",
-    "VT12596",
-    "VT12626",
-    "VT12627",
-    "VT12630",
-    "VT12631",
-    "VT12643",
-"VT12644",
-"VT12647",
-"VT12648",
-"VT12671",
-"VT12672",
-"VT12673",
-"VT12674",
-"VT12676",
-"VT12677",
-"VT12678",
-"VT12679",
-
-];
+$productlistdata = array("suits" => [
+        "hk01.png",
+        "hk02.png",
+        "hk03.png",
+        "hk04.png",
+        "hk05.png",
+        "hk06.png",
+        "hk07.png",
+        "hk08.png",
+        "hk09.png",
+        "hk10.png",
+        "hk11.png",
+        "hk12.png",
+        "hk13.png",
+        "hk14.png",
+        "hk15.png",
+        "hk16.png",
+        "hk17.png",
+        "hk18.png",
+        "hk19.png",
+        "hk20.png",
+        "hk21.png",
+        "hk22.png",
+        "hk23.png",
+        "hk24.png",
+    ],
+    "linings" => [
+        "HK4401.jpg",
+"HK4402.jpg",
+"HK4403.jpg",
+"HK4404.jpg",
+"HK4405.jpg",
+"HK4406.jpg",
+"HK4407.jpg",
+"HK4408.jpg",
+"HK4409.jpg",
+"HK4410.jpg",
+"HK4411.jpg",
+"HK4412.jpg",
+"HK4413.jpg",
+"HK4414.jpg",
+"HK4415.jpg",
+"HK4416.jpg",
+"HK4417.jpg",
+"HK4418.jpg",
+"HK4419.jpg",
+"HK4420.jpg",
+"HK4421.jpg",
+"HK4422.jpg",
+"HK4423.jpg",
+"HK4424.jpg",
+"HK4425.jpg"
+    ],
+);
+$productslistdata = $productlistdata[$producttype];
 
 
 $image1 = "";
@@ -83,13 +110,13 @@ $image2 = "";
         /* margin-top: -71px; */
         margin-left: -7px;
     }
-    
+
     hr {
-     margin-top: 0rem; 
-     margin-bottom:10px;; 
-    border: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
+        margin-top: 0rem; 
+        margin-bottom:10px;; 
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
 
 
     .product-box1 .product-img-holder {
@@ -126,7 +153,7 @@ $image2 = "";
             default:
                 ?>
                 min-height: 260px;<?php
-        }
+}
         ?>
     }
 
@@ -166,7 +193,7 @@ $image2 = "";
             default:
                 ?>
                 min-height: 260px;<?php
-        }
+}
         ?>
     }
 
@@ -180,8 +207,8 @@ $image2 = "";
     <div class="position-center-center">
         <div class="container   ">
             <h2 class="heading_product" style="text-transform: capitalize"><?php
-                echo $producttype;
-                ?> </h2>
+        echo $producttype;
+        ?> </h2>
 
             <!-- Breadcrumb -->
             <ol class="breadcrumb">
@@ -338,38 +365,38 @@ $image2 = "";
                             <p class="text-center"><span class="info_text ">Showing {0}-{1} of {2} results</span></p>
                         </div>
                         <div class="row products-container content" >
-                                <!-- Item -->
-                                <?php
-                                foreach ($productslistdata as $key => $value) {
-                                    ?>
-                                    <div class="product clearfix col-md-4">
-                                        <div class="product-image">
-                                            <a href="#"><img src="http://files.costcokart.com/vouge/coman/output/<?php echo $value; ?>/cutting20001.png" alt="Slim Fit Chinos"></a>
-                                            <a href="#"><img src="http://files.costcokart.com/vouge/coman/output/<?php echo $value; ?>/cutting20001.png" alt="Slim Fit Chinos"></a>
-                                            <div class="product-overlay">
-                                                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
-                                                <a href="#" class="item-quick-view" ><i class="icon-zoom-in2"></i><span> Quick View</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-desc">
-                                            <div class="product-title"><h3><a href="#">HK000<?php echo $key + 1; ?></a></h3></div>
-                                            <div class="product-short-dest"><p>2 PLY 100% COTTON</p></div>
-                                            <div class="product-rating">
-                                                <i class="icon-star3"></i>
-                                                <i class="icon-star3"></i>
-                                                <i class="icon-star3"></i>
-                                                <i class="icon-star-half-full"></i>
-                                                <i class="icon-star-empty"></i>
-                                            </div>
+                            <!-- Item -->
+                            <?php
+                            foreach ($productslistdata as $key => $value) {
+                                ?>
+                                <div class="product clearfix col-md-4">
+                                    <div class="product-image">
+                                        <a href="#"><img src="http://files.costcokart.com/hkwtc/<?php echo $value; ?>" alt="Slim Fit Chinos"></a>
+                                        <a href="#"><img src="http://files.costcokart.com/hkwtc/<?php echo $value; ?>" alt="Slim Fit Chinos"></a>
+                                        <div class="product-overlay">
+                                            <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                                            <a href="#" class="item-quick-view" ><i class="icon-zoom-in2"></i><span> Quick View</span></a>
                                         </div>
                                     </div>
+                                    <div class="product-desc">
+                                        <div class="product-title"><h3><a href="#">HK000<?php echo $key + 1; ?></a></h3></div>
+                                        <div class="product-short-dest"><p>2 PLY 100% COTTON</p></div>
+                                        <div class="product-rating">
+                                            <i class="icon-star3"></i>
+                                            <i class="icon-star3"></i>
+                                            <i class="icon-star3"></i>
+                                            <i class="icon-star-half-full"></i>
+                                            <i class="icon-star-empty"></i>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                    <?php
-                                }
-                                ?>
+                                <?php
+                            }
+                            ?>
 
-                            </div>
-                       
+                        </div>
+
                         <center>
                             <div class="page_navigation"></div>
                         </center>
@@ -397,36 +424,7 @@ $image2 = "";
                 </h4>
             </div>
 
-            <?php
 
-            function createItemBlock($citem_id) {
-
-                switch ($citem_id) {
-                    case '1':
-                        $item_array = array("title" => "Shirt(s)", "link" => site_url("Customization/customizationShirt"));
-                        break;
-                    case '2':
-                        $item_array = array("title" => "Suit(s)", "link" => site_url("Customization/customizationSuitV2/2"));
-                        break;
-                    case '5':
-                        $item_array = array("title" => "Tuxedo Suit(s)", "link" => site_url("Customization/customizationSuitV2/5"));
-                        break;
-                    case '6':
-                        $item_array = array("title" => "Tuxedo Jackets(s)", "link" => site_url("Customization/customizationSuitV2/6"));
-                        break;
-                    case '7':
-                        $item_array = array("title" => "Tuxedo Pants(s)", "link" => site_url("Customization/customizationSuitV2/7"));
-                        break;
-                    case '3':
-                        $item_array = array("title" => "Pant(s)", "link" => site_url("Customization/customizationSuitV2/3"));
-                        break;
-                    case '4':
-                        $item_array = array("title" => "Jacket(s)", "link" => site_url("Customization/customizationSuitV2/4"));
-                        break;
-                    default:
-                        $item_array = array("title" => "Shirt(s)", "link" => site_url("Customization/customizationSuitV2"));
-                }
-                ?>
 
                 <!-- Cart Details -->
                 <div class="modal-body checkout-form">
@@ -456,11 +454,7 @@ $image2 = "";
                     <a href="<?php echo $item_array['link']; ?>" class="btn btn-default pull-right">Customize Now <i class="fa fa-arrow-right"></i></a> 
                 </div>
 
-                <?php
-            }
-
-            createItemBlock($custom_id);
-            ?>
+           
 
 
 
@@ -492,7 +486,7 @@ $this->load->view('layout/footer');
 
 <script type="text/javascript">
     $(document).ready(function () {
-  
+
 
 //    $('#paging_container1').pajinate({
 //    items_per_page: 12,
