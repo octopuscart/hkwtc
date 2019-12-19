@@ -43,6 +43,10 @@
         meta_tags();
         ?>
 
+        
+        <?php
+        $this->load->view('layout/whatappwidget');
+        ?>
         <style>
 
             .tp-caption.Fashion-SmallText, .Fashion-SmallText,
