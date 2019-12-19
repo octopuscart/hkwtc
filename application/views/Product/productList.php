@@ -12,8 +12,8 @@ foreach ($categorie_parent as $key => $value) {
 
 
 $productextdata = array(
-    "suits" => array("ext" => "png"),
-    "linings" => array("ext" => "jpg"),
+    "suits" => array("ext" => "png", "description"=>"FINEST WOOL FOR ALL SEASON"),
+    "linings" => array("ext" => "jpg", "description"=>"Made in Italy"),
  );
 $productext = $productextdata[$producttype];
 $productlistdata = array("suits" => [
@@ -390,7 +390,7 @@ $image2 = "";
                                     </div>
                                     <div class="product-desc">
                                         <div class="product-title"><h3><a href="#"><?php echo $value; ?></a></h3></div>
-                                        <div class="product-short-dest"><p>2 PLY 100% COTTON</p></div>
+                                        <div class="product-short-dest"><p><?php echo $productext["description"];?></p></div>
                                         <div class="product-rating">
                                             <i class="icon-star3"></i>
                                             <i class="icon-star3"></i>
