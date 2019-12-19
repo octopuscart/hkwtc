@@ -108,23 +108,13 @@
         <!-- External JavaScripts
         ============================================= -->
         <script src="<?php echo base_url(); ?>assets/theme2/js/jquery.js"></script>
-        <script src="<?php echo base_url(); ?>assets/theme2/js/plugins.js"></script>
+        <!--<script src="<?php echo base_url(); ?>assets/theme2/js/plugins.js"></script>-->
 
         <!-- Footer Scripts
         ============================================= -->
         <script src="<?php echo base_url(); ?>assets/theme2/js/functions.js"></script>
 
-        <!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
-        <script src="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-
-        <script src="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
-
- 
+    
 
     </body>
 </html>

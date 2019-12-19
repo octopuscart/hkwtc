@@ -24,7 +24,20 @@ $productslistdata = [
     "VT12627",
     "VT12630",
     "VT12631",
-    ];
+    "VT12643",
+"VT12644",
+"VT12647",
+"VT12648",
+"VT12671",
+"VT12672",
+"VT12673",
+"VT12674",
+"VT12676",
+"VT12677",
+"VT12678",
+"VT12679",
+
+];
 
 
 $image1 = "";
@@ -70,6 +83,13 @@ $image2 = "";
         /* margin-top: -71px; */
         margin-left: -7px;
     }
+    
+    hr {
+     margin-top: 0rem; 
+     margin-bottom:10px;; 
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
 
 
     .product-box1 .product-img-holder {
@@ -156,12 +176,12 @@ $image2 = "";
 
 <!-- Slider -->
 <section class="sub-bnr" data-stellar-background-ratio="0.5" style="padding: 0px;
-    background: #E0E0E0;">
+         background: #E0E0E0;">
     <div class="position-center-center">
-        <div class="container">
-            <h4><?php
+        <div class="container   ">
+            <h2 class="heading_product"><?php
                 echo $custom_item;
-                ?> </h4>
+                ?> </h2>
 
             <!-- Breadcrumb -->
             <ol class="breadcrumb">
@@ -191,7 +211,7 @@ $image2 = "";
                         <?php if (count($categories)) { ?>
                             <!-- HEADING -->
                             <div class="heading">
-                                <h6>Products Categories</h6>
+                                <h3 class="heading_product">Products Categories</h3>
                                 <hr class="dotted">
                             </div>
 
@@ -203,7 +223,7 @@ $image2 = "";
                                     $subcategories = $value['sub_category'];
                                     ?>  
 
-                                    <li>
+                                    <li class="catelist">
                                         <a class="<?php echo $cattempid == $value['id'] ? 'active' : ''; ?>" href="<?php echo site_url("Product/ProductList/" . $custom_id . "/" . $value['id']); ?>">
                                             <i class="flaticon-left-arrow"></i>
                                             <?php echo $value['category_name']; ?>
@@ -254,7 +274,7 @@ $image2 = "";
 
                         <div class="product_attr" ng-repeat="(attrk, attrv) in productResults.attributes" >
                             <div class="heading" ng-if='attrv.widget == "color"'>
-                                <h6>Color</h6>
+                                <h3 class="heading_product">Color</h3>
                                 <hr class="dotted">
                             </div>
 
@@ -285,7 +305,7 @@ $image2 = "";
                 <!-- Main Shop Itesm -->          
                 <div class="col-md-9"> 
 
-        
+
 
                     <!-- SHOWING INFO -->
 
@@ -294,40 +314,7 @@ $image2 = "";
 
                     <div class="" > 
 
-                        <div class="row products-container content" >
-                            <!-- Item -->
-                            <?php
-                                                    foreach ($productslistdata as $key => $value) {
-                                                        
-                                            
-                            ?>
-                            <div class="product clearfix col-md-4">
-                                <div class="product-image">
-                                    <a href="#"><img src="http://files.costcokart.com/vouge/coman/output/<?php echo $value;?>/cutting20001.png" alt="Slim Fit Chinos"></a>
-                                    <a href="#"><img src="http://files.costcokart.com/vouge/coman/output/<?php echo $value;?>/cutting20001.png" alt="Slim Fit Chinos"></a>
-                                    <div class="product-overlay">
-                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
-                                        <a href="#" class="item-quick-view" ><i class="icon-zoom-in2"></i><span> Quick View</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-desc">
-                                    <div class="product-title"><h3><a href="#">HKWTC000<?php echo $key+1;?></a></h3></div>
 
-                                    <div class="product-rating">
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star-half-full"></i>
-                                        <i class="icon-star-empty"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <?php
-                                                    }
-                            ?>
-
-                        </div>
 
 
                     </div>
@@ -346,7 +333,48 @@ $image2 = "";
                                             <li><a href="#.">....</a></li>
                                             <li><a href="#.">&gt;</a></li>
                                         </ul>-->
+                    <div class="col-md-12" id="paging_container1">
+                        <div class="showing-info">
+                            <p class="text-center"><span class="info_text ">Showing {0}-{1} of {2} results</span></p>
+                        </div>
+                        <div class="row products-container content" >
+                                <!-- Item -->
+                                <?php
+                                foreach ($productslistdata as $key => $value) {
+                                    ?>
+                                    <div class="product clearfix col-md-4">
+                                        <div class="product-image">
+                                            <a href="#"><img src="http://files.costcokart.com/vouge/coman/output/<?php echo $value; ?>/cutting20001.png" alt="Slim Fit Chinos"></a>
+                                            <a href="#"><img src="http://files.costcokart.com/vouge/coman/output/<?php echo $value; ?>/cutting20001.png" alt="Slim Fit Chinos"></a>
+                                            <div class="product-overlay">
+                                                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                                                <a href="#" class="item-quick-view" ><i class="icon-zoom-in2"></i><span> Quick View</span></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-desc">
+                                            <div class="product-title"><h3><a href="#">HK000<?php echo $key + 1; ?></a></h3></div>
+                                            <div class="product-short-dest"><p>2 PLY 100% COTTON</p></div>
+                                            <div class="product-rating">
+                                                <i class="icon-star3"></i>
+                                                <i class="icon-star3"></i>
+                                                <i class="icon-star3"></i>
+                                                <i class="icon-star-half-full"></i>
+                                                <i class="icon-star-empty"></i>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                    <?php
+                                }
+                                ?>
+
+                            </div>
+                       
+                        <center>
+                            <div class="page_navigation"></div>
+                        </center>
+                        <div style="clear: both"></div>
+                    </div>
 
                 </div>
             </div>
@@ -453,7 +481,7 @@ $image2 = "";
 <?php
 $this->load->view('layout/footer');
 ?>
-
+<script src="<?php echo base_url(); ?>assets/theme/js/jquery/jquery.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/theme/js/jquery.pajinate.min.js"></script>
 
 
@@ -464,6 +492,12 @@ $this->load->view('layout/footer');
 
 <script type="text/javascript">
     $(document).ready(function () {
+  
+
+//    $('#paging_container1').pajinate({
+//    items_per_page: 12,
+//            num_page_links_to_display: 5,
+//    });
 
     });
 </script>

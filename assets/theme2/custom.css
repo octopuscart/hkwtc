@@ -103,3 +103,40 @@ article.preview.pattern03 {
     z-index: 199;
     height: 100px;
 }
+
+.product-title h3 a, .single-product .product-title h2 a {
+    color: #333;
+    font-size: 15px;
+}
+
+.product-short-dest p{
+    margin:0px;
+}
+
+.heading_product {
+    text-transform: none;
+   
+    font-family: 'Cookie';
+}
+h3.heading_product{
+        margin-bottom: 0px;
+}
+
+.catelist{
+       display: block;
+    font-size: 15px;
+    color: black;
+}
+
+.catelist a{
+    color:black;
+}
+
+.productbackground {
+    height: 300px;
+    width: 400px;
+}
+.product-image > a, .product-image .slide a, .product-image img {
+    
+    border-radius: 10px;
+}

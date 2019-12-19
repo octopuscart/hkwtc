@@ -30,9 +30,7 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/colors.php?color=78c9d1" type="text/css" />
 
         <!-- SLIDER REVOLUTION 5.x CSS SETTINGS -->
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/css/settings.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/css/layers.css">
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/include/rs-plugin/css/navigation.css">
+
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/custom.css">
                 <script src="<?php echo base_url(); ?>assets/theme/angular/angular.min.js"></script>
 
