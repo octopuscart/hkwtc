@@ -10,7 +10,39 @@ $this->load->view('layout/header');
 </style>
 
 <!-- MAP -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="google-map-area">
+        <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyA319S-ZyrzBQNhbYmjGedtOfl8wm6tY0Y&v=3.exp'></script><div style='overflow:hidden;height:338px;width:100%;'>
+            <div id='gmap_canvas' style='height:338px;width:100%;'></div><div><small><a href="http://embedgooglemaps.com">									embed google maps							</a></small></div><div><small>
 
+                </small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+        </div><script type='text/javascript'>
+            function init_map() {
+                //22.2968045,114.1687551  22.2969039,114.1623853
+                var myOptions = {zoom: 17, center: new google.maps.LatLng(22.297975, 114.17118299999993),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP};
+                map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+                marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(22.297975, 114.17118299999993)});
+
+                marker2 = new google.maps.Marker({map: map, position: new google.maps.LatLng(22.2967832, 114.1709048)});
+
+
+
+                infowindow = new google.maps.InfoWindow({content: '<strong>HONG KONG WOOLEN TEXTILE CO.</strong><br>Flat D3 11/F, Mirador Mansion,<br/> 54-64B Nathan Rd, Kowloon, Hong Kong'});
+
+                google.maps.event.addListener(marker, 'click', function () {
+                    infowindow.open(map, marker);
+                });
+                infowindow.open(map, marker);
+
+
+
+
+            }
+            google.maps.event.addDomListener(window, 'load', init_map);</script>
+
+    </div>
+</div>
 <div style="clear: both"></div>
 <!-- Content -->
 <div id="contactus"> 

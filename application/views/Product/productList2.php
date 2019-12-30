@@ -185,7 +185,7 @@ $image2 = "";
 
 
                                 <div class="input-group mb-3">
-                   
+
                                     <input type="text" class="form-control" name="search" placeholder="SEARCH">
 
                                     <div class="input-group-append">
@@ -329,7 +329,7 @@ $image2 = "";
                                         <a href="#"><img src="http://files.costcokart.com/hkwtc/{{product.folder}}" alt="Slim Fit Chinos"></a>
                                         <a href="#"><img src="http://files.costcokart.com/hkwtc/{{product.folder}}" alt="Slim Fit Chinos"></a>
                                         <div class="product-overlay">
-                                            <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Enquiry</span></a>
+                                            <a href="#" class="add-to-cart" ng-click="askPriceSelection(product.product_id)" data-toggle="modal" data-target="#productprice"><i class="icon-shopping-cart"></i><span> Enquiry</span></a>
                                             <a href="#" class="item-quick-view" ng-click="productlook(product)" data-toggle="modal" data-target="#productModal"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
                                         </div>
                                     </div>
@@ -402,26 +402,107 @@ $image2 = "";
 
 
 
-<!-- Modal -->
-<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">{{selectedproduct.product.title}}<br/><small>{{selectedproduct.product.short_description}}</small></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <img src="http://files.costcokart.com/hkwtc/{{selectedproduct.product.folder}}" alt="{{selectedproduct.product.short_description}}">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary"><i class="icon-shopping-cart"></i> Enquiry</button>
-      </div>
+    <div class="modal  fade" id="productprice" tabindex="-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel" style="font-size: 15px">
+                         <h3 class="heading_product">Products Enquiry</h3>
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                </div>
+
+
+
+                <!-- Cart Details -->
+                <div class="modal-body checkout-form">
+                    <div class="custom_block_item" >
+
+
+                        <div class="row cart-details" >
+                            <div class="col-sm-12 col-md-3" ng-repeat="(key, product) in askpricedata" >
+                                <div class="thumbnail">
+                                    <img src="http://files.costcokart.com/hkwtc/{{product.folder}}" alt="" style="width: auto;" alt="...">
+
+                                    <div class="caption">
+                                        <h5 style="font-size:15px;" class="text-center m_bottom_10">{{product.title}}</h5>
+                                        <p><a href="#."  ng-click="removePriceData(product.id)" class="btn btn-danger btn-xs btn-block" style="    "><i class="fa fa-remove d_inline_m fs_large" ></i> Remove</a> </p>
+                                    </div>
+                                    <div style="display:none">   {{testcheck=$index}}</div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <form method="post" action="#" >
+                                    <div style="margin-top:10px;">
+                                        <input type="hidden" name="item" value="<?php echo $custom_item; ?>" />
+                                        <input type="hidden" name="item_id" value="<?php echo $custom_id; ?>" />
+
+                                        <span ng-repeat="product in askpricedata">
+                                            <input type="hidden" name="productid[]" value="{{product.id}}" />
+                                        </span>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 w_xs_full m_xs_bottom_10" style="margin-bottom:10px">
+                                                <input type="text" name="last_name" placeholder="Last Name*" class="form-control" required="">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 w_xs_full m_xs_bottom_10" style="margin-bottom:10px">
+                                                <input type="text" name="first_name" placeholder="First Name*" class="form-control" required="">
+                                            </div>
+
+                                        </div>
+                                        <input type="email" name="email" placeholder="Email*" class="form-control" required="" style="margin-bottom:10px">
+
+
+                                        <input type="tel" name="contact" placeholder="Contact No." class="form-control" style="margin-bottom:10px">
+
+
+                                        <button type="submit" name="priceenquiry" class="btn btn-danger" style="margin-right:10px">Submit</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Add More</button>
+
+
+                                    </div>
+                                </form>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{selectedproduct.product.title}}<br/><small>{{selectedproduct.product.short_description}}</small></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="http://files.costcokart.com/hkwtc/{{selectedproduct.product.folder}}" alt="{{selectedproduct.product.short_description}}">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary"><i class="icon-shopping-cart"></i> Enquiry</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 <!-- End Content --> 
