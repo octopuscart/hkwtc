@@ -64,20 +64,14 @@ class Shop extends CI_Controller {
                 $this->email->to(email_bcc);
 //                $this->email->bcc(email_bcc);
                 $subjectt = $this->input->post('subject');
-                $orderlog = array(
-                    'log_type' => 'Enquiry',
-                    'log_datetime' => date('Y-m-d H:i:s'),
-                    'user_id' => 'ENQ',
-                    'log_detail' => "Enquiry from website - " . $this->input->post('subject')
-                );
-                $this->db->insert('system_log', $orderlog);
+             
 
                 $subject = "Enquiry from website - " . $this->input->post('subject');
                 $this->email->subject($subject);
 
                 $web_enquiry['web_enquiry'] = $web_enquiry;
 
-                $htmlsmessage = $this->load->view('Email/web_enquiry', $web_enquiry, true);
+                echo $htmlsmessage = $this->load->view('Email/web_enquiry', $web_enquiry, true);
                 $this->email->message($htmlsmessage);
 
                 $this->email->print_debugger();
