@@ -94,14 +94,13 @@
                         <nav id="primary-menu" class="not-dark">
 
                             <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="0">
-                                <li class="current"> <a href="<?php echo site_url("/");?>" ><div>Home</div></a></li>
-                               
-                                 <li><a href="<?php echo site_url("Product/ProductList/1/0/suits"); ?>" ><div>Suits</div></a></li>
-                                <li><a href="<?php echo site_url("Product/ProductList/1/0/shirts"); ?>"><div>Shirts</div></a></li>
-                                <li><a href="<?php echo site_url("Product/ProductList/1/0/linings"); ?>"><div>Linings </div></a></li> <li><a href="#" data-href="#section-about"><div>About</div></a></li>
-                                
-                                  <li><a href="#" data-href="#section-about"><div>About</div></a></li>
-                                <li><a href="<?php echo site_url("Shop/contactus");?>" ><div>Contact</div></a></li>
+                                <li class="current"> <a href="<?php echo site_url("/"); ?>" ><div>Home</div></a></li>
+
+                                <li><a href="<?php echo site_url("Product/ProductList/2/0/suits"); ?>" ><div>Suits</div></a></li>
+                                <li><a href="<?php echo site_url("Product/ProductList/4/0/linings"); ?>"><div>Linings </div></a></li> <li><a href="#" data-href="#section-about"><div>About</div></a></li>
+
+                                <li><a href="#" data-href="#section-about"><div>About</div></a></li>
+                                <li><a href="<?php echo site_url("Shop/contactus"); ?>" ><div>Contact</div></a></li>
                             </ul>
 
                         </nav>
@@ -699,8 +698,10 @@
                                     <div>
                                         <h5><i class='icon-phone-sign'></i> Contact:</h5>
                                         <address class="nobottommargin">
-                                            <abbr title="Phone Number"><strong>Phone:</strong></abbr> +(852) 3619 7457<br>
-                                            <abbr title="Email Address"><strong>Email:</strong></abbr> sales@hkwoolentextile.com
+                                            <abbr title="Phone Number"><strong class="telprefix">MOB:</strong></abbr> +(852) 6388 6067<br>
+                                            <abbr title="Phone Number"><strong class="telprefix">TEL:</strong></abbr> +(852) 3619 7454<br>
+                                            <abbr title="Phone Number"><strong class="telprefix">FAX:</strong></abbr> +(852) 3619 7453<br>
+                                            <abbr title="Email Address"><strong class="telprefix">Email:</strong></abbr> sales@hkwoolentextile.com 
                                         </address>
                                     </div>
                                 </div>

@@ -15,10 +15,12 @@ foreach ($categorie_parent as $key => $value) {
 $image1 = "";
 $image2 = "";
 ?>
+
 <div style="opacity: 0;position: fixed;">
     {{gitem_price = <?php echo $item_price; ?>}}
     {{showmodel = 1}}
 </div>
+
 
 <style>
     .page_navigation a {
@@ -38,18 +40,19 @@ $image2 = "";
 
     .colorblock{
         font-weight: 500;
-
         padding: 0px 10px;
-        height: 13px;
-        width: 100x;
+        height: 8px;
         /* float: left; */
-        margin-top: -71px;
+        width: 15px;
         position: absolute;
+        /* float: left; */
+        /* margin-top: -71px; */
+        /* position: absolute; */
         margin: auto;
-        border: 1px solid #0000005e;
-        border: 1px solid #0000005e;
+        /* border: 1px solid #0000005e; */
+        /* border: 1px solid #0000005e; */
         text-shadow: 0px 1px 4px #000;
-        margin-top: -71px;
+        /* margin-top: -71px; */
         margin-left: -7px;
     }
 
@@ -70,6 +73,11 @@ $image2 = "";
                 min-height: 390px;
                 <?php
                 break;
+            case "5":
+                ?>
+                min-height: 390px;
+                <?php
+                break;
             case "3":
                 ?>
                 min-height: 262px;
@@ -86,9 +94,9 @@ $image2 = "";
         }
         ?>
     }
-    
-    
-    
+
+
+
     .product-box1{
 
 
@@ -101,6 +109,11 @@ $image2 = "";
                 <?php
                 break;
             case "2":
+                ?>
+                min-height: 520px;
+                <?php
+                break;
+            case "5":
                 ?>
                 min-height: 520px;
                 <?php
@@ -121,62 +134,85 @@ $image2 = "";
         }
         ?>
     }
-    
+
 </style>
 
 
-<!-- Inner Page Banner Area Start Here -->
-<div class="inner-page-banner-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="breadcrumb-area">
-                    <h1>
-                        <?php
-                        echo $custom_item;
-                        ?>
-                    </h1>
-                    <ul>
-                        <li><a href="<?php echo site_url("/"); ?>">Home</a></li>
-                        <?php echo count($linklist) ? "<b class='barcomb-list'>/</b>" : ''; ?>
-                        <?php
-                        echo implode("<b class='barcomb-list'>/</b>", $linklist)
-                        ?>
-                    </ul>
-                </div>
-            </div>
+
+<!-- Slider -->
+<!-- Slider -->
+<section class="sub-bnr" data-stellar-background-ratio="0.5" style="padding: 0px;
+         background: #E0E0E0;">
+    <div class="position-center-center">
+        <div class="container   ">
+            <h2 class="heading_product" style="text-transform: capitalize"><?php
+                echo $custom_item;
+                ?> </h2>
+
+            <!-- Breadcrumb -->
+            <ol class="breadcrumb">
+                <li><a href="<?php echo site_url("/"); ?>">Home</a></li>
+                <?php echo count($linklist) ? "<b class='barcomb-list'>/</b>" : ''; ?>
+                <?php
+                echo implode("<b class='barcomb-list'>/</b>", $linklist)
+                ?>
+            </ol>
         </div>
     </div>
-</div>
+</section>
+
+
+<!-- Content -->
+<div id="content" ng-controller="ProductController"> 
 
 
 
-<!-- Inner Page Banner Area End Here -->
-<!-- Shop Page Area Start Here -->
-<div class="shop-page-area" ng-controller="ProductController">
-    <div class="container" id="paging_container1">
 
 
 
-        <div class="row"  >
+    <!-- Shop Content -->
+    <div class="shop-content pad-t-b-60" >
+        <div class="container">
+            <div class="row"> 
+
+                <!-- Shop Side Bar -->
+
+                <div class="col-md-3">
+                    <div class="side-bar">
+
+                        <div class="search">
+                            <form action="#">
 
 
-            <div class="col-lg-3 col-md-3" ng-if="productResults.products.length">
-                <div class="sidebar hidden-after-desk animated slideInLeft">
+                                <div class="input-group mb-3">
+                   
+                                    <input type="text" class="form-control" name="search" placeholder="SEARCH">
 
-                    <?php
-                    if (count($categories)) {
-                        ?>
-                        <h2 class="title-sidebar">SHOP CATEGORIES</h2>
-                        <div class="category-menu-area sidebar-section-margin" id="category-menu-area">
-                            <ul>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="submit"><i class="icon-search2"></i> Search</button>
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+                        <?php if (count($categories)) { ?>
+                            <!-- HEADING -->
+                            <div class="heading">
+                                <h3 class="heading_product">Products Categories</h3>
+                                <hr class="dotted">
+                            </div>
+
+                            <!-- CATEGORIES -->
+                            <ul class="cate">
+
                                 <?php
                                 foreach ($categories as $key => $value) {
                                     $subcategories = $value['sub_category'];
                                     ?>  
 
-                                    <li>
-                                        <a href="<?php echo site_url("Product/ProductList/" . $custom_id . "/" . $value['id']); ?>">
+                                    <li class="catelist">
+                                        <a class="<?php echo $cattempid == $value['id'] ? 'active' : ''; ?>" href="<?php echo site_url("Product/ProductList/" . $custom_id . "/" . $value['id']); ?>">
                                             <i class="flaticon-left-arrow"></i>
                                             <?php echo $value['category_name']; ?>
 
@@ -214,29 +250,26 @@ $image2 = "";
                                 }
                                 ?>   
                             </ul>
-                        </div>
-                        <?php
-                    }
-                    ?>
-                    <!--                    <h2 class="title-sidebar product_attr_h2">FILTER BY PRICE</h2>
-                                        <div id="price-range-wrapper" class="price-range-wrapper">
-                                            <div id="price-range-filter"></div>
-                                            <div class="price-range-select">
-                                                <div class="price-range" id="price-range-min">{{productResults.price.minprice}}</div>
-                                                <div class="price-range" id="price-range-max">{{productResults.price.maxprice}}</div>
-                                            </div>
-                                            <button class="btn-services-shop-now" type="button" ng-click="filterPrice()">Filter</button>
-                                        </div>-->
 
-                    <div class="product_attr" ng-repeat="(attrk, attrv) in productResults.attributes" >
+                            <?php
+                        }
+                        ?>
+
+
+
+
                         <!-- HEADING -->
 
-                        <h2 class="title-sidebar product_attr_h2">{{attrv.title}}</h2>
+                        <div class="product_attr" ng-repeat="(attrk, attrv) in productResults.attributes" >
+                            <div class="heading" ng-if='attrv.widget == "color"'>
+                                <h3 class="heading_product">Color</h3>
+                                <hr class="dotted">
+                            </div>
 
-                        <!-- COLORE -->
-                        <ul class="cate" ng-if='attrv.widget == "color"'>
-                            <li ng-repeat="atv in attrv" ng-if='atv.product_count'>
-                                <a href="#.">
+                            <!-- COLORE -->
+                            <ul class="cate" ng-if='attrv.widget == "color"'>
+                                <li ng-repeat="atv in attrv" ng-if='atv.product_count' style="    display: block;">
+
                                     <label style="font-weight: 500;background: {{atv.additional_value}};padding: 0px 5px;float: left;
                                            margin-right: 5px;border: 1px solid #0000005e;border: 1px solid #0000005e;
                                            text-shadow: 0px 1px 4px #000;">
@@ -247,340 +280,174 @@ $image2 = "";
                                            color: #fff;"></i>
                                         <!--{{atv.attribute_value}} ({{atv.product_count}})-->
                                     </label>
-                                </a>
+
 
                                     <!--<a href="#."><input type="checkbox">{{atv.attribute_value}} <span>(32) </span></a>-->
-                            </li>
-                        </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <!-- Main Shop Itesm -->          
+                <div class="col-md-9"> 
+
+                    <button class="btn btn-default btn-small pull-right" style="    position: absolute;
+                            right: 10px;
+                            top: -45px;" data-toggle="modal" data-target="#productcustome">View Custom Cart</button>
+
+                    <div id="content1"  ng-if="productProcess.state == 1" style="padding: 100px 0px;"> 
+
+                        <!-- Tesm Text -->
+                        <section class="error-page text-center pad-t-b-130">
+                            <div class="{{productResults.products.length?'container1':'container'}}"> 
+                                <center>
+                                    <img src="<?php echo base_url() . 'assets/theme2/img/loader.gif' ?>">
+                                </center>
+                                <!-- Heading -->
+                                <h1 style="font-size: 40px;text-align: center">Loading...</h1>
+                            </div>
+                        </section>
+
                     </div>
 
+                    <!-- SHOWING INFO -->
 
 
 
 
-                </div>
-            </div>
-            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" >
+                    <div class="" > 
 
-
-                <div id="content1"  ng-if="productProcess.state == 1" style="padding: 100px 0px;"> 
-
-                    <!-- Tesm Text -->
-                    <section class="error-page text-center pad-t-b-130">
-                        <div class="{{productResults.products.length?'container1':'container'}}"> 
-                            <center>
-                                <img src="<?php echo base_url() . 'assets/theme2/img/loader.gif' ?>">
-                            </center>
-                            <!-- Heading -->
-                            <h1 style="font-size: 40px;text-align: center">Loading...</h1>
-                        </div>
-                    </section>
-
-                </div>
-
-                <div class="row inner-section-space-top" ng-if="productProcess.state == 2">
-                    <!-- Tab panes -->
-                    <div class="tab-content" >
-                        <div role="tabpanel"  class="tab-pane active clear products-container content" id="gried-view"> 
-
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 animated zoomIn"  ng-repeat="(k, product) in productResults.products">
-                                <div class="product-box1" style="height: 434px;">
-                                    <ul class="product-social">
-                                        <li><a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                        <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                    <div class="product-img-holder">
-                                        <a href="#">
-                                            <?php
-                                            switch ($custom_id) {
-                                                case "1":
-                                                    ?>
-                                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/shirt_model10001.png" alt="product">
-                                                    <?php
-                                                    break;
-                                                case "2":
-                                                    ?>
-                                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product">
-
-                                                    <?php
-                                                    break;
-                                                case "3":
-                                                    ?>
-                                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/pant_style10001.png" alt="product">
-                                                    <?php
-                                                    break;
-                                                case "4":
-                                                    ?>
-                                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product">
-                                                    <?php
-                                                    break;
-                                                default:
-                                                    echo $custom_item;
-                                            }
-                                            ?>
-                                        </a>
+                        <div class="row products-container content" ng-if="productProcess.state == 2">
+                            <!-- Item -->
+                            <div class="row products-container content" >
+                                <div class="product clearfix col-md-4" ng-repeat="(k, product) in productProcess.products">
+                                    <div class="product-image">
+                                        <a href="#"><img src="http://files.costcokart.com/hkwtc/{{product.folder}}" alt="Slim Fit Chinos"></a>
+                                        <a href="#"><img src="http://files.costcokart.com/hkwtc/{{product.folder}}" alt="Slim Fit Chinos"></a>
+                                        <div class="product-overlay">
+                                            <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Enquiry</span></a>
+                                            <a href="#" class="item-quick-view" ng-click="productlook(product)" data-toggle="modal" data-target="#productModal"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
+                                        </div>
                                     </div>
-                                    <div class="product-content-holder">
-                                        <h3>
-                                            <a href="#">{{product.title}}  <br>
-                                                <span style="font-size: 12px">{{product.short_description}} </span>
-                                            </a>
-                                            <p style="    margin-bottom: -7px;" ng-if="product.attr.length">
-
-                                                <span class="colorblock" style="background: {{product.attr[0]['Colors']}};"></span>
-                                            </p>
-                                        </h3>
-                                        <span>{{<?php echo $item_price; ?>|currency:"<?php echo globle_currency; ?> "}}</span>
+                                    <div class="product-desc">
+                                        <div class="product-title"><h3><a href="#">{{product.title}}</a></h3></div>
+                                        <div class="product-short-dest"><p>{{product.short_description}}</p></div>
+                                        <div class="product-rating">
+                                            <i class="icon-star3"></i>
+                                            <i class="icon-star3"></i>
+                                            <i class="icon-star3"></i>
+                                            <i class="icon-star-half-full"></i>
+                                            <i class="icon-star-empty"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
+                        </div>
 
 
-                            <div style="clear: both"></div>
+                    </div>
+
+
+
+                    <div id="content"  ng-if="productProcess.state == 0"> 
+                        <div ng-if="checkproduct == 0">
+                            <!-- Tesm Text -->
+                            <section class="error-page text-center pad-t-b-130">
+                                <div class="1 "> 
+
+                                    <!-- Heading -->
+                                    <h1 style="font-size: 40px">No Product Found</h1>
+                                    <p>Products Will Comming Soon</p>
+                                    <hr class="dotted">
+                                    <a href="<?php echo site_url(); ?>" class="woocommerce-Button button btn-shop-now-fill">BACK TO HOME</a>
+                                </div>
+                            </section>
                         </div>
                     </div>
-                    <div class="col-md-12">
+
+
+
+
+                    <!--                     Pagination 
+                                        <ul class="pagination">
+                                            <li><a href="#.">1</a></li>
+                                            <li><a href="#.">2</a></li>
+                                            <li><a href="#.">....</a></li>
+                                            <li><a href="#.">&gt;</a></li>
+                                        </ul>-->
+
+                    <div class="col-md-12" id="paging_container1">
+                        <div class="showing-info">
+                            <p class="text-center"><span class="info_text ">Showing {0}-{1} of {2} results</span></p>
+                        </div>
+                        <div class="row products-container content" ng-if="productProcess.state == 2">
+                            <!-- Item -->
+                            <div class="col-sm-4 animated zoomIn"  ng-repeat="(k, product) in productResults.products">
+                            </div>
+                        </div>
                         <center>
-                            <div class="page_navigation "></div>
+                            <div class="page_navigation"></div>
                         </center>
                         <div style="clear: both"></div>
                     </div>
                 </div>
-
-            </div>
-
-        </div>
-
-
-
-        <div id="content"  ng-if="productProcess.state == 0"> 
-            <div ng-if="checkproduct == 0">
-                <!-- Tesm Text -->
-                <section class="error-page text-center pad-t-b-130">
-                    <div class="container "> 
-
-                        <!-- Heading -->
-                        <h1 style="font-size: 40px">No Product Found</h1>
-                        <p>Products Will Comming Soon</p>
-                        <hr class="dotted">
-                        <a href="<?php echo site_url(); ?>" class="woocommerce-Button button btn-shop-now-fill">BACK TO HOME</a>
-                    </div>
-                </section>
             </div>
         </div>
-
-
-
-
-
     </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{selectedproduct.product.title}}<br/><small>{{selectedproduct.product.short_description}}</small></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="http://files.costcokart.com/hkwtc/{{selectedproduct.product.folder}}" alt="{{selectedproduct.product.short_description}}">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"><i class="icon-shopping-cart"></i> Enquiry</button>
+      </div>
+    </div>
+  </div>
 </div>
 
+</div>
+<!-- End Content --> 
 
 <script>
-            var category_id = <?php echo $category; ?>;</script>
+    var category_id = <?php echo $cattempid; ?>;
+    var custom_id = <?php echo $custom_id; ?>;
+    var searchdata = <?php echo isset($_GET["search"]) ? ($_GET["search"] != '' ? $_GET["search"] : '0') : "0"; ?>;</script>
 <!--angular controllers-->
 
-<script src="<?php echo base_url(); ?>assets/theme/js/jquery.pajinate.min.js"></script>
 
-<script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
-<!-- Modal Dialog Box Start Here-->
-<div id="myModal" class="modal fade" role="dialog" ng-if="showmodel">
-    <div class="modal-dialog">
-        <div class="modal-body ">
-            <button type="button" class="close myclose" data-dismiss="modal">&times;</button>
-            <div class="product-details1-area">
-                <div class="product-details-info-area">
-                    <div class="row">
-                        <div class="col-md-9 col-sm-12 col-xs-12">
-                            <div class="inner-product-details-left">
-                                <div class="tab-content">
-                                    <div id="metro-related1" class="tab-pane fade active in" ng-if="projectDetailsModel.productobj.file_name">
-                                        <a href="#">
-                                            <div class="product_image_back popup_fabric" style="background: url(<?php
-                                            switch ($custom_id) {
-                                                case "1":
-                                                    ?>
-                                                         <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/shirt_model10001.png<?php
-                                                         break;
-                                                     case "2":
-                                                         ?>
-                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/s1_master_style60001.png"<?php
-                                                         break;
-                                                     case "3":
-                                                         ?>
-                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/pant_style10001.png<?php
-                                                         break;
-                                                     case "4":
-                                                         ?>
-                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/s1_master_style60001.png<?php
-                                                         break;
-                                                     default:
-                                                         echo $custom_item;
-                                                 }
-                                                 ?>)"></div>
-                                                                                         <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name}}" alt="single">-->
-                                        </a>
-                                    </div>
-                                    <div id="metro-related2" class="tab-pane fade" ng-if="projectDetailsModel.productobj.file_name1">
-                                        <a href="#">
-                                            <div class="product_image_back popup_fabric" style="background: url(<?php
-                                            switch ($custom_id) {
-                                                case "1":
-                                                    ?>
-                                                         <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/shirt_model20001.png<?php
-                                                         break;
-                                                     case "2":
-                                                         ?>
-                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/style_buttons.png"<?php
-                                                         break;
-                                                     case "3":
-                                                         ?>
-                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/pant_style20001.png<?php
-                                                         break;
-                                                     case "4":
-                                                         ?>
-                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/style_buttons.png<?php
-                                                         break;
-                                                     default:
-                                                         echo $custom_item;
-                                                 }
-                                                 ?>);"></div>
-                                                                                         <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name1}}" alt="single">-->
-                                        </a>
-                                    </div>
-                                    <div id="metro-related3" class="tab-pane fade" ng-if="projectDetailsModel.productobj.file_name2">
-                                        <a href="#">
-                                            <div class="product_image_back popup_fabric" style="background: url(<?php echo custome_image_server; ?>/coman/resize/output/{{projectDetailsModel.productobj.folder}}.jpg);background-repeat: repeat!important;"></div>
-                                                                                         <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name2}}" alt="single">-->
-                                        </a>
-                                    </div>
-                                    <div style="clear: both"></div>
-                                </div>
-                                <ul>
-                                    <li class="active" ng-if="projectDetailsModel.productobj.file_name">
-                                        <a aria-expanded="false" data-toggle="tab" href="#metro-related1" style="width:75px;">
-                                            <div class="product_image_back" style="background: url(<?php
-                                            switch ($custom_id) {
-                                                case "1":
-                                                    ?>
-                                                         <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/shirt_model10001.png<?php
-                                                         break;
-                                                     case "2":
-                                                         ?>
-                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/s1_master_style60001.png"<?php
-                                                         break;
-                                                     case "3":
-                                                         ?>
-                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/pant_style10001.png<?php
-                                                         break;
-                                                     case "4":
-                                                         ?>
-                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/s1_master_style60001.png<?php
-                                                         break;
-                                                     default:
-                                                         echo $custom_item;
-                                                 }
-                                                 ?>);height: 75px"></div>
-                                            <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name}}" alt="related1">-->
-                                        </a>
-                                    </li>
-                                    <li ng-if="projectDetailsModel.productobj.file_name1">
-                                        <a aria-expanded="false" data-toggle="tab" href="#metro-related2" style="width:75px;">
-                                            <div class="product_image_back" style="background: url(<?php
-                                            switch ($custom_id) {
-                                                case "1":
-                                                    ?>
-                                                         <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/shirt_model20001.png<?php
-                                                         break;
-                                                     case "2":
-                                                         ?>
-                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/style_buttons.png"<?php
-                                                         break;
-                                                     case "3":
-                                                         ?>
-                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/pant_style20001.png<?php
-                                                         break;
-                                                     case "4":
-                                                         ?>
-                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/style_buttons.png<?php
-                                                         break;
-                                                     default:
-                                                         echo $custom_item;
-                                                 }
-                                                 ?>);height: 75px"></div>
-                                        </a>
-                                    </li>
-                                    <li ng-if="projectDetailsModel.productobj.file_name2">
-                                        <a aria-expanded="false" data-toggle="tab" href="#metro-related3" style="width:75px;">
-                                            <div class="product_image_back" style="background: url(<?php echo custome_image_server; ?>/coman/resize/output/{{projectDetailsModel.productobj.folder}}.jpg);height: 75px"></div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class=" col-md-3 col-sm-12 col-xs-12">
-                            <div class="inner-product-details-right">
-                                <h3 style="font-size: 20px;">{{projectDetailsModel.productobj.title}}</h3> 
-                                <ul>
-                                    <li><i aria-hidden="true" class="fa fa-star"></i></li>
-                                    <li><i aria-hidden="true" class="fa fa-star"></i></li>
-                                    <li><i aria-hidden="true" class="fa fa-star"></i></li>
-                                    <li><i aria-hidden="true" class="fa fa-star"></i></li>
-                                    <li><i aria-hidden="true" class="fa fa-star"></i></li>
-                                </ul>
-                                <p style="font-size: 20px;" class="price">{{gitem_price|currency:"<?php echo globle_currency; ?> "}}</p>
-                                <p>{{projectDetailsModel.productobj.short_description}}</p>
-                                <div class="product-details-content">
-                                    <p><span class="model_tab_title">SKU:</span><br/> {{projectDetailsModel.productobj.title}}</p>
-                                    <p><span class="model_tab_title">Availability:</span><br/> {{projectDetailsModel.productobj.stock_status}}</p>
-                                    <p ng-if="projectDetailsModel.productobj.attr.length"><span class="model_tab_title" >Color(s)</span><br/> <span class="colorblock" style="background: {{projectDetailsModel.productobj.attr[0]['Colors']}};    position: relative;margin: 0;"></span></p>
-                                </div>
-
-
-                                <!--                                <ul class="product-details-social">
-                                                                    <li>Share: {{projectDetailsModel.quantity}}</li>
-                                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-facebook"></i></a></li>
-                                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-twitter"></i></a></li>
-                                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-linkedin"></i></a></li>
-                                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-pinterest"></i></a></li>
-                                                                </ul>-->
-                                <ul class="inner-product-details-cart">
-                                    <li>
-                                        <!--<a href="#" ng-click="addToCart(projectDetailsModel.productobj.product_id, projectDetailsModel.quantity)">Add To Cart</a>-->
-                                        <a href="{{projectDetailsModel.link}}" >Customize Now</a>
-                                    </li>
-                                    <!--                                    <li>
-                                                                            <div class="input-group quantity-holder" id="quantity-holder">
-                                                                                <input type="text" placeholder="1" value="1" id="model_quantity" class="form-control quantity-input" name="quantity">
-                                                                                <div class="input-group-btn-vertical">
-                                                                                    <button type="button" class="btn btn-default quantity-plus" ng-click="modelProductQuantity()"><i aria-hidden="true" class="fa fa-plus"></i></button>
-                                                                                    <button type="button" class="btn btn-default quantity-minus"  ng-click="modelProductQuantity()"><i aria-hidden="true" class="fa fa-minus"></i></button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>-->
-                                                                        <!--<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>-->
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--        <div class="modal-footer">
-                    <a href="#" class="btn-services-shop-now" data-dismiss="modal">Close</a>
-                </div>-->
-    </div>
-</div>
 <?php
 $this->load->view('layout/footer');
 ?>
-<!--angular controllers-->
+<script src="<?php echo base_url(); ?>assets/theme/js/jquery/jquery.min.js"></script>
+
 <script src="<?php echo base_url(); ?>assets/theme/js/jquery.pajinate.min.js"></script>
 
+
+<script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
+
+<!--angular controllers-->
+
+
 <script type="text/javascript">
-            $(document).ready(function () {
+    $(document).ready(function () {
 
     });
 </script>

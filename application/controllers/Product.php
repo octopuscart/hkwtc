@@ -40,7 +40,7 @@ class Product extends CI_Controller {
         $data["cattempid"] = $cattempid;
         $data["producttype"] = $producttype;
 
-        $this->load->view('Product/productList', $data);
+        $this->load->view('Product/productList2', $data);
     }
 
     function ProductSearch() {

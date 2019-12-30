@@ -13,7 +13,13 @@
 
 #content p {
     line-height: 1.8;
-    color: black;
+    color: black
+}
+
+
+strong.telprefix {
+    width: 43px;
+    float: left;
 }
 
 
@@ -115,15 +121,15 @@ article.preview.pattern03 {
 
 .heading_product {
     text-transform: none;
-   
+
     font-family: 'Cookie';
 }
 h3.heading_product{
-        margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .catelist{
-       display: block;
+    display: block;
     font-size: 15px;
     color: black;
 }
@@ -137,6 +143,6 @@ h3.heading_product{
     width: 400px;
 }
 .product-image > a, .product-image .slide a, .product-image img {
-    
+
     border-radius: 10px;
 }
