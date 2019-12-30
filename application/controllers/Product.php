@@ -53,6 +53,7 @@ class Product extends CI_Controller {
                 'email' => $this->input->post('email'),
                 'contact' => $this->input->post('contact'),
             );
+
             $sendernameeq = $this->input->post('last_name') . " " . $this->input->post('first_name');
             if ($this->input->post('email')) {
                 $emailsender = email_sender;
@@ -85,16 +86,16 @@ class Product extends CI_Controller {
 
 
                 $htmlsmessage = $this->load->view('Email/price_enquiry', $price_enquiry, true);
-                echo $this->email->message($htmlsmessage);
 
-//                $this->email->print_debugger();
-//                $send = $this->email->send();
-//                if ($send) {
-//                    // echo json_encode("send");
-//                } else {
-//                    $error = $this->email->print_debugger(array('headers'));
-//                    //  echo json_encode($error);
-//                }
+                $this->email->message($htmlsmessage);
+                $this->email->print_debugger();
+                $send = $this->email->send();
+                if ($send) {
+                    // echo json_encode("send");
+                } else {
+                    $error = $this->email->print_debugger(array('headers'));
+                    //  echo json_encode($error);
+                }
             }
         }
         $this->load->view('Product/productList2', $data);
