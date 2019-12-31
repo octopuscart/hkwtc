@@ -98,7 +98,7 @@
                                 ?>
                                 <tr>
                                     <td>
-                                        <img src="http://files.costcokart.com/hkwtc/<?php echo $value['folder']; ?>" alt="" style="width: 100px;" alt="...">
+                                        <img src="https://files.costcokart.com/hkwtc/<?php echo $value['folder']; ?>" alt="" style="width: 100px;" alt="...">
 
                                     </td>
                                     <td>

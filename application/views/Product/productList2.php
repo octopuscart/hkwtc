@@ -326,8 +326,8 @@ $image2 = "";
                             <div class="row products-container content" >
                                 <div class="product clearfix col-md-4" ng-repeat="(k, product) in productProcess.products">
                                     <div class="product-image">
-                                        <a href="#"><img src="http://files.costcokart.com/hkwtc/{{product.folder}}" alt="Slim Fit Chinos"></a>
-                                        <a href="#"><img src="http://files.costcokart.com/hkwtc/{{product.folder}}" alt="Slim Fit Chinos"></a>
+                                        <a href="#"><img src="https://files.costcokart.com/hkwtc/{{product.folder}}" alt="Slim Fit Chinos"></a>
+                                        <a href="#"><img src="https://files.costcokart.com/hkwtc/{{product.folder}}" alt="Slim Fit Chinos"></a>
                                         <div class="product-overlay">
                                             <a href="#" class="add-to-cart" ng-click="askPriceSelection(product.product_id)" data-toggle="modal" data-target="#productprice"><i class="icon-shopping-cart"></i><span> Enquiry</span></a>
                                             <a href="#" class="item-quick-view" ng-click="productlook(product)" data-toggle="modal" data-target="#productModal"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
@@ -423,7 +423,7 @@ $image2 = "";
                         <div class="row cart-details" >
                             <div class="col-sm-12 col-md-3" ng-repeat="(key, product) in askpricedata" >
                                 <div class="thumbnail">
-                                    <img src="http://files.costcokart.com/hkwtc/{{product.folder}}" alt="" style="width: auto;" alt="...">
+                                    <img src="https://files.costcokart.com/hkwtc/{{product.folder}}" alt="" style="width: auto;" alt="...">
 
                                     <div class="caption">
                                         <h5 style="font-size:15px;" class="text-center m_bottom_10">{{product.title}}</h5>
@@ -494,7 +494,7 @@ $image2 = "";
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src="http://files.costcokart.com/hkwtc/{{selectedproduct.product.folder}}" alt="{{selectedproduct.product.short_description}}">
+                    <img src="https://files.costcokart.com/hkwtc/{{selectedproduct.product.folder}}" alt="{{selectedproduct.product.short_description}}">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
