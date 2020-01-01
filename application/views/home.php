@@ -97,9 +97,8 @@
                                 <li class="current"> <a href="<?php echo site_url("/"); ?>" ><div>Home</div></a></li>
 
                                 <li><a href="<?php echo site_url("Product/ProductList/2/0/suits"); ?>" ><div>Suits</div></a></li>
-                                <li><a href="<?php echo site_url("Product/ProductList/4/0/linings"); ?>"><div>Linings </div></a></li> <li><a href="#" data-href="#section-about"><div>About</div></a></li>
-
-                                <li><a href="#" data-href="#section-about"><div>About</div></a></li>
+                                <li><a href="<?php echo site_url("Product/ProductList/4/0/linings"); ?>"><div>Linings </div></a></li> 
+                                <li><a href="#" data-href="#section-about"><div>About Us</div></a></li>
                                 <li><a href="<?php echo site_url("Shop/contactus"); ?>" ><div>Contact</div></a></li>
                             </ul>
 

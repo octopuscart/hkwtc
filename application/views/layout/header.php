@@ -97,13 +97,11 @@
                         <nav id="primary-menu" class="not-dark">
 
                             <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="0">
-                                <li class="current">
-                                    <a href="<?php echo site_url("/"); ?>" ><div>Home</div></a></li>
-
+                                <li class="current"><a href="<?php echo site_url("/"); ?>" ><div>Home</div></a></li>
                                 <li><a href="<?php echo site_url("Product/ProductList/2/0/suits"); ?>" ><div>Suits</div></a></li>
-                                <li><a href="<?php echo site_url("Product/ProductList/4/0/linings"); ?>"><div>Linings </div></a></li> <li><a href="#" data-href="#section-about"><div>About</div></a></li>
+                                <li><a href="<?php echo site_url("Product/ProductList/4/0/linings"); ?>"><div>Linings </div></a></li>
+                                <li><a href="#" data-href="#section-about"><div>About</div></a></li>
                                 <li><a href="<?php echo site_url("Shop/contactus"); ?>" ><div>Contact</div></a></li>
-
                             </ul>
 
                         </nav>
