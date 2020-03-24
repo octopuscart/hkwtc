@@ -74,7 +74,7 @@ $this->load->view('layout/header');
                             <div>
                                 <h5><i class='icon-phone-sign'></i> Contact:</h5>
                                 <address class="nobottommargin">
-                                    <abbr title="Phone Number"><strong class="telprefix">MOB:</strong></abbr> +(852) 6388 6067<br>
+                                    <abbr title="Phone Number"><strong class="telprefix">MOB:</strong></abbr> +(852) 6890 3200<br>
                                     <abbr title="Phone Number"><strong class="telprefix">TEL:</strong></abbr> +(852) 3619 7454<br>
                                     <abbr title="Phone Number"><strong class="telprefix">FAX:</strong></abbr> +(852) 3619 7453<br>
                                     <abbr title="Email Address"><strong class="telprefix">EMAIL:</strong></abbr> sales@hkwoolentextile.com 
